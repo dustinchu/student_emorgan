@@ -14,11 +14,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  ScrollController _scrollController = ScrollController();
+  static ScrollController _scrollController = ScrollController();
 
 //  _scrollController.animateTo(.0,
 //                         duration: Duration(milliseconds: 200),
 //                         curve: Curves.ease);
+
+  void upBtn() {
+    _scrollController.animateTo(.0,
+        duration: Duration(milliseconds: 200), curve: Curves.ease);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +46,29 @@ class _HomeScreenState extends State<HomeScreen> {
           child: ListView(
             children: [
               ProductBanner(
-                scrollController: _scrollController,
+                upBtn: upBtn,
+                title: "Tear to Taste",
+                title2: "SHALI",
+                body1: "Human A wears a tear patch",
+                body2: "Human B wears taste salivary",
+                isLeft: false,
               ),
               ProductBanner(
-                scrollController: _scrollController,
+                upBtn: upBtn,
+                title: "Voice to Vibrate",
+                title2: "OBI",
+                body1: "Human A wears a voice patch",
+                body2: "Human B wears a tactile heart",
+                isLeft: true,
               ),
               ProductBanner(
-                scrollController: _scrollController,
-              )
+                upBtn: upBtn,
+                title: "Pulse to Pain",
+                title2: "BUZZY",
+                body1: "Human A&B both wear patches with",
+                body2: "pulse detection and low freqency electric shock",
+                isLeft: false,
+              ),
             ],
           )),
     );
