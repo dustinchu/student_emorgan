@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   url_strategy: ^0.1.1
+  video_player: ^1.0.1
   vs_scrollbar: ^0.1.2
 
 dev_dependencies:

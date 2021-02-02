@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
-
+import 'package:video_player/video_player.dart';
 import 'home_menu.dart';
 import 'product_banner.dart';
 
@@ -15,13 +15,26 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   ScrollController _scrollController = ScrollController();
-
+  VideoPlayerController _controller;
 //  _scrollController.animateTo(.0,
 //                         duration: Duration(milliseconds: 200),
 //                         curve: Curves.ease);
   void upBtn() {
     _scrollController.animateTo(.0,
         duration: Duration(milliseconds: 200), curve: Curves.ease);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.network(
+        'http://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4')
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {
+          _controller.play();
+        });
+      });
   }
 
   @override
@@ -50,6 +63,12 @@ class _HomeScreenState extends State<HomeScreen> {
               shrinkWrap: true,
               physics: BouncingScrollPhysics(),
               children: [
+                _controller.value.initialized
+                    ? AspectRatio(
+                        aspectRatio: _controller.value.aspectRatio,
+                        child: VideoPlayer(_controller),
+                      )
+                    : Container(),
                 ProductBanner(
                   upBtn: upBtn,
                   title: "Tear to Taste",
