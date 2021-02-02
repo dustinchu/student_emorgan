@@ -101,6 +101,7 @@ class _ProductBannerState extends State<ProductBanner> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Material(
+          color: Colors.transparent,
           child: InkWell(
             onTap: () {},
             onHover: (value) {
