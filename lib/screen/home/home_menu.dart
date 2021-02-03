@@ -1,3 +1,4 @@
+import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
 
 class HomeMenu extends StatelessWidget {
@@ -23,20 +24,21 @@ class HomeMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double w=MediaQuery.of(context).size.width;
     return Column(
       children: [
-        menu("Emorgan", true),
-        menu("Products", false),
-        menu("Purchase Process", false),
-        menu("Book a counseling", false),
-        menu("User Feedback", false),
-        menu("Contact us", false),
-        menu("About us", false)
+        menu("Emorgan", true,w),
+        menu("Products", false,w),
+        menu("Purchase Process", false,w),
+        menu("Book a counseling", false,w),
+        menu("User Feedback", false,w),
+        menu("Contact us", false,w),
+        menu("About us", false,w)
       ],
     );
   }
 
-  Widget menu(String text, bool selected) {
+  Widget menu(String text, bool selected,w) {
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -55,7 +57,7 @@ class HomeMenu extends StatelessWidget {
               Text(
                 text,
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize:windows_width_medium_size(w),
                     color: selected ? Color(0xFF7A82A7) : Color(0x807A82A7)),
               )
             ],

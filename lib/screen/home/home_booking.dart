@@ -1,4 +1,6 @@
+import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/menu_btn.dart';
+import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/provider/book_state.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
@@ -48,8 +50,8 @@ class _HomeBookingState extends State<HomeBooking> {
           Text(
             title,
             style: TextStyle(
-              color: Color(0xFF426248),
-            ),
+                fontSize: windows_width_small_size(w),
+                color: Color(0xFF424648)),
           ),
           SizedBox(
             height: 5,
@@ -59,7 +61,6 @@ class _HomeBookingState extends State<HomeBooking> {
               color: Colors.white,
               borderRadius: new BorderRadius.circular((60)), // 圆角度
             ),
-            width: ((w / 3) * 2) / 4,
             height: 30,
             child: TextField(
               cursorColor: Color(0xFFC8C1EF),
@@ -81,7 +82,7 @@ class _HomeBookingState extends State<HomeBooking> {
           left: 0,
           top: 0,
           child: Container(
-            padding: EdgeInsets.only(top: 89, left: 10, right: 10),
+            padding: EdgeInsets.only(top: windowsSizeboxHightSize(50), left: 10, right: 10),
             height: h,
             width: w / 3,
             color: Colors.white,
@@ -90,42 +91,54 @@ class _HomeBookingState extends State<HomeBooking> {
               children: [
                 Text(
                   "Book a Psychological Counseling",
-                  style: TextStyle(fontSize: 18, color: Color(0xFF364146)),
+                  style: TextStyle(
+                      fontSize: windows_width_small_size(w),
+                      color: Color(0xFF364146)),
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 Text(
                   "Professional Assistance",
-                  style: TextStyle(fontSize: 36, color: Color(0xFF364146)),
+                  style: TextStyle(
+                      fontSize: windows_width_large_size(w),
+                      color: Color(0xFF364146)),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
                   "Choose a time for counseling.",
-                  style: TextStyle(fontSize: 18, color: Color(0xFF364146)),
+                  style: TextStyle(
+                      fontSize: windows_width_small_size(w),
+                      color: Color(0xFF364146)),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
                   "It will be a new way to improve\na relationship.",
-                  style: TextStyle(fontSize: 18, color: Color(0xFF364146)),
+                  style: TextStyle(
+                      fontSize: windows_width_small_size(w),
+                      color: Color(0xFF364146)),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
                   "After a series of counselors,\nthe psychologist will decide if\nyou and your partner need to\ntransplant emorgans.\n",
-                  style: TextStyle(fontSize: 18, color: Color(0xFF364146)),
+                  style: TextStyle(
+                      fontSize: windows_width_small_size(w),
+                      color: Color(0xFF364146)),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
                   "If the answer is yes,\nyou’ll get a purchase code.\nYou can get back to here to\ndecide which emorgan is more\nsuitable for you and your partner.\n",
-                  style: TextStyle(fontSize: 18, color: Color(0xFF364146)),
+                  style: TextStyle(
+                      fontSize: windows_width_small_size(w),
+                      color: Color(0xFF364146)),
                 ),
               ],
             ),
@@ -133,37 +146,30 @@ class _HomeBookingState extends State<HomeBooking> {
     }
 
     List<Widget> rowEditText1 = [
-      edit("Your First Name", firstNameTextEditingController),
+      Expanded(child: edit("Your First Name", firstNameTextEditingController)),
       SizedBox(
         width: 20,
       ),
-      edit("Your Last Name", lastNameTextEditingController),
+      Expanded(child: edit("Your Last Name", lastNameTextEditingController)),
     ];
     List<Widget> rowEditText2 = [
-      edit("Email Address", emailAddressTextEditingController),
+      Expanded(child: edit("Email Address", emailAddressTextEditingController)),
       SizedBox(
         width: 20,
       ),
-      edit("Phone Number", phoneNumberTextEditingController),
+      Expanded(child: edit("Phone Number", phoneNumberTextEditingController)),
     ];
     List<Widget> rowEditText3 = [
-      edit("Partner's First Name", partnerFirstNameTextEditingController),
+      Expanded(
+          child: edit(
+              "Partner's First Name", partnerFirstNameTextEditingController)),
       SizedBox(
         width: 20,
       ),
-      edit("Partner's Last Name", partnerLastNameTextEditingController),
+      Expanded(
+          child: edit(
+              "Partner's Last Name", partnerLastNameTextEditingController)),
     ];
-
-    final Widget childButtonWithoutSameItem = Container(
-      width: 60,
-      height: 40,
-      child: Center(
-        child: Text(
-          "2/10",
-          overflow: TextOverflow.ellipsis,
-        ),
-      ),
-    );
 
     //輸入頁
     Widget input() {
@@ -176,29 +182,29 @@ class _HomeBookingState extends State<HomeBooking> {
           width: w / 3 * 2,
           child: Container(
             padding: EdgeInsets.only(
-                left: ((w / 3) * 2 / 4) - 20,
-                right: ((w / 3) * 2 / 4) - 20,
-                top: 50),
+                left: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
+                right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
+                top: windowsSizeboxHightSize(50)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Enter Booking Detail",
                   style: TextStyle(
-                    fontSize: 36,
+                    fontSize: windows_width_large_size(w),
                     color: Color(0xFF426248),
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: windowsSizeboxHightSize(30),
                 ),
                 Row(children: rowEditText1),
                 SizedBox(
-                  height: 15,
+                  height: windowsSizeboxHightSize(20),
                 ),
                 Row(children: rowEditText2),
                 SizedBox(
-                  height: 15,
+                  height:windowsSizeboxHightSize(20),
                 ),
                 Container(
                   height: 2,
@@ -206,11 +212,11 @@ class _HomeBookingState extends State<HomeBooking> {
                   color: Colors.white,
                 ),
                 SizedBox(
-                  height: 15,
+                  height: windowsSizeboxHightSize(20),
                 ),
                 Row(children: rowEditText3),
                 SizedBox(
-                  height: 15,
+                  height: windowsSizeboxHightSize(20),
                 ),
                 Container(
                   height: 2,
@@ -218,21 +224,25 @@ class _HomeBookingState extends State<HomeBooking> {
                   color: Colors.white,
                 ),
                 SizedBox(
-                  height: 30,
+                  height: windowsSizeboxHightSize(20),
                 ),
                 Text(
                   "Booking Date",
-                  style: TextStyle(fontSize: 20, color: Color(0xFF424648)),
+                  style: TextStyle(
+                      fontSize: windows_width_medium_size(w),
+                      color: Color(0xFF424648)),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: windowsSizeboxHightSize(15),
                 ),
                 Text(
                   "2024",
-                  style: TextStyle(fontSize: 36, color: Color(0xFF424648)),
+                  style: TextStyle(
+                      fontSize: windows_width_large_size(w),
+                      color: Color(0xFF424648)),
                 ),
                 SizedBox(
-                  height: 10,
+                  height:windowsSizeboxHightSize(15),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -306,7 +316,10 @@ class _HomeBookingState extends State<HomeBooking> {
                     color: Colors.transparent, // 底色
                     borderRadius: new BorderRadius.circular((60)), // 圆角度
                   ),
-                  child: Text("Book NOW"),
+                  child: Text("Book NOW",
+                      style: TextStyle(
+                          color: Color(0xFF364146),
+                          fontSize: windows_width_small_size(w))),
                 ),
               ),
             ),
@@ -362,15 +375,22 @@ List<String> items = [
   '17:00',
 ];
 
+//點擊動畫展開下半部
 class _DateWidgetState extends State<DateWidget> {
   @override
   Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(widget.title),
+        Text(
+          widget.title,
+          style: TextStyle(
+              fontSize: windows_width_small_size(w), color: Color(0xFF424648)),
+        ),
         InkWell(
+          
           onTap: () {
             setState(() {
               statusList[widget.index] = !statusList[widget.index];
@@ -378,11 +398,17 @@ class _DateWidgetState extends State<DateWidget> {
           },
           child: Container(
             color: statusList[widget.index] ? Colors.white : Color(0xFFC8C1EF),
-            width: 60,
+            width: windowsSizeboxWidthSize(60),
             height: 40,
+            padding: EdgeInsets.all(0),
             margin: EdgeInsets.symmetric(vertical: 5),
             child: Center(
-              child: Text(widget.dateStr),
+              child: Text(
+                widget.dateStr,
+                style: TextStyle(
+                    fontSize: windows_width_small_size(w) - 2,
+                    color: Color(0xFF424648)),
+              ),
             ),
           ),
         ),
@@ -392,7 +418,8 @@ class _DateWidgetState extends State<DateWidget> {
           firstChild: Column(
             children: items
                 .map((e) => Container(
-                      width: 60,
+                      padding: EdgeInsets.all(0),
+                      width: windowsSizeboxWidthSize(60),
                       height: 45,
                     ))
                 .toList(),
@@ -403,7 +430,8 @@ class _DateWidgetState extends State<DateWidget> {
             children: items
                 .map((value) => InkWell(
                       child: Container(
-                        width: 60,
+                        padding: EdgeInsets.all(0),
+                        width: windowsSizeboxWidthSize(60),
                         height: 40,
                         margin: EdgeInsets.only(bottom: 5),
                         decoration: new BoxDecoration(
@@ -414,7 +442,12 @@ class _DateWidgetState extends State<DateWidget> {
                               color: Color(0xFFC8C1EF), width: 2),
                         ),
                         alignment: Alignment.center,
-                        child: Text("$value"),
+                        child: Text(
+                          "$value",
+                          style: TextStyle(
+                              fontSize: windows_width_small_size(w) - 1,
+                              color: Color(0xFF424648)),
+                        ),
                       ),
                       onTap: () {
                         setState(() => clickString[widget.index] = value);

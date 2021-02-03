@@ -1,3 +1,5 @@
+import 'package:emorgan/common/font_size.dart';
+import 'package:emorgan/common/padding_size.dart';
 import 'package:flutter/material.dart';
 
 class HomeProductBanner extends StatefulWidget {
@@ -71,31 +73,31 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
           ),
           Text(
             widget.title,
-            style: TextStyle(fontSize: 22, color: Color(0xFF364146)),
+            style: TextStyle(fontSize: windows_width_medium_size(w), color: Color(0xFF364146)),
           ),
           Text(
             widget.title2,
-            style: TextStyle(fontSize: 36, color: Color(0xFF364146)),
+            style: TextStyle(fontSize:  windows_width_large_size(w), color: Color(0xFF364146)),
           ),
           SizedBox(
             height: 36,
           ),
           Text(
             widget.body1,
-            style: TextStyle(fontSize: 18, color: Color(0xFF364146)),
+            style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
           ),
           Text(
             widget.body2,
-            style: TextStyle(fontSize: 18, color: Color(0xFF364146)),
+            style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
           ),
           Expanded(child: Container()),
-          bottomBtn()
+          bottomBtn(w)
         ],
       ),
     );
   }
 
-  Widget bottomBtn() {
+  Widget bottomBtn(w) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.end,
@@ -121,21 +123,21 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
                         " Learn more",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize:  windows_width_small_size(w),
                           color: Color(0xFF364146),
                         ),
                       ),
                       Icon(
                         Icons.keyboard_arrow_right_outlined,
                         color: Color(0xFF7A82A7),
-                        size: 22,
+                        size: windows_width_medium_size(w),
                       )
                     ],
                   ),
                   learnStatus
                       ? Container(
-                          padding: EdgeInsets.only(right: 30),
-                          width: 105,
+                          // padding: EdgeInsets.only(right: 30),
+                          width:  windows_width_small_size(w)*6,
                           height: 3,
                           color: Color(0xFF7A82A7),
                         )
@@ -146,7 +148,7 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
           ),
         ),
         SizedBox(
-          width: 20,
+          width: windowsSizeboxWidthSize(20),
         ),
         Material(
           child: InkWell(
@@ -166,7 +168,7 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
                     orderStatus ? Color(0xFF7A82A7) : Colors.transparent, // 底色
                 borderRadius: new BorderRadius.circular((60)), // 圆角度
               ),
-              child: Text("ORDER NOW"),
+              child: Text("ORDER NOW",style: TextStyle(fontSize:  windows_width_small_size(w)-1,color: Color(0xFF364146)),),
             ),
           ),
         )

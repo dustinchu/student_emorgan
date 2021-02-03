@@ -28,6 +28,7 @@ dependencies:
   flutter_modular: ^2.0.1
   pin_input_text_field: ^3.3.0
   provider: ^4.3.3
+  responsive_framework: ^0.0.14
   url_strategy: ^0.1.1
   vs_scrollbar: ^0.1.2
 
