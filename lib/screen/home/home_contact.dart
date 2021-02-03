@@ -13,7 +13,7 @@ class _HomeContactState extends State<HomeContact> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
+    // double h = MediaQuery.of(context).size.height;
     TextEditingController yourNameTextEditingController;
     TextEditingController yourEmailTextEditingController;
     TextEditingController messageTextEditingController;

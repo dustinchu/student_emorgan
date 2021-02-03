@@ -29,7 +29,8 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
+    // double h = MediaQuery.of(context).size.height;
+    double h = 900;
 
     @override
     void initState() {

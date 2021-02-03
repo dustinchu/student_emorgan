@@ -8,7 +8,8 @@ class HomeHelp extends StatelessWidget {
   @override
   Widget build(BuildContext context) { 
     double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
+    // double h = MediaQuery.of(context).size.height;
+    double h =900;
     List<Widget> stepList = [
       step("Step 1.", "assets/step1.png", "Book a counseling Online ", "", "",w),
       step("Step 2.", "assets/step2.png", "Get the consent and",

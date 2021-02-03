@@ -41,7 +41,8 @@ class _HomeBookingState extends State<HomeBooking> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
+    // double h = MediaQuery.of(context).size.height;
+    double h =900;
 
     Widget edit(title, control) {
       return Column(
