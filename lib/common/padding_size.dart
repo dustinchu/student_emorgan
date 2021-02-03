@@ -1,24 +1,22 @@
-double windowsPaddingWidthSize(double w) {
-  print("WWW???-----$w");
+double windowsPaddingWidthSize(double w,double w1) {
   if (w > 1200)
-    return w - 4;
+    return w1 - 4;
   else if (w > 1100)
-    return w - 8;
+    return w1 - 8;
   else if (w > 1000)
-    return w - 16;
+    return w1 - 16;
   else if (w > 900)
-    return w - 24;
+    return w1 - 24;
   else if (w > 800)
-    return w - 32;
+    return w1 - 32;
   else if (w > 700)
-    return w - 40;
+    return w1 - 40;
   else if (w > 600)
-    return w - 48;
-  else if (w > 500) return -56;
-  return w - 64;
+    return w1 - 48;
+  else if (w > 500) return w1-56;
+  return w1 - 64;
 }
 double windowsSizeboxWidthSize(double w) {
-  print("WWW???-----$w");
   if (w > 1200)
     return w - 1;
   else if (w > 1100)
@@ -37,7 +35,6 @@ double windowsSizeboxWidthSize(double w) {
   return w - 11;
 }
 double windowsSizeboxHightSize(double w) {
-  print("WWW???-----$w");
   if (w > 1200)
     return w - 1;
   else if (w > 1100)

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
 import 'home_booking.dart';
+import 'home_contact.dart';
+import 'home_feedback.dart';
 import 'home_help.dart';
+import 'home_image_play.dart';
 import 'home_menu.dart';
 import 'home_product_banner.dart';
 
@@ -81,7 +84,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   isLeft: true,
                 ),
                 HomeHelp(),
-                HomeBooking()
+                HomeBooking(),
+                HomeImagePlay(),
+                HomeFeedback(),
+                HomeContact(),
               ],
             ),
           ),

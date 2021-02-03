@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   animate_do: ^1.7.5
+  carousel_slider: ^3.0.0
   cupertino_icons: ^1.0.2
   flutter_modular: ^2.0.1
   pin_input_text_field: ^3.3.0
