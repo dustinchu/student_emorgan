@@ -9,8 +9,7 @@ class HomeFeedback extends StatelessWidget {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
- 
-    
+
     return Container(
       padding: EdgeInsets.symmetric(vertical: 50),
       width: w,
@@ -22,53 +21,56 @@ class HomeFeedback extends StatelessWidget {
         ),
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                  horizontal: windowsPaddingWidthSize(w, 100)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "User Feedback",
-                    style: TextStyle(
-                        fontSize: windows_width_medium_size(w),
-                        color: Color(0xFF424648)),
-                  ),
-                  Text(
-                    "See How They Feel",
-                    style: TextStyle(
-                        fontSize: windows_width_large_size(w),
-                        color: Color(0xFF424648)),
-                  )
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
+          Container(
+            // margin: EdgeInsets.symmetric(
+            // horizontal: windowsPaddingWidthSize(100)),
+            child: Row(
               children: [
-                Text(
-                  "Here are some Emo’s feedback of Emorgan.\n",
-                  style: TextStyle(
-                      fontSize: windows_width_small_size(w),
-                      color: Color(0xFF424648)),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "User Feedback",
+                      style: TextStyle(
+                          fontSize: windows_width_medium_size(w),
+                          color: Color(0xFF424648)),
+                    ),
+                    Text(
+                      "See How They Feel",
+                      style: TextStyle(
+                          fontSize: windows_width_large_size(w),
+                          color: Color(0xFF424648)),
+                    )
+                  ],
                 ),
-                Text(
-                  "We collected Emos’ feedbacks who have used\nEMORGAN for more than one year to provide\reference for new EMOs.",
-                  style: TextStyle(
-                      fontSize: windows_width_small_size(w),
-                      color: Color(0xFF424648)),
+                SizedBox(
+                  width: 50,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Here are some Emo’s feedback of Emorgan.\n",
+                      style: TextStyle(
+                          fontSize: windows_width_small_size(w),
+                          color: Color(0xFF424648)),
+                    ),
+                    Text(
+                      "We collected Emos’ feedbacks who have used\nEMORGAN for more than one year to provide\reference for new EMOs.",
+                      style: TextStyle(
+                          fontSize: windows_width_small_size(w),
+                          color: Color(0xFF424648)),
+                    )
+                  ],
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );

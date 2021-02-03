@@ -25,7 +25,7 @@ class _HomeContactState extends State<HomeContact> {
       messageTextEditingController = TextEditingController();
     }
 
-    Widget edit(title, control,h) {
+    Widget edit(title, control, h) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -58,7 +58,7 @@ class _HomeContactState extends State<HomeContact> {
 
     return Container(
       padding: EdgeInsets.symmetric(
-          vertical: 50, horizontal: windowsPaddingWidthSize(w, 100)),
+          vertical: 50, horizontal: windowsPaddingWidthSize(100)),
       width: w,
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -67,52 +67,53 @@ class _HomeContactState extends State<HomeContact> {
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
+               crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(
-                flex: 1,
-                child: Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Contact us",
-                        style: TextStyle(
-                            fontSize: windows_width_medium_size(w),
-                            color: Color(0xFF424648)),
-                      ),
-                      Text(
-                        "Tell us your Thoughts",
-                        style: TextStyle(
-                            fontSize: windows_width_large_size(w),
-                            color: Color(0xFF424648)),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 1,
+              Container(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "We are looking forward to hearing from you.\n",
+                      "Contact us",
                       style: TextStyle(
-                          fontSize: windows_width_small_size(w),
+                          fontSize: windows_width_medium_size(w),
                           color: Color(0xFF424648)),
                     ),
                     Text(
-                      "You can tell us about your ideas, or ask us \nquestions. Any suggestions are welcome :)",
+                      "Tell us your Thoughts",
                       style: TextStyle(
-                          fontSize: windows_width_small_size(w),
+                          fontSize: windows_width_large_size(w),
                           color: Color(0xFF424648)),
                     )
                   ],
                 ),
+              ),
+              SizedBox(
+                width: 50,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "We are looking forward to hearing from you.\n",
+                    style: TextStyle(
+                        fontSize: windows_width_small_size(w),
+                        color: Color(0xFF424648)),
+                  ),
+                  Text(
+                    "You can tell us about your ideas, or ask us \nquestions. Any suggestions are welcome :)",
+                    style: TextStyle(
+                        fontSize: windows_width_small_size(w),
+                        color: Color(0xFF424648)),
+                  )
+                ],
               )
             ],
           ),
@@ -127,38 +128,46 @@ class _HomeContactState extends State<HomeContact> {
                 Row(
                   children: [
                     Expanded(
-                      child: edit("Your Name", yourNameTextEditingController,30),
+                      child:
+                          edit("Your Name", yourNameTextEditingController, 30),
                     ),
                     SizedBox(
                       width: 20,
                     ),
                     Expanded(
-                      child: edit("Your Email", yourNameTextEditingController,30),
+                      child:
+                          edit("Your Email", yourNameTextEditingController, 30),
                     ),
                   ],
                 ),
-                  SizedBox(
-                      height: 30,
-                    ),
-                Expanded(child:  edit("Message", yourNameTextEditingController,300),),
                 SizedBox(
-                      height: 10,
-                    ),
+                  height: 30,
+                ),
+                Expanded(
+                  child: edit("Message", yourNameTextEditingController, 300),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: [Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  decoration: new BoxDecoration(
-                    border: new Border.all(
-                        color: Color(0xFF364146), width: 4), // 邊色寬度
-                    color: Colors.transparent, // 底色
-                    borderRadius: new BorderRadius.circular((60)), // 圆角度
-                  ),
-                  child: Text("Send Message",
-                      style: TextStyle(
-                          color: Color(0xFF364146),
-                          fontSize: windows_width_small_size(w))),
-                ),],)
+                  children: [
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      decoration: new BoxDecoration(
+                        border: new Border.all(
+                            color: Color(0xFF364146), width: 4), // 邊色寬度
+                        color: Colors.transparent, // 底色
+                        borderRadius: new BorderRadius.circular((60)), // 圆角度
+                      ),
+                      child: Text("Send Message",
+                          style: TextStyle(
+                              color: Color(0xFF364146),
+                              fontSize: windows_width_small_size(w))),
+                    ),
+                  ],
+                )
               ],
             ),
           )

@@ -1,20 +1,20 @@
-double windowsPaddingWidthSize(double w,double w1) {
+double windowsPaddingWidthSize(double w) {
   if (w > 1200)
-    return w1 - 4;
+    return w - 4;
   else if (w > 1100)
-    return w1 - 8;
+    return w - 8;
   else if (w > 1000)
-    return w1 - 16;
+    return w - 16;
   else if (w > 900)
-    return w1 - 24;
+    return w - 24;
   else if (w > 800)
-    return w1 - 32;
+    return w - 32;
   else if (w > 700)
-    return w1 - 40;
+    return w - 40;
   else if (w > 600)
-    return w1 - 48;
-  else if (w > 500) return w1-56;
-  return w1 - 64;
+    return w - 48;
+  else if (w > 500) return w-56;
+  return w - 64;
 }
 double windowsSizeboxWidthSize(double w) {
   if (w > 1200)

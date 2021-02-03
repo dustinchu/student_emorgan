@@ -148,46 +148,59 @@ class HomeHelp extends StatelessWidget {
       width: w,
       // height: 400,
       color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Purchase Process",
-            style: TextStyle(fontSize: windows_width_medium_size(w), color: Color(0xFF364146)),
+      child: Row(
+        children: [Expanded(child: Container()),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Purchase Process",
+                style: TextStyle(fontSize: windows_width_medium_size(w), color: Color(0xFF364146)),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "Know Your Needs First",
+                style: TextStyle(fontSize: windows_width_large_size(w), color: Color(0xFF364146)),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Text('''We understand that when you come to this website, you want a better solution. There might
+be some problems with you and your partner.
+
+You have tried many methods, but they were not satisfied.
+
+We suggest that you and your partner can talk to our psychological counselors first, they will
+nhelp you with relationship and emotion problems, and  also make a serious decision
+whether you need emorgans and help you grow in understanding each other.
+              ''',
+                // "We understand that when you come to this website, you want a better solution. There might ",
+                style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
+              ),
+
+              // Text(
+              //   "be some problems with you and your partner. ",
+              //   style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
+              // ),
+              // SizedBox(
+              //   height: 15,
+              // ),
+              // Text(
+              //   "You have tried many methods, but they were not satisfied.",
+              //   style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
+              // ),
+              // SizedBox(
+              //   height: 15,
+              // ),
+              // Text(
+              //   "We suggest that you and your partner can talk to our psychological counselors first, they will \nhelp you with relationship and emotion problems, and  also make a serious decision \nwhether you need emorgans and help you grow in understanding each other.",
+              //   style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
+              // ),
+            ],
           ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            "Know Your Needs First",
-            style: TextStyle(fontSize: windows_width_large_size(w), color: Color(0xFF364146)),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Text(
-            "We understand that when you come to this website, you want a better solution. There might ",
-            style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
-          ),
-          Text(
-            "be some problems with you and your partner. ",
-            style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Text(
-            "You have tried many methods, but they were not satisfied.",
-            style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Text(
-            "We suggest that you and your partner can talk to our psychological counselors first, they will \nhelp you with relationship and emotion problems, and  also make a serious decision \nwhether you need emorgans and help you grow in understanding each other.",
-            style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
-          ),
+          Expanded(child: Container()),
         ],
       ),
     );

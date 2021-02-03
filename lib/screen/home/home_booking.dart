@@ -83,7 +83,7 @@ class _HomeBookingState extends State<HomeBooking> {
           left: 0,
           top: 0,
           child: Container(
-            padding: EdgeInsets.only(top: windowsSizeboxHightSize(50), left: 10, right: 10),
+            padding: EdgeInsets.only(top: windowsSizeboxHightSize(50), left: 30, right: 10),
             height: h,
             width: w / 3,
             color: Colors.white,
@@ -183,8 +183,8 @@ class _HomeBookingState extends State<HomeBooking> {
           width: w / 3 * 2,
           child: Container(
             padding: EdgeInsets.only(
-                left: windowsPaddingWidthSize(w,((w / 3) * 2 / 4) - 20),
-                right: windowsPaddingWidthSize(w,((w / 3) * 2 / 4) - 20),
+                left: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
+                right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
                 top: windowsSizeboxHightSize(50)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
