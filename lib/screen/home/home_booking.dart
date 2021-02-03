@@ -416,6 +416,7 @@ class _DateWidgetState extends State<DateWidget> {
         //點擊後動畫展開
         AnimatedCrossFade(
           duration: const Duration(milliseconds: 700),
+          //讓沒元件的時候一樣高
           firstChild: Column(
             children: items
                 .map((e) => Container(
