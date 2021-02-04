@@ -6,6 +6,8 @@ class HomeProductBanner extends StatefulWidget {
   HomeProductBanner(
       {Key key,
       this.upBtn,
+      this.moreBtn,
+      this.nowBtn,
       this.title,
       this.title2,
       this.body1,
@@ -18,6 +20,8 @@ class HomeProductBanner extends StatefulWidget {
   final String body1;
   final String body2;
   final bool isLeft;
+  final VoidCallback moreBtn;
+  final VoidCallback nowBtn;
   @override
   _HomeProductBannerState createState() => _HomeProductBannerState();
 }
@@ -31,11 +35,6 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
     double h = 900;
-
-    @override
-    void initState() {
-      super.initState();
-    }
 
     return Stack(
       children: [
@@ -74,22 +73,30 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
           ),
           Text(
             widget.title,
-            style: TextStyle(fontSize: windows_width_medium_size(w), color: Color(0xFF364146)),
+            style: TextStyle(
+                fontSize: windows_width_medium_size(w),
+                color: Color(0xFF364146)),
           ),
           Text(
             widget.title2,
-            style: TextStyle(fontSize:  windows_width_large_size(w), color: Color(0xFF364146)),
+            style: TextStyle(
+                fontSize: windows_width_large_size(w),
+                color: Color(0xFF364146)),
           ),
           SizedBox(
             height: 36,
           ),
           Text(
             widget.body1,
-            style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
+            style: TextStyle(
+                fontSize: windows_width_small_size(w),
+                color: Color(0xFF364146)),
           ),
           Text(
             widget.body2,
-            style: TextStyle(fontSize:  windows_width_small_size(w), color: Color(0xFF364146)),
+            style: TextStyle(
+                fontSize: windows_width_small_size(w),
+                color: Color(0xFF364146)),
           ),
           Expanded(child: Container()),
           bottomBtn(w)
@@ -106,7 +113,7 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
         Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: () {},
+            onTap: widget.moreBtn,
             onHover: (value) {
               print(value);
               setState(() {
@@ -124,7 +131,7 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
                         " Learn more",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize:  windows_width_small_size(w),
+                          fontSize: windows_width_small_size(w),
                           color: Color(0xFF364146),
                         ),
                       ),
@@ -138,7 +145,7 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
                   learnStatus
                       ? Container(
                           // padding: EdgeInsets.only(right: 30),
-                          width:  windows_width_small_size(w)*6,
+                          width: windows_width_small_size(w) * 6,
                           height: 3,
                           color: Color(0xFF7A82A7),
                         )
@@ -153,7 +160,7 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
         ),
         Material(
           child: InkWell(
-            onTap: () {},
+            onTap: widget.nowBtn,
             onHover: (value) {
               print(value);
               setState(() {
@@ -169,7 +176,12 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
                     orderStatus ? Color(0xFF7A82A7) : Colors.transparent, // 底色
                 borderRadius: new BorderRadius.circular((60)), // 圆角度
               ),
-              child: Text("ORDER NOW",style: TextStyle(fontSize:  windows_width_small_size(w)-1,color: Color(0xFF364146)),),
+              child: Text(
+                "ORDER NOW",
+                style: TextStyle(
+                    fontSize: windows_width_small_size(w) - 1,
+                    color: Color(0xFF364146)),
+              ),
             ),
           ),
         )

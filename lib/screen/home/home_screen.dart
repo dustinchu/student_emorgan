@@ -1,3 +1,4 @@
+import 'package:emorgan/screen/buy/buy_loding.dart';
 import 'package:flutter/material.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
 import 'home_about.dart';
@@ -30,6 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    void moreNBtn() {}
+    void nowBtn() {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Buyloding()));
+    }
+
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Stack(
@@ -62,6 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 //     : Container(),
                 HomeProductBanner(
                   upBtn: upBtn,
+                  nowBtn: nowBtn,
+                  moreBtn: moreNBtn,
                   title: "Tear to Taste",
                   title2: "SHALI",
                   body1: "Human A wears a tear patch",
