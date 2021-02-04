@@ -17,8 +17,9 @@ class _BuylodingState extends State<Buyloding> with TickerProviderStateMixin {
   void initState() {
     // TODO: implement initState
     super.initState();
+    //圖片旋轉動畫
     controller =
-        AnimationController(duration: const Duration(seconds: 3), vsync: this);
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
     animation = Tween(begin: 0.0, end: 0.75).animate(controller);
 
     /*
@@ -32,7 +33,7 @@ class _BuylodingState extends State<Buyloding> with TickerProviderStateMixin {
         setState(() {
           start = true;
         });
-        Future.delayed(Duration(seconds: 1), () {
+        Future.delayed(Duration(seconds: 2), () {
           // print('延遲1s执行');
           setState(() {
             startHome = true;

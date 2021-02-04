@@ -7,6 +7,7 @@ import 'package:url_strategy/url_strategy.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
 
 import 'provider/book_state.dart';
+import 'screen/shali_product/shali_product_screen.dart';
 
 void main() {
   setPathUrlStrategy();
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       //   ),
       // );
       home: Scaffold(body: HomeScreen())),
-      // home: Scaffold(body: Buyloding())),
+      // home: Scaffold(body: ShaliProductScreen())),
     );
   }
 }
