@@ -59,7 +59,7 @@ class _HomeMenuState extends State<HomeMenu> with TickerProviderStateMixin {
     ];
 
     animation =
-        Tween(begin: Offset(-1, 0), end: Offset(0, 0)).animate(controller);
+        Tween(begin: Offset(-1.5, 0), end: Offset(0, 0)).animate(controller);
 
     return Row(children: [
       InkWell(
