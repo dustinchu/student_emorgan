@@ -1,6 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
+import 'main2.dart';
+
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -36,44 +39,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Choose a demo"),
-      ),
-      body: Column(
-        children: [
-          FlatButton(
-              onPressed: () {
-                setState(() {
-                  first = !first;
-                });
-              },
-              child: Text("213123123")),
-          Center(
-            child: AnimatedCrossFade(
-              duration: const Duration(milliseconds: 1000 ),
-              firstChild: Container(), // When you don't want to show menu..
-              secondChild: Row(
-                children: [Square(), Square(), Square(), Square()],
-              ),
-              crossFadeState:
-                  first ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
-class Square extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 50,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Colors.blueAccent,
+    return Scaffold(
+      backgroundColor: Color(0xFFC8C1EF),
+      body: Container(
+        color:Colors.transparent,
+        child: SizedBox(
+          height: 500,
+          width: 500,
+          child: ImagePage(
+            finderName: "buzzy",
+          ),
+        ),
       ),
     );
   }

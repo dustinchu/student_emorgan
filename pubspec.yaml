@@ -27,6 +27,7 @@ dependencies:
   carousel_slider: ^3.0.0
   cupertino_icons: ^1.0.2
   flutter_modular: ^2.0.1
+  imageview360: ^1.2.0
   pin_input_text_field: ^3.3.0
   provider: ^4.3.3
   responsive_framework: ^0.0.14
@@ -49,6 +50,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/buzzy/
+    - assets/shali/
+    - assets/obi/
+    - assets/car/
+    # - assets/OBI_SMALL
+    # - assets/SHALI_SMALL
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

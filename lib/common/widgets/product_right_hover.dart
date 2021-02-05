@@ -1,7 +1,6 @@
+import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
 
-import '../font_size.dart';
-import '../product_line_size.dart';
 
 class Product_Right_hover extends StatelessWidget {
   final String title;

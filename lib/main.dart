@@ -1,13 +1,12 @@
-import 'package:emorgan/screen/buy/buy_loding.dart';
-import 'package:emorgan/screen/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'package:vs_scrollbar/vs_scrollbar.dart';
 
 import 'provider/book_state.dart';
-import 'screen/shali_product/shali_product_screen.dart';
+import 'screen/buzzy_product/buzzy_product_screen.dart';
+import 'screen/home/home_screen.dart';
+import 'screen/obi_product/obi_product_screen.dart';
 
 void main() {
   setPathUrlStrategy();
@@ -32,8 +31,8 @@ class MyApp extends StatelessWidget {
       //     child: Scaffold(body: HomeScreen()),
       //   ),
       // );
-      home: Scaffold(body: HomeScreen())),
-      // home: Scaffold(body: ShaliProductScreen())),
+      home: HomeScreen()),
+      // home: Scaffold(body: BuzzyProductScreen())),
     );
   }
 }

@@ -2,9 +2,12 @@ import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:flutter/material.dart';
 
+import 'home_product_Image.dart';
+
 class HomeProductBanner extends StatefulWidget {
   HomeProductBanner(
       {Key key,
+      this.id,
       this.upBtn,
       this.moreBtn,
       this.nowBtn,
@@ -12,6 +15,7 @@ class HomeProductBanner extends StatefulWidget {
       this.title2,
       this.body1,
       this.body2,
+      this.finderName,
       this.isLeft})
       : super(key: key);
   final VoidCallback upBtn;
@@ -22,6 +26,8 @@ class HomeProductBanner extends StatefulWidget {
   final bool isLeft;
   final VoidCallback moreBtn;
   final VoidCallback nowBtn;
+  final String finderName;
+  final String id;
   @override
   _HomeProductBannerState createState() => _HomeProductBannerState();
 }
@@ -201,11 +207,17 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
       ),
       height: h,
       width: w,
-      child: Center(
-        child: Text(
-          "111",
-          style: TextStyle(color: Colors.white),
-        ),
+      // child: Center(
+      //   child: Text("123"),
+      // ),
+      child: Container(
+        padding: widget.isLeft
+            ? EdgeInsets.only(left: w / 3)
+            : EdgeInsets.only(right: w / 3),
+        child: Center(
+            child: ImagePage(
+          finderName: widget.finderName,
+        )),
       ),
     );
   }

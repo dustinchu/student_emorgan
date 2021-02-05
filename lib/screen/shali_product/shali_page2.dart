@@ -1,10 +1,10 @@
-import 'package:emorgan/common/font_size.dart';
-import 'package:emorgan/common/product_line_size.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
 import 'package:flutter/material.dart';
 
+import 'line_size.dart';
 import 'product_text.dart';
+import 'top_size.dart';
 
 class ShaliPage2 extends StatefulWidget {
   ShaliPage2({Key key}) : super(key: key);
@@ -15,10 +15,10 @@ class ShaliPage2 extends StatefulWidget {
 
 AnimationController controller;
 Animation<Offset> animation;
-bool forksStart = false;
-bool powerStart = false;
-bool lightStart = false;
-bool thermometeStart = false;
+bool suctionStart = false;
+bool cameraStart = false;
+bool batteryStart = false;
+bool silicone = false;
 
 class _ShaliPage2State extends State<ShaliPage2> with TickerProviderStateMixin {
   @override
@@ -68,6 +68,7 @@ DIMENSIONS
                 //w / 3 - 150 ＝左右邊界寬度
                 //(w-((w / 3 - 150)*2))得到中間頁面的寬度
                 // 白色區域中間(w-((w / 3 - 150)*2))/2,
+                //左一hovar
                 Positioned(
                   top: ((w / 5 + 50) / 10) * 2,
                   //白色區域分成40等分
@@ -78,37 +79,37 @@ DIMENSIONS
                     onHover: (value) {
                       if (value) {
                         setState(() {
-                          forksStart = true;
+                          suctionStart = true;
                         });
                       } else {
                         setState(() {
-                          forksStart = false;
+                          suctionStart = false;
                         });
                       }
                     },
                     child: Container(
                       width: 40,
                       height: 40,
-                      color: Colors.pink,
+                      color: Colors.transparent,
                     ),
                   ),
                 ),
                 //左二 hover
                 Positioned(
-                  top: ((w / 5 + 50) / 10) * 8,
+                  top: ((w / 5 + 50) / 10) * 6.8,
                   //白色區域分成40等分
-                  left: (w - ((w / 3 - 150) * 2)) / 40 * 17,
+                  left: (w - ((w / 3 - 150) * 2)) / 40 * 13,
                   child: InkWell(
                     hoverColor: Colors.transparent,
                     onTap: () {},
                     onHover: (value) {
                       if (value) {
                         setState(() {
-                          powerStart = true;
+                          cameraStart = true;
                         });
                       } else {
                         setState(() {
-                          powerStart = false;
+                          cameraStart = false;
                         });
                       }
                     },
@@ -121,20 +122,20 @@ DIMENSIONS
                 ),
                 //右一Hover
                 Positioned(
-                  top: ((w / 5 + 50) / 10) * 3,
+                  top: ((w / 5 + 50) / 10) * 1.7,
                   //白色區域分成40等分
-                  right: (w - ((w / 3 - 150) * 2)) / 40 * 17,
+                  right: (w - ((w / 3 - 150) * 2)) / 40 * 13,
                   child: InkWell(
                     hoverColor: Colors.transparent,
                     onTap: () {},
                     onHover: (value) {
                       if (value) {
                         setState(() {
-                          thermometeStart = true;
+                          batteryStart = true;
                         });
                       } else {
                         setState(() {
-                          thermometeStart = false;
+                          batteryStart = false;
                         });
                       }
                     },
@@ -147,20 +148,20 @@ DIMENSIONS
                 ),
                 //右二Hover
                 Positioned(
-                  top: ((w / 5 + 50) / 10) * 8,
+                  top: ((w / 5 + 50) / 10) * 6.5,
                   //白色區域分成40等分
-                  right: (w - ((w / 3 - 150) * 2)) / 40 * 13,
+                  right: (w - ((w / 3 - 150) * 2)) / 40 * 19,
                   child: InkWell(
                     hoverColor: Colors.transparent,
                     onTap: () {},
                     onHover: (value) {
                       if (value) {
                         setState(() {
-                          lightStart = true;
+                          silicone = true;
                         });
                       } else {
                         setState(() {
-                          lightStart = false;
+                          silicone = false;
                         });
                       }
                     },
@@ -171,74 +172,79 @@ DIMENSIONS
                     ),
                   ),
                 ),
+                // Positioned(
+                //   top: ((w / 5 + 50) / 10) * 1,
+                //   left: 0,
+                //   child: AnimatedSwitcher(
+                //       duration: const Duration(milliseconds: 600),
+                //       child: Text("${w / 5}")),
+                // ),
                 Positioned(
-                  top: ((w / 5 + 50) / 10) * 2,
+                  top:top_size(w/5,((w / 5 + 50) / 10) * 2.4),
                   left: 0,
                   child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 600),
-                    child: forksStart
-                        ? Product_left_hover(
-                          lineWidth:line_left_width_size2(w/5),
-                            title: "Fixed Forks",
-                            body: '''\nThere will be 4 forks made
+                      duration: const Duration(milliseconds: 600),
+                      child: suctionStart?Product_left_hover(
+                        lineWidth: line_left1_patch_width_size(w / 5),
+                        title: "Tear Suction",
+                        body: '''\nThere will be 4 forks made
 of Nitinol with shape
 memory to fix emorgan at
 the right position.''',
+                      ):Container(),),
+                ),
+                //左二資訊
+                Positioned(
+                  top: top_size(w/5,((w / 5 + 50) / 10) * 7),
+                  left: 0,
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 600),
+                    child: cameraStart
+                        ? Product_left_hover(
+                            lineWidth: line_left2_patch_width_size(w / 5),
+                            title: "Camera",
+                            body: '''\nTIt detects user’s partner’s
+facial expression.''',
                           )
                         : Container(),
                   ),
                 ),
-                //左二資訊
-//                 Positioned(
-//                   top: ((w / 5 + 50) / 10) * 8,
-//                   left: 0,
-//                   child: AnimatedSwitcher(
-//                     duration: const Duration(milliseconds: 600),
-//                     child: powerStart
-//                         ? Product_left_hover(
-//                             title: "Blood Flow Power",
-//                             body: '''\nWhile blood is flowing in
-// vein, it will move the leads
-// back and forth to generate
-// electricity.''',
-//                           )
-//                         : Container(),
-//                   ),
-//                 ),
 //                 //右一資訊
-//                 Positioned(
-//                   top: ((w / 5 + 50) / 10) * 3,
-//                   right: 0,
-//                   child: AnimatedSwitcher(
-//                       duration: const Duration(milliseconds: 600),
-//                       child: thermometeStart
-//                           ? Product_Right_hover(
-//                               title: "Thermomete",
-//                               body: '''\nShali will enhance the taste 
-// density while it detects
-// user’s body temperature
-// changed by emotion.
-// ''',
-//                             )
-//                           : Container()),
-//                 ),
+                Positioned(
+                  top:  top_size(w/5,((w / 5 + 50) / 10) * 1.7),
+                  right: 0,
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 600),
+                    child: batteryStart
+                        ? Product_Right_hover(
+                            lineWidth: line_right1_patch_width_size(w / 5),
+                            title: "Battery",
+                            body: '''\nThe electric power is from
+the battery which can
+supply power continuously
+for 14 years.
+''',
+                          )
+                        : Container(),
+                  ),
+                ),
 //                 //右二資訊
-//                 Positioned(
-//                   top: ((w / 5 + 50) / 10) * 8,
-//                   right: 0,
-//                   child: AnimatedSwitcher(
-//                     duration: const Duration(milliseconds: 600),
-//                     child: lightStart
-//                         ? Product_Right_hover(
-//                             title: "Light Sign",
-//                             body: '''\nDuring the operation,
-// the light will remind
-// doctors if the pairing is
-// successful.''',
-//                           )
-//                         : Container(),
-//                   ),
-//                 )
+                Positioned(
+                  top:  top_size(w/5,((w / 5 + 50) / 10) * 6.7),
+                  right: 0,
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 600),
+                    child: silicone
+                        ? Product_Right_hover(
+                            lineWidth: line_right2_patch_width_size(w / 5),
+                            title: "Biomedical Silicone",
+                            body: '''\nUsing high skin-friendly
+material to avoid skin
+allergies.''',
+                          )
+                        : Container(),
+                  ),
+                )
               ],
             ),
             SizedBox(
