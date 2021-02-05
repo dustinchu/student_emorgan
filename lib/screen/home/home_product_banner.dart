@@ -37,7 +37,8 @@ class HomeProductBanner extends StatefulWidget {
 bool learnStatus = false;
 bool orderStatus = false;
 
-class _HomeProductBannerState extends State<HomeProductBanner> {
+class _HomeProductBannerState extends State<HomeProductBanner>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -111,6 +112,9 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
     );
   }
 
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
   // Widget innerLayout(w, h) {
   //   return Container(
   //     padding: EdgeInsets.only(left: 26, top: 22, right: 26, bottom: 50),

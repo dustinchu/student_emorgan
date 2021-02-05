@@ -78,12 +78,16 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuProducts() {}
-    void menuPurchase() {_scrollController.animateTo(2698,
-        duration: Duration(milliseconds: 200), curve: Curves.ease);}
+    void menuPurchase() {
+      _scrollController.animateTo(2698,
+          duration: Duration(milliseconds: 200), curve: Curves.ease);
+    }
+
     void menuBook() {
       _scrollController.animateTo(3600,
-        duration: Duration(milliseconds: 200), curve: Curves.ease);
+          duration: Duration(milliseconds: 200), curve: Curves.ease);
     }
+
     void menuUser() {
       _scrollController.animateTo(4873,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
@@ -96,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     void menuAbout() {
       _scrollController.animateTo(6125,
-        duration: Duration(milliseconds: 200), curve: Curves.ease);
+          duration: Duration(milliseconds: 200), curve: Curves.ease);
     }
 
     double w = MediaQuery.of(context).size.width;
@@ -119,6 +123,9 @@ class _HomeScreenState extends State<HomeScreen> {
               scrollbarFadeDuration: Duration(milliseconds: 500),
               scrollbarTimeToFade: Duration(milliseconds: 800),
               child: ListView(
+                //避免listview下拉 往回時 會重新渲染 參考 https://stackoverflow.com/questions/57980225/flutter-issue-listview-rebuilding-items-when-scrolled
+
+                addAutomaticKeepAlives: true,
                 controller:
                     _scrollController, // use same scrollController object to support drag functionality
                 shrinkWrap: true,
