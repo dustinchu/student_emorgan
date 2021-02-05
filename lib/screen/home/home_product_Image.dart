@@ -17,7 +17,7 @@ class _ImagePageState extends State<ImagePage> {
   int swipeSensitivity = 2;
   bool allowSwipeToRotate = true;
   RotationDirection rotationDirection = RotationDirection.anticlockwise;
-  Duration frameChangeDuration = Duration(milliseconds: 20);
+  Duration frameChangeDuration = Duration(microseconds: 100);
   bool imagePrecached = false;
 
   @override
@@ -40,7 +40,7 @@ class _ImagePageState extends State<ImagePage> {
               autoRotate: autoRotate,
               rotationCount: rotationCount,
               rotationDirection: RotationDirection.anticlockwise,
-              frameChangeDuration: Duration(milliseconds: 30),
+              frameChangeDuration: Duration(microseconds: 100),
               swipeSensitivity: swipeSensitivity,
               allowSwipeToRotate: allowSwipeToRotate,
               onImageIndexChanged: (currentImageIndex) {

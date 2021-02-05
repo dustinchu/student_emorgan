@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     body1: "Human A wears a tear patch",
                     body2: "Human B wears taste salivary",
                     isLeft: true,
-                    finderName: 'buzzy',
+                    finderName: 'shali',
                   ),
                   new HomeProductBanner(
                     id: "obi",
@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     body1: "Human A wears a voice patch",
                     body2: "Human B wears a tactile heart",
                     isLeft: false,
-                    finderName: "buzzy",
+                    finderName: "obi",
                   ),
                   new HomeProductBanner(
                     id: "buzzy",

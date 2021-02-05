@@ -53,7 +53,6 @@ flutter:
     - assets/buzzy/
     - assets/shali/
     - assets/obi/
-    - assets/car/
     # - assets/OBI_SMALL
     # - assets/SHALI_SMALL
   # An image asset can refer to one or more resolution-specific "variants", see
