@@ -7,8 +7,8 @@ import 'package:pin_input_text_field/pin_input_text_field.dart';
 import 'package:provider/provider.dart';
 
 class HomeBooking extends StatefulWidget {
-  HomeBooking({Key key}) : super(key: key);
-
+  HomeBooking({Key key, this.upBtn}) : super(key: key);
+  final VoidCallback upBtn;
   @override
   _HomeBookingState createState() => _HomeBookingState();
 }
@@ -42,7 +42,7 @@ class _HomeBookingState extends State<HomeBooking> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h =900;
+    double h = 900;
 
     Widget edit(title, control) {
       return Column(
@@ -83,7 +83,8 @@ class _HomeBookingState extends State<HomeBooking> {
           left: 0,
           top: 0,
           child: Container(
-            padding: EdgeInsets.only(top: windowsSizeboxHightSize(50), left: 30, right: 10),
+            padding: EdgeInsets.only(
+                top: windowsSizeboxHightSize(50), left: 30, right: 10),
             height: h,
             width: w / 3,
             color: Colors.white,
@@ -205,7 +206,7 @@ class _HomeBookingState extends State<HomeBooking> {
                 ),
                 Row(children: rowEditText2),
                 SizedBox(
-                  height:windowsSizeboxHightSize(20),
+                  height: windowsSizeboxHightSize(20),
                 ),
                 Container(
                   height: 2,
@@ -243,7 +244,7 @@ class _HomeBookingState extends State<HomeBooking> {
                       color: Color(0xFF424648)),
                 ),
                 SizedBox(
-                  height:windowsSizeboxHightSize(15),
+                  height: windowsSizeboxHightSize(15),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -324,7 +325,14 @@ class _HomeBookingState extends State<HomeBooking> {
                 ),
               ),
             ),
-          )
+          ),
+          Positioned(
+              top: 20,
+              right: 20,
+              child: IconButton(
+                icon: Image.asset('assets/icon_up.png'),
+                onPressed: widget.upBtn,
+              )),
         ],
       ),
     );
@@ -391,7 +399,6 @@ class _DateWidgetState extends State<DateWidget> {
               fontSize: windows_width_small_size(w), color: Color(0xFF424648)),
         ),
         InkWell(
-          
           onTap: () {
             setState(() {
               statusList[widget.index] = !statusList[widget.index];

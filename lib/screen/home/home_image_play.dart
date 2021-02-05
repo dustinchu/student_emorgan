@@ -8,48 +8,47 @@ class HomeImagePlay extends StatefulWidget {
   _HomeImagePlayState createState() => _HomeImagePlayState();
 }
 
-final List<String> imgList = [
-  'assets/1.png',
-  'assets/2.png',
-  'assets/3.png',
-  'assets/4.png',
-  'assets/5.png',
+final List<String> imgPlayList = [
+  'assets/play1.png',
+  'assets/play2.png',
+  'assets/play3.png',
+  'assets/play4.png',
+  'assets/play5.png',
 ];
 
 class _HomeImagePlayState extends State<HomeImagePlay> {
   @override
   Widget build(BuildContext context) {
-        double w = MediaQuery.of(context).size.width;
+    double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Container(
-      width: w,
-      height: 375,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/help.png"),
-          fit: BoxFit.cover,
+        width: w,
+        height: 375,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/help.png"),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      padding: EdgeInsets.symmetric(vertical: 100),
+        padding: EdgeInsets.symmetric(vertical: 100),
         child: CarouselSlider(
           options: CarouselOptions(
             height: 175,
-             autoPlay: true,
-             viewportFraction:0.5,
-              aspectRatio: 2.0,
-              enlargeCenterPage: true,
+            autoPlay: true,
+            viewportFraction: 0.5,
+            aspectRatio: 2.0,
+            enlargeCenterPage: true,
           ),
-          items: imgList.map((item) => Container(
-            child: Center(
-              child: Image.asset(item)
-            ),
-          )).toList(),
-        )
-      );
+          items: imgPlayList
+              .map((item) => Container(
+                    child: Center(child: Image.asset(item)),
+                  ))
+              .toList(),
+        ));
   }
 }
 
-final List<Widget> imageSliders = imgList
+final List<Widget> imageSliders = imgPlayList
     .map((item) => Container(
           child: Container(
             margin: EdgeInsets.all(5.0),

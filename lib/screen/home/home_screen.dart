@@ -27,6 +27,23 @@ class _HomeScreenState extends State<HomeScreen> {
 //  _scrollController.animateTo(.0,
 //                         duration: Duration(milliseconds: 200),
 //                         curve: Curves.ease);
+
+  @override
+  void initState() {
+    super.initState();
+    //监听滚动事件，打印滚动位置
+    _scrollController.addListener(() {
+      print(_scrollController.offset); //打印滚动位置
+    });
+  }
+
+  @override
+  void dispose() {
+    //为了避免内存泄露，需要调用_controller.dispose
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   void upBtn() {
     _scrollController.animateTo(.0,
         duration: Duration(milliseconds: 200), curve: Curves.ease);
@@ -53,6 +70,33 @@ class _HomeScreenState extends State<HomeScreen> {
     void nowBtn() {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => Buyloding()));
+    }
+
+    void menuEmorgan() {
+      _scrollController.animateTo(.0,
+          duration: Duration(milliseconds: 200), curve: Curves.ease);
+    }
+
+    void menuProducts() {}
+    void menuPurchase() {_scrollController.animateTo(2698,
+        duration: Duration(milliseconds: 200), curve: Curves.ease);}
+    void menuBook() {
+      _scrollController.animateTo(3600,
+        duration: Duration(milliseconds: 200), curve: Curves.ease);
+    }
+    void menuUser() {
+      _scrollController.animateTo(4873,
+          duration: Duration(milliseconds: 200), curve: Curves.ease);
+    }
+
+    void menuContact() {
+      _scrollController.animateTo(5254,
+          duration: Duration(milliseconds: 200), curve: Curves.ease);
+    }
+
+    void menuAbout() {
+      _scrollController.animateTo(6125,
+        duration: Duration(milliseconds: 200), curve: Curves.ease);
     }
 
     double w = MediaQuery.of(context).size.width;
@@ -108,6 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     body2: "Human B wears taste salivary",
                     isLeft: true,
                     finderName: 'shali',
+                    first: false,
                   ),
                   new HomeProductBanner(
                     id: "obi",
@@ -119,6 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     body2: "Human B wears a tactile heart",
                     isLeft: false,
                     finderName: "obi",
+                    first: true,
                   ),
                   new HomeProductBanner(
                     id: "buzzy",
@@ -130,24 +176,40 @@ class _HomeScreenState extends State<HomeScreen> {
                     body2: "pulse detection and low freqency electric shock",
                     isLeft: true,
                     finderName: "buzzy",
+                    first: true,
                   ),
                   HomeHelp(),
-                  HomeBooking(),
+                  HomeBooking(
+                    upBtn: upBtn,
+                  ),
                   HomeImagePlay(),
-                  HomeFeedback(),
-                  HomeContact(),
-                  HomeAbout(),
+                  HomeFeedback(
+                    upBtn: upBtn,
+                  ),
+                  HomeContact(
+                    upBtn: upBtn,
+                  ),
+                  HomeAbout(
+                    upBtn: upBtn,
+                  ),
                 ],
               ),
             ),
           ),
           Positioned(
-            width: 400,
-            height: 300,
-            left: 18.0,
-            top: h / 2,
-            child: HomeMenu(),
-          ),
+              width: 400,
+              height: 300,
+              left: 18.0,
+              top: h / 2,
+              child: HomeMenu(
+                emorgan: menuEmorgan,
+                products: menuProducts,
+                purchase: menuPurchase,
+                book: menuBook,
+                user: menuUser,
+                contact: menuContact,
+                about: menuAbout,
+              )),
         ],
       ),
     );

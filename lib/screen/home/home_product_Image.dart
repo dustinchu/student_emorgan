@@ -29,6 +29,11 @@ class _ImagePageState extends State<ImagePage> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return (imagePrecached == true)
         ? Container(

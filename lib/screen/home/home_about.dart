@@ -3,8 +3,8 @@ import 'package:emorgan/common/padding_size.dart';
 import 'package:flutter/material.dart';
 
 class HomeAbout extends StatelessWidget {
-  const HomeAbout({Key key}) : super(key: key);
-
+  const HomeAbout({Key key, this.upBtn}) : super(key: key);
+  final VoidCallback upBtn;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -60,13 +60,13 @@ class HomeAbout extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text("Wen-Chien,Wu",
-                          style: TextStyle(
-                              color: Color(0xFF324146),
-                              fontSize: windows_width_large_size(w))),
+                                style: TextStyle(
+                                    color: Color(0xFF324146),
+                                    fontSize: windows_width_large_size(w))),
                             Text("Emorgan CEO",
-                          style: TextStyle(
-                              color: Color(0x80424648),
-                              fontSize: windows_width_medium_size(w))),
+                                style: TextStyle(
+                                    color: Color(0x80424648),
+                                    fontSize: windows_width_medium_size(w))),
                           ],
                         ),
                       ),
@@ -76,13 +76,13 @@ class HomeAbout extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text("Wen-Chien,Wu",
-                          style: TextStyle(
-                              color: Color(0xFF324146),
-                              fontSize: windows_width_large_size(w))),
+                                style: TextStyle(
+                                    color: Color(0xFF324146),
+                                    fontSize: windows_width_large_size(w))),
                             Text("Emorgan CEO",
-                          style: TextStyle(
-                              color: Color(0x80424648),
-                              fontSize: windows_width_medium_size(w))),
+                                style: TextStyle(
+                                    color: Color(0x80424648),
+                                    fontSize: windows_width_medium_size(w))),
                           ],
                         ),
                       ),
@@ -105,7 +105,7 @@ class HomeAbout extends StatelessWidget {
                     children: [
                       IconButton(
                         icon: Image.asset('assets/icon_up.png'),
-                        onPressed: () {},
+                        onPressed: upBtn,
                       )
                     ],
                   ),
@@ -168,43 +168,66 @@ spiritually assisted.''',
                       ),
                       Row(
                         children: [
-                          Image.asset("assets/email.png",width: 15,height: 15,),
-                           SizedBox(width: 10,),
+                          Image.asset(
+                            "assets/email.png",
+                            width: 15,
+                            height: 15,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Text("Participation",
                               style: TextStyle(
-                                  color: Color(0xFF7A82A7), fontSize:  windows_width_small_size(w)))
+                                  color: Color(0xFF7A82A7),
+                                  fontSize: windows_width_small_size(w)))
                         ],
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: 20,
                       ),
                       Row(
                         children: [
-                          Image.asset("assets/phone.png",width: 15,height: 15,),
-                           SizedBox(width: 10,),
+                          Image.asset(
+                            "assets/phone.png",
+                            width: 15,
+                            height: 15,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Text("0912-283-063",
                               style: TextStyle(
-                                  color: Color(0xFF7A82A7), fontSize:  windows_width_small_size(w)))
+                                  color: Color(0xFF7A82A7),
+                                  fontSize: windows_width_small_size(w)))
                         ],
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: 20,
                       ),
                       Row(
                         children: [
-                          Image.asset("assets/ig.png",width: 15,height: 15,),
-                          SizedBox(width: 10,),
+                          Image.asset(
+                            "assets/ig.png",
+                            width: 15,
+                            height: 15,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Text("emorgan_creation",
                               style: TextStyle(
-                                  color: Color(0xFF7A82A7), fontSize:  windows_width_small_size(w)))
+                                  color: Color(0xFF7A82A7),
+                                  fontSize: windows_width_small_size(w)))
                         ],
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: 100,
                       ),
                       Center(
-                        child: Text("© 2020-2047 EMORGAN", style: TextStyle(
-                                    color: Color(0xFFC8C1EF), fontSize:  windows_width_small_size(w))),
+                        child: Text("© 2020-2047 EMORGAN",
+                            style: TextStyle(
+                                color: Color(0xFFC8C1EF),
+                                fontSize: windows_width_small_size(w))),
                       )
                     ],
                   ),

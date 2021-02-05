@@ -89,29 +89,38 @@ class _HomeMenuState extends State<HomeMenu> with TickerProviderStateMixin {
         child: InkWell(
           onTap: () {},
           onHover: (value) {
-            if (!value)
-              controller.reverse();
+            if (!value) controller.reverse();
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: listStr
-                .map((value) => Container(
-                      padding: EdgeInsets.all(0),
-                      height: 20,
-                      margin: EdgeInsets.only(bottom: 5),
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "$value",
-                        style:
-                            TextStyle(fontSize: 12, color: Color(0x80424648)),
-                      ),
-                    ))
-                .toList(),
+            children: [
+              menuItem(listStr[0], widget.emorgan),
+              menuItem(listStr[1], widget.products),
+              menuItem(listStr[2], widget.purchase),
+              menuItem(listStr[3], widget.book),
+              menuItem(listStr[4], widget.user),
+              menuItem(listStr[5], widget.contact),
+              menuItem(listStr[6], widget.about),
+            ],
+            // children: listStr
+            //     .map((value) => Container(
+            //           padding: EdgeInsets.all(0),
+            //           height: 20,
+            //           margin: EdgeInsets.only(bottom: 5),
+            //           alignment: Alignment.centerLeft,
+            //           child: Text(
+            //             "$value",
+            //             style:
+            //                 TextStyle(fontSize: 12, color: Color(0x80424648)),
+            //           ),
+            //         ),)
+            //     .toList(),
           ),
         ),
       ),
     ]);
+
     // return Column(
     //   children: [
     //     menu("Emorgan", true,w),
@@ -125,6 +134,21 @@ class _HomeMenuState extends State<HomeMenu> with TickerProviderStateMixin {
     // );
   }
 
+  Widget menuItem(String value, VoidCallback ontap) {
+    return InkWell(
+      onTap: ontap,
+      child: Container(
+        padding: EdgeInsets.all(0),
+        height: 20,
+        margin: EdgeInsets.only(bottom: 5),
+        alignment: Alignment.centerLeft,
+        child: Text(
+          "$value",
+          style: TextStyle(fontSize: 12, color: Color(0x80424648)),
+        ),
+      ),
+    );
+  }
   // Widget menu(String text, bool selected, w) {
   //   return Material(
   //     color: Colors.transparent,

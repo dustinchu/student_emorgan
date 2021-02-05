@@ -7,6 +7,7 @@ import 'home_product_Image.dart';
 class HomeProductBanner extends StatefulWidget {
   HomeProductBanner(
       {Key key,
+      this.first,
       this.id,
       this.upBtn,
       this.moreBtn,
@@ -28,6 +29,7 @@ class HomeProductBanner extends StatefulWidget {
   final VoidCallback nowBtn;
   final String finderName;
   final String id;
+  final bool first;
   @override
   _HomeProductBannerState createState() => _HomeProductBannerState();
 }
@@ -68,13 +70,14 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
           ),
         ),
         // backround(w, h),
+
         widget.isLeft
             ? Positioned(
                 bottom: 0.0,
                 left: 0.0,
                 child: InnerLayout(
-                  moreBtn:widget.moreBtn,
-                  nowBtn:widget.nowBtn,
+                  moreBtn: widget.moreBtn,
+                  nowBtn: widget.nowBtn,
                   title: widget.title,
                   title2: widget.title2,
                   body1: widget.body1,
@@ -85,14 +88,25 @@ class _HomeProductBannerState extends State<HomeProductBanner> {
                 bottom: 0.0,
                 right: 0.0,
                 child: InnerLayout(
-                    moreBtn:widget.moreBtn,
-                  nowBtn:widget.nowBtn,
+                  moreBtn: widget.moreBtn,
+                  nowBtn: widget.nowBtn,
                   title: widget.title,
                   title2: widget.title2,
                   body1: widget.body1,
                   body2: widget.body2,
                   upBtn: widget.upBtn,
                 )),
+
+        Positioned(
+          top: 20,
+          right: 20,
+          child: widget.first
+              ? IconButton(
+                  icon: Image.asset('assets/icon_up.png'),
+                  onPressed: widget.upBtn,
+                )
+              : Container(),
+        ),
       ],
     );
   }
@@ -393,19 +407,19 @@ class _InnerLayoutState extends State<InnerLayout> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                IconButton(
-                  icon: Image.asset('assets/icon_up.png'),
-                  onPressed: widget.upBtn,
-                  // onPressed: () => widget.scrollController.animateTo(.0,
-                  //     duration: Duration(milliseconds: 200),
-                  //     curve: Curves.ease),
-                )
-              ],
-            ),
+            // Row(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: [
+            //     IconButton(
+            //       icon: Image.asset('assets/icon_up.png'),
+            //       onPressed: widget.upBtn,
+            //       // onPressed: () => widget.scrollController.animateTo(.0,
+            //       //     duration: Duration(milliseconds: 200),
+            //       //     curve: Curves.ease),
+            //     )
+            //   ],
+            // ),
             SizedBox(
               height: 41,
             ),
