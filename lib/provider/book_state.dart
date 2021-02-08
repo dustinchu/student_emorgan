@@ -9,7 +9,10 @@ class BookStatus extends ChangeNotifier {
   bool thuStatus = false;
   bool friStatus = false;
   bool satStatus = false;
-  int clickIndex=99;
+  int clickIndex = 99;
+  bool imageStatus = false;
+
+  bool get getImageStatus => imageStatus;
   bool get getMonStatus => monStatus;
   bool get getTueStatus => tueStatus;
   bool get getWedStatus => wedStatus;
@@ -18,10 +21,14 @@ class BookStatus extends ChangeNotifier {
   bool get getSatStatus => satStatus;
   int get getClickItem => clickIndex;
 
+  void setImageStatus(bool status) {
+    imageStatus = status;
+    notifyListeners();
+  }
+
   void setClickItem(String value) {
-   
     switch (value) {
-        case "10:00":
+      case "10:00":
         clickIndex = 0;
         break;
       case "11:00":

@@ -1,8 +1,10 @@
+import 'package:emorgan/provider/book_state.dart';
 import 'package:emorgan/screen/buy/buy_loding.dart';
 import 'package:emorgan/screen/buzzy_product/buzzy_product_screen.dart';
 import 'package:emorgan/screen/obi_product/obi_product_screen.dart';
 import 'package:emorgan/screen/shali_product/shali_product_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
 import 'home_about.dart';
 import 'home_booking.dart';
@@ -33,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     //监听滚动事件，打印滚动位置
     _scrollController.addListener(() {
+      Provider.of<BookStatus>(context, listen: false).setImageStatus(false);
       // print(_scrollController.offset); //打印滚动位置
     });
   }

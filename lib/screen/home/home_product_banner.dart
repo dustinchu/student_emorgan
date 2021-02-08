@@ -1,9 +1,11 @@
 import 'package:easy_web_view/easy_web_view.dart';
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/padding_size.dart';
+import 'package:emorgan/provider/book_state.dart';
 import 'package:emorgan/screen/home/home_product_360html.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import 'home_product_Image.dart';
 
@@ -53,6 +55,7 @@ class _HomeProductBannerState extends State<HomeProductBanner>
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
+    var imageStatus = Provider.of<BookStatus>(context);
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
     double h = 900;
@@ -77,17 +80,25 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                 ? EdgeInsets.only(left: w / 3)
                 : EdgeInsets.only(right: w / 3),
             child: Center(
-              child: EasyWebView(
-                onLoaded: () {
-                  print("onload~");
-                },
-                src: "https://eloquent-engelbart-9e449d.netlify.app",
-                isHtml: false, // Use Html syntax
-                isMarkdown: false, // Use markdown syntax
-                convertToWidgets: false, // Try to convert to flutter widgets
-                // width: 100,
-                // height: 100,
-              ),
+              child: imageStatus.getImageStatus
+                  ? EasyWebView(
+                      onLoaded: () {
+                        print("onload~");
+                      },
+                      src: "https://eloquent-engelbart-9e449d.netlify.app",
+                      isHtml: false, // Use Html syntax
+                      isMarkdown: false, // Use markdown syntax
+                      convertToWidgets:
+                          false, // Try to convert to flutter widgets
+                      // width: 100,
+                      // height: 100,
+                    )
+                  : FlatButton(
+                      onPressed: () {
+                        Provider.of<BookStatus>(context, listen: false)
+                            .setImageStatus(true);
+                      },
+                      child: Text("play")),
               // child: HomeProduct360Html(
               //     valueID: widget.finderName, path: widget.path),
               // child: ImagePage(
