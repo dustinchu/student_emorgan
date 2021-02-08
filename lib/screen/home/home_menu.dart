@@ -1,5 +1,6 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeMenu extends StatefulWidget {
   final bool selected;
@@ -144,7 +145,8 @@ class _HomeMenuState extends State<HomeMenu> with TickerProviderStateMixin {
         alignment: Alignment.centerLeft,
         child: Text(
           "$value",
-          style: TextStyle(fontSize: 12, color: Color(0x80424648)),
+          style: GoogleFonts.montserrat(
+              textStyle: TextStyle(fontSize: 12, color: Color(0x80424648))),
         ),
       ),
     );

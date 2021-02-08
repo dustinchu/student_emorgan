@@ -1,5 +1,6 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BuzzyPage4 extends StatelessWidget {
   const BuzzyPage4({Key key}) : super(key: key);
@@ -26,7 +27,8 @@ into a sense of touch.''';
       width: w,
       height: h,
       child: Container(
-        padding: EdgeInsets.only(left: w / 3 - 150,right: w / 3 - 150, top: 40),
+        padding:
+            EdgeInsets.only(left: w / 3 - 150, right: w / 3 - 150, top: 40),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +38,9 @@ into a sense of touch.''';
               imgPath: "assets/buzzy_img1.png",
               msg: step1Msg,
             ),
-            SizedBox(width: 50,),
+            SizedBox(
+              width: 50,
+            ),
             Setp(
               title: "Low-frequency Therapy\n",
               imgPath: "assets/buzzy_img2.png",
@@ -76,14 +80,20 @@ class Setp extends StatelessWidget {
         Text(
           title,
           textAlign: TextAlign.start,
-          style: TextStyle(
-              fontSize: product_width_medium_size(w), color: Color(0xFF424648)),
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                fontSize: product_width_medium_size(w),
+                color: Color(0xFF424648)),
+          ),
         ),
         Text(
           msg,
           textAlign: TextAlign.start,
-          style: TextStyle(
-              fontSize: product_width_small_size(w), color: Color(0xFF424648)),
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                fontSize: product_width_small_size(w),
+                color: Color(0xFF424648)),
+          ),
         ),
       ],
     );

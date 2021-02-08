@@ -1,10 +1,21 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class HomeFeedback extends StatelessWidget {
-  const HomeFeedback({Key key, this.upBtn}) : super(key: key);
+class HomeFeedback extends StatefulWidget {
+  HomeFeedback({Key key, this.upBtn}) : super(key: key);
   final VoidCallback upBtn;
+  @override
+  _HomeFeedbackState createState() => _HomeFeedbackState();
+}
+
+class _HomeFeedbackState extends State<HomeFeedback>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -37,15 +48,19 @@ class HomeFeedback extends StatelessWidget {
                       children: [
                         Text(
                           "User Feedback",
-                          style: TextStyle(
+                          style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
                               fontSize: windows_width_medium_size(w),
                               color: Color(0xFF424648)),
+                            ),
                         ),
                         Text(
                           "See How They Feel",
-                          style: TextStyle(
+                           style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
                               fontSize: windows_width_large_size(w),
                               color: Color(0xFF424648)),
+                            ),
                         )
                       ],
                     ),
@@ -58,15 +73,19 @@ class HomeFeedback extends StatelessWidget {
                       children: [
                         Text(
                           "Here are some Emo’s feedback of Emorgan.\n",
-                          style: TextStyle(
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
                               fontSize: windows_width_small_size(w),
                               color: Color(0xFF424648)),
+                            ),
                         ),
                         Text(
                           "We collected Emos’ feedbacks who have used\nEMORGAN for more than one year to provide\reference for new EMOs.",
-                          style: TextStyle(
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
                               fontSize: windows_width_small_size(w),
                               color: Color(0xFF424648)),
+                            ),
                         )
                       ],
                     )
@@ -81,7 +100,7 @@ class HomeFeedback extends StatelessWidget {
             right: 20,
             child: IconButton(
               icon: Image.asset('assets/icon_up.png'),
-              onPressed: upBtn,
+              onPressed: widget.upBtn,
             )),
       ],
     );

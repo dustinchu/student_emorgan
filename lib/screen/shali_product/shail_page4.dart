@@ -1,6 +1,6 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 class ShaliPage4 extends StatelessWidget {
   const ShaliPage4({Key key}) : super(key: key);
@@ -81,8 +81,11 @@ class Setp extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
-              fontSize: product_width_medium_size(w), color: Color(0xFF424648)),
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                fontSize: product_width_medium_size(w),
+                color: Color(0xFF424648)),
+          ),
         ),
         Container(
           margin: EdgeInsets.only(top: 25, bottom: 25),
@@ -98,8 +101,10 @@ class Setp extends StatelessWidget {
         Text(
           msg,
           textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: product_width_small_size(w), color: Color(0xFF424648)),
+          style: GoogleFonts.montserrat(
+              textStyle: TextStyle(
+                  fontSize: product_width_small_size(w),
+                  color: Color(0xFF424648))),
         ),
       ],
     );

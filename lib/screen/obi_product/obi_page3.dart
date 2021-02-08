@@ -1,6 +1,7 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/screen/shali_product/top_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'product_text.dart';
 
@@ -55,9 +56,11 @@ gland.
                     children: [
                       Text(
                         "Human A",
-                        style: TextStyle(
-                            fontSize: product_width_medium_size(w),
-                            color: Color(0xFF424648)),
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: product_width_medium_size(w),
+                              color: Color(0xFF424648)),
+                        ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,9 +85,11 @@ gland.
                     children: [
                       Text(
                         "Human B",
-                        style: TextStyle(
-                            fontSize: product_width_medium_size(w),
-                            color: Color(0xFF424648)),
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: product_width_medium_size(w),
+                              color: Color(0xFF424648)),
+                        ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

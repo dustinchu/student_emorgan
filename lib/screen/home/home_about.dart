@@ -1,10 +1,22 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class HomeAbout extends StatelessWidget {
+class HomeAbout extends StatefulWidget {
   const HomeAbout({Key key, this.upBtn}) : super(key: key);
   final VoidCallback upBtn;
+
+  @override
+  _HomeAboutState createState() => _HomeAboutState();
+}
+
+class _HomeAboutState extends State<HomeAbout>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -14,12 +26,18 @@ class HomeAbout extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            child: Text(t1,
-                style: TextStyle(color: Color(0xFF364146), fontSize: 12)),
+            child: Text(
+              t1,
+              style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(color: Color(0xFF364146), fontSize: 12)),
+            ),
           ),
           Expanded(
-            child: Text(t2,
-                style: TextStyle(color: Color(0x80424648), fontSize: 12)),
+            child: Text(
+              t2,
+              style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(color: Color(0x80424648), fontSize: 12)),
+            ),
           )
         ],
       );
@@ -105,22 +123,29 @@ class HomeAbout extends StatelessWidget {
                     children: [
                       IconButton(
                         icon: Image.asset('assets/icon_up.png'),
-                        onPressed: upBtn,
+                        onPressed: widget.upBtn,
                       )
                     ],
                   ),
-                  Text("About EMOGRAN",
-                      style: TextStyle(
-                          color: Color(0xFF364146),
-                          fontSize: windows_width_medium_size(w))),
-                  Text("For Love, For Future",
-                      style: TextStyle(
-                          color: Color(0xFF364146),
-                          fontSize: windows_width_large_size(w))),
+                  Text(
+                    "About EMOGRAN",
+                    style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            color: Color(0xFF364146),
+                            fontSize: windows_width_medium_size(w))),
+                  ),
+                  Text(
+                    "For Love, For Future",
+                    style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            color: Color(0xFF364146),
+                            fontSize: windows_width_large_size(w))),
+                  ),
                   SizedBox(
                     height: 50,
                   ),
-                  Text('''Emorgan wish every couple has another
+                  Text(
+                    '''Emorgan wish every couple has another
 chance to love again.
 \n
 We care about human mental needs.
@@ -133,9 +158,11 @@ Emorgan has three sets of products:“Obi”,
 We are simultaneously developing
 more products that will help humans to be
 spiritually assisted.''',
-                      style: TextStyle(
-                          color: Color(0xFF364146),
-                          fontSize: windows_width_small_size(w))),
+                    style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            color: Color(0xFF364146),
+                            fontSize: windows_width_small_size(w))),
+                  ),
                   SizedBox(
                     height: 50,
                   ),
@@ -143,10 +170,13 @@ spiritually assisted.''',
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Participation",
-                          style: TextStyle(
-                              color: Color(0xFF7A82A7),
-                              fontSize: windows_width_small_size(w))),
+                      Text(
+                        "Participation",
+                        style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                color: Color(0xFF7A82A7),
+                                fontSize: windows_width_small_size(w))),
+                      ),
                       SizedBox(
                         height: 20,
                       ),
@@ -176,10 +206,13 @@ spiritually assisted.''',
                           SizedBox(
                             width: 10,
                           ),
-                          Text("Participation",
-                              style: TextStyle(
-                                  color: Color(0xFF7A82A7),
-                                  fontSize: windows_width_small_size(w)))
+                          Text(
+                            "Participation",
+                            style: GoogleFonts.montserrat(
+                                textStyle: TextStyle(
+                                    color: Color(0xFF7A82A7),
+                                    fontSize: windows_width_small_size(w))),
+                          )
                         ],
                       ),
                       SizedBox(
@@ -195,10 +228,13 @@ spiritually assisted.''',
                           SizedBox(
                             width: 10,
                           ),
-                          Text("0912-283-063",
-                              style: TextStyle(
-                                  color: Color(0xFF7A82A7),
-                                  fontSize: windows_width_small_size(w)))
+                          Text(
+                            "0912-283-063",
+                            style: GoogleFonts.montserrat(
+                                textStyle: TextStyle(
+                                    color: Color(0xFF7A82A7),
+                                    fontSize: windows_width_small_size(w))),
+                          )
                         ],
                       ),
                       SizedBox(
@@ -214,20 +250,26 @@ spiritually assisted.''',
                           SizedBox(
                             width: 10,
                           ),
-                          Text("emorgan_creation",
-                              style: TextStyle(
-                                  color: Color(0xFF7A82A7),
-                                  fontSize: windows_width_small_size(w)))
+                          Text(
+                            "emorgan_creation",
+                            style: GoogleFonts.montserrat(
+                                textStyle: TextStyle(
+                                    color: Color(0xFF7A82A7),
+                                    fontSize: windows_width_small_size(w))),
+                          )
                         ],
                       ),
                       SizedBox(
                         height: 100,
                       ),
                       Center(
-                        child: Text("© 2020-2047 EMORGAN",
-                            style: TextStyle(
-                                color: Color(0xFFC8C1EF),
-                                fontSize: windows_width_small_size(w))),
+                        child: Text(
+                          "© 2020-2047 EMORGAN",
+                          style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                  color: Color(0xFFC8C1EF),
+                                  fontSize: windows_width_small_size(w))),
+                        ),
                       )
                     ],
                   ),

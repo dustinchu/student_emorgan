@@ -1,5 +1,6 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class ObiPage4 extends StatelessWidget {
@@ -97,8 +98,10 @@ class Setp extends StatelessWidget {
         Text(
           msg,
           textAlign: TextAlign.center,
-          style: TextStyle(
+           style: GoogleFonts.montserrat(
+                          textStyle:  TextStyle(
               fontSize: product_width_small_size(w), color: Color(0xFF424648)),
+                        ),
         ),
       ],
     );

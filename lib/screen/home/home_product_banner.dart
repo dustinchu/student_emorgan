@@ -1,6 +1,8 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/padding_size.dart';
+import 'package:emorgan/screen/home/home_product_360html.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'home_product_Image.dart';
 
@@ -17,6 +19,9 @@ class HomeProductBanner extends StatefulWidget {
       this.body1,
       this.body2,
       this.finderName,
+      this.path,
+      this.imgWidth,
+      this.imgHeigh,
       this.isLeft})
       : super(key: key);
   final VoidCallback upBtn;
@@ -28,6 +33,9 @@ class HomeProductBanner extends StatefulWidget {
   final VoidCallback moreBtn;
   final VoidCallback nowBtn;
   final String finderName;
+  final String path;
+  final double imgWidth;
+  final double imgHeigh;
   final String id;
   final bool first;
   @override
@@ -39,6 +47,9 @@ bool orderStatus = false;
 
 class _HomeProductBannerState extends State<HomeProductBanner>
     with AutomaticKeepAliveClientMixin {
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -65,9 +76,14 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                 ? EdgeInsets.only(left: w / 3)
                 : EdgeInsets.only(right: w / 3),
             child: Center(
-                child: ImagePage(
-              finderName: widget.finderName,
-            )),
+              // child: HomeProduct360Html(
+              //     valueID: widget.finderName, path: widget.path),
+              child: ImagePage(
+                w: widget.imgWidth,
+                h: widget.imgHeigh,
+                finderName: widget.finderName,
+              ),
+            ),
           ),
         ),
         // backround(w, h),
@@ -112,9 +128,6 @@ class _HomeProductBannerState extends State<HomeProductBanner>
     );
   }
 
-  @override
-  // TODO: implement wantKeepAlive
-  bool get wantKeepAlive => true;
   // Widget innerLayout(w, h) {
   //   return Container(
   //     padding: EdgeInsets.only(left: 26, top: 22, right: 26, bottom: 50),
@@ -404,12 +417,13 @@ class _InnerLayoutState extends State<InnerLayout> {
     double h = 900;
     return Container(
       child: Container(
-        padding: EdgeInsets.only(left: 26, top: 22, right: 26, bottom: 50),
+        padding: EdgeInsets.only(left: 26, right: 26, bottom: 50),
         width: w / 3,
         height: h,
         decoration: BoxDecoration(color: Colors.white),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Row(
             //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -425,119 +439,155 @@ class _InnerLayoutState extends State<InnerLayout> {
             //   ],
             // ),
             SizedBox(
-              height: 41,
-            ),
-            Text(
-              widget.title,
-              style: TextStyle(
-                  fontSize: windows_width_medium_size(w),
-                  color: Color(0xFF364146)),
-            ),
-            Text(
-              widget.title2,
-              style: TextStyle(
-                  fontSize: windows_width_large_size(w),
-                  color: Color(0xFF364146)),
-            ),
-            SizedBox(
-              height: 36,
-            ),
-            Text(
-              widget.body1,
-              style: TextStyle(
-                  fontSize: windows_width_small_size(w),
-                  color: Color(0xFF364146)),
-            ),
-            Text(
-              widget.body2,
-              style: TextStyle(
-                  fontSize: windows_width_small_size(w),
-                  color: Color(0xFF364146)),
-            ),
-            Expanded(child: Container()),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    onTap: widget.moreBtn,
-                    onHover: (value) {
-                      print(value);
-                      setState(() {
-                        learnStatus = value;
-                      });
-                    },
-                    child: Container(
-                      child: Column(
+              width: 440,
+              height: 362,
+              child: Row(
+                children: [
+                  Expanded(child: Container()),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 41,
+                      ),
+                      Text(
+                        widget.title,
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: windows_width_medium_size(w),
+                              color: Color(0xFF364146)),
+                        ),
+                      ),
+                      Text(
+                        widget.title2,
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: windows_width_large_size(w),
+                              color: Color(0xFF364146)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 36,
+                      ),
+                      Text(
+                        widget.body1,
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: windows_width_small_size(w),
+                              color: Color(0xFF364146)),
+                        ),
+                      ),
+                      Text(
+                        widget.body2,
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: windows_width_small_size(w),
+                              color: Color(0xFF364146)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                " Learn more",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: windows_width_small_size(w),
-                                  color: Color(0xFF364146),
+                          Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: widget.moreBtn,
+                              onHover: (value) {
+                                print(value);
+                                setState(() {
+                                  learnStatus = value;
+                                });
+                              },
+                              child: Container(
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          " Learn more",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                            textStyle: TextStyle(
+                                              fontSize:
+                                                  windows_width_small_size(w),
+                                              color: Color(0xFF364146),
+                                            ),
+                                          ),
+                                        ),
+                                        Icon(
+                                          Icons.keyboard_arrow_right_outlined,
+                                          color: Color(0xFF7A82A7),
+                                          size: windows_width_medium_size(w),
+                                        )
+                                      ],
+                                    ),
+                                    learnStatus
+                                        ? Container(
+                                            // padding: EdgeInsets.only(right: 30),
+                                            width:
+                                                windows_width_small_size(w) * 6,
+                                            height: 3,
+                                            color: Color(0xFF7A82A7),
+                                          )
+                                        : Container(),
+                                  ],
                                 ),
                               ),
-                              Icon(
-                                Icons.keyboard_arrow_right_outlined,
-                                color: Color(0xFF7A82A7),
-                                size: windows_width_medium_size(w),
-                              )
-                            ],
+                            ),
                           ),
-                          learnStatus
-                              ? Container(
-                                  // padding: EdgeInsets.only(right: 30),
-                                  width: windows_width_small_size(w) * 6,
-                                  height: 3,
-                                  color: Color(0xFF7A82A7),
-                                )
-                              : Container(),
+                          SizedBox(
+                            width: windowsSizeboxWidthSize(20),
+                          ),
+                          Material(
+                            child: InkWell(
+                              onTap: widget.nowBtn,
+                              onHover: (value) {
+                                print(value);
+                                setState(() {
+                                  orderStatus = value;
+                                });
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 5),
+                                decoration: new BoxDecoration(
+                                  border: new Border.all(
+                                      color: Color(0xFF7A82A7),
+                                      width: 4), // 邊色寬度
+                                  color: orderStatus
+                                      ? Color(0xFF7A82A7)
+                                      : Colors.transparent, // 底色
+                                  borderRadius:
+                                      new BorderRadius.circular((60)), // 圆角度
+                                ),
+                                child: Text(
+                                  "ORDER NOW",
+                                  style: GoogleFonts.montserrat(
+                                    textStyle: TextStyle(
+                                        fontSize:
+                                            windows_width_small_size(w) - 1,
+                                        color: Color(0xFF364146)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
                         ],
-                      ),
-                    ),
+                      )
+                    ],
                   ),
-                ),
-                SizedBox(
-                  width: windowsSizeboxWidthSize(20),
-                ),
-                Material(
-                  child: InkWell(
-                    onTap: widget.nowBtn,
-                    onHover: (value) {
-                      print(value);
-                      setState(() {
-                        orderStatus = value;
-                      });
-                    },
-                    child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      decoration: new BoxDecoration(
-                        border: new Border.all(
-                            color: Color(0xFF7A82A7), width: 4), // 邊色寬度
-                        color: orderStatus
-                            ? Color(0xFF7A82A7)
-                            : Colors.transparent, // 底色
-                        borderRadius: new BorderRadius.circular((60)), // 圆角度
-                      ),
-                      child: Text(
-                        "ORDER NOW",
-                        style: TextStyle(
-                            fontSize: windows_width_small_size(w) - 1,
-                            color: Color(0xFF364146)),
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            )
+                  Expanded(child: Container()),
+                ],
+              ),
+            ),
           ],
         ),
       ),

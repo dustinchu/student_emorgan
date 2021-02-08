@@ -3,6 +3,7 @@ import 'package:emorgan/common/menu_btn.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/provider/book_state.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +18,11 @@ String selectedKey;
 String selectedItem;
 String initialValue;
 
-class _HomeBookingState extends State<HomeBooking> {
+class _HomeBookingState extends State<HomeBooking>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
   TextEditingController firstNameTextEditingController;
   TextEditingController lastNameTextEditingController;
   TextEditingController emailAddressTextEditingController;
@@ -50,9 +55,11 @@ class _HomeBookingState extends State<HomeBooking> {
         children: [
           Text(
             title,
-            style: TextStyle(
-                fontSize: windows_width_small_size(w),
-                color: Color(0xFF424648)),
+            style: GoogleFonts.montserrat(
+              textStyle: TextStyle(
+                  fontSize: windows_width_small_size(w),
+                  color: Color(0xFF424648)),
+            ),
           ),
           SizedBox(
             height: 5,
@@ -84,64 +91,84 @@ class _HomeBookingState extends State<HomeBooking> {
           top: 0,
           child: Container(
             padding: EdgeInsets.only(
-                top: windowsSizeboxHightSize(50), left: 30, right: 10),
+                top: windowsSizeboxHightSize(100), left: 30, right: 10),
             height: h,
             width: w / 3,
             color: Colors.white,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: [
-                Text(
-                  "Book a Psychological Counseling",
-                  style: TextStyle(
-                      fontSize: windows_width_small_size(w),
-                      color: Color(0xFF364146)),
+                Expanded(child: Container()),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text("Book a Psychological Counseling",
+                        style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                fontSize: windows_width_small_size(w),
+                                color: Color(0xFF364146)))
+                        // style: TextStyle(
+                        //     fontSize: windows_width_small_size(w),
+                        //     color: Color(0xFF364146)),
+                        ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Professional Assistance",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            fontSize: windows_width_large_size(w),
+                            color: Color(0xFF364146)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Choose a time for counseling.",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            fontSize: windows_width_small_size(w),
+                            color: Color(0xFF364146)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "It will be a new way to improve\na relationship.",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            fontSize: windows_width_small_size(w),
+                            color: Color(0xFF364146)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "After a series of counselors,\nthe psychologist will decide if\nyou and your partner need to\ntransplant emorgans.\n",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            fontSize: windows_width_small_size(w),
+                            color: Color(0xFF364146)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "If the answer is yes,\nyou’ll get a purchase code.\nYou can get back to here to\ndecide which emorgan is more\nsuitable for you and your partner.\n",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            fontSize: windows_width_small_size(w),
+                            color: Color(0xFF364146)),
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Professional Assistance",
-                  style: TextStyle(
-                      fontSize: windows_width_large_size(w),
-                      color: Color(0xFF364146)),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "Choose a time for counseling.",
-                  style: TextStyle(
-                      fontSize: windows_width_small_size(w),
-                      color: Color(0xFF364146)),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "It will be a new way to improve\na relationship.",
-                  style: TextStyle(
-                      fontSize: windows_width_small_size(w),
-                      color: Color(0xFF364146)),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "After a series of counselors,\nthe psychologist will decide if\nyou and your partner need to\ntransplant emorgans.\n",
-                  style: TextStyle(
-                      fontSize: windows_width_small_size(w),
-                      color: Color(0xFF364146)),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "If the answer is yes,\nyou’ll get a purchase code.\nYou can get back to here to\ndecide which emorgan is more\nsuitable for you and your partner.\n",
-                  style: TextStyle(
-                      fontSize: windows_width_small_size(w),
-                      color: Color(0xFF364146)),
-                ),
+                Expanded(child: Container()),
               ],
             ),
           ));
@@ -186,15 +213,17 @@ class _HomeBookingState extends State<HomeBooking> {
             padding: EdgeInsets.only(
                 left: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
                 right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
-                top: windowsSizeboxHightSize(50)),
+                top: windowsSizeboxHightSize(100)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Enter Booking Detail",
-                  style: TextStyle(
-                    fontSize: windows_width_large_size(w),
-                    color: Color(0xFF426248),
+                  style: GoogleFonts.montserrat(
+                    textStyle: TextStyle(
+                      fontSize: windows_width_large_size(w),
+                      color: Color(0xFF426248),
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -230,18 +259,22 @@ class _HomeBookingState extends State<HomeBooking> {
                 ),
                 Text(
                   "Booking Date",
-                  style: TextStyle(
-                      fontSize: windows_width_medium_size(w),
-                      color: Color(0xFF424648)),
+                  style: GoogleFonts.montserrat(
+                    textStyle: TextStyle(
+                        fontSize: windows_width_medium_size(w),
+                        color: Color(0xFF424648)),
+                  ),
                 ),
                 SizedBox(
                   height: windowsSizeboxHightSize(15),
                 ),
                 Text(
                   "2024",
-                  style: TextStyle(
-                      fontSize: windows_width_large_size(w),
-                      color: Color(0xFF424648)),
+                  style: GoogleFonts.montserrat(
+                    textStyle: TextStyle(
+                        fontSize: windows_width_large_size(w),
+                        color: Color(0xFF424648)),
+                  ),
                 ),
                 SizedBox(
                   height: windowsSizeboxHightSize(15),
@@ -318,10 +351,12 @@ class _HomeBookingState extends State<HomeBooking> {
                     color: Colors.transparent, // 底色
                     borderRadius: new BorderRadius.circular((60)), // 圆角度
                   ),
-                  child: Text("Book NOW",
-                      style: TextStyle(
-                          color: Color(0xFF364146),
-                          fontSize: windows_width_small_size(w))),
+                  child: Text(
+                    "Book NOW",
+                    style: TextStyle(
+                        color: Color(0xFF364146),
+                        fontSize: windows_width_small_size(w)),
+                  ),
                 ),
               ),
             ),
@@ -395,8 +430,11 @@ class _DateWidgetState extends State<DateWidget> {
       children: [
         Text(
           widget.title,
-          style: TextStyle(
-              fontSize: windows_width_small_size(w), color: Color(0xFF424648)),
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                fontSize: windows_width_small_size(w),
+                color: Color(0xFF424648)),
+          ),
         ),
         InkWell(
           onTap: () {
@@ -413,9 +451,11 @@ class _DateWidgetState extends State<DateWidget> {
             child: Center(
               child: Text(
                 widget.dateStr,
-                style: TextStyle(
-                    fontSize: windows_width_small_size(w) - 2,
-                    color: Color(0xFF424648)),
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                      fontSize: windows_width_small_size(w) - 2,
+                      color: Color(0xFF424648)),
+                ),
               ),
             ),
           ),
@@ -453,9 +493,11 @@ class _DateWidgetState extends State<DateWidget> {
                         alignment: Alignment.center,
                         child: Text(
                           "$value",
-                          style: TextStyle(
-                              fontSize: windows_width_small_size(w) - 1,
-                              color: Color(0xFF424648)),
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                fontSize: windows_width_small_size(w) - 1,
+                                color: Color(0xFF424648)),
+                          ),
                         ),
                       ),
                       onTap: () {

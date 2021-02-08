@@ -1,5 +1,6 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'product_text.dart';
 
@@ -59,9 +60,11 @@ on your body and the product functions.
                         children: [
                           Text(
                             "Human A",
-                            style: TextStyle(
-                                fontSize: product_width_medium_size(w),
-                                color: Color(0xFF424648)),
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                  fontSize: product_width_medium_size(w),
+                                  color: Color(0xFF424648)),
+                            ),
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,9 +88,11 @@ on your body and the product functions.
                         children: [
                           Text(
                             "Human B",
-                            style: TextStyle(
+                               style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
                                 fontSize: product_width_medium_size(w),
                                 color: Color(0xFF424648)),
+                            ),
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,7 +114,9 @@ on your body and the product functions.
                       ),
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   msg("How to put on Buzzy Patch", human_bMsg, w),
                 ],
               ),

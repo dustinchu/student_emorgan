@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:imageview360/imageview360.dart';
+
+import 'imageview360.dart';
 
 class ImagePage extends StatefulWidget {
-  ImagePage({Key key, this.finderName}) : super(key: key);
+  ImagePage({Key key, this.finderName, this.w, this.h}) : super(key: key);
 
   final String finderName;
+  final double h;
+  final double w;
 
   @override
   _ImagePageState createState() => _ImagePageState();
@@ -29,23 +32,17 @@ class _ImagePageState extends State<ImagePage> {
   }
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return (imagePrecached == true)
         ? Container(
-            width: 500,
-            height: 500,
+            width: widget.w,
+            height: widget.h,
             child: ImageView360(
               key: UniqueKey(),
               imageList: imageList,
               autoRotate: autoRotate,
               rotationCount: rotationCount,
               rotationDirection: RotationDirection.anticlockwise,
-              frameChangeDuration: Duration(microseconds: 100),
               swipeSensitivity: swipeSensitivity,
               allowSwipeToRotate: allowSwipeToRotate,
               onImageIndexChanged: (currentImageIndex) {

@@ -1,0 +1,77 @@
+<!--
+  KeyShotXR
+  (c) Copyright 2012-2017 Luxion ApS - All Rights Reserved.
+
+  Instructions for deploying KeyShotXR to a website and sharing via email.
+-->
+
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>KeyShotXR instructions</title>
+    <style>
+
+      *, html, body {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        color: #666666;
+      }
+
+      .code {
+        display: inline-block;
+        padding: 5px;
+        border: 1px solid #ccc;
+        color: #B0B0B0;
+        background-color: #173C47;
+        border-radius: 3px;
+      }
+
+      .overlay {
+        position: absolute;
+        display: inline-block;
+        width: 1280px; /* same width as iframe below */
+        height: 1196px; /* same height as iframe below */
+        pointer-events: none;
+      }
+
+      .c-tag {
+        color: #B38D36;
+      }
+
+      .c-attribute {
+        color: #48B093;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="max-width: 1280px; max-height: 1196px;">
+      <div class="overlay" id="overlay">&nbsp;</div>
+        <iframe src="buzzy.151.html"
+                allowfullscreen
+                style="position: absolute; top: 0px; left: 0px; height: 100%; width: 1px; min-width: 100%; *width: 100%;"
+                frameborder="0"
+                scrolling="no">
+        </iframe>
+      </div>
+    </div>
+   <script>
+   // In cases where the mouse is in a drag state and dragged
+   // outside of the iframe the event is still activated
+   // when focusing back into the iframe. This will block the event until
+   // the mouse activates the event.
+   var blockEvent = true;
+   if (blockEvent) {
+     var overlay = document.getElementById("overlay");
+
+     document.addEventListener("mousedown", function(e) {
+       overlay.style.pointerEvents = "none";
+     }, false);
+
+     document.addEventListener("mouseup", function(e) {
+       overlay.style.pointerEvents = "auto";
+     }, false);
+   }
+   </script>
+  </body>
+</html>

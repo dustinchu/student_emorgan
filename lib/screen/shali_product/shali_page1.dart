@@ -2,6 +2,7 @@ import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'line_size.dart';
 import 'product_text.dart';
@@ -53,7 +54,9 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
                   ),
                   Text(
                     "Back",
-                    style: TextStyle(fontSize: 16, color: Color(0xFF364146)),
+                    style: GoogleFonts.montserrat(
+                        textStyle:
+                            TextStyle(fontSize: 16, color: Color(0xFF364146))),
                   )
                 ],
               ),
@@ -77,9 +80,11 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
                     ),
                     child: Text(
                       "ORDER NOW",
-                      style: TextStyle(
-                          fontSize: windows_width_small_size(w) - 1,
-                          color: Colors.white),
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            fontSize: windows_width_small_size(w) - 1,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
@@ -90,10 +95,20 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Tear to Taste",
-                    style: TextStyle(fontSize: 22, color: Color(0xFF364146))),
-                Text("SHALI",
-                    style: TextStyle(fontSize: 32, color: Color(0xFF364146))),
+                Text(
+                  "Tear to Taste",
+                  style: GoogleFonts.montserrat(
+                    textStyle:
+                        TextStyle(fontSize: 22, color: Color(0xFF364146)),
+                  ),
+                ),
+                Text(
+                  "SHALI",
+                  style: GoogleFonts.montserrat(
+                    textStyle:
+                        TextStyle(fontSize: 32, color: Color(0xFF364146)),
+                  ),
+                ),
               ],
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ObiPage5 extends StatelessWidget {
   const ObiPage5({Key key}) : super(key: key);
@@ -32,7 +33,8 @@ term in human body.''';
       width: w,
       height: h,
       child: Container(
-        padding: EdgeInsets.only(left: w / 3 - 150,right: w / 3 - 150, top: 40),
+        padding:
+            EdgeInsets.only(left: w / 3 - 150, right: w / 3 - 150, top: 40),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,14 +88,19 @@ class Setp extends StatelessWidget {
         Text(
           title,
           textAlign: TextAlign.start,
-          style: TextStyle(
-              fontSize: product_width_medium_size(w), color: Color(0xFF424648)),
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                fontSize: product_width_medium_size(w),
+                color: Color(0xFF424648)),
+          ),
         ),
         Text(
           msg,
           textAlign: TextAlign.start,
-          style: TextStyle(
-              fontSize: product_width_small_size(w), color: Color(0xFF424648)),
+          style: GoogleFonts.montserrat(
+              textStyle: TextStyle(
+                  fontSize: product_width_small_size(w),
+                  color: Color(0xFF424648))),
         ),
       ],
     );

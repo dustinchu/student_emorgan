@@ -16,7 +16,11 @@ final List<String> imgPlayList = [
   'assets/play5.png',
 ];
 
-class _HomeImagePlayState extends State<HomeImagePlay> {
+class _HomeImagePlayState extends State<HomeImagePlay>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;

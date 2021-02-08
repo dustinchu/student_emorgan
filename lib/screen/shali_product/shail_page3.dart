@@ -1,6 +1,7 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/screen/shali_product/top_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'product_text.dart';
 
@@ -21,14 +22,17 @@ product functions.''';
 gland.
 
 ''';
-double lineTop(w){
-if(w>1600) return 0;
-else if(w>1500) return 20;
-else if(w>1300) return 40;
-else if(w>1100) return 60;
-return 80;
+    double lineTop(w) {
+      if (w > 1600)
+        return 0;
+      else if (w > 1500)
+        return 20;
+      else if (w > 1300)
+        return 40;
+      else if (w > 1100) return 60;
+      return 80;
+    }
 
-}
     return Container(
         width: w,
         height: h,
@@ -43,9 +47,11 @@ return 80;
                     children: [
                       Text(
                         "Human A",
-                        style: TextStyle(
-                            fontSize: product_width_medium_size(w),
-                            color: Color(0xFF424648)),
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: product_width_medium_size(w),
+                              color: Color(0xFF424648)),
+                        ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,9 +76,11 @@ return 80;
                     children: [
                       Text(
                         "Human B",
-                        style: TextStyle(
-                            fontSize: product_width_medium_size(w),
-                            color: Color(0xFF424648)),
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: product_width_medium_size(w),
+                              color: Color(0xFF424648)),
+                        ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,8 +104,8 @@ return 80;
                 ],
               ),
               Positioned(
-                top: h/3.5-lineTop(w),
-                left: w/3/2,
+                top: h / 3.5 - lineTop(w),
+                left: w / 3 / 2,
                 child: Container(
                     margin: EdgeInsets.only(),
                     decoration: BoxDecoration(

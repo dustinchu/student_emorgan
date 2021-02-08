@@ -1,6 +1,7 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeContact extends StatefulWidget {
   HomeContact({Key key, this.upBtn}) : super(key: key);
@@ -9,7 +10,12 @@ class HomeContact extends StatefulWidget {
   _HomeContactState createState() => _HomeContactState();
 }
 
-class _HomeContactState extends State<HomeContact> {
+class _HomeContactState extends State<HomeContact>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -31,9 +37,11 @@ class _HomeContactState extends State<HomeContact> {
         children: [
           Text(
             title,
-            style: TextStyle(
-                fontSize: windows_width_small_size(w),
-                color: Color(0xFF424648)),
+            style: GoogleFonts.montserrat(
+              textStyle: TextStyle(
+                  fontSize: windows_width_small_size(w),
+                  color: Color(0xFF424648)),
+            ),
           ),
           SizedBox(
             height: 5,
@@ -68,57 +76,71 @@ class _HomeContactState extends State<HomeContact> {
               fit: BoxFit.cover,
             ),
           ),
-          child: Column(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Contact us",
-                          style: TextStyle(
-                              fontSize: windows_width_medium_size(w),
-                              color: Color(0xFF424648)),
-                        ),
-                        Text(
-                          "Tell us your Thoughts",
-                          style: TextStyle(
-                              fontSize: windows_width_large_size(w),
-                              color: Color(0xFF424648)),
-                        )
-                      ],
+                  Text(
+                    "Contact us",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          fontSize: windows_width_medium_size(w),
+                          color: Color(0xFF424648)),
                     ),
                   ),
-                  SizedBox(
-                    width: 50,
+                  Text(
+                    "Tell us your Thoughts",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          fontSize: windows_width_large_size(w),
+                          color: Color(0xFF424648)),
+                    ),
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "We are looking forward to hearing from you.\n",
-                        style: TextStyle(
-                            fontSize: windows_width_small_size(w),
-                            color: Color(0xFF424648)),
-                      ),
-                      Text(
-                        "You can tell us about your ideas, or ask us \nquestions. Any suggestions are welcome :)",
-                        style: TextStyle(
-                            fontSize: windows_width_small_size(w),
-                            color: Color(0xFF424648)),
-                      )
-                    ],
+                  // Column(
+                  //   crossAxisAlignment: CrossAxisAlignment.start,
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     Text(
+                  //       "We are looking forward to hearing from you.\n",
+                  //       style: GoogleFonts.montserrat(
+                  //         textStyle: TextStyle(
+                  //             fontSize: windows_width_small_size(w),
+                  //             color: Color(0xFF424648)),
+                  //       ),
+                  //     ),
+                  //     Text(
+                  //       "You can tell us about your ideas, or ask us \nquestions. Any suggestions are welcome :)",
+                  //       style: GoogleFonts.montserrat(
+                  //         textStyle: TextStyle(
+                  //             fontSize: windows_width_small_size(w),
+                  //             color: Color(0xFF424648)),
+                  //       ),
+                  //     )
+                  //   ],
+                  // )
+                  Text(
+                    "\nWe are looking forward to hearing from you.\n",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          fontSize: windows_width_small_size(w),
+                          color: Color(0xFF424648)),
+                    ),
+                  ),
+                  Text(
+                    "You can tell us about your ideas, or ask us \nquestions. Any suggestions are welcome :)",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          fontSize: windows_width_small_size(w),
+                          color: Color(0xFF424648)),
+                    ),
                   )
                 ],
               ),
+              SizedBox(width: 200,),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 50, horizontal: 50),
                 margin: EdgeInsets.symmetric(vertical: 50),
@@ -165,10 +187,14 @@ class _HomeContactState extends State<HomeContact> {
                             borderRadius:
                                 new BorderRadius.circular((60)), // 圆角度
                           ),
-                          child: Text("Send Message",
-                              style: TextStyle(
+                          child: Text(
+                            "Send Message",
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
                                   color: Color(0xFF364146),
-                                  fontSize: windows_width_small_size(w))),
+                                  fontSize: windows_width_small_size(w)),
+                            ),
+                          ),
                         ),
                       ],
                     )
