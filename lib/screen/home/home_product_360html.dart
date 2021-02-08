@@ -26,7 +26,6 @@ class HomeProduct360Html extends StatelessWidget {
     );
 
     return SizedBox(
-        height: 500,
           // child: EasyWebView(
 
           //   src: path,
