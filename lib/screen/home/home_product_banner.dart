@@ -76,13 +76,13 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                 ? EdgeInsets.only(left: w / 3)
                 : EdgeInsets.only(right: w / 3),
             child: Center(
-              child: HomeProduct360Html(
-                  valueID: widget.finderName, path: widget.path),
-              // child: ImagePage(
-              //   w: widget.imgWidth,
-              //   h: widget.imgHeigh,
-              //   finderName: widget.finderName,
-              // ),
+              // child: HomeProduct360Html(
+              //     valueID: widget.finderName, path: widget.path),
+              child: ImagePage(
+                w: widget.imgWidth,
+                h: widget.imgHeigh,
+                finderName: widget.finderName,
+              ),
             ),
           ),
         ),
