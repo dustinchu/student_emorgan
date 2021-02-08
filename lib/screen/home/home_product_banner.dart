@@ -1,3 +1,4 @@
+import 'package:easy_web_view/easy_web_view.dart';
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/screen/home/home_product_360html.dart';
@@ -76,8 +77,19 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                 ? EdgeInsets.only(left: w / 3)
                 : EdgeInsets.only(right: w / 3),
             child: Center(
-              child: HomeProduct360Html(
-                  valueID: widget.finderName, path: widget.path),
+              child: EasyWebView(
+                onLoaded: () {
+                  print("onload~");
+                },
+                src: "https://eloquent-engelbart-9e449d.netlify.app",
+                isHtml: false, // Use Html syntax
+                isMarkdown: false, // Use markdown syntax
+                convertToWidgets: false, // Try to convert to flutter widgets
+                // width: 100,
+                // height: 100,
+              ),
+              // child: HomeProduct360Html(
+              //     valueID: widget.finderName, path: widget.path),
               // child: ImagePage(
               //   w: widget.imgWidth,
               //   h: widget.imgHeigh,
