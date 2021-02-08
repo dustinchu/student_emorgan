@@ -33105,13 +33105,13 @@ s.bH(s.c,new B.bd(new V.a1e(this)),!1)},
 m:function(a){this.d.m(0)
 this.aS(0)},
 a1j:function(){this.d.d9(0,C.aP,P.b7(0,200,0))},
-E:function(a,b){var s,r,q,p,o=this,n=null,m="assets/obi/obi.150.html",l=t.w,k=b.H(l).f,j=b.H(l).f.a.b
-l=o.d
+E:function(a,b){var s,r,q,p,o=this,n=null,m=t.w,l=b.H(m).f,k=b.H(m).f.a.b
+m=o.d
 s=P.b7(0,500,0)
 r=P.b7(0,800,0)
 q=o.ga1i()
 p=t.t
-return M.u7(T.c2(C.R,H.b([M.w(n,B.Zm(!0,B.S0(!0,H.b([K.a7D("Human A wears a tear patch","Human B wears taste salivary","shali",!1,"shali",717,768,!0,new V.a1c(b),new V.a18(b),m,"Tear to Taste","SHALI",q),K.a7D("Human A wears a voice patch","Human B wears a tactile heart","obi",!0,"obi",668,1024,!1,new V.a1a(b),n,m,"Voice to Vibrate","OBI",q),K.a7D("Human A&B both wear patches with","pulse detection and low freqency electric shock","buzzy",!0,"buzzy",795,1024,!0,new V.a1_(b),n,m,"Pulse to Pain","BUZZY",q),new A.ri(q,n),new A.rf(q,n),new M.rj(n),new O.rh(q,n),new Z.rg(q,n),new K.re(q,n)],p),l,new L.jd(n),!0),new P.l(4291346927),l,50,n,s,r,8),n,n,n,j,n,n,k.a.a),T.am(n,new A.rk(new V.a14(o),new V.a15(),new V.a16(o),new V.a12(o),new V.a17(o),new V.a13(o),new V.a11(o),n),300,n,18,n,j/2,400)],p),C.v,C.M))}}
+return M.u7(T.c2(C.R,H.b([M.w(n,B.Zm(!0,B.S0(!0,H.b([K.a7D("Human A wears a tear patch","Human B wears taste salivary","shali",!1,"shali",717,768,!0,new V.a1c(b),new V.a18(b),"assets/shali/shali.145.html","Tear to Taste","SHALI",q),K.a7D("Human A wears a voice patch","Human B wears a tactile heart","obi",!0,"obi",668,1024,!1,new V.a1a(b),n,"assets/obi/obi.150.html","Voice to Vibrate","OBI",q),K.a7D("Human A&B both wear patches with","pulse detection and low freqency electric shock","buzzy",!0,"buzzy",795,1024,!0,new V.a1_(b),n,"assets/buzzy/buzzy.151.html","Pulse to Pain","BUZZY",q),new A.ri(q,n),new A.rf(q,n),new M.rj(n),new O.rh(q,n),new Z.rg(q,n),new K.re(q,n)],p),m,new L.jd(n),!0),new P.l(4291346927),m,50,n,s,r,8),n,n,n,k,n,n,l.a.a),T.am(n,new A.rk(new V.a14(o),new V.a15(),new V.a16(o),new V.a12(o),new V.a17(o),new V.a13(o),new V.a11(o),n),300,n,18,n,k/2,400)],p),C.v,C.M))}}
 V.a1e.prototype={
 $0:function(){var s=C.b.gbG(this.a.d.d).y
 s.toString
