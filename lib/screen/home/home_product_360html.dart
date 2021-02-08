@@ -18,7 +18,7 @@ class HomeProduct360Html extends StatelessWidget {
         ..width = MediaQuery.of(context).size.width.toString()
         ..height = MediaQuery.of(context).size.height.toString()
         // ..src = path
-        ..src = path
+        ..src = "https://eloquent-engelbart-9e449d.netlify.app"
         ..style.overflow = "hidden"
         ..allow = "autoplay"
         ..allowFullscreen = true

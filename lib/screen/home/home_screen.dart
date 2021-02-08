@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     //监听滚动事件，打印滚动位置
     _scrollController.addListener(() {
-      print(_scrollController.offset); //打印滚动位置
+      // print(_scrollController.offset); //打印滚动位置
     });
   }
 
@@ -159,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     body2: "Human B wears taste salivary",
                     isLeft: true,
                     finderName: 'shali',
-                    path: "assets/shali/shali.145.html",
+                    path: "assets/shali145.html",
                     first: false,
                     imgWidth: 768,
                     imgHeigh: 717,
@@ -174,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     body2: "Human B wears a tactile heart",
                     isLeft: false,
                     finderName: "obi",
-                    path: "assets/obi/obi.150.html",
+                    path: "assets/obi150.html",
                     first: true,
                     imgWidth: 1024,
                     imgHeigh: 668,
@@ -189,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     body2: "pulse detection and low freqency electric shock",
                     isLeft: true,
                     finderName: "buzzy",
-                    path: "assets/buzzy/buzzy.151.html",
+                    path: "assets/buzzy151.html",
                     first: true,
                     imgWidth: 1024,
                     imgHeigh: 795,
