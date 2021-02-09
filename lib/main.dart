@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
           //     child: Scaffold(body: HomeScreen()),
           //   ),
           // );
-          // home: HomeScreen()),
-      home: Scaffold(body: OrderShoppingCode())),
+          home: HomeScreen()),
+      // home: Scaffold(body: OrderShoppingCode())),
     );
   }
 }
