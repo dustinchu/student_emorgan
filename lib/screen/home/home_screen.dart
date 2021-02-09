@@ -4,6 +4,7 @@ import 'package:emorgan/screen/buy/buy_loding.dart';
 import 'package:emorgan/screen/buzzy_product/buzzy_product_screen.dart';
 import 'package:emorgan/screen/home/home_vidio.dart';
 import 'package:emorgan/screen/obi_product/obi_product_screen.dart';
+import 'package:emorgan/screen/order/order_shopping_code.dart';
 import 'package:emorgan/screen/shali_product/shali_product_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -99,8 +100,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
     void moreNBtn() {}
     void nowBtn() {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Buyloding()));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => OrderShoppingCode()));
     }
 
     void menuEmorgan() {
