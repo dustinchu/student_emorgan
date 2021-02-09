@@ -1,4 +1,5 @@
 import 'package:emorgan/common/font_size.dart';
+import 'package:emorgan/common/widgets/circular_container.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
 import 'package:flutter/material.dart';
@@ -161,11 +162,7 @@ DIMENSIONS
                             });
                           }
                         },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          color: Colors.transparent,
-                        ),
+                        child: CircularContainer()
                       ),
                     ),
                     //左2Hover
@@ -187,11 +184,7 @@ DIMENSIONS
                             });
                           }
                         },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          color: Colors.transparent,
-                        ),
+                        child: CircularContainer()
                       ),
                     ),
                     //右一Hover
@@ -213,11 +206,7 @@ DIMENSIONS
                             });
                           }
                         },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          color: Colors.transparent,
-                        ),
+                        child: CircularContainer()
                       ),
                     ),
 
@@ -240,11 +229,7 @@ DIMENSIONS
                             });
                           }
                         },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          color: Colors.transparent,
-                        ),
+                        child: CircularContainer()
                       ),
                     ),
                     // Positioned(

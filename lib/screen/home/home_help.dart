@@ -19,7 +19,7 @@ class _HomeHelpState extends State<HomeHelp>
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h = 950;
+    double h = 900;
     List<Widget> stepList = [
       step("Step 1.", "assets/step1.png", "Book a counseling \nOnline ", "", "",
           w),

@@ -1,87 +1,79 @@
-import 'dart:html';
-import 'dart:html' as html;
-import 'dart:js' as js;
-import 'dart:ui' as ui;
+import 'dart:math';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:pointer_interceptor/pointer_interceptor.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+
+const numberOfItems = 5001;
+const minItemHeight = 20.0;
+const maxItemHeight = 150.0;
+const scrollDuration = Duration(seconds: 2);
 
 void main() {
-  runApp(MaterialApp(home: HomeScreen()));
+  runApp(ScrollablePositionedListExample());
 }
 
-String valueID = "AA";
-String path = "assets/obi/obi.150.html";
+// The root widget for the example app.
+class ScrollablePositionedListExample extends StatelessWidget {
+  const ScrollablePositionedListExample({Key key}) : super(key: key);
 
-class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(
-      valueID,
-      (int id) => html.IFrameElement()
-        ..width = MediaQuery.of(context).size.width.toString()
-        ..height = MediaQuery.of(context).size.height.toString()
-        // ..src = path
-        ..src = path
-        ..style.overflow = "hidden"
-        ..allow = "autoplay"
-        ..allowFullscreen = true
-        ..style.border = 'none',
+    return MaterialApp(
+      title: 'ScrollablePositionedList Example',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const Page(),
     );
-
-    return Scaffold(
-        body: Stack(
-      children: <Widget>[
-        ListView(
-          children: [
-            PointerInterceptor(
-              child: Container(
-                height: 500,
-                width: 500,
-                child: Center(
-                  child: Text("123123"),
-                ),
-              ),
-            ),
-            Container(
-              height: 500,
-              width: 500,
-              child: Center(
-                child: Text("123123"),
-              ),
-            ),
-            Container(
-              height: 500,
-              width: 500,
-              child: Center(
-                child: Text("123123"),
-              ),
-            ),
-            Container(
-              height: 500,
-              width: 500,
-              child: Center(
-                child: Text("123123"),
-              ),
-            ),
-            Container(
-              height: 500,
-              width: 500,
-              child: Center(
-                child: Text("123123"),
-              ),
-            )
-          ],
-        ),
-       // *** Must come before the rest...
-      ],
-    ));
   }
 }
 
-class HtmlWidget extends StatelessWidget {
+class Page extends StatelessWidget {
+  const Page({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return HtmlElementView(viewType: 'someViewType');
+    final controller = PageController(initialPage: 1);
+    return Scaffold(
+      body: Container(
+          child: Listener(
+        onPointerSignal: (pointerSignal) {
+          if (pointerSignal is PointerScrollEvent) {
+            print(pointerSignal.scrollDelta.dx);
+            print("AA${pointerSignal.scrollDelta.dy}");
+            // do something when scrolled
+          }
+        },
+        child: ListView(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: controller,
+          scrollDirection: Axis.vertical,
+          children: [
+            Container(
+              height: 900,
+              color: Colors.redAccent,
+            ),
+            Container(
+              height: 900,
+              color: Colors.purpleAccent,
+            ),
+            Container(
+              height: 900,
+              color: Colors.amberAccent,
+            ),
+            Container(
+              height: 900,
+              color: Colors.blueAccent,
+            ),
+            Container(
+              height: 900,
+              color: Colors.pinkAccent,
+            ),
+            Container(
+              height: 900,
+              color: Colors.greenAccent,
+            )
+          ],
+        ),
+      )),
+    );
   }
 }

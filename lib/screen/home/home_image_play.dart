@@ -24,10 +24,9 @@ class _HomeImagePlayState extends State<HomeImagePlay>
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
     return Container(
         width: w,
-        height: 375,
+        height: 400,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/help.png"),

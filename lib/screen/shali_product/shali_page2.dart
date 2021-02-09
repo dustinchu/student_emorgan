@@ -1,3 +1,4 @@
+import 'package:emorgan/common/widgets/circular_container.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
 import 'package:flutter/material.dart';
@@ -74,25 +75,20 @@ DIMENSIONS
                   //白色區域分成40等分
                   left: (w - ((w / 3 - 150) * 2)) / 40 * 21,
                   child: InkWell(
-                    hoverColor: Colors.transparent,
-                    onTap: () {},
-                    onHover: (value) {
-                      if (value) {
-                        setState(() {
-                          suctionStart = true;
-                        });
-                      } else {
-                        setState(() {
-                          suctionStart = false;
-                        });
-                      }
-                    },
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      color: Colors.transparent,
-                    ),
-                  ),
+                      hoverColor: Colors.transparent,
+                      onTap: () {},
+                      onHover: (value) {
+                        if (value) {
+                          setState(() {
+                            suctionStart = true;
+                          });
+                        } else {
+                          setState(() {
+                            suctionStart = false;
+                          });
+                        }
+                      },
+                      child: CircularContainer()),
                 ),
                 //左二 hover
                 Positioned(
@@ -100,25 +96,20 @@ DIMENSIONS
                   //白色區域分成40等分
                   left: (w - ((w / 3 - 150) * 2)) / 40 * 13,
                   child: InkWell(
-                    hoverColor: Colors.transparent,
-                    onTap: () {},
-                    onHover: (value) {
-                      if (value) {
-                        setState(() {
-                          cameraStart = true;
-                        });
-                      } else {
-                        setState(() {
-                          cameraStart = false;
-                        });
-                      }
-                    },
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      color: Colors.transparent,
-                    ),
-                  ),
+                      hoverColor: Colors.transparent,
+                      onTap: () {},
+                      onHover: (value) {
+                        if (value) {
+                          setState(() {
+                            cameraStart = true;
+                          });
+                        } else {
+                          setState(() {
+                            cameraStart = false;
+                          });
+                        }
+                      },
+                      child: CircularContainer()),
                 ),
                 //右一Hover
                 Positioned(
@@ -126,25 +117,20 @@ DIMENSIONS
                   //白色區域分成40等分
                   right: (w - ((w / 3 - 150) * 2)) / 40 * 13,
                   child: InkWell(
-                    hoverColor: Colors.transparent,
-                    onTap: () {},
-                    onHover: (value) {
-                      if (value) {
-                        setState(() {
-                          batteryStart = true;
-                        });
-                      } else {
-                        setState(() {
-                          batteryStart = false;
-                        });
-                      }
-                    },
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      color: Colors.transparent,
-                    ),
-                  ),
+                      hoverColor: Colors.transparent,
+                      onTap: () {},
+                      onHover: (value) {
+                        if (value) {
+                          setState(() {
+                            batteryStart = true;
+                          });
+                        } else {
+                          setState(() {
+                            batteryStart = false;
+                          });
+                        }
+                      },
+                      child: CircularContainer()),
                 ),
                 //右二Hover
                 Positioned(
@@ -152,25 +138,20 @@ DIMENSIONS
                   //白色區域分成40等分
                   right: (w - ((w / 3 - 150) * 2)) / 40 * 19,
                   child: InkWell(
-                    hoverColor: Colors.transparent,
-                    onTap: () {},
-                    onHover: (value) {
-                      if (value) {
-                        setState(() {
-                          silicone = true;
-                        });
-                      } else {
-                        setState(() {
-                          silicone = false;
-                        });
-                      }
-                    },
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      color: Colors.transparent,
-                    ),
-                  ),
+                      hoverColor: Colors.transparent,
+                      onTap: () {},
+                      onHover: (value) {
+                        if (value) {
+                          setState(() {
+                            silicone = true;
+                          });
+                        } else {
+                          setState(() {
+                            silicone = false;
+                          });
+                        }
+                      },
+                      child: CircularContainer()),
                 ),
                 // Positioned(
                 //   top: ((w / 5 + 50) / 10) * 1,
@@ -180,22 +161,25 @@ DIMENSIONS
                 //       child: Text("${w / 5}")),
                 // ),
                 Positioned(
-                  top:top_size(w/5,((w / 5 + 50) / 10) * 2.4),
+                  top: top_size(w / 5, ((w / 5 + 50) / 10) * 2.4),
                   left: 0,
                   child: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 600),
-                      child: suctionStart?Product_left_hover(
-                        lineWidth: line_left1_patch_width_size(w / 5),
-                        title: "Tear Suction",
-                        body: '''\nThere will be 4 forks made
+                    duration: const Duration(milliseconds: 600),
+                    child: suctionStart
+                        ? Product_left_hover(
+                            lineWidth: line_left1_patch_width_size(w / 5),
+                            title: "Tear Suction",
+                            body: '''\nThere will be 4 forks made
 of Nitinol with shape
 memory to fix emorgan at
 the right position.''',
-                      ):Container(),),
+                          )
+                        : Container(),
+                  ),
                 ),
                 //左二資訊
                 Positioned(
-                  top: top_size(w/5,((w / 5 + 50) / 10) * 7),
+                  top: top_size(w / 5, ((w / 5 + 50) / 10) * 7),
                   left: 0,
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 600),
@@ -211,7 +195,7 @@ facial expression.''',
                 ),
 //                 //右一資訊
                 Positioned(
-                  top:  top_size(w/5,((w / 5 + 50) / 10) * 1.7),
+                  top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.7),
                   right: 0,
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 600),
@@ -230,7 +214,7 @@ for 14 years.
                 ),
 //                 //右二資訊
                 Positioned(
-                  top:  top_size(w/5,((w / 5 + 50) / 10) * 6.7),
+                  top: top_size(w / 5, ((w / 5 + 50) / 10) * 6.7),
                   right: 0,
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 600),

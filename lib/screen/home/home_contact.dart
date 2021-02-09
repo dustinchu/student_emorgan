@@ -70,6 +70,7 @@ class _HomeContactState extends State<HomeContact>
           padding: EdgeInsets.symmetric(
               vertical: 50, horizontal: windowsPaddingWidthSize(100)),
           width: w,
+          height: 900,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/help.png"),
@@ -82,7 +83,7 @@ class _HomeContactState extends State<HomeContact>
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "Contact us",

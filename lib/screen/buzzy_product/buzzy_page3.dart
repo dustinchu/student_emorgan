@@ -11,14 +11,18 @@ class BuzzyPage3 extends StatelessWidget {
     double h = 550;
     String step1Msg = '''Patch detects
 the unusual pulse
+
+
  ''';
     String step2Msg = '''Patch turns A’s pulse
 into electric shock 
 data
+
  ''';
     String step3Msg = '''Electric shock data
 was sent to B’s
 Buzzy Patch
+
  ''';
     String step4Msg = '''B feels electric shock
 from A and have a

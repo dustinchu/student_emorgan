@@ -11,9 +11,11 @@ class ShaliPage4 extends StatelessWidget {
     double h = 550;
     String step1Msg = '''Patch camera detects
 the fighting situation
+
  ''';
     String step2Msg = '''Patch starts analyzing
 A’s data of voice
+
  ''';
     String step3Msg = '''Patch turns
 A’s voice’s data
@@ -24,7 +26,9 @@ sent to B’s
 Obi Emorgan
  ''';
     String step5Msg = '''B feels the vibrate and
-try to read A’s emotion''';
+try to read A’s emotion
+
+''';
 
     return Container(
       width: w,

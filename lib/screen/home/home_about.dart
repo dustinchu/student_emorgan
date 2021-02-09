@@ -20,24 +20,46 @@ class _HomeAboutState extends State<HomeAbout>
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
+    double h = 900;
     Widget participation(String t1, String t2) {
       return Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(
-            child: Text(
-              t1,
-              style: GoogleFonts.montserrat(
-                  textStyle: TextStyle(color: Color(0xFF364146), fontSize: 12)),
-            ),
+          Text(
+            t1,
+            style: GoogleFonts.montserrat(
+                textStyle: TextStyle(color: Color(0xFF364146), fontSize: 12)),
           ),
-          Expanded(
-            child: Text(
-              t2,
-              style: GoogleFonts.montserrat(
-                  textStyle: TextStyle(color: Color(0x80424648), fontSize: 12)),
-            ),
+          SizedBox(
+            width: 160,
+          ),
+          Text(
+            t2,
+            style: GoogleFonts.montserrat(
+                textStyle: TextStyle(color: Color(0x80424648), fontSize: 12)),
+          ),
+        ],
+      );
+    }
+
+    Widget iconText(String img, String text) {
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            img,
+            width: 15,
+            height: 15,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            text,
+            style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                    color: Color(0xFF7A82A7),
+                    fontSize: windows_width_small_size(w))),
           )
         ],
       );
@@ -45,6 +67,7 @@ class _HomeAboutState extends State<HomeAbout>
 
     return Container(
       width: w,
+      height: 900,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/help.png"),
@@ -55,7 +78,8 @@ class _HomeAboutState extends State<HomeAbout>
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
+          Container(
+            width: (w / 3) * 2,
             child: Column(
               children: [
                 Container(
@@ -69,7 +93,7 @@ class _HomeAboutState extends State<HomeAbout>
                   ),
                 ),
                 Container(
-                  height: 200,
+                  height: 140,
                   child: Row(
                     children: [
                       Expanded(
@@ -81,7 +105,7 @@ class _HomeAboutState extends State<HomeAbout>
                                 style: TextStyle(
                                     color: Color(0xFF324146),
                                     fontSize: windows_width_large_size(w))),
-                            Text("Emorgan CEO",
+                            Text("Emorgan Designer",
                                 style: TextStyle(
                                     color: Color(0x80424648),
                                     fontSize: windows_width_medium_size(w))),
@@ -97,7 +121,7 @@ class _HomeAboutState extends State<HomeAbout>
                                 style: TextStyle(
                                     color: Color(0xFF324146),
                                     fontSize: windows_width_large_size(w))),
-                            Text("Emorgan CEO",
+                            Text("Emorgan Designer",
                                 style: TextStyle(
                                     color: Color(0x80424648),
                                     fontSize: windows_width_medium_size(w))),
@@ -110,42 +134,42 @@ class _HomeAboutState extends State<HomeAbout>
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: Image.asset('assets/icon_up.png'),
-                        onPressed: widget.upBtn,
-                      )
-                    ],
-                  ),
-                  Text(
-                    "About EMOGRAN",
-                    style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            color: Color(0xFF364146),
-                            fontSize: windows_width_medium_size(w))),
-                  ),
-                  Text(
-                    "For Love, For Future",
-                    style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            color: Color(0xFF364146),
-                            fontSize: windows_width_large_size(w))),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Text(
-                    '''Emorgan wish every couple has another
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                alignment: Alignment.center,
+                width: w / 3,
+                height: h,
+                color: Colors.white,
+                padding: EdgeInsets.only(top:20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text(
+                      "About EMOGRAN",
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xFF364146),
+                              fontSize: windows_width_medium_size(w))),
+                    ),
+                    Text(
+                      "For Love, For Future",
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xFF364146),
+                              fontSize: windows_width_large_size(w))),
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Text(
+                      '''Emorgan wish every couple has another
 chance to love again.
 \n
 We care about human mental needs.
@@ -158,124 +182,73 @@ Emorgan has three sets of products:“Obi”,
 We are simultaneously developing
 more products that will help humans to be
 spiritually assisted.''',
-                    style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            color: Color(0xFF364146),
-                            fontSize: windows_width_small_size(w))),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Participation",
-                        style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                                color: Color(0xFF7A82A7),
-                                fontSize: windows_width_small_size(w))),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      participation("Dustin, Chu", "Website Engineer"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      participation("Chih Hung, Lin", "Animator"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      participation("Osborne, Zhu", "Animator"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      participation("Gimmy", "Photographer"),
-                      SizedBox(
-                        height: 50,
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            "assets/email.png",
-                            width: 15,
-                            height: 15,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Participation",
-                            style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                    color: Color(0xFF7A82A7),
-                                    fontSize: windows_width_small_size(w))),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            "assets/phone.png",
-                            width: 15,
-                            height: 15,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "0912-283-063",
-                            style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                    color: Color(0xFF7A82A7),
-                                    fontSize: windows_width_small_size(w))),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            "assets/ig.png",
-                            width: 15,
-                            height: 15,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "emorgan_creation",
-                            style: GoogleFonts.montserrat(
-                                textStyle: TextStyle(
-                                    color: Color(0xFF7A82A7),
-                                    fontSize: windows_width_small_size(w))),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 100,
-                      ),
-                      Center(
-                        child: Text(
-                          "© 2020-2047 EMORGAN",
-                          style: GoogleFonts.montserrat(
-                              textStyle: TextStyle(
-                                  color: Color(0xFFC8C1EF),
-                                  fontSize: windows_width_small_size(w))),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xFF364146),
+                              fontSize: windows_width_small_size(w))),
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Text(
+                      "Participation",
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xFF7A82A7),
+                              fontSize: windows_width_small_size(w))),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    participation("Dustin, Chu     ", "Website Engineer"),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    participation("Chih Hung, Lin", "Animator"),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    participation("Osborne, Zhu  ", "Animator"),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    participation("Gimmyfoto      ", "Photographer"),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    iconText("assets/email.png", "Participation"),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    iconText("assets/phone.png", "0912-283-063"),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    iconText("assets/ig.png", "emorgan_creation"),
+                    SizedBox(
+                      height: 100,
+                    ),
+                  ],
+                ),
               ),
-            ),
+              Positioned(
+                bottom: 20,
+                child: Text(
+                  "© 2020-2047 EMORGAN",
+                  style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          color: Color(0xFFC8C1EF),
+                          fontSize: windows_width_small_size(w))),
+                ),
+              ),
+              Positioned(
+                  top: 20,
+                  right: 20,
+                  child: IconButton(
+                    icon: Image.asset('assets/icon_up.png'),
+                    onPressed: widget.upBtn,
+                  )),
+            ],
           )
         ],
       ),

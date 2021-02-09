@@ -335,7 +335,7 @@ class _HomeBookingState extends State<HomeBooking>
           about(),
           input(),
           Positioned(
-            bottom: 20,
+            bottom: 50,
             right: ((w / 3) * 2 / 4) - 20,
             child: Material(
               child: InkWell(
@@ -353,9 +353,11 @@ class _HomeBookingState extends State<HomeBooking>
                   ),
                   child: Text(
                     "Book NOW",
-                    style: TextStyle(
-                        color: Color(0xFF364146),
-                        fontSize: windows_width_small_size(w)),
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          color: Color(0xFF364146),
+                          fontSize: windows_width_small_size(w)),
+                    ),
                   ),
                 ),
               ),

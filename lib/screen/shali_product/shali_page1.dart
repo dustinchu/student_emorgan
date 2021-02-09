@@ -1,4 +1,5 @@
 import 'package:emorgan/common/font_size.dart';
+import 'package:emorgan/common/widgets/circular_container.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,16 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = 950;
+
+    Widget circularContainer() {
+      return Container(
+        decoration: new BoxDecoration(
+          color: Color(0x80F2F2F2), // 底色
+          borderRadius: new BorderRadius.circular((20.0)), // 圆角度
+        ),
+      );
+    }
+
     return Container(
       width: w,
       height: h,
@@ -152,25 +163,20 @@ DIMENSIONS
                       //白色區域分成40等分
                       left: (w - ((w / 3 - 150) * 2)) / 40 * 14,
                       child: InkWell(
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        onHover: (value) {
-                          if (value) {
-                            setState(() {
-                              forksStart = true;
-                            });
-                          } else {
-                            setState(() {
-                              forksStart = false;
-                            });
-                          }
-                        },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          color: Colors.transparent,
-                        ),
-                      ),
+                          hoverColor: Colors.transparent,
+                          onTap: () {},
+                          onHover: (value) {
+                            if (value) {
+                              setState(() {
+                                forksStart = true;
+                              });
+                            } else {
+                              setState(() {
+                                forksStart = false;
+                              });
+                            }
+                          },
+                          child: CircularContainer()),
                     ),
                     //左二 hover
                     Positioned(
@@ -178,25 +184,20 @@ DIMENSIONS
                       //白色區域分成40等分
                       left: (w - ((w / 3 - 150) * 2)) / 40 * 17,
                       child: InkWell(
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        onHover: (value) {
-                          if (value) {
-                            setState(() {
-                              powerStart = true;
-                            });
-                          } else {
-                            setState(() {
-                              powerStart = false;
-                            });
-                          }
-                        },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          color: Colors.transparent,
-                        ),
-                      ),
+                          hoverColor: Colors.transparent,
+                          onTap: () {},
+                          onHover: (value) {
+                            if (value) {
+                              setState(() {
+                                powerStart = true;
+                              });
+                            } else {
+                              setState(() {
+                                powerStart = false;
+                              });
+                            }
+                          },
+                          child: CircularContainer()),
                     ),
                     //右一Hover
                     Positioned(
@@ -204,25 +205,20 @@ DIMENSIONS
                       //白色區域分成40等分
                       right: (w - ((w / 3 - 150) * 2)) / 40 * 17,
                       child: InkWell(
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        onHover: (value) {
-                          if (value) {
-                            setState(() {
-                              thermometeStart = true;
-                            });
-                          } else {
-                            setState(() {
-                              thermometeStart = false;
-                            });
-                          }
-                        },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          color: Colors.transparent,
-                        ),
-                      ),
+                          hoverColor: Colors.transparent,
+                          onTap: () {},
+                          onHover: (value) {
+                            if (value) {
+                              setState(() {
+                                thermometeStart = true;
+                              });
+                            } else {
+                              setState(() {
+                                thermometeStart = false;
+                              });
+                            }
+                          },
+                          child: CircularContainer()),
                     ),
                     //右二Hover
                     Positioned(
@@ -230,25 +226,20 @@ DIMENSIONS
                       //白色區域分成40等分
                       right: (w - ((w / 3 - 150) * 2)) / 40 * 13,
                       child: InkWell(
-                        hoverColor: Colors.transparent,
-                        onTap: () {},
-                        onHover: (value) {
-                          if (value) {
-                            setState(() {
-                              lightStart = true;
-                            });
-                          } else {
-                            setState(() {
-                              lightStart = false;
-                            });
-                          }
-                        },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          color: Colors.transparent,
-                        ),
-                      ),
+                          hoverColor: Colors.transparent,
+                          onTap: () {},
+                          onHover: (value) {
+                            if (value) {
+                              setState(() {
+                                lightStart = true;
+                              });
+                            } else {
+                              setState(() {
+                                lightStart = false;
+                              });
+                            }
+                          },
+                          child: CircularContainer()),
                     ),
                     Positioned(
                       top: ((w / 5 + 50) / 10) * 3,

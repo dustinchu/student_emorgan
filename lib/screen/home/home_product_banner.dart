@@ -5,6 +5,7 @@ import 'package:emorgan/provider/book_state.dart';
 import 'package:emorgan/screen/home/home_product_360html.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:provider/provider.dart';
 
 import 'home_product_Image.dart';
@@ -12,7 +13,7 @@ import 'home_product_Image.dart';
 class HomeProductBanner extends StatefulWidget {
   HomeProductBanner(
       {Key key,
-      this.first,
+      this.status,
       this.id,
       this.upBtn,
       this.moreBtn,
@@ -40,7 +41,7 @@ class HomeProductBanner extends StatefulWidget {
   final double imgWidth;
   final double imgHeigh;
   final String id;
-  final bool first;
+  final bool status;
   @override
   _HomeProductBannerState createState() => _HomeProductBannerState();
 }
@@ -55,7 +56,6 @@ class _HomeProductBannerState extends State<HomeProductBanner>
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
-    var imageStatus = Provider.of<BookStatus>(context);
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
     double h = 900;
@@ -80,33 +80,34 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                 ? EdgeInsets.only(left: w / 3)
                 : EdgeInsets.only(right: w / 3),
             child: Center(
-              child: imageStatus.getImageStatus
-                  ? EasyWebView(
-                      onLoaded: () {
-                        print("onload~");
-                      },
-                      src: "https://eloquent-engelbart-9e449d.netlify.app",
-                      isHtml: false, // Use Html syntax
-                      isMarkdown: false, // Use markdown syntax
-                      convertToWidgets:
-                          false, // Try to convert to flutter widgets
-                      // width: 100,
-                      // height: 100,
-                    )
-                  : FlatButton(
-                      onPressed: () {
-                        Provider.of<BookStatus>(context, listen: false)
-                            .setImageStatus(true);
-                      },
-                      child: Text("play")),
-              // child: HomeProduct360Html(
-              //     valueID: widget.finderName, path: widget.path),
-              // child: ImagePage(
-              //   w: widget.imgWidth,
-              //   h: widget.imgHeigh,
-              //   finderName: widget.finderName,
-              // ),
-            ),
+                child: widget.status
+                    ? EasyWebView(
+                        onLoaded: () {
+                          // print("onload~");
+                        },
+                        src: widget.path,
+                        isHtml: false, // Use Html syntax
+                        isMarkdown: false, // Use markdown syntax
+                        convertToWidgets:
+                            false, // Try to convert to flutter widgets
+                        // width: 100,
+                        // height: 100,
+                      )
+                    : Container()
+                // : FlatButton(
+                //     onPressed: () {
+                //       Provider.of<BookStatus>(context, listen: false)
+                //           .setImageStatus(true);
+                //     },
+                //     child: Text("play")),
+                // child: HomeProduct360Html(
+                //     valueID: widget.finderName, path: widget.path),
+                // child: ImagePage(
+                //   w: widget.imgWidth,
+                //   h: widget.imgHeigh,
+                //   finderName: widget.finderName,
+                // ),
+                ),
           ),
         ),
         // backround(w, h),
@@ -138,269 +139,18 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                 )),
 
         Positioned(
-          top: 20,
-          right: 20,
-          child: widget.first
-              ? IconButton(
-                  icon: Image.asset('assets/icon_up.png'),
-                  onPressed: widget.upBtn,
-                )
-              : Container(),
-        ),
+            top: 20,
+            right: 20,
+            child: PointerInterceptor(
+              child: IconButton(
+                icon: Image.asset('assets/icon_up.png'),
+                onPressed: widget.upBtn,
+              ),
+            )),
       ],
     );
   }
 
-  // Widget innerLayout(w, h) {
-  //   return Container(
-  //     padding: EdgeInsets.only(left: 26, top: 22, right: 26, bottom: 50),
-  //     width: w / 3,
-  //     height: h,
-  //     decoration: BoxDecoration(color: Colors.white),
-  //     child: Column(
-  //       crossAxisAlignment: CrossAxisAlignment.start,
-  //       children: [
-  //         Row(
-  //           crossAxisAlignment: CrossAxisAlignment.start,
-  //           mainAxisAlignment: MainAxisAlignment.end,
-  //           children: [
-  //             IconButton(
-  //               icon: Image.asset('assets/icon_up.png'),
-  //               onPressed: widget.upBtn,
-  //               // onPressed: () => widget.scrollController.animateTo(.0,
-  //               //     duration: Duration(milliseconds: 200),
-  //               //     curve: Curves.ease),
-  //             )
-  //           ],
-  //         ),
-  //         SizedBox(
-  //           height: 41,
-  //         ),
-  //         Text(
-  //           widget.title,
-  //           style: TextStyle(
-  //               fontSize: windows_width_medium_size(w),
-  //               color: Color(0xFF364146)),
-  //         ),
-  //         Text(
-  //           widget.title2,
-  //           style: TextStyle(
-  //               fontSize: windows_width_large_size(w),
-  //               color: Color(0xFF364146)),
-  //         ),
-  //         SizedBox(
-  //           height: 36,
-  //         ),
-  //         Text(
-  //           widget.body1,
-  //           style: TextStyle(
-  //               fontSize: windows_width_small_size(w),
-  //               color: Color(0xFF364146)),
-  //         ),
-  //         Text(
-  //           widget.body2,
-  //           style: TextStyle(
-  //               fontSize: windows_width_small_size(w),
-  //               color: Color(0xFF364146)),
-  //         ),
-  //         Expanded(child: Container()),
-  //         Row(
-  //           crossAxisAlignment: CrossAxisAlignment.center,
-  //           mainAxisAlignment: MainAxisAlignment.end,
-  //           children: [
-  //             Material(
-  //               color: Colors.transparent,
-  //               child: InkWell(
-  //                 onTap: widget.moreBtn,
-  //                 onHover: (value) {
-  //                   print(value);
-  //                   setState(() {
-  //                     learnStatus = value;
-  //                   });
-  //                 },
-  //                 child: Container(
-  //                   child: Column(
-  //                     children: [
-  //                       Row(
-  //                         crossAxisAlignment: CrossAxisAlignment.start,
-  //                         mainAxisAlignment: MainAxisAlignment.start,
-  //                         children: [
-  //                           Text(
-  //                             " Learn more",
-  //                             textAlign: TextAlign.center,
-  //                             style: TextStyle(
-  //                               fontSize: windows_width_small_size(w),
-  //                               color: Color(0xFF364146),
-  //                             ),
-  //                           ),
-  //                           Icon(
-  //                             Icons.keyboard_arrow_right_outlined,
-  //                             color: Color(0xFF7A82A7),
-  //                             size: windows_width_medium_size(w),
-  //                           )
-  //                         ],
-  //                       ),
-  //                       learnStatus
-  //                           ? Container(
-  //                               // padding: EdgeInsets.only(right: 30),
-  //                               width: windows_width_small_size(w) * 6,
-  //                               height: 3,
-  //                               color: Color(0xFF7A82A7),
-  //                             )
-  //                           : Container(),
-  //                     ],
-  //                   ),
-  //                 ),
-  //               ),
-  //             ),
-  //             SizedBox(
-  //               width: windowsSizeboxWidthSize(20),
-  //             ),
-  //             Material(
-  //               child: InkWell(
-  //                 onTap: widget.nowBtn,
-  //                 onHover: (value) {
-  //                   print(value);
-  //                   setState(() {
-  //                     orderStatus = value;
-  //                   });
-  //                 },
-  //                 child: Container(
-  //                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-  //                   decoration: new BoxDecoration(
-  //                     border: new Border.all(
-  //                         color: Color(0xFF7A82A7), width: 4), // 邊色寬度
-  //                     color: orderStatus
-  //                         ? Color(0xFF7A82A7)
-  //                         : Colors.transparent, // 底色
-  //                     borderRadius: new BorderRadius.circular((60)), // 圆角度
-  //                   ),
-  //                   child: Text(
-  //                     "ORDER NOW",
-  //                     style: TextStyle(
-  //                         fontSize: windows_width_small_size(w) - 1,
-  //                         color: Color(0xFF364146)),
-  //                   ),
-  //                 ),
-  //               ),
-  //             )
-  //           ],
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
-
-  // Widget bottomBtn(w) {
-  //   return Row(
-  //     crossAxisAlignment: CrossAxisAlignment.center,
-  //     mainAxisAlignment: MainAxisAlignment.end,
-  //     children: [
-  //       Material(
-  //         color: Colors.transparent,
-  //         child: InkWell(
-  //           onTap: widget.moreBtn,
-  //           onHover: (value) {
-  //             print(value);
-  //             setState(() {
-  //               learnStatus = value;
-  //             });
-  //           },
-  //           child: Container(
-  //             child: Column(
-  //               children: [
-  //                 Row(
-  //                   crossAxisAlignment: CrossAxisAlignment.start,
-  //                   mainAxisAlignment: MainAxisAlignment.start,
-  //                   children: [
-  //                     Text(
-  //                       " Learn more",
-  //                       textAlign: TextAlign.center,
-  //                       style: TextStyle(
-  //                         fontSize: windows_width_small_size(w),
-  //                         color: Color(0xFF364146),
-  //                       ),
-  //                     ),
-  //                     Icon(
-  //                       Icons.keyboard_arrow_right_outlined,
-  //                       color: Color(0xFF7A82A7),
-  //                       size: windows_width_medium_size(w),
-  //                     )
-  //                   ],
-  //                 ),
-  //                 learnStatus
-  //                     ? Container(
-  //                         // padding: EdgeInsets.only(right: 30),
-  //                         width: windows_width_small_size(w) * 6,
-  //                         height: 3,
-  //                         color: Color(0xFF7A82A7),
-  //                       )
-  //                     : Container(),
-  //               ],
-  //             ),
-  //           ),
-  //         ),
-  //       ),
-  //       SizedBox(
-  //         width: windowsSizeboxWidthSize(20),
-  //       ),
-  //       Material(
-  //         child: InkWell(
-  //           onTap: widget.nowBtn,
-  //           onHover: (value) {
-  //             print(value);
-  //             setState(() {
-  //               orderStatus = value;
-  //             });
-  //           },
-  //           child: Container(
-  //             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-  //             decoration: new BoxDecoration(
-  //               border:
-  //                   new Border.all(color: Color(0xFF7A82A7), width: 4), // 邊色寬度
-  //               color:
-  //                   orderStatus ? Color(0xFF7A82A7) : Colors.transparent, // 底色
-  //               borderRadius: new BorderRadius.circular((60)), // 圆角度
-  //             ),
-  //             child: Text(
-  //               "ORDER NOW",
-  //               style: TextStyle(
-  //                   fontSize: windows_width_small_size(w) - 1,
-  //                   color: Color(0xFF364146)),
-  //             ),
-  //           ),
-  //         ),
-  //       )
-  //     ],
-  //   );
-  // }
-
-  // Widget backround(w, h) {
-  //   return Container(
-  //     decoration: BoxDecoration(
-  //       image: DecorationImage(
-  //         image: widget.isLeft
-  //             ? AssetImage("assets/backround_right.png")
-  //             : AssetImage("assets/backround_left.png"),
-  //         fit: BoxFit.cover,
-  //       ),
-  //     ),
-  //     height: h,
-  //     width: w,
-  //     // child: Center(
-  //     //   child: Text("123"),
-  //     // ),
-  //     child: Container(
-  //       padding: widget.isLeft
-  //           ? EdgeInsets.only(left: w / 3)
-  //           : EdgeInsets.only(right: w / 3),
-  //       child: Center(
-  //           child: ImagePage(
-  //         finderName: widget.finderName,
-  //       )),
-  //     ),
-  //   );
-  // }
 }
 
 class InnerLayout extends StatefulWidget {
