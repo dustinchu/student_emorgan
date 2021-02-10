@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'ordar_appbar.dart';
+import 'order_appbar.dart';
+import 'order_patch.dart';
 
 class OrderShoppingCode extends StatefulWidget {
   OrderShoppingCode({Key key}) : super(key: key);
@@ -38,7 +39,7 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
     return Scaffold(
       body: Container(
         width: w,
-        height: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/help.png"),
@@ -106,7 +107,13 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  print("nnext");
+                                  if (editStatus) {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                OrderPatch()));
+                                  }
                                 },
                                 child: Container(
                                   padding: EdgeInsets.symmetric(

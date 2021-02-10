@@ -8,6 +8,7 @@ import 'provider/book_state.dart';
 import 'screen/buzzy_product/buzzy_product_screen.dart';
 import 'screen/home/home_screen.dart';
 import 'screen/obi_product/obi_product_screen.dart';
+import 'screen/order/order_patch.dart';
 import 'screen/order/order_shopping_code.dart';
 
 void main() {
