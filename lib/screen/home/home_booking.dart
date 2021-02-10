@@ -23,12 +23,224 @@ class _HomeBookingState extends State<HomeBooking>
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
+  bool firstName = false;
+  bool lastName = false;
+  bool address = false;
+  bool number = false;
+  bool partnerFirstName = false;
+  bool partnerLastName = false;
+  bool isDate = false;
   TextEditingController firstNameTextEditingController;
   TextEditingController lastNameTextEditingController;
   TextEditingController emailAddressTextEditingController;
   TextEditingController phoneNumberTextEditingController;
   TextEditingController partnerFirstNameTextEditingController;
   TextEditingController partnerLastNameTextEditingController;
+  List<bool> statusList = [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ];
+  List<List<String>> selectedList = [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+  ];
+  //記錄最後一次點擊的index
+  int endIndex = 9;
+  void selectedListLoor(int index, String value, int ontapIndex) {
+    for (int i = 0; i < selectedList.length; i++) {
+      if (i == index) {
+        for (int o = 0; o < selectedList[i].length; o++) {
+          if (o == ontapIndex) {
+            //將選擇的直存起來
+            selectedList[i][o] = value;
+            //有選擇的話記錄起來
+            setState(() {
+              isDate = true;
+            });
+          } else {
+            selectedList[i][o] = "";
+          }
+        }
+      } else {
+        selectedList[i] = [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+        ];
+      }
+    }
+  }
+
+  //循環list把點擊的那一個index bool改變 給下拉選單用
+  void listLoor(int index) {
+    for (int i = 0; i < statusList.length; i++) {
+      if (i == index) {
+        statusList[i] = !statusList[i];
+        //如果false =打開  最後一次打開的存起來
+        if (statusList[i] == false) {
+          endIndex = index;
+        }
+      } else {
+        statusList[i] = true;
+      }
+    }
+  }
+
+  void dateBtn0() {
+    setState(() {
+      listLoor(0);
+    });
+  }
+
+  void dateBtn1() {
+    setState(() {
+      listLoor(1);
+    });
+  }
+
+  void dateBtn2() {
+    setState(() {
+      listLoor(2);
+    });
+  }
+
+  void dateBtn3() {
+    setState(() {
+      listLoor(3);
+    });
+  }
+
+  void dateBtn4() {
+    setState(() {
+      listLoor(4);
+    });
+  }
+
+  void dateBtn5() {
+    setState(() {
+      listLoor(5);
+    });
+  }
+
+  void selected0(value, ontapIndex) {
+    setState(() {
+      selectedListLoor(0, value, ontapIndex);
+    });
+  }
+
+  void selected1(value, ontapIndex) {
+    setState(() {
+      selectedListLoor(1, value, ontapIndex);
+    });
+  }
+
+  void selected2(value, ontapIndex) {
+    setState(() {
+      selectedListLoor(2, value, ontapIndex);
+    });
+  }
+
+  void selected3(value, ontapIndex) {
+    setState(() {
+      selectedListLoor(3, value, ontapIndex);
+    });
+  }
+
+  void selected4(value, ontapIndex) {
+    setState(() {
+      selectedListLoor(4, value, ontapIndex);
+    });
+  }
+
+  void selected5(value, ontapIndex) {
+    setState(() {
+      selectedListLoor(5, value, ontapIndex);
+    });
+  }
+
+  void success() {
+    setState(() {
+      firstNameTextEditingController.text = "";
+      lastNameTextEditingController.text = "";
+      emailAddressTextEditingController.text = "";
+      phoneNumberTextEditingController.text = "";
+      partnerFirstNameTextEditingController.text = "";
+      partnerLastNameTextEditingController.text = "";
+
+      for (int i = 0; i < selectedList.length; i++) {
+        selectedList[i] = [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+        ];
+      }
+    });
+  }
 
   @override
   void initState() {
@@ -40,6 +252,73 @@ class _HomeBookingState extends State<HomeBooking>
     partnerFirstNameTextEditingController = TextEditingController();
     partnerLastNameTextEditingController = TextEditingController();
     selectedKey = keys[0];
+
+    firstNameTextEditingController.addListener(() {
+      if (firstNameTextEditingController.text.length > 0) {
+        setState(() {
+          firstName = true;
+        });
+      } else {
+        setState(() {
+          firstName = false;
+        });
+      }
+    });
+    lastNameTextEditingController.addListener(() {
+      if (lastNameTextEditingController.text.length > 0) {
+        setState(() {
+          lastName = true;
+        });
+      } else {
+        setState(() {
+          lastName = false;
+        });
+      }
+    });
+    emailAddressTextEditingController.addListener(() {
+      if (emailAddressTextEditingController.text.length > 0) {
+        setState(() {
+          address = true;
+        });
+      } else {
+        setState(() {
+          address = false;
+        });
+      }
+    });
+    phoneNumberTextEditingController.addListener(() {
+      if (phoneNumberTextEditingController.text.length > 0) {
+        setState(() {
+          number = true;
+        });
+      } else {
+        setState(() {
+          number = false;
+        });
+      }
+    });
+    partnerFirstNameTextEditingController.addListener(() {
+      if (partnerFirstNameTextEditingController.text.length > 0) {
+        setState(() {
+          partnerFirstName = true;
+        });
+      } else {
+        setState(() {
+          partnerFirstName = false;
+        });
+      }
+    });
+    partnerLastNameTextEditingController.addListener(() {
+      if (partnerLastNameTextEditingController.text.length > 0) {
+        setState(() {
+          partnerLastName = true;
+        });
+      } else {
+        setState(() {
+          partnerLastName = false;
+        });
+      }
+    });
   }
 
   void setStatus(String value) {}
@@ -286,31 +565,55 @@ class _HomeBookingState extends State<HomeBooking>
                       title: "Mon.",
                       dateStr: "12/2",
                       index: 0,
+                      openStatus: statusList[0],
+                      upBtn: dateBtn0,
+                      selectedDate: selected0,
+                      items: selectedList[0],
                     ),
                     new DateWidget(
                       title: "Tue",
                       dateStr: "12/3",
                       index: 1,
+                      openStatus: statusList[1],
+                      upBtn: dateBtn1,
+                      selectedDate: selected1,
+                      items: selectedList[1],
                     ),
                     new DateWidget(
                       title: "Wed.",
                       dateStr: "12/4",
                       index: 2,
+                      openStatus: statusList[2],
+                      upBtn: dateBtn2,
+                      selectedDate: selected2,
+                      items: selectedList[2],
                     ),
                     new DateWidget(
                       title: "Thu.",
                       dateStr: "12/5",
                       index: 3,
+                      openStatus: statusList[3],
+                      upBtn: dateBtn3,
+                      selectedDate: selected3,
+                      items: selectedList[3],
                     ),
                     new DateWidget(
                       title: "Fri",
                       dateStr: "12/6",
                       index: 4,
+                      openStatus: statusList[4],
+                      upBtn: dateBtn4,
+                      selectedDate: selected4,
+                      items: selectedList[4],
                     ),
                     new DateWidget(
                       title: "Sat.",
                       dateStr: "12/7",
                       index: 5,
+                      openStatus: statusList[5],
+                      upBtn: dateBtn5,
+                      selectedDate: selected5,
+                      items: selectedList[5],
                     )
                   ],
                 )
@@ -336,26 +639,60 @@ class _HomeBookingState extends State<HomeBooking>
           input(),
           Positioned(
             bottom: 50,
-            right: ((w / 3) * 2 / 4) - 20,
+            right: 50,
             child: Material(
+              color: Colors.transparent,
               child: InkWell(
-                onTap: () {},
-                onHover: (value) {
-                  print(value);
+                onTap: () {
+                  if (firstName &&
+                      lastName &&
+                      address &&
+                      number &&
+                      partnerFirstName &&
+                      partnerLastName &&
+                      isDate) success();
                 },
+                // onHover: (value) {
+                //   print(value);
+                // },
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: new BoxDecoration(
                     border: new Border.all(
-                        color: Color(0xFF364146), width: 4), // 邊色寬度
-                    color: Colors.transparent, // 底色
+                        color: firstName &&
+                                lastName &&
+                                address &&
+                                number &&
+                                partnerFirstName &&
+                                partnerLastName &&
+                                isDate
+                            ? Color(0xFF7A82A7)
+                            : Color(0xF80364146),
+                        width: 2), // 邊色寬度
+                    color: firstName &&
+                            lastName &&
+                            address &&
+                            number &&
+                            partnerFirstName &&
+                            partnerLastName &&
+                            isDate
+                        ? Color(0xFF7A82A7)
+                        : Colors.transparent, // 底色底色
                     borderRadius: new BorderRadius.circular((60)), // 圆角度
                   ),
                   child: Text(
                     "Book NOW",
                     style: GoogleFonts.montserrat(
                       textStyle: TextStyle(
-                          color: Color(0xFF364146),
+                          color: firstName &&
+                                  lastName &&
+                                  address &&
+                                  number &&
+                                  partnerFirstName &&
+                                  partnerLastName &&
+                                  isDate
+                              ? Colors.white
+                              : Color(0x80364146),
                           fontSize: windows_width_small_size(w)),
                     ),
                   ),
@@ -380,37 +717,27 @@ class DateWidget extends StatefulWidget {
   final int index;
   final String title;
   final String dateStr;
+  final bool openStatus;
+  final List<String> items;
+  final VoidCallback upBtn;
+  final Function(String value, int ontapIndex) selectedDate;
   DateWidget(
       {Key key,
       @required this.index,
       @required this.title,
-      @required this.dateStr})
+      @required this.dateStr,
+      @required this.openStatus,
+      @required this.selectedDate,
+      @required this.items,
+      this.upBtn})
       : super(key: key);
 
   @override
   _DateWidgetState createState() => _DateWidgetState();
 }
 
-List<bool> statusList = [
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-];
-List<String> clickString = [
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-];
-
-List<String> items = [
+//預設資料
+List<String> defDataItem = [
   '10:00',
   '11:00',
   '12:00',
@@ -439,13 +766,14 @@ class _DateWidgetState extends State<DateWidget> {
           ),
         ),
         InkWell(
-          onTap: () {
-            setState(() {
-              statusList[widget.index] = !statusList[widget.index];
-            });
-          },
+          onTap: widget.upBtn,
+          // onTap: () {
+          //   // setState(() {
+          //   //   statusList[widget.index] = !statusList[widget.index];
+          //   // });
+          // },
           child: Container(
-            color: statusList[widget.index] ? Colors.white : Color(0xFFC8C1EF),
+            color: widget.openStatus ? Colors.white : Color(0xFFC8C1EF),
             width: windowsSizeboxWidthSize(60),
             height: 40,
             padding: EdgeInsets.all(0),
@@ -466,49 +794,51 @@ class _DateWidgetState extends State<DateWidget> {
         AnimatedCrossFade(
           duration: const Duration(milliseconds: 700),
           //讓沒元件的時候一樣高
-          firstChild: Column(
-            children: items
-                .map((e) => Container(
+          firstChild: Column(children: [
+            for (int i = 0; i < 7; i++)
+              Container(
+                padding: EdgeInsets.all(0),
+                width: windowsSizeboxWidthSize(60),
+                height: 45,
+              )
+          ]),
+          secondChild: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                for (int i = 0; i < 7; i++)
+                  InkWell(
+                    child: Container(
                       padding: EdgeInsets.all(0),
                       width: windowsSizeboxWidthSize(60),
-                      height: 45,
-                    ))
-                .toList(),
-          ),
-          secondChild: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: items
-                .map((value) => InkWell(
-                      child: Container(
-                        padding: EdgeInsets.all(0),
-                        width: windowsSizeboxWidthSize(60),
-                        height: 40,
-                        margin: EdgeInsets.only(bottom: 5),
-                        decoration: new BoxDecoration(
-                          color: clickString[widget.index] == value
-                              ? Color(0xFFC8C1EF)
-                              : Colors.transparent,
-                          border: new Border.all(
-                              color: Color(0xFFC8C1EF), width: 2),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          "$value",
-                          style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                                fontSize: windows_width_small_size(w) - 1,
-                                color: Color(0xFF424648)),
-                          ),
+                      height: 40,
+                      margin: EdgeInsets.only(bottom: 5),
+                      decoration: new BoxDecoration(
+                        color: widget.items[widget.index] == defDataItem[i]
+                            ? Color(0xFFC8C1EF)
+                            : Colors.transparent,
+                        border:
+                            new Border.all(color: Color(0xFFC8C1EF), width: 2),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "${defDataItem[i]}",
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: windows_width_small_size(w) - 1,
+                              color: Color(0xFF424648)),
                         ),
                       ),
-                      onTap: () {
-                        setState(() => clickString[widget.index] = value);
-                      },
-                    ))
-                .toList(),
-          ),
-          crossFadeState: statusList[widget.index]
+                    ),
+                    onTap: () {
+                      widget.selectedDate(defDataItem[i], i);
+                      //將點選的資料存到預設的list裡面
+                      setState(
+                          () => widget.items[widget.index] = defDataItem[i]);
+                    },
+                  )
+              ]),
+          crossFadeState: widget.openStatus
               ? CrossFadeState.showFirst
               : CrossFadeState.showSecond,
         ),
