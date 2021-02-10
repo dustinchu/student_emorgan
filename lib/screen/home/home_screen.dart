@@ -145,10 +145,10 @@ class _HomeScreenState extends State<HomeScreen> {
             height: h,
             width: w,
             child: Listener(
-              onPointerUp: (details) {
-                // upBtn();
-                print("up");
-              },
+              // onPointerUp: (details) {
+              //   // upBtn();
+              //   print("up");
+              // },
               onPointerSignal: (pointerSignal) async {
                 if (scrollStatus) {
                   if (pointerSignal is PointerScrollEvent) {
@@ -222,6 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     new HomeProductBanner(
                       id: "obi",
                       upBtn: upBtn,
+                      nowBtn: nowBtn,
                       moreBtn: obiLearn,
                       title: "Voice to Vibrate",
                       title2: "OBI",
@@ -238,6 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     new HomeProductBanner(
                       id: "buzzy",
                       upBtn: upBtn,
+                      nowBtn: nowBtn,
                       moreBtn: buzzyLearn,
                       title: "Pulse to Pain",
                       title2: "BUZZY",
