@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'order_appbar.dart';
+import 'order_information.dart';
 
 class OrderPatch extends StatefulWidget {
   OrderPatch({Key key}) : super(key: key);
@@ -211,20 +212,32 @@ class _OrderPatchState extends State<OrderPatch> {
             Positioned(
               bottom: 40,
               right: 40,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-                decoration: new BoxDecoration(
-                  border: new Border.all(
-                      color: Color(0x80364146), width: 2), // 邊色寬度
-                  color: Colors.transparent, // 底色
-                  borderRadius: new BorderRadius.circular((30)), // 圆角度
-                ),
-                child: Text(
-                  "NEXT",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                        fontSize: 18,
-                        color: nextStatus ? Colors.white : Color(0x80364146)),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OrderImformation()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    decoration: new BoxDecoration(
+                      border: new Border.all(
+                          color: Color(0x80364146), width: 2), // 邊色寬度
+                      color: Colors.transparent, // 底色
+                      borderRadius: new BorderRadius.circular((30)), // 圆角度
+                    ),
+                    child: Text(
+                      "NEXT",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            fontSize: 18,
+                            color:
+                                nextStatus ? Colors.white : Color(0x80364146)),
+                      ),
+                    ),
                   ),
                 ),
               ),
