@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
 import 'package:provider/provider.dart';
 
+import 'order_account.dart';
 import 'order_appbar.dart';
 
 class OrderImformation extends StatefulWidget {
@@ -273,6 +274,10 @@ class _OrderImformationState extends State<OrderImformation>
         ];
       }
     });
+     Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OrderAccount()));
   }
 
   @override
@@ -684,7 +689,7 @@ class _OrderImformationState extends State<OrderImformation>
       return Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/help.png"),
+              image: AssetImage("assets/order_left_backround.png"),
               fit: BoxFit.cover,
             ),
           ),

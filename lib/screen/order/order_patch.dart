@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'order_appbar.dart';
+import 'order_circle.dart';
 import 'order_information.dart';
 
 class OrderPatch extends StatefulWidget {
@@ -77,14 +78,18 @@ class _OrderPatchState extends State<OrderPatch> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Circle(
-                                imgPath: "assets/order_shali.png",
-                                text: "SHALI"),
+                              imgPath: "assets/order_shali.png",
+                              text: "SHALI",
+                              smill: false,
+                            ),
                             SizedBox(
                               width: 50,
                             ),
                             Circle(
-                                imgPath: "assets/order_shali.png",
-                                text: "SHALI")
+                              imgPath: "assets/order_shali.png",
+                              text: "SHALI",
+                              smill: false,
+                            )
                           ],
                         ),
                         SizedBox(
@@ -94,11 +99,18 @@ class _OrderPatchState extends State<OrderPatch> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Circle(
-                                imgPath: "assets/order_obi.png", text: "OBI"),
+                              imgPath: "assets/order_obi.png",
+                              text: "OBI",
+                              smill: false,
+                            ),
                             SizedBox(
                               width: 50,
                             ),
-                            Circle(imgPath: "assets/order_obi.png", text: "OBI")
+                            Circle(
+                              imgPath: "assets/order_obi.png",
+                              text: "OBI",
+                              smill: false,
+                            )
                           ],
                         ),
                         SizedBox(
@@ -116,14 +128,18 @@ class _OrderPatchState extends State<OrderPatch> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Circle(
-                                imgPath: "assets/order_buzzy.png",
-                                text: "BUZZY"),
+                              imgPath: "assets/order_buzzy.png",
+                              text: "BUZZY",
+                              smill: false,
+                            ),
                             SizedBox(
                               width: 50,
                             ),
                             Circle(
-                                imgPath: "assets/order_buzzy.png",
-                                text: "BUZZY")
+                              imgPath: "assets/order_buzzy.png",
+                              text: "BUZZY",
+                              smill: false,
+                            )
                           ],
                         ),
                       ],
@@ -249,44 +265,44 @@ class _OrderPatchState extends State<OrderPatch> {
   }
 }
 
-class Circle extends StatelessWidget {
-  const Circle({Key key, @required this.imgPath, @required this.text})
-      : super(key: key);
-  final String imgPath;
-  final String text;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      height: 200,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.white,
-        border: Border.all(width: 5.0, color: Colors.white),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 120,
-            height: 120,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(imgPath),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            text,
-            style: GoogleFonts.montserrat(
-                textStyle: TextStyle(color: Color(0xFF424648), fontSize: 20)),
-          )
-        ],
-      ),
-    );
-  }
-}
+// class Circle extends StatelessWidget {
+//   const Circle({Key key, @required this.imgPath, @required this.text})
+//       : super(key: key);
+//   final String imgPath;
+//   final String text;
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       width: 200,
+//       height: 200,
+//       decoration: BoxDecoration(
+//         shape: BoxShape.circle,
+//         color: Colors.white,
+//         border: Border.all(width: 5.0, color: Colors.white),
+//       ),
+//       child: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           Container(
+//             width: 120,
+//             height: 120,
+//             decoration: BoxDecoration(
+//               image: DecorationImage(
+//                 image: AssetImage(imgPath),
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//           ),
+//           SizedBox(
+//             height: 10,
+//           ),
+//           Text(
+//             text,
+//             style: GoogleFonts.montserrat(
+//                 textStyle: TextStyle(color: Color(0xFF424648), fontSize: 20)),
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
