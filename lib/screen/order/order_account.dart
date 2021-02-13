@@ -179,7 +179,7 @@ class _OrderAccountState extends State<OrderAccount> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     // double h = 900;
-    List<bool> colorStatus = [false, false, true, false];
+    List<bool> colorStatus = [false, false, false, true];
     Widget infoInput() {
       return Container(
           decoration: BoxDecoration(
