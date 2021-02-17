@@ -326,7 +326,7 @@ class _HomeBookingState extends State<HomeBooking>
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h = 900;
+    double h = 1100;
 
     Widget edit(title, control) {
       return Column(
@@ -370,7 +370,7 @@ class _HomeBookingState extends State<HomeBooking>
           top: 0,
           child: Container(
             padding: EdgeInsets.only(
-                top: windowsSizeboxHightSize(100), left: 30, right: 10),
+                top: windowsSizeboxHightSize(200), left: 30, right: 10),
             height: h,
             width: w / 3,
             color: Colors.white,
@@ -492,7 +492,7 @@ class _HomeBookingState extends State<HomeBooking>
             padding: EdgeInsets.only(
                 left: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
                 right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
-                top: windowsSizeboxHightSize(100)),
+                top: windowsSizeboxHightSize(200)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -501,7 +501,7 @@ class _HomeBookingState extends State<HomeBooking>
                   style: GoogleFonts.montserrat(
                     textStyle: TextStyle(
                       fontSize: windows_width_large_size(w),
-                      color: Color(0xFF426248),
+                      color: Color(0xFF424648),
                     ),
                   ),
                 ),

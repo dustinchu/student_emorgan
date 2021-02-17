@@ -10,7 +10,7 @@ class CircularContainer extends StatelessWidget {
                           height: 40,
                           decoration: new BoxDecoration(
                             // color:Colors.pink,
-                            color: Color(0x80F2F2F2), // 底色
+                            color: Color(0x807A82A7), // 底色
                             borderRadius:
                                 new BorderRadius.circular((20.0)), // 圆角度
                           ),

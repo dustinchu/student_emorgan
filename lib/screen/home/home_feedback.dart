@@ -26,7 +26,7 @@ class _HomeFeedbackState extends State<HomeFeedback>
         Container(
           padding: EdgeInsets.symmetric(vertical: 50),
           width: w,
-          height: 500,
+          height: 600,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/feedback.png"),
@@ -43,7 +43,7 @@ class _HomeFeedbackState extends State<HomeFeedback>
                 child: Row(
                   children: [
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(

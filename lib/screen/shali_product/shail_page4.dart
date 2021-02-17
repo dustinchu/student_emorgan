@@ -34,37 +34,40 @@ try to read A’s emotion
       width: w,
       height: h,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: w / 3 - 150, vertical: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Setp(
-              title: "Step 1.",
-              imgPath: "assets/product_step1.png",
-              msg: step1Msg,
-            ),
-            Setp(
-              title: "Step 2.",
-              imgPath: "assets/product_step2.png",
-              msg: step2Msg,
-            ),
-            Setp(
-              title: "Step 3.",
-              imgPath: "assets/product_step3.png",
-              msg: step3Msg,
-            ),
-            Setp(
-              title: "Step 4.",
-              imgPath: "assets/product_step4.png",
-              msg: step4Msg,
-            ),
-            Setp(
-              title: "Step 5.",
-              imgPath: "assets/product_step5.png",
-              msg: step5Msg,
-            ),
-          ],
+        padding: EdgeInsets.symmetric(horizontal: w / 3 - 100, vertical: 20),
+        child: Padding(
+          padding: const EdgeInsets.only(top:20,left:50),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Setp(
+                title: "Step 1.",
+                imgPath: "assets/product_step1.png",
+                msg: step1Msg,
+              ),
+              Setp(
+                title: "Step 2.",
+                imgPath: "assets/product_step2.png",
+                msg: step2Msg,
+              ),
+              Setp(
+                title: "Step 3.",
+                imgPath: "assets/product_step3.png",
+                msg: step3Msg,
+              ),
+              Setp(
+                title: "Step 4.",
+                imgPath: "assets/product_step4.png",
+                msg: step4Msg,
+              ),
+              Setp(
+                title: "Step 5.",
+                imgPath: "assets/product_step5.png",
+                msg: step5Msg,
+              ),
+            ],
+          ),
         ),
       ),
     );

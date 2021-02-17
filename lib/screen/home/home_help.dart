@@ -19,9 +19,9 @@ class _HomeHelpState extends State<HomeHelp>
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h = 900;
+    double h = 1100;
     List<Widget> stepList = [
-      step("Step 1.", "assets/step1.png", "Book a counseling \nOnline ", "", "",
+      step("Step 1.", "assets/step1.png", "Book a counseling", "Online", "",
           w),
       step("Step 2.", "assets/step2.png", "Get the consent and",
           "emorgan-purchse code", "from the psychologist", w),
@@ -195,7 +195,7 @@ class _HomeHelpState extends State<HomeHelp>
           children: [
             Expanded(child: Container()),
             Container(
-              padding: EdgeInsets.only(top: 200),
+              padding: EdgeInsets.only(top: 250),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -226,7 +226,7 @@ class _HomeHelpState extends State<HomeHelp>
               width: 100,
             ),
             Container(
-              padding: EdgeInsets.only(top: 200),
+              padding: EdgeInsets.only(top: 250),
               child: Text(
                 '''We understand that when you come to this website, you want a better solution. There might
 be some problems with you and your partner.

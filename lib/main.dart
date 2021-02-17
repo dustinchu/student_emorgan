@@ -11,6 +11,7 @@ import 'screen/obi_product/obi_product_screen.dart';
 import 'screen/order/order_information.dart';
 import 'screen/order/order_patch.dart';
 import 'screen/order/order_shopping_code.dart';
+import 'screen/shali_product/shali_product_screen.dart';
 
 void main() {
   setPathUrlStrategy();
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
           //   ),
           // );
           home: HomeScreen()),
-      // home: Scaffold(body: OrderImformation())),
+      // home: ShaliProductScreen()),
     );
   }
 }

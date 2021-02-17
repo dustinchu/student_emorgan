@@ -58,7 +58,7 @@ class _HomeProductBannerState extends State<HomeProductBanner>
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h = 900;
+    double h = 1100;
     return Stack(
       children: [
         Container(
@@ -187,7 +187,7 @@ class _InnerLayoutState extends State<InnerLayout> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h = 900;
+    double h = 1100;
     return Container(
       child: Container(
         padding: EdgeInsets.only(left: 26, right: 26, bottom: 50),

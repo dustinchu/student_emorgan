@@ -20,7 +20,7 @@ class _HomeAboutState extends State<HomeAbout>
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 900;
+    double h = 1100;
     Widget participation(String t1, String t2) {
       return Row(
         mainAxisSize: MainAxisSize.min,
@@ -67,7 +67,7 @@ class _HomeAboutState extends State<HomeAbout>
 
     return Container(
       width: w,
-      height: 900,
+      height: 1100,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/help.png"),
@@ -84,7 +84,7 @@ class _HomeAboutState extends State<HomeAbout>
               children: [
                 Container(
                   width: (w / 3) * 2,
-                  height: 755,
+                  height: 900,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/people.png"),
@@ -93,7 +93,7 @@ class _HomeAboutState extends State<HomeAbout>
                   ),
                 ),
                 Container(
-                  height: 140,
+                  height: 200,
                   child: Row(
                     children: [
                       Expanded(
@@ -169,15 +169,15 @@ class _HomeAboutState extends State<HomeAbout>
                       height: 50,
                     ),
                     Text(
-                      '''Emorgan wish every couple has another
+                      '''Emorgan wishes every couple has another
 chance to love again.
 \n
 We care about human mental needs.
 We focus on development of biomedical
 technology and materials.
 \n
-Emorgan has three sets of products:“Obi”,
-“Shali” and “Buzzy”.
+Emorgan has three sets of products:
+“Obi”,“Shali” and “Buzzy”.
 \n
 We are simultaneously developing
 more products that will help humans to be
