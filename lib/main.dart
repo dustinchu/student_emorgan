@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
           //     child: Scaffold(body: HomeScreen()),
           //   ),
           // );
-          // home: HomeScreen()),
-      home: ShaliProductScreen()),
+          home: HomeScreen()),
+      // home: ShaliProductScreen()),
     );
   }
 }
