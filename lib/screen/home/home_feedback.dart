@@ -26,7 +26,7 @@ class _HomeFeedbackState extends State<HomeFeedback>
         Container(
           padding: EdgeInsets.symmetric(vertical: 50),
           width: w,
-          height: 600,
+          height: 700,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/feedback.png"),

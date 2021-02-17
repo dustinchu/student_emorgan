@@ -111,14 +111,14 @@ class _HomeContactState extends State<HomeContact>
 
     return Container(
       width: w,
-      height: 1100,
+      height: 1300,
       child: Stack(
         children: [
           Container(
             padding: EdgeInsets.symmetric(
                 vertical: 50, horizontal: windowsPaddingWidthSize(100)),
             width: w,
-            height: 1100,
+            height: 1300,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/help.png"),

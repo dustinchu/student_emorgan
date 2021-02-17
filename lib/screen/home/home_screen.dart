@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool scrollStatus = true;
   void scrollPageNext() {
     pageIndex += 1;
-    pageAnimate += 1100;
+    pageAnimate += 1300;
 
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void scrollPageBack() {
     pageIndex -= 1;
-    pageAnimate -= 1100;
+    pageAnimate -= 1300;
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
         duration: Duration(seconds: 1), curve: Curves.ease);
@@ -267,9 +267,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         HomeContact(
                           upBtn: upBtn,
                         ),
-                          HomeAbout(
-                      upBtn: upBtn,
-                    ),
+                        HomeAbout(
+                          upBtn: upBtn,
+                        ),
+                        // Container(
+                        //   width: MediaQuery.of(context).size.width,
+                        //   height: 300,
+                        //   decoration: BoxDecoration(
+                        //     image: DecorationImage(
+                        //       image: AssetImage("assets/help.png"),
+                        //       fit: BoxFit.cover,
+                        //     ),
+                        //   ),
+                        // )
                       ],
                     ),
 

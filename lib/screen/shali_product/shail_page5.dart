@@ -9,25 +9,9 @@ class ShaliPage5 extends StatelessWidget {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = 700;
-    String step1Msg = '''The power leads would be coated by
-PVDF.  While blood is flowing in vein,
-it will move the leads back and forth
-to generate electricity.''';
-    String step2Msg = '''4 forks are made of this material. 
-When implanting EMORGAN, retract
-the protective sheath outside of the
-pacemaker, and the forks will 
-automatically open to hook on the 
-body destination.''';
-    String step3Msg = '''They have good affinity with 
-organisms and does not produce 
-toxic corrosion and decomposition 
-substance. Moreover, They don’t 
-cause biological cell mutation, 
-necrosis, inflammation and growth 
-Granulation. According to the above, 
-the materials can be used for long-
-term in human body.''';
+    String step1Msg = '''The power leads would be coated by PVDF.  While blood is flowing in vein, it will move the leads back and forth to generate electricity.''';
+    String step2Msg = '''4 forks are made of this material. When implanting EMORGAN, retract the protective sheath outside of the pacemaker, and the forks will  automatically open to hook on the  body destination.''';
+    String step3Msg = '''They have good affinity with  organisms and does not produce  toxic corrosion and decomposition  substance. Moreover, They don’t  cause biological cell mutation, necrosis, inflammation and growth Granulation. According to the above, the materials can be used for long-term in human body.''';
 
     return Container(
       width: w,

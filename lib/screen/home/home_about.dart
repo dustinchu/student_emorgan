@@ -20,7 +20,7 @@ class _HomeAboutState extends State<HomeAbout>
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 1100;
+    double h = 1300;
     Widget participation(String t1, String t2) {
       return Row(
         mainAxisSize: MainAxisSize.min,
@@ -67,7 +67,7 @@ class _HomeAboutState extends State<HomeAbout>
 
     return Container(
       width: w,
-      height: 1100,
+      height: 1300,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/help.png"),
@@ -84,7 +84,7 @@ class _HomeAboutState extends State<HomeAbout>
               children: [
                 Container(
                   width: (w / 3) * 2,
-                  height: 900,
+                  height: 1000,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/people.png"),
@@ -93,7 +93,7 @@ class _HomeAboutState extends State<HomeAbout>
                   ),
                 ),
                 Container(
-                  height: 200,
+                  height: 300,
                   child: Row(
                     children: [
                       Expanded(

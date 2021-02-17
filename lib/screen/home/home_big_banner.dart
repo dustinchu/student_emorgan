@@ -14,7 +14,7 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h = 1100;
+    double h = 1300;
     return Stack(
       children: [
         Container(

@@ -26,7 +26,7 @@ class _HomeImagePlayState extends State<HomeImagePlay>
     double w = MediaQuery.of(context).size.width;
     return Container(
         width: w,
-        height: 500,
+        height: 600,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/help.png"),

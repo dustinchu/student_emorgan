@@ -127,7 +127,7 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
             padding:
                 EdgeInsets.symmetric(horizontal: w / 3 - 100, vertical: 70),
             child: Padding(
-              padding: const EdgeInsets.only(left:50),
+              padding: const EdgeInsets.only(left: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -330,24 +330,23 @@ The shape idea is from human salivary glands. The main form is a long ellipse wi
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                          child: msg(
-                              "Material",
-                              '''Biomedical Metal
+                      msg(
+                          "Material",
+                          '''Biomedical Metal
 Biomedical Ceramics
 Biomedical Polymer
 
 All the materials are also non-toxic and
 biological.''',
-                              w)),
-                      Expanded(
-                          child: msg(
-                              "Technology",
-                              '''Artificial aromatic compounds
+                          w),
+                      Expanded(child: Container()),
+                      msg(
+                          "Technology",
+                          '''Artificial aromatic compounds
 
 Providing the taste which was transferred from
 tear ingredient by Shali patch.''',
-                              w))
+                          w)
                     ],
                   )
                 ],
