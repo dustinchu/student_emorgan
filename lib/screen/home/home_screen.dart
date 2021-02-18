@@ -50,18 +50,23 @@ class _HomeScreenState extends State<HomeScreen> {
   int pageIndex = 0;
   double pageAnimate = 0;
   bool scrollStatus = true;
-  void scrollPageNext() {
+  void scrollPageNext(h) {
+    if (pageIndex == 0) pageAnimate += 1300 + ((h - 1300) / 2);
+    else  pageAnimate += 1300 ;
+    // pageAnimate += 1300;
+    // else
+    // pageAnimate += 1700;
     pageIndex += 1;
-    pageAnimate += 1300;
 
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
         duration: Duration(seconds: 1), curve: Curves.ease);
   }
 
-  void scrollPageBack() {
+  void scrollPageBack(h) {
     pageIndex -= 1;
     pageAnimate -= 1300;
+    // pageAnimate -= 1700;
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
         duration: Duration(seconds: 1), curve: Curves.ease);
@@ -157,11 +162,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     // print("Y:${pointerSignal.scrollDelta.dy}");
 
                     if (pointerSignal.scrollDelta.dy > 0 &&
-                        pageAnimate != 9900) {
-                      scrollPageNext();
+                        pageAnimate != 14300) {
+                      print("?");
+                      scrollPageNext(h);
                     }
                     if (pointerSignal.scrollDelta.dy < 0 && pageAnimate != 0) {
-                      scrollPageBack();
+                      scrollPageBack(h);
                     }
                     //延遲兩秒
                     await Future.delayed(Duration(milliseconds: 1500));
