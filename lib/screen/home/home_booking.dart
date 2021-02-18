@@ -4,6 +4,7 @@ import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/provider/book_state.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
 import 'package:provider/provider.dart';
 
@@ -30,6 +31,8 @@ class _HomeBookingState extends State<HomeBooking>
   bool partnerFirstName = false;
   bool partnerLastName = false;
   bool isDate = false;
+  //如果週日 之後的日期都要+1 預設+0
+  int dateIndex = 0;
   TextEditingController firstNameTextEditingController;
   TextEditingController lastNameTextEditingController;
   TextEditingController emailAddressTextEditingController;
@@ -130,6 +133,19 @@ class _HomeBookingState extends State<HomeBooking>
         ];
       }
     }
+  }
+
+  //得到日期
+  String getDateStr(int addDate) {
+    String date = DateFormat("E.", "en_US")
+        .format(DateTime.now().add(new Duration(days: addDate + dateIndex)));
+    if (date == "Sun.") {
+      date = DateFormat("E.", "en_US").format(
+          DateTime.now().add(new Duration(days: addDate + dateIndex + 1)));
+      dateIndex = 1;
+    }
+
+    return date;
   }
 
   //循環list把點擊的那一個index bool改變 給下拉選單用

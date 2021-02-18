@@ -11,7 +11,11 @@ import 'order_account.dart';
 import 'order_appbar.dart';
 
 class OrderImformation extends StatefulWidget {
-  OrderImformation({Key key}) : super(key: key);
+  OrderImformation(
+      {Key key, @required this.leftImagePath, @required this.rightImagePath})
+      : super(key: key);
+  final String leftImagePath;
+  final String rightImagePath;
   @override
   _OrderImformationState createState() => _OrderImformationState();
 }
@@ -274,10 +278,8 @@ class _OrderImformationState extends State<OrderImformation>
         ];
       }
     });
-     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OrderAccount()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => OrderAccount()));
   }
 
   @override
@@ -700,7 +702,7 @@ class _OrderImformationState extends State<OrderImformation>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-               Expanded(child: Container()),
+              Expanded(child: Container()),
               Text(
                 "Personal Information",
                 style: GoogleFonts.montserrat(
@@ -711,7 +713,7 @@ class _OrderImformationState extends State<OrderImformation>
                 height: 50,
               ),
               LeftInput(
-                imagePath: 'assets/order_people_left1.png',
+                imagePath: widget.leftImagePath,
                 firstNameTextEditingController: firstNameTextEditingController1,
                 idNumberTextEditingController: idNumberTextEditingController1,
                 emailAddressTextEditingController:
@@ -729,7 +731,7 @@ class _OrderImformationState extends State<OrderImformation>
                 color: Colors.white,
               ),
               LeftInput(
-                imagePath: 'assets/order_people_left2.png',
+                imagePath: widget.rightImagePath,
                 firstNameTextEditingController: firstNameTextEditingController2,
                 idNumberTextEditingController: idNumberTextEditingController2,
                 emailAddressTextEditingController:
@@ -741,7 +743,7 @@ class _OrderImformationState extends State<OrderImformation>
                 phoneNumberTextEditingController:
                     phoneNumberTextEditingController2,
               ),
-               Expanded(child: Container()),
+              Expanded(child: Container()),
             ],
           ));
     }
@@ -848,7 +850,7 @@ class _OrderImformationState extends State<OrderImformation>
                   )
                 ],
               ),
-               Expanded(child: Container()),
+              Expanded(child: Container()),
             ],
           ),
         ),

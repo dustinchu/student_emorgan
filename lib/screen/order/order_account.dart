@@ -1,9 +1,11 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/menu_btn.dart';
 import 'package:emorgan/common/padding_size.dart';
+import 'package:emorgan/provider/account.dart';
 import 'package:emorgan/screen/buy/buy_loding.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import 'order_appbar.dart';
 import 'order_circle.dart';
@@ -178,6 +180,7 @@ class _OrderAccountState extends State<OrderAccount> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
+    var accountStatus = Provider.of<AccountStatus>(context);
     // double h = 900;
     List<bool> colorStatus = [false, false, false, true];
     Widget infoInput() {
@@ -320,15 +323,18 @@ class _OrderAccountState extends State<OrderAccount> {
                   Column(
                     children: [
                       Circle(
-                        imgPath: "assets/order_buzzy.png",
-                        text: "BUZZY",
+                        isLeft: true,
+                        isClick: false,
+                        isDefault: true,
+                        imgPath:accountStatus.getAccount1ImangePath,
+                        text: accountStatus.getAccount1Name,
                         smill: true,
                       ),
                       SizedBox(
                         height: 30,
                       ),
                       Text(
-                        "Schiele",
+                        "Human A",
                         style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
                               fontSize: windows_width_medium_size(w),
@@ -343,15 +349,18 @@ class _OrderAccountState extends State<OrderAccount> {
                   Column(
                     children: [
                       Circle(
-                        imgPath: "assets/order_buzzy.png",
-                        text: "BUZZY",
+                          isLeft: true,
+                        isClick: false,
+                        isDefault: true,
+                        imgPath: accountStatus.getAccount2ImangePath,
+                        text: accountStatus.getAccount2Name,
                         smill: true,
                       ),
                       SizedBox(
                         height: 30,
                       ),
                       Text(
-                        "Wen-Chien",
+                        "Human B",
                         style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
                               fontSize: windows_width_medium_size(w),
@@ -378,11 +387,11 @@ class _OrderAccountState extends State<OrderAccount> {
               SizedBox(
                 height: 10,
               ),
-              order_dobdy("Shali", "0.99 BTC"),
+              order_dobdy(accountStatus.getAccount1Name, "0.99 BTC"),
               SizedBox(
                 height: 30,
               ),
-              order_dobdy("Obi", "0.99 BTC"),
+              order_dobdy(accountStatus.getAccount2Name, "0.99 BTC"),
               SizedBox(
                 height: 30,
               ),

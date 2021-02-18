@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+import 'provider/account.dart';
 import 'provider/banner.dart';
 import 'provider/book_state.dart';
 import 'screen/buzzy_product/buzzy_product_screen.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(value: BookStatus()),
         ChangeNotifierProvider.value(value: BannerStatus()),
+        ChangeNotifierProvider.value(value: AccountStatus()),
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -39,7 +41,7 @@ class MyApp extends StatelessWidget {
           //   ),
           // );
           home: HomeScreen()),
-      // home: OrderAccount()),
+      // home: OrderPatch()),
     );
   }
 }

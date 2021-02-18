@@ -30,6 +30,7 @@ dependencies:
   flutter_inappwebview: ^4.0.0+4
   flutter_modular: ^2.0.1
   google_fonts: ^1.1.2
+  intl: ^0.16.1
   mailer: ^3.3.0
   pin_input_text_field: ^3.3.0
   pointer_interceptor: ^0.8.0+2

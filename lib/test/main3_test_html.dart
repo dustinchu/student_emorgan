@@ -1,12 +1,5 @@
-import 'dart:math';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-
-const numberOfItems = 5001;
-const minItemHeight = 20.0;
-const maxItemHeight = 150.0;
-const scrollDuration = Duration(seconds: 2);
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(ScrollablePositionedListExample());
@@ -31,47 +24,33 @@ class Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(initialPage: 1);
+    int dateIndex = 0;
+    //得到日期
+    String getDateStr(int addDate) {
+      String date = DateFormat("E.", "en_US")
+          .format(DateTime.now().add(new Duration(days: addDate + dateIndex)));
+      if (date == "Sun.") {
+        date = DateFormat("E.", "en_US").format(
+            DateTime.now().add(new Duration(days: addDate + dateIndex + 1)));
+        dateIndex = 1;
+      }
+
+      return date;
+    }
+
     return Scaffold(
       body: Container(
-          child: Listener(
-        onPointerSignal: (pointerSignal) {
-          if (pointerSignal is PointerScrollEvent) {
-            print(pointerSignal.scrollDelta.dx);
-            print("AA${pointerSignal.scrollDelta.dy}");
-            // do something when scrolled
-          }
-        },
-        child: ListView(
-          physics: const NeverScrollableScrollPhysics(),
-          controller: controller,
-          scrollDirection: Axis.vertical,
-          children: [
-            Container(
-              height: 900,
-              color: Colors.redAccent,
-            ),
-            Container(
-              height: 900,
-              color: Colors.purpleAccent,
-            ),
-            Container(
-              height: 900,
-              color: Colors.amberAccent,
-            ),
-            Container(
-              height: 900,
-              color: Colors.blueAccent,
-            ),
-            Container(
-              height: 900,
-              color: Colors.pinkAccent,
-            ),
-            Container(
-              height: 900,
-              color: Colors.greenAccent,
-            )
-          ],
+          child: Center(
+        child: FlatButton(
+          onPressed: () {
+            print("Date===${getDateStr(1)}");
+            print("Date===${getDateStr(2)}");
+            print("Date===${getDateStr(3)}");
+            print("Date===${getDateStr(4)}");
+            print("Date===${getDateStr(5)}");
+            print("Date===${getDateStr(6)}");
+          },
+          child: Text("!@3213"),
         ),
       )),
     );

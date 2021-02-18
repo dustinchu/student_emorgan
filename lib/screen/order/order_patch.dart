@@ -1,5 +1,7 @@
+import 'package:emorgan/provider/account.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import 'order_appbar.dart';
 import 'order_circle.dart';
@@ -14,6 +16,150 @@ class OrderPatch extends StatefulWidget {
 
 class _OrderPatchState extends State<OrderPatch> {
   bool nextStatus = false;
+  String leftClick = "";
+  String rightClick = "";
+  String leftImagePath = "assets/patch_init.png";
+  String rightImagePath = "assets/patch_init.png";
+  String pushPageImagePathLeft = "";
+  String pushPageImagePathRight = "";
+  bool clickDefault = true;
+  void leftShali() {
+    leftClick = "shali";
+    if (rightClick == "buzzy") {
+      rightClick = "";
+    }
+    if (rightClick == "") {
+      leftImagePath = "assets/patch_l_shali_left.png";
+      rightImagePath = "assets/patch_l_shali_right.png";
+    } else if (rightClick == "shali") {
+      leftImagePath = "assets/patch_shali_and_shali_left.png";
+      rightImagePath = "assets/patch_shali_and_shali_right.png";
+
+      pushPageImagePathLeft = "info_shali_and_shali_left.png";
+      pushPageImagePathRight = "info_shali_and_shali_right.png";
+    } else if (rightClick == "obi") {
+      leftImagePath = "assets/patch_shali_and_obi_left.png";
+      rightImagePath = "assets/patch_shali_and_obi_right.png";
+
+      pushPageImagePathLeft = "info_shali_and_obi_left.png";
+      pushPageImagePathRight = "info_shali_and_obi_right.png";
+    } else if (rightClick == "buzzy") {
+      leftImagePath = "assets/patch_buzzy_left.png";
+      rightImagePath = "assets/patch_buzzy_right.png";
+
+      pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
+      pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+    }
+      Provider.of<AccountStatus>(context, listen: false).setAccountName1("Shali","assets/order_shali.png");
+                          
+    setState(() {});
+  }
+
+  void rightShali() {
+    rightClick = "shali";
+    if (leftClick == "buzzy") {
+      leftClick = "";
+    }
+    if (leftClick == "") {
+      leftImagePath = "assets/patch_r_shali_left.png";
+      rightImagePath = "assets/patch_r_shali_right.png";
+    } else if (leftClick == "shali") {
+      leftImagePath = "assets/patch_shali_and_shali_left.png";
+      rightImagePath = "assets/patch_shali_and_shali_right.png";
+
+      pushPageImagePathLeft = "info_shali_and_shali_left.png";
+      pushPageImagePathRight = "info_shali_and_shali_right.png";
+    } else if (leftClick == "obi") {
+      leftImagePath = "assets/patch_obi_and_shali_left.png";
+      rightImagePath = "assets/patch_obi_and_shali_right.png";
+
+      pushPageImagePathLeft = "info_obi_and_shali_left.png";
+      pushPageImagePathRight = "info_obi_and_shali_right.png";
+    } else if (rightClick == "buzzy") {
+      leftImagePath = "assets/patch_buzzy_left.png";
+      rightImagePath = "assets/patch_buzzy_right.png";
+
+      pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
+      pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+    }
+
+      Provider.of<AccountStatus>(context, listen: false).setAccountName2("Shali","assets/order_shali.png");
+    setState(() {});
+  }
+
+  void leftObi() {
+    leftClick = "obi";
+    if (rightClick == "buzzy") {
+      rightClick = "";
+    }
+    if (rightClick == "") {
+      leftImagePath = "assets/patch_l_obi_left.png";
+      rightImagePath = "assets/patch_l_obi_right.png";
+    } else if (rightClick == "shali") {
+      leftImagePath = "assets/patch_obi_and_shali_left.png";
+      rightImagePath = "assets/patch_obi_and_shali_right.png";
+
+      pushPageImagePathLeft = "info_obi_and_shali_left.png";
+      pushPageImagePathRight = "info_obi_and_shali_right.png";
+    } else if (rightClick == "obi") {
+      leftImagePath = "assets/patch_obi_and_obi_left.png";
+      rightImagePath = "assets/patch_obi_and_obi_right.png";
+
+      pushPageImagePathLeft = "info_obi_and_obi_left.png";
+      pushPageImagePathRight = "info_obi_and_obi_right.png";
+    } else if (rightClick == "buzzy") {
+      leftImagePath = "assets/patch_buzzy_left.png";
+      rightImagePath = "assets/patch_buzzy_right.png";
+
+      pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
+      pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+    }
+      Provider.of<AccountStatus>(context, listen: false).setAccountName1("obi","assets/order_obi.png");
+    setState(() {});
+  }
+
+  void rightObi() {
+    rightClick = "obi";
+    if (leftClick == "buzzy") {
+      leftClick = "";
+    }
+    if (leftClick == "") {
+      leftImagePath = "assets/patch_r_obi_left.png";
+      rightImagePath = "assets/patch_r_obi_right.png";
+    } else if (leftClick == "shali") {
+      leftImagePath = "assets/patch_shali_and_shali_left.png";
+      rightImagePath = "assets/patch_shali_and_shali_right.png";
+
+      pushPageImagePathLeft = "info_shali_and_obi_left.png";
+      pushPageImagePathRight = "info_shali_and_obi_right.png";
+    } else if (leftClick == "obi") {
+      leftImagePath = "assets/patch_obi_and_obi_left.png";
+      rightImagePath = "assets/patch_obi_and_obi_right.png";
+
+      pushPageImagePathLeft = "info_obi_and_obi_left.png";
+      pushPageImagePathRight = "info_obi_and_obi_right.png";
+    } else if (rightClick == "buzzy") {
+      leftImagePath = "assets/patch_buzzy_left.png";
+      rightImagePath = "assets/patch_buzzy_right.png";
+
+      pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
+      pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+    }
+     Provider.of<AccountStatus>(context, listen: false).setAccountName2("obi","assets/order_obi.png");
+    setState(() {});
+  }
+
+  void buzzy() {
+    rightClick = "buzzy";
+    leftClick = "buzzy";
+    leftImagePath = "assets/patch_buzzy_left.png";
+    rightImagePath = "assets/patch_buzzy_right.png";
+    pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
+    pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+ Provider.of<AccountStatus>(context, listen: false).setbuzzy("BUZZY","assets/order_buzzy.png");
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -79,6 +225,10 @@ class _OrderPatchState extends State<OrderPatch> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Circle(
+                              isDefault: clickDefault,
+                              isClick: leftClick == "shali",
+                              isLeft: true,
+                              upBtn: leftShali,
                               imgPath: "assets/order_shali.png",
                               text: "SHALI",
                               smill: false,
@@ -87,6 +237,10 @@ class _OrderPatchState extends State<OrderPatch> {
                               width: 50,
                             ),
                             Circle(
+                              isDefault: clickDefault,
+                              isClick: rightClick == "shali",
+                              isLeft: false,
+                              upBtn: rightShali,
                               imgPath: "assets/order_shali.png",
                               text: "SHALI",
                               smill: false,
@@ -100,6 +254,10 @@ class _OrderPatchState extends State<OrderPatch> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Circle(
+                              isDefault: clickDefault,
+                              isClick: leftClick == "obi",
+                              isLeft: true,
+                              upBtn: leftObi,
                               imgPath: "assets/order_obi.png",
                               text: "OBI",
                               smill: false,
@@ -108,6 +266,10 @@ class _OrderPatchState extends State<OrderPatch> {
                               width: 50,
                             ),
                             Circle(
+                              isDefault: clickDefault,
+                              isClick: rightClick == "obi",
+                              isLeft: false,
+                              upBtn: rightObi,
                               imgPath: "assets/order_obi.png",
                               text: "OBI",
                               smill: false,
@@ -129,6 +291,10 @@ class _OrderPatchState extends State<OrderPatch> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Circle(
+                              isDefault: clickDefault,
+                              isClick: leftClick == "buzzy",
+                              isLeft: true,
+                              upBtn: buzzy,
                               imgPath: "assets/order_buzzy.png",
                               text: "BUZZY",
                               smill: false,
@@ -137,6 +303,10 @@ class _OrderPatchState extends State<OrderPatch> {
                               width: 50,
                             ),
                             Circle(
+                              isDefault: clickDefault,
+                              isClick: rightClick == "buzzy",
+                              isLeft: false,
+                              upBtn: buzzy,
                               imgPath: "assets/order_buzzy.png",
                               text: "BUZZY",
                               smill: false,
@@ -168,9 +338,8 @@ class _OrderPatchState extends State<OrderPatch> {
                               height: 550,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/order_people_left1.png"),
-                                  fit: BoxFit.cover,
+                                  image: AssetImage(leftImagePath),
+                                  fit: BoxFit.fill,
                                 ),
                               ),
                             ),
@@ -182,9 +351,8 @@ class _OrderPatchState extends State<OrderPatch> {
                               height: 550,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/order_people_right1.png"),
-                                  fit: BoxFit.cover,
+                                  image: AssetImage(rightImagePath),
+                                  fit: BoxFit.fill,
                                 ),
                               ),
                             ),
@@ -236,17 +404,26 @@ class _OrderPatchState extends State<OrderPatch> {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OrderImformation()));
+                    if (leftClick != "" && rightClick != "")
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OrderImformation(
+                                    leftImagePath: pushPageImagePathLeft,
+                                    rightImagePath: pushPageImagePathRight,
+                                  )));
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                     decoration: new BoxDecoration(
                       border: new Border.all(
-                          color: Color(0x80364146), width: 2), // 邊色寬度
-                      color: Colors.transparent, // 底色
+                          color: leftClick != "" && rightClick != ""
+                              ? Color(0xFF7A82A7)
+                              : Color(0x80364146),
+                          width: 2), // 邊色寬度
+                      color: leftClick != "" && rightClick != ""
+                          ? Color(0xFF7A82A7)
+                          : Colors.transparent, // 底色
                       borderRadius: new BorderRadius.circular((30)), // 圆角度
                     ),
                     child: Text(
@@ -254,8 +431,9 @@ class _OrderPatchState extends State<OrderPatch> {
                       style: GoogleFonts.montserrat(
                         textStyle: TextStyle(
                             fontSize: 18,
-                            color:
-                                nextStatus ? Colors.white : Color(0x80364146)),
+                            color: leftClick != "" && rightClick != ""
+                                ? Colors.white
+                                : Color(0x80364146)),
                       ),
                     ),
                   ),
