@@ -1,3 +1,4 @@
+import 'package:emorgan/screen/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,7 +21,7 @@ class OrderAppbar extends StatelessWidget {
           Expanded(child: Container()),
           status
               ? Container(
-                  color: Color(0xFFCFDDF9),
+                  color: Color(0xFF7A82A7),
                   height: 6,
                   width: 180,
                 )
@@ -44,21 +45,33 @@ class OrderAppbar extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  margin: EdgeInsets.only(left: 50, right: 10),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/logo.png"),
-                      fit: BoxFit.cover,
-                    ),
+                InkWell(
+                  onTap: (){
+                    print("????");
+                    MaterialPageRoute(builder: (context) => HomeScreen()); 
+                  },
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 50, right: 10),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/logo.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        width: 30,
+                        height: 30,
+                      ),
+                      Text(
+                        "Emorgan",
+                        style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                color: Color(0xFF7A82A7), fontSize: 32)),
+                      ),
+                    ],
                   ),
-                  width: 30,
-                  height: 30,
                 ),
-                Text("Emorgan",
-                style: GoogleFonts.montserrat(
-              textStyle:  TextStyle(color: Color(0xFF7A82A7), fontSize: 32)),
-            ),
                 Expanded(
                     child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 70),

@@ -73,7 +73,8 @@ class _OrderPatchState extends State<OrderPatch> {
                     color: Colors.transparent,
                     child: Column(
                       children: [
-                        title("Wen-Chien", "Schiele", 200, 50),
+                        Expanded(child: Container()),
+                        title("Human A", "Human B", 200, 50),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -142,6 +143,7 @@ class _OrderPatchState extends State<OrderPatch> {
                             )
                           ],
                         ),
+                        Expanded(child: Container()),
                       ],
                     ),
                   ),
@@ -153,10 +155,11 @@ class _OrderPatchState extends State<OrderPatch> {
                     color: Colors.white,
                     child: Column(
                       children: [
+                        Expanded(child: Container()),
                         SizedBox(
                           height: 100,
                         ),
-                        title("Wen-Chien", "Schiele", 350, 100),
+                        title("Human A", "Human B", 350, 100),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -184,9 +187,10 @@ class _OrderPatchState extends State<OrderPatch> {
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                            )
+                            ),
                           ],
-                        )
+                        ),
+                        Expanded(child: Container()),
                       ],
                     ),
                   ),

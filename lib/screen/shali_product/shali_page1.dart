@@ -2,6 +2,7 @@ import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/widgets/circular_container.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
+import 'package:emorgan/screen/order/order_shopping_code.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -79,7 +80,7 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
               child: Material(
                 child: InkWell(
                   onTap: () {
-                    print("btn;;;");
+                   MaterialPageRoute(builder: (context) => OrderShoppingCode());
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -114,7 +115,7 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
                   ),
                 ),
                 Text(
-                  "shali",
+                  "Shali",
                   style: GoogleFonts.montserrat(
                     textStyle:
                         TextStyle(fontSize: 32, color: Color(0xFF364146)),
@@ -150,8 +151,8 @@ DIMENSIONS
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            width: w / 5,
-                            height: w / 5 + 50,
+                                    width: w / 5 + 20,
+                            height: w / 5 + 70,
                           ),
                         ],
                       ),
@@ -161,9 +162,9 @@ DIMENSIONS
                       //(w-((w / 3 - 150)*2))得到中間頁面的寬度
                       // 白色區域中間(w-((w / 3 - 150)*2))/2,
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 3,
+                        top: ((w / 5 + 50) / 10) * 3-10,
                         //白色區域分成40等分
-                        left: (w - ((w / 3 - 150) * 2)) / 40 * 14,
+                        left: (w - ((w / 3 - 150) * 2)) / 40 * 12.3,
                         child: InkWell(
                             hoverColor: Colors.transparent,
                             onTap: () {},
@@ -182,9 +183,9 @@ DIMENSIONS
                       ),
                       //左二 hover
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 8,
+                        top: ((w / 5 + 50) / 10) * 7.6,
                         //白色區域分成40等分
-                        left: (w - ((w / 3 - 150) * 2)) / 40 * 17,
+                        left: (w - ((w / 3 - 150) * 2)) / 40 * 14,
                         child: InkWell(
                             hoverColor: Colors.transparent,
                             onTap: () {},
@@ -203,9 +204,9 @@ DIMENSIONS
                       ),
                       //右一Hover
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 3,
+                        top: ((w / 5 + 50) / 10) * 3-10,
                         //白色區域分成40等分
-                        right: (w - ((w / 3 - 150) * 2)) / 40 * 17,
+                        right: (w - ((w / 3 - 150) * 2)) / 40 * 14.3,
                         child: InkWell(
                             hoverColor: Colors.transparent,
                             onTap: () {},
@@ -224,9 +225,9 @@ DIMENSIONS
                       ),
                       //右二Hover
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 8,
+                        top: ((w / 5 + 50) / 10) * 7.8,
                         //白色區域分成40等分
-                        right: (w - ((w / 3 - 150) * 2)) / 40 * 13,
+                        right: (w - ((w / 3 - 150) * 2)) / 40 * 10.5,
                         child: InkWell(
                             hoverColor: Colors.transparent,
                             onTap: () {},
@@ -250,7 +251,7 @@ DIMENSIONS
                           duration: const Duration(milliseconds: 600),
                           child: forksStart
                               ? Product_left_hover(
-                                  lineWidth: line_left_width_size(w / 5),
+                                  lineWidth: line_left_width_size(w / 6),
                                   title: "Fixed Forks",
                                   body: '''\nThere will be 4 forks made
 of Nitinol with shape
@@ -268,7 +269,7 @@ the right position.''',
                           duration: const Duration(milliseconds: 600),
                           child: powerStart
                               ? Product_left_hover(
-                                  lineWidth: line_left_width_size(w / 5),
+                                  lineWidth: line_left_width_size(w / 6),
                                   title: "Blood Flow Power",
                                   body: '''\nWhile blood is flowing in
 vein, it will move the leads
@@ -286,7 +287,7 @@ electricity.''',
                             duration: const Duration(milliseconds: 600),
                             child: thermometeStart
                                 ? Product_Right_hover(
-                                    lineWidth: line_width_right_size2(w / 5),
+                                    lineWidth: line_width_right_size2(w / 6),
                                     title: "Thermomete",
                                     body: '''\nShali will enhance the taste 
 density while it detects
@@ -304,7 +305,7 @@ changed by emotion.
                           duration: const Duration(milliseconds: 600),
                           child: lightStart
                               ? Product_Right_hover(
-                                  lineWidth: line_width_right_size(w / 5),
+                                  lineWidth: line_width_right_size(w / 7),
                                   title: "Light Sign",
                                   body: '''\nDuring the operation,
 the light will remind
@@ -321,11 +322,10 @@ successful.''',
                   ),
                   title(
                       "Design",
-                      '''
-The shape idea is from human salivary glands. The main form is a long ellipse with smooth surface and tissue-friendly to avoidany danger during transplantation and removal.''',
+                      '''The shape idea is from human salivary glands. The main form is a long ellipse with smooth surface and tissue-friendly to avoidany danger during transplantation and removal.''',
                       w),
                   SizedBox(
-                    height: 40,
+                    height: 60,
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,

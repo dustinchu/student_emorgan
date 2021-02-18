@@ -700,6 +700,7 @@ class _OrderImformationState extends State<OrderImformation>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+               Expanded(child: Container()),
               Text(
                 "Personal Information",
                 style: GoogleFonts.montserrat(
@@ -728,7 +729,7 @@ class _OrderImformationState extends State<OrderImformation>
                 color: Colors.white,
               ),
               LeftInput(
-                imagePath: 'assets/order_people_left1.png',
+                imagePath: 'assets/order_people_left2.png',
                 firstNameTextEditingController: firstNameTextEditingController2,
                 idNumberTextEditingController: idNumberTextEditingController2,
                 emailAddressTextEditingController:
@@ -740,6 +741,7 @@ class _OrderImformationState extends State<OrderImformation>
                 phoneNumberTextEditingController:
                     phoneNumberTextEditingController2,
               ),
+               Expanded(child: Container()),
             ],
           ));
     }
@@ -763,6 +765,7 @@ class _OrderImformationState extends State<OrderImformation>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Expanded(child: Container()),
               Text(
                 "Booking Date",
                 style: GoogleFonts.montserrat(
@@ -844,7 +847,8 @@ class _OrderImformationState extends State<OrderImformation>
                     items: selectedList[5],
                   )
                 ],
-              )
+              ),
+               Expanded(child: Container()),
             ],
           ),
         ),

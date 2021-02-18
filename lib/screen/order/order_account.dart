@@ -194,6 +194,7 @@ class _OrderAccountState extends State<OrderAccount> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Expanded(child: Container()),
               Text(
                 "Enter Account Detail",
                 style: GoogleFonts.montserrat(
@@ -236,6 +237,7 @@ class _OrderAccountState extends State<OrderAccount> {
                 ccvTextEditingController: ccvTextEditingController,
                 billingTextEditingController: billingTextEditingController,
               ),
+               Expanded(child: Container()),
             ],
           ));
     }
@@ -306,6 +308,7 @@ class _OrderAccountState extends State<OrderAccount> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+               Expanded(child: Container()),
               orderTitleAndLine("Emorgan"),
               SizedBox(
                 height: 10,
@@ -425,7 +428,8 @@ class _OrderAccountState extends State<OrderAccount> {
                     ),
                   ),
                 ],
-              )
+              ),
+               Expanded(child: Container()),
             ],
           ),
         ),

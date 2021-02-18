@@ -75,7 +75,7 @@ DIMENSIONS
                   Positioned(
                     top: ((w / 5 + 50) / 10) * 2,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 21,
+                    left: (w - ((w / 3 - 150) * 2)) / 40 * 18,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                         onTap: () {},
@@ -94,9 +94,9 @@ DIMENSIONS
                   ),
                   //左二 hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 6.8,
+                    top: ((w / 5 + 50) / 10) * 6.7,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 13,
+                    left: (w - ((w / 3 - 150) * 2)) / 40 * 9.5,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                         onTap: () {},
@@ -115,9 +115,9 @@ DIMENSIONS
                   ),
                   //右一Hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 1.7,
+                    top: ((w / 5 + 50) / 10) * 1.4,
                     //白色區域分成40等分
-                    right: (w - ((w / 3 - 150) * 2)) / 40 * 13,
+                    right: (w - ((w / 3 - 150) * 2)) / 40 * 9.3,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                         onTap: () {},
@@ -136,9 +136,9 @@ DIMENSIONS
                   ),
                   //右二Hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 6.5,
+                    top: ((w / 5 + 50) / 10) * 6.7,
                     //白色區域分成40等分
-                    right: (w - ((w / 3 - 150) * 2)) / 40 * 19,
+                    right: (w - ((w / 3 - 150) * 2)) / 40 * 15,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                         onTap: () {},
@@ -169,7 +169,7 @@ DIMENSIONS
                       duration: const Duration(milliseconds: 600),
                       child: suctionStart
                           ? Product_left_hover(
-                              lineWidth: line_left1_patch_width_size(w / 5),
+                              lineWidth: line_left1_patch_width_size(w / 6.4),
                               title: "Tear Suction",
                               body: '''\nThere will be 4 forks made
 of Nitinol with shape
@@ -187,7 +187,7 @@ the right position.''',
                       duration: const Duration(milliseconds: 600),
                       child: cameraStart
                           ? Product_left_hover(
-                              lineWidth: line_left2_patch_width_size(w / 5),
+                              lineWidth: line_left2_patch_width_size(w / 8),
                               title: "Camera",
                               body: '''\nTIt detects user’s partner’s
 facial expression.''',
@@ -203,7 +203,7 @@ facial expression.''',
                       duration: const Duration(milliseconds: 600),
                       child: batteryStart
                           ? Product_Right_hover(
-                              lineWidth: line_right1_patch_width_size(w / 5),
+                              lineWidth: line_right1_patch_width_size(w / 8.5),
                               title: "Battery",
                               body: '''\nThe electric power is from
 the battery which can
@@ -216,13 +216,13 @@ for 14 years.
                   ),
 //                 //右二資訊
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 6.7),
+                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 7),
                     right: 0,
                     child: AnimatedSwitcher(
                       duration: const Duration(milliseconds: 600),
                       child: silicone
                           ? Product_Right_hover(
-                              lineWidth: line_right2_patch_width_size(w / 5),
+                              lineWidth: line_right2_patch_width_size(w / 7),
                               title: "Biomedical Silicone",
                               body: '''\nUsing high skin-friendly
 material to avoid skin
@@ -246,20 +246,19 @@ allergies.''',
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
-                      child: msg(
-                          "Material",
-                          '''The material attached to the face is silicone,
+                  msg(
+                      "Material",
+                      '''The material attached to the face is silicone,
 which increase the adhesion between the skin
 and the patch to prevent needles from damage.''',
-                          w)),
-                  Expanded(
-                      child: msg(
-                          "Technology",
-                          '''Tear crystal analysis
+                      w),
+                      Expanded(child: Container()),
+                  msg(
+                      "Technology",
+                      '''Tear crystal analysis
 AI facial analysis
 Protein analysis''',
-                          w))
+                      w)
                 ],
               )
             ],

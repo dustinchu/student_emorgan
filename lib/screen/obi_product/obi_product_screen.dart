@@ -45,7 +45,9 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
                 physics: BouncingScrollPhysics(),
                 children: [
                   ObiPage1(),
+                    SizedBox(height: 100,),
                   ObiPage2(),
+                    SizedBox(height: 100,),
                   ObiPage3(),
                   ObiPage4(),
                   ObiPage5(),

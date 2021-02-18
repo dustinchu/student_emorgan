@@ -6,13 +6,13 @@ class CircularContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-                          width: 40,
-                          height: 40,
+                          width: 50,
+                          height: 50,
                           decoration: new BoxDecoration(
                             // color:Colors.pink,
                             color: Color(0x807A82A7), // 底色
                             borderRadius:
-                                new BorderRadius.circular((20.0)), // 圆角度
+                                new BorderRadius.circular((30.0)), // 圆角度
                           ),
                         );
   }
