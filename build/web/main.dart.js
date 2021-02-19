@@ -35849,14 +35849,14 @@ if(s==="buzzy")s=r.f=""
 if(s===""){r.r="assets/patch_l_shali_left.png"
 r.x="assets/patch_l_shali_right.png"}else if(s==="shali"){r.r="assets/patch_shali_and_shali_left.png"
 r.x="assets/patch_shali_and_shali_right.png"
-r.y="info_shali_and_shali_left.png"
-r.z="info_shali_and_shali_right.png"}else if(s==="obi"){r.r="assets/patch_shali_and_obi_left.png"
+r.y="assets/info_shali_and_shali_left.png"
+r.z="assets/info_shali_and_shali_right.png"}else if(s==="obi"){r.r="assets/patch_shali_and_obi_left.png"
 r.x="assets/patch_shali_and_obi_right.png"
-r.y="info_shali_and_obi_left.png"
-r.z="info_shali_and_obi_right.png"}else if(s==="buzzy"){r.r="assets/patch_buzzy_left.png"
+r.y="assets/info_shali_and_obi_left.png"
+r.z="assets/info_shali_and_obi_right.png"}else if(s==="buzzy"){r.r="assets/patch_buzzy_left.png"
 r.x="assets/patch_buzzy_right.png"
-r.y="info_buzzy_and_buzzy_left.png"
-r.z="info_buzzy_and_buzzy_right.png"}s=r.c
+r.y="assets/info_buzzy_and_buzzy_left.png"
+r.z="assets/info_buzzy_and_buzzy_right.png"}s=r.c
 s.toString
 Y.iY(s,!1,t.Vw).AU("SHALI","assets/order_shali.png","Shali")
 r.t(new T.a8e())},
@@ -35867,11 +35867,11 @@ if(s==="buzzy")s=r.e=""
 if(s===""){r.r="assets/patch_r_shali_left.png"
 r.x="assets/patch_r_shali_right.png"}else if(s==="shali"){r.r="assets/patch_shali_and_shali_left.png"
 r.x="assets/patch_shali_and_shali_right.png"
-r.y="info_shali_and_shali_left.png"
-r.z="info_shali_and_shali_right.png"}else if(s==="obi"){r.r="assets/patch_obi_and_shali_left.png"
+r.y="assets/info_shali_and_shali_left.png"
+r.z="assets/info_shali_and_shali_right.png"}else if(s==="obi"){r.r="assets/patch_obi_and_shali_left.png"
 r.x="assets/patch_obi_and_shali_right.png"
-r.y="info_obi_and_shali_left.png"
-r.z="info_obi_and_shali_right.png"}s=r.c
+r.y="assets/info_obi_and_shali_left.png"
+r.z="assets/info_obi_and_shali_right.png"}s=r.c
 s.toString
 Y.iY(s,!1,t.Vw).AV("SHALI","assets/order_shali.png","Shali")
 r.t(new T.a8g())},
@@ -35888,8 +35888,8 @@ r.x="assets/patch_obi_and_obi_right.png"
 r.y="info_obi_and_obi_left.png"
 r.z="info_obi_and_obi_right.png"}else if(s==="buzzy"){r.r="assets/patch_buzzy_left.png"
 r.x="assets/patch_buzzy_right.png"
-r.y="info_buzzy_and_buzzy_left.png"
-r.z="info_buzzy_and_buzzy_right.png"}s=r.c
+r.y="assets/info_buzzy_and_buzzy_left.png"
+r.z="assets/info_buzzy_and_buzzy_right.png"}s=r.c
 s.toString
 Y.iY(s,!1,t.Vw).AU("OBI","assets/order_obi.png","Obi")
 r.t(new T.a8d())},
@@ -35900,11 +35900,11 @@ if(s==="buzzy")s=r.e=""
 if(s===""){r.r="assets/patch_r_obi_left.png"
 r.x="assets/patch_r_obi_right.png"}else if(s==="shali"){r.r="assets/patch_shali_and_obi_left.png"
 r.x="assets/patch_shali_and_obi_right.png"
-r.y="info_shali_and_obi_left.png"
-r.z="info_shali_and_obi_right.png"}else if(s==="obi"){r.r="assets/patch_obi_and_obi_left.png"
+r.y="assets/info_shali_and_obi_left.png"
+r.z="assets/info_shali_and_obi_right.png"}else if(s==="obi"){r.r="assets/patch_obi_and_obi_left.png"
 r.x="assets/patch_obi_and_obi_right.png"
-r.y="info_obi_and_obi_left.png"
-r.z="info_obi_and_obi_right.png"}s=r.c
+r.y="assets/info_obi_and_obi_left.png"
+r.z="assets/info_obi_and_obi_right.png"}s=r.c
 s.toString
 Y.iY(s,!1,t.Vw).AV("OBI","assets/order_obi.png","Obi")
 r.t(new T.a8f())},
@@ -35912,8 +35912,8 @@ Zb:function(){var s,r=this,q="assets/order_buzzy.png"
 r.e=r.f="buzzy"
 r.r="assets/patch_buzzy_left.png"
 r.x="assets/patch_buzzy_right.png"
-r.y="info_buzzy_and_buzzy_left.png"
-r.z="info_buzzy_and_buzzy_right.png"
+r.y="assets/info_buzzy_and_buzzy_left.png"
+r.z="assets/info_buzzy_and_buzzy_right.png"
 s=r.c
 s.toString
 s=Y.iY(s,!1,t.Vw)

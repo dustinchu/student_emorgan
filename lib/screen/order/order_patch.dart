@@ -35,20 +35,20 @@ class _OrderPatchState extends State<OrderPatch> {
       leftImagePath = "assets/patch_shali_and_shali_left.png";
       rightImagePath = "assets/patch_shali_and_shali_right.png";
 
-      pushPageImagePathLeft = "info_shali_and_shali_left.png";
-      pushPageImagePathRight = "info_shali_and_shali_right.png";
+      pushPageImagePathLeft = "assets/info_shali_and_shali_left.png";
+      pushPageImagePathRight = "assets/info_shali_and_shali_right.png";
     } else if (rightClick == "obi") {
       leftImagePath = "assets/patch_shali_and_obi_left.png";
       rightImagePath = "assets/patch_shali_and_obi_right.png";
 
-      pushPageImagePathLeft = "info_shali_and_obi_left.png";
-      pushPageImagePathRight = "info_shali_and_obi_right.png";
+      pushPageImagePathLeft = "assets/info_shali_and_obi_left.png";
+      pushPageImagePathRight = "assets/info_shali_and_obi_right.png";
     } else if (rightClick == "buzzy") {
       leftImagePath = "assets/patch_buzzy_left.png";
       rightImagePath = "assets/patch_buzzy_right.png";
 
-      pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
-      pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+      pushPageImagePathLeft = "assets/info_buzzy_and_buzzy_left.png";
+      pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
     }
       Provider.of<AccountStatus>(context, listen: false).setAccountName1("SHALI","assets/order_shali.png","Shali");
                           
@@ -67,20 +67,20 @@ class _OrderPatchState extends State<OrderPatch> {
       leftImagePath = "assets/patch_shali_and_shali_left.png";
       rightImagePath = "assets/patch_shali_and_shali_right.png";
 
-      pushPageImagePathLeft = "info_shali_and_shali_left.png";
-      pushPageImagePathRight = "info_shali_and_shali_right.png";
+      pushPageImagePathLeft = "assets/info_shali_and_shali_left.png";
+      pushPageImagePathRight = "assets/info_shali_and_shali_right.png";
     } else if (leftClick == "obi") {
       leftImagePath = "assets/patch_obi_and_shali_left.png";
       rightImagePath = "assets/patch_obi_and_shali_right.png";
 
-      pushPageImagePathLeft = "info_obi_and_shali_left.png";
-      pushPageImagePathRight = "info_obi_and_shali_right.png";
+      pushPageImagePathLeft = "assets/info_obi_and_shali_left.png";
+      pushPageImagePathRight = "assets/info_obi_and_shali_right.png";
     } else if (rightClick == "buzzy") {
       leftImagePath = "assets/patch_buzzy_left.png";
       rightImagePath = "assets/patch_buzzy_right.png";
 
-      pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
-      pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+      pushPageImagePathLeft = "assets/info_buzzy_and_buzzy_left.png";
+      pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
     }
 
       Provider.of<AccountStatus>(context, listen: false).setAccountName2("SHALI","assets/order_shali.png","Shali");
@@ -111,8 +111,8 @@ class _OrderPatchState extends State<OrderPatch> {
       leftImagePath = "assets/patch_buzzy_left.png";
       rightImagePath = "assets/patch_buzzy_right.png";
 
-      pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
-      pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+      pushPageImagePathLeft = "assets/info_buzzy_and_buzzy_left.png";
+      pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
     }
       Provider.of<AccountStatus>(context, listen: false).setAccountName1("OBI","assets/order_obi.png","Obi");
     setState(() {});
@@ -130,20 +130,20 @@ class _OrderPatchState extends State<OrderPatch> {
       leftImagePath = "assets/patch_shali_and_obi_left.png";
       rightImagePath = "assets/patch_shali_and_obi_right.png";
 
-      pushPageImagePathLeft = "info_shali_and_obi_left.png";
-      pushPageImagePathRight = "info_shali_and_obi_right.png";
+      pushPageImagePathLeft = "assets/info_shali_and_obi_left.png";
+      pushPageImagePathRight = "assets/info_shali_and_obi_right.png";
     } else if (leftClick == "obi") {
       leftImagePath = "assets/patch_obi_and_obi_left.png";
       rightImagePath = "assets/patch_obi_and_obi_right.png";
 
-      pushPageImagePathLeft = "info_obi_and_obi_left.png";
-      pushPageImagePathRight = "info_obi_and_obi_right.png";
+      pushPageImagePathLeft = "assets/info_obi_and_obi_left.png";
+      pushPageImagePathRight = "assets/info_obi_and_obi_right.png";
     } else if (rightClick == "buzzy") {
       leftImagePath = "assets/patch_buzzy_left.png";
       rightImagePath = "assets/patch_buzzy_right.png";
 
-      pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
-      pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+      pushPageImagePathLeft = "assets/info_buzzy_and_buzzy_left.png";
+      pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
     }
      Provider.of<AccountStatus>(context, listen: false).setAccountName2("OBI","assets/order_obi.png","Obi");
     setState(() {});
@@ -154,8 +154,8 @@ class _OrderPatchState extends State<OrderPatch> {
     leftClick = "buzzy";
     leftImagePath = "assets/patch_buzzy_left.png";
     rightImagePath = "assets/patch_buzzy_right.png";
-    pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
-    pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
+    pushPageImagePathLeft = "assets/info_buzzy_and_buzzy_left.png";
+    pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
  Provider.of<AccountStatus>(context, listen: false).setbuzzy("Buzzy","assets/order_buzzy.png","BUZZY");
     setState(() {});
   }
