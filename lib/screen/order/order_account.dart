@@ -254,7 +254,7 @@ class _OrderAccountState extends State<OrderAccount> {
             style: GoogleFonts.montserrat(
               textStyle: TextStyle(
                 fontSize: windows_width_medium_size(w),
-                color: Color(0xFF426248),
+                color: Color(0xFF424648),
               ),
             ),
           ),
@@ -277,7 +277,7 @@ class _OrderAccountState extends State<OrderAccount> {
             style: GoogleFonts.montserrat(
               textStyle: TextStyle(
                 fontSize: windows_width_small_size(w),
-                color: Color(0xFF426248),
+                color: Color(0xFF424648),
               ),
             ),
           ),
@@ -287,7 +287,7 @@ class _OrderAccountState extends State<OrderAccount> {
             style: GoogleFonts.montserrat(
               textStyle: TextStyle(
                 fontSize: windows_width_small_size(w),
-                color: Color(0xFF426248),
+                color: Color(0xFF424648),
               ),
             ),
           )
@@ -410,7 +410,7 @@ class _OrderAccountState extends State<OrderAccount> {
                     style: GoogleFonts.montserrat(
                       textStyle: TextStyle(
                         fontSize: windows_width_medium_size(w),
-                        color: Color(0xFF426248),
+                        color: Color(0xFF424648),
                       ),
                     ),
                   ),
@@ -420,7 +420,7 @@ class _OrderAccountState extends State<OrderAccount> {
                     style: GoogleFonts.montserrat(
                       textStyle: TextStyle(
                         fontSize: windows_width_large_size(w),
-                        color: Color(0xFF426248),
+                        color: Color(0xFF424648),
                       ),
                     ),
                   ),
@@ -432,7 +432,7 @@ class _OrderAccountState extends State<OrderAccount> {
                     style: GoogleFonts.montserrat(
                       textStyle: TextStyle(
                         fontSize: windows_width_medium_size(w),
-                        color: Color(0xFF426248),
+                        color: Color(0xFF424648),
                       ),
                     ),
                   ),
