@@ -50,7 +50,7 @@ class _OrderPatchState extends State<OrderPatch> {
       pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
       pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
     }
-      Provider.of<AccountStatus>(context, listen: false).setAccountName1("Shali","assets/order_shali.png");
+      Provider.of<AccountStatus>(context, listen: false).setAccountName1("SHALI","assets/order_shali.png","Shali");
                           
     setState(() {});
   }
@@ -83,7 +83,7 @@ class _OrderPatchState extends State<OrderPatch> {
       pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
     }
 
-      Provider.of<AccountStatus>(context, listen: false).setAccountName2("Shali","assets/order_shali.png");
+      Provider.of<AccountStatus>(context, listen: false).setAccountName2("SHALI","assets/order_shali.png","Shali");
     setState(() {});
   }
 
@@ -114,7 +114,7 @@ class _OrderPatchState extends State<OrderPatch> {
       pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
       pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
     }
-      Provider.of<AccountStatus>(context, listen: false).setAccountName1("obi","assets/order_obi.png");
+      Provider.of<AccountStatus>(context, listen: false).setAccountName1("OBI","assets/order_obi.png","Obi");
     setState(() {});
   }
 
@@ -127,8 +127,8 @@ class _OrderPatchState extends State<OrderPatch> {
       leftImagePath = "assets/patch_r_obi_left.png";
       rightImagePath = "assets/patch_r_obi_right.png";
     } else if (leftClick == "shali") {
-      leftImagePath = "assets/patch_shali_and_shali_left.png";
-      rightImagePath = "assets/patch_shali_and_shali_right.png";
+      leftImagePath = "assets/patch_shali_and_obi_left.png";
+      rightImagePath = "assets/patch_shali_and_obi_right.png";
 
       pushPageImagePathLeft = "info_shali_and_obi_left.png";
       pushPageImagePathRight = "info_shali_and_obi_right.png";
@@ -145,7 +145,7 @@ class _OrderPatchState extends State<OrderPatch> {
       pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
       pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
     }
-     Provider.of<AccountStatus>(context, listen: false).setAccountName2("obi","assets/order_obi.png");
+     Provider.of<AccountStatus>(context, listen: false).setAccountName2("OBI","assets/order_obi.png","Obi");
     setState(() {});
   }
 
@@ -156,7 +156,7 @@ class _OrderPatchState extends State<OrderPatch> {
     rightImagePath = "assets/patch_buzzy_right.png";
     pushPageImagePathLeft = "info_buzzy_and_buzzy_left.png";
     pushPageImagePathRight = "info_buzzy_and_buzzy_right.png";
- Provider.of<AccountStatus>(context, listen: false).setbuzzy("BUZZY","assets/order_buzzy.png");
+ Provider.of<AccountStatus>(context, listen: false).setbuzzy("Buzzy","assets/order_buzzy.png","BUZZY");
     setState(() {});
   }
 
@@ -213,7 +213,6 @@ class _OrderPatchState extends State<OrderPatch> {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.only(top: 100),
                     width: w,
                     height: h,
                     color: Colors.transparent,
@@ -326,16 +325,14 @@ class _OrderPatchState extends State<OrderPatch> {
                     child: Column(
                       children: [
                         Expanded(child: Container()),
-                        SizedBox(
-                          height: 100,
-                        ),
+                       
                         title("Human A", "Human B", 350, 100),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                               width: 350,
-                              height: 550,
+                              height: 650,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(leftImagePath),
@@ -348,7 +345,7 @@ class _OrderPatchState extends State<OrderPatch> {
                             ),
                             Container(
                               width: 350,
-                              height: 550,
+                              height: 650,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(rightImagePath),

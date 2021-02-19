@@ -44,9 +44,9 @@ class _ShaliProductScreenState extends State<ShaliProductScreen> {
                 physics: BouncingScrollPhysics(),
                 children: [
                   ShaliPage1(),
-                  SizedBox(height: 100,),
+                  SizedBox(height: 200,),
                   ShaliPage2(),
-                   SizedBox(height: 100,),
+                   SizedBox(height: 200,),
                   ShaliPage3(),
                   ShaliPage4(),
                   ShaliPage5(),

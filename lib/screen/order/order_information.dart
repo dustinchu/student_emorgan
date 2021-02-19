@@ -696,7 +696,7 @@ class _OrderImformationState extends State<OrderImformation>
             ),
           ),
           padding: EdgeInsets.only(
-              top: windowsSizeboxHightSize(200), left: 100, right: 100),
+             left: 100, right: 100),
           height: h,
           width: w / 2,
           child: Column(
@@ -763,7 +763,7 @@ class _OrderImformationState extends State<OrderImformation>
           padding: EdgeInsets.only(
               left: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
               right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
-              top: windowsSizeboxHightSize(200)),
+             ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

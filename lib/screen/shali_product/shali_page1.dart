@@ -33,7 +33,7 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 950;
+    double h = 1100;
 
     Widget circularContainer() {
       return Container(
@@ -322,7 +322,7 @@ successful.''',
                   ),
                   title(
                       "Design",
-                      '''The shape idea is from human salivary glands. The main form is a long ellipse with smooth surface and tissue-friendly to avoidany danger during transplantation and removal.''',
+                      '''\nThe shape idea is from human salivary glands. The main form is a long ellipse with smooth surface and tissue-friendly to avoidany danger during transplantation and removal.''',
                       w),
                   SizedBox(
                     height: 60,

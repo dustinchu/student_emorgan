@@ -7,31 +7,36 @@ class AccountStatus extends ChangeNotifier {
   String account2Name;
   String account1ImangePath;
   String account2ImangePath;
-
+  String accountOrderName1;
+  String accountOrderName2;
   String get getAccount1Name => account1Name;
   String get getAccount2Name => account2Name;
   String get getAccount1ImangePath => account1ImangePath;
   String get getAccount2ImangePath => account2ImangePath;
-
-  void setAccountName1(String name,String path) {
+  String get getAccountOrderName1 => accountOrderName1;
+  String get getAccountOrderName2 => accountOrderName2;
+  void setAccountName1(String name, String path, String orderName) {
     account1Name = name;
-     account1ImangePath = path;
+    account1ImangePath = path;
+    accountOrderName1 = orderName;
     notifyListeners();
   }
 
-  void setAccountName2(String name,String path) {
+  void setAccountName2(String name, String path, String orderName) {
     account2Name = name;
     account2ImangePath = path;
+    accountOrderName2 = orderName;
     notifyListeners();
   }
 
-  void setbuzzy(String name,String path) {
-      account1Name = name;
+  void setbuzzy(String name, String path, String orderName) {
+    account1Name = name;
     account1ImangePath = path;
     account2Name = name;
     account2ImangePath = path;
+    accountOrderName1 = orderName;
+    accountOrderName2 = orderName;
+
     notifyListeners();
   }
-
-
 }

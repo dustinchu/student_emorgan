@@ -33,7 +33,7 @@ class _BuzzyPage1State extends State<BuzzyPage1> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 1000;
+    double h = 1100;
     return Container(
       width: w,
       height: h,
@@ -319,7 +319,7 @@ into electric shock data.''',
                   ),
                   title(
                       "Design",
-                      '''Imitate the shape of human spine. The main form is an long acute triangle with smooth surface.''',
+                      '''\nImitate the shape of human spine. The main form is an long acute triangle with smooth surface.''',
                       w),
                   SizedBox(
                     height: 60,

@@ -44,9 +44,9 @@ class _BuzzyProductScreenState extends State<BuzzyProductScreen> {
                 physics: BouncingScrollPhysics(),
                 children: [
                   BuzzyPage1(),
-                  SizedBox(height: 100,),
+                  SizedBox(height: 200,),
                   BuzzyPage2(),
-                  SizedBox(height: 100,),
+                  SizedBox(height: 200,),
                   BuzzyPage3(),
                   BuzzyPage4(),
                 ],

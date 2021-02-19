@@ -238,7 +238,7 @@ allergies.''',
               ),
               title(
                   "Design",
-                  '''Shali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.''',
+                  '''\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.''',
                   w),
               SizedBox(
                 height: 40,

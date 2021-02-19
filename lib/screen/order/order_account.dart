@@ -387,11 +387,11 @@ class _OrderAccountState extends State<OrderAccount> {
               SizedBox(
                 height: 10,
               ),
-              order_dobdy(accountStatus.getAccount1Name, "0.99 BTC"),
+              order_dobdy(accountStatus.getAccountOrderName1, "0.99 BTC"),
               SizedBox(
                 height: 30,
               ),
-              order_dobdy(accountStatus.getAccount2Name, "0.99 BTC"),
+              order_dobdy(accountStatus.getAccountOrderName2, "0.99 BTC"),
               SizedBox(
                 height: 30,
               ),
@@ -711,13 +711,13 @@ class LeftInput2 extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-            width: w / 2 / 3 * 2,
+            width: (w / 2 / 3 * 2)+20,
             child: edit("Name on Card", nameOrCardTextEditingController, w)),
         SizedBox(
           height: 20,
         ),
         Container(
-            width: w / 2 / 3 * 2,
+            width: (w / 2 / 3 * 2)+20,
             child: edit("Credit Card Number", creditTextEditingController, w)),
         SizedBox(
           height: 20,
@@ -728,14 +728,14 @@ class LeftInput2 extends StatelessWidget {
         Row(
           children: [
             Container(
-                width: (w / 2 / 3 * 2 / 3) - 20,
+                width: (w / 2 / 3 * 2 / 3)-10 ,
                 child: edit(
                     "CreDit Card Number", creditCardTextEditingController, w)),
             SizedBox(
               width: 20,
             ),
             Container(
-                width: (w / 2 / 3 * 2 / 3) - 20,
+                width: (w / 2 / 3 * 2 / 3)-10 ,
                 child: edit("CCV", ccvTextEditingController, w)),
             SizedBox(
               width: 20,

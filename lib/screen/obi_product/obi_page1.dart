@@ -273,7 +273,7 @@ the pairing is successful.''',
                   ),
                   title(
                       "Design",
-                      '''The shape idea is from human heart. The main form is a short ellipse with smooth surface and tissue-friendly to avoid any
+                      '''\nThe shape idea is from human heart. The main form is a short ellipse with smooth surface and tissue-friendly to avoid any
 danger during transplantation and removal.''',
                       w),
                   SizedBox(
