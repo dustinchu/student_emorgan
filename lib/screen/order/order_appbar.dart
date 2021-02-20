@@ -70,9 +70,9 @@ class OrderAppbar extends StatelessWidget {
                       ),
                       Text(
                         "Emorgan",
-                        style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                                color: Color(0xFF7A82A7), fontSize: 32)),
+                        style:TextStyle(
+                          fontFamily: 'Beware',
+                                color: Color(0xFF7A82A7), fontSize: 32),
                       ),
                     ],
                   ),

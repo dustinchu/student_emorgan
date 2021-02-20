@@ -113,7 +113,6 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                                 onTap: () {
                                   if (editStatus) {
                                     _orderStatus.setPage1Status(false);
-                                   print("?1?==${_orderStatus.getPage1Status.toString()}");
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(

@@ -374,7 +374,6 @@ class _OrderPatchState extends State<OrderPatch> {
               top: 0,
               child: OrderAppbar(
                 clickPage1: () {
-                  print("??==${_orderStatus.getPage1Status.toString()}");
                   if (!_orderStatus.getPage1Status) {
                     Navigator.push(
                         context,
