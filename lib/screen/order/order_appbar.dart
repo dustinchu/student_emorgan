@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OrderAppbar extends StatelessWidget {
-  const OrderAppbar({Key key, this.colorStatus}) : super(key: key);
+  const OrderAppbar(
+      {Key key, this.colorStatus, this.clickPage1, this.clickPage2})
+      : super(key: key);
   final List<bool> colorStatus;
+  final VoidCallback clickPage1;
+  final VoidCallback clickPage2;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -79,8 +83,14 @@ class OrderAppbar extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      appbarText("1. Shopping Code", colorStatus[0]),
-                      appbarText("2. Emorgan Patch", colorStatus[1]),
+                      InkWell(
+                          onTap: clickPage1,
+                          child:
+                              appbarText("1. Shopping Code", colorStatus[0])),
+                      InkWell(
+                          onTap: clickPage2,
+                          child:
+                              appbarText("2. Emorgan Patch", colorStatus[1])),
                       appbarText("3. Operation Date", colorStatus[2]),
                       appbarText("4. Payment", colorStatus[3]),
                     ],

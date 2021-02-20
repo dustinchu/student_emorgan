@@ -6,6 +6,8 @@ import 'package:url_strategy/url_strategy.dart';
 import 'provider/account.dart';
 import 'provider/banner.dart';
 import 'provider/book_state.dart';
+import 'screen/about/about_animator_screen.dart';
+import 'screen/about/about_dets_page.dart';
 import 'screen/buzzy_product/buzzy_product_screen.dart';
 import 'screen/home/home_screen.dart';
 import 'screen/obi_product/obi_product_screen.dart';
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
           //   ),
           // );
           home: HomeScreen()),
-      // home: OrderPatch()),
+      // home: OrderShoppingCode()),
     );
   }
 }

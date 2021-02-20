@@ -1,5 +1,8 @@
 import 'package:emorgan/common/widgets/circular_container.dart';
+import 'package:emorgan/common/widgets/detsIntroAnimation.dart';
+import 'package:emorgan/common/widgets/product_left_animation_hover.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
+import 'package:emorgan/common/widgets/product_right_animation_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
 import 'package:flutter/material.dart';
 
@@ -20,18 +23,57 @@ bool cameraStart = false;
 bool microphoneStart = false;
 bool batteryStart = false;
 bool silicone = false;
+DetsIntroAnimation left1InfoAnimation;
+DetsIntroAnimation left2InfoAnimation;
+DetsIntroAnimation right1InfoAnimation;
+DetsIntroAnimation right2InfoAnimation;
+
+AnimationController controllerLeft1;
+AnimationController controllerLeft2;
+AnimationController controllerRight1;
+AnimationController controllerRight2;
 
 class _ObiPage2State extends State<ObiPage2> with TickerProviderStateMixin {
   @override
   void initState() {
-    // TODO: implement initState
+    controllerLeft1 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
+    controllerLeft2 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
+    controllerRight1 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
+    controllerRight2 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controllerLeft1.dispose();
+    controllerLeft2.dispose();
+    controllerRight1.dispose();
+    controllerRight2.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = 950;
+    left1InfoAnimation = DetsIntroAnimation(
+      controllerLeft1,
+      line_page2_left_width_size(w / 7),
+    );
+    left2InfoAnimation = DetsIntroAnimation(
+      controllerLeft2,
+      line_page2_left2_width_size(w / 7),
+    );
+    right1InfoAnimation = DetsIntroAnimation(
+        controllerRight1, line_page2_right1_width_size(w / 7));
+    right2InfoAnimation = DetsIntroAnimation(
+      controllerRight2,
+      line_page2_right2_width_size(w / 8.5),
+    );
     return Container(
       width: w,
       height: h,
@@ -81,16 +123,16 @@ DIMENSIONS
                         onTap: () {},
                         onHover: (value) {
                           if (value) {
-                            setState(() {
-                              cameraStart = true;
-                            });
+                            controllerLeft1.forward();
                           } else {
-                            setState(() {
-                              cameraStart = false;
-                            });
+                            controllerLeft1.reverse();
                           }
                         },
-                        child: CircularContainer()),
+                        child: AnimatedBuilder(
+                                animation: left1InfoAnimation.controller,
+                                builder: (BuildContext context, Widget child) {
+                                    return CircularContainer(infoAnimation:left1InfoAnimation);
+                                }),),
                   ),
                   //左二 hover
                   Positioned(
@@ -102,16 +144,16 @@ DIMENSIONS
                         onTap: () {},
                         onHover: (value) {
                           if (value) {
-                            setState(() {
-                              microphoneStart = true;
-                            });
+                            controllerLeft2.forward();
                           } else {
-                            setState(() {
-                              microphoneStart = false;
-                            });
+                            controllerLeft2.reverse();
                           }
                         },
-                        child: CircularContainer()),
+                        child: AnimatedBuilder(
+                                animation: left2InfoAnimation.controller,
+                                builder: (BuildContext context, Widget child) {
+                                    return CircularContainer(infoAnimation:left2InfoAnimation);
+                                }),),
                   ),
                   //右一Hover
                   Positioned(
@@ -123,16 +165,16 @@ DIMENSIONS
                         onTap: () {},
                         onHover: (value) {
                           if (value) {
-                            setState(() {
-                              batteryStart = true;
-                            });
+                            controllerRight1.forward();
                           } else {
-                            setState(() {
-                              batteryStart = false;
-                            });
+                            controllerRight1.reverse();
                           }
                         },
-                        child: CircularContainer()),
+                         child: AnimatedBuilder(
+                                animation: right1InfoAnimation.controller,
+                                builder: (BuildContext context, Widget child) {
+                                      return CircularContainer(infoAnimation:right1InfoAnimation);
+                                }),),
                   ),
                   //右二Hover
                   Positioned(
@@ -144,16 +186,16 @@ DIMENSIONS
                         onTap: () {},
                         onHover: (value) {
                           if (value) {
-                            setState(() {
-                              silicone = true;
-                            });
+                            controllerRight2.forward();
                           } else {
-                            setState(() {
-                              silicone = false;
-                            });
+                            controllerRight2.reverse();
                           }
                         },
-                        child: CircularContainer()),
+                        child: AnimatedBuilder(
+                                animation: right2InfoAnimation.controller,
+                                builder: (BuildContext context, Widget child) {
+                                  return CircularContainer(infoAnimation:right2InfoAnimation);
+                                }),),
                   ),
                   // Positioned(
                   //   top: ((w / 5 + 50) / 10) * 1,
@@ -166,70 +208,120 @@ DIMENSIONS
                   Positioned(
                     top: top_size(w / 5, ((w / 5 + 50) / 10) * 2),
                     left: 0,
-                    child: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 600),
-                      child: cameraStart
-                          ? Product_left_hover(
-                              lineWidth: line_page2_left_width_size(w / 7),
-                              title: "Camera",
-                              body: '''\nIt detects user’s partner’s
+                    child: AnimatedBuilder(
+                        animation: left1InfoAnimation.controller,
+                        builder: (BuildContext context, Widget child) {
+                          return Product_left_animation_hover(
+                            infoAnimation: left1InfoAnimation,
+                            // lineWidth:
+                            //     line_page1_left_width_size(w / 7.8),
+                            title: "Camera",
+                            body: '''\nIt detects user’s partner’s
 facial expression.''',
-                            )
-                          : Container(),
-                    ),
+                          );
+                        }),
+//                     child: AnimatedSwitcher(
+//                       duration: const Duration(milliseconds: 600),
+//                       child: cameraStart
+//                           ? Product_left_hover(
+//                               lineWidth: line_page2_left_width_size(w / 7),
+//                               title: "Camera",
+//                               body: '''\nIt detects user’s partner’s
+// facial expression.''',
+//                             )
+//                           : Container(),
+                    // ),
                   ),
                   //左二資訊
                   Positioned(
                     top: top_size(w / 5, ((w / 5 + 50) / 10) * 5.6),
                     left: 0,
-                    child: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 600),
-                      child: microphoneStart
-                          ? Product_left_hover(
-                              lineWidth: line_page2_left2_width_size(w / 7),
-                              title: "Microphone",
-                              body: '''\nTCollecting user’s voice and
+
+                    child: AnimatedBuilder(
+                        animation: left2InfoAnimation.controller,
+                        builder: (BuildContext context, Widget child) {
+                          return Product_left_animation_hover(
+                            infoAnimation: left2InfoAnimation,
+                            // lineWidth:
+                            //     line_page1_left_width_size(w / 7.8),
+                            title: "Microphone",
+                            body: '''\nTCollecting user’s voice and
 transfer it into vibrate
 data.''',
-                            )
-                          : Container(),
-                    ),
+                          );
+                        }),
+//                     child: AnimatedSwitcher(
+//                       duration: const Duration(milliseconds: 600),
+//                       child: microphoneStart
+//                           ? Product_left_hover(
+//                               lineWidth: line_page2_left2_width_size(w / 7),
+//                               title: "Microphone",
+//                               body: '''\nTCollecting user’s voice and
+// transfer it into vibrate
+// data.''',
+//                             )
+//                           : Container(),
+//                     ),
                   ),
 //                 //右一資訊
                   Positioned(
                     top: top_size(w / 5, ((w / 5 + 50) / 10) * 2),
                     right: 0,
-                    child: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 600),
-                      child: batteryStart
-                          ? Product_Right_hover(
-                              lineWidth: line_page2_right1_width_size(w / 7),
-                              title: "Battery",
-                              body: '''\nThe electric power is from
+                    child: AnimatedBuilder(
+                        animation: right1InfoAnimation.controller,
+                        builder: (BuildContext context, Widget child) {
+                          return Product_right_animation_hover(
+                            infoAnimation: right1InfoAnimation,
+                            title: "Battery",
+                            body: '''\nThe electric power is from
 the battery which can
 supply power continuously
 for 14 years.
 ''',
-                            )
-                          : Container(),
-                    ),
+                          );
+                        }),
+//                     child: AnimatedSwitcher(
+//                       duration: const Duration(milliseconds: 600),
+//                       child: batteryStart
+//                           ? Product_Right_hover(
+//                               lineWidth: line_page2_right1_width_size(w / 7),
+//                               title: "Battery",
+//                               body: '''\nThe electric power is from
+// the battery which can
+// supply power continuously
+// for 14 years.
+// ''',
+//                             )
+//                           : Container(),
+                    // ),
                   ),
 //                 //右二資訊
                   Positioned(
                     top: top_size(w / 5, ((w / 5 + 50) / 10) * 7.4),
                     right: 0,
-                    child: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 600),
-                      child: silicone
-                          ? Product_Right_hover(
-                              lineWidth: line_page2_right2_width_size(w / 8.5),
-                              title: "Biomedical Silicone",
-                              body: '''\nUsing high skin-friendly
+                    child: AnimatedBuilder(
+                        animation: right2InfoAnimation.controller,
+                        builder: (BuildContext context, Widget child) {
+                          return Product_right_animation_hover(
+                            infoAnimation: right2InfoAnimation,
+                            title: "Biomedical Silicone",
+                            body: '''\nUsing high skin-friendly
 material to avoid skin
 allergies.''',
-                            )
-                          : Container(),
-                    ),
+                          );
+                        }),
+//                     child: AnimatedSwitcher(
+//                       duration: const Duration(milliseconds: 600),
+//                       child: silicone
+//                           ? Product_Right_hover(
+//                               lineWidth: line_page2_right2_width_size(w / 8.5),
+//                               title: "Biomedical Silicone",
+//                               body: '''\nUsing high skin-friendly
+// material to avoid skin
+// allergies.''',
+//                             )
+//                           : Container(),
+//                     ),
                   )
                 ],
               ),

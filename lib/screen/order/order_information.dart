@@ -2,6 +2,7 @@ import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/menu_btn.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/provider/book_state.dart';
+import 'package:emorgan/util/order_page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
@@ -9,6 +10,8 @@ import 'package:provider/provider.dart';
 
 import 'order_account.dart';
 import 'order_appbar.dart';
+import 'order_patch.dart';
+import 'order_shopping_code.dart';
 
 class OrderImformation extends StatefulWidget {
   OrderImformation(
@@ -685,6 +688,7 @@ class _OrderImformationState extends State<OrderImformation>
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
+     OrderPageStatus _orderStatus = OrderPageStatus();
     // double h = 900;
     List<bool> colorStatus = [false, false, true, false];
     Widget infoInput() {
@@ -695,8 +699,7 @@ class _OrderImformationState extends State<OrderImformation>
               fit: BoxFit.cover,
             ),
           ),
-          padding: EdgeInsets.only(
-             left: 100, right: 100),
+          padding: EdgeInsets.only(left: 100, right: 100),
           height: h,
           width: w / 2,
           child: Column(
@@ -761,9 +764,9 @@ class _OrderImformationState extends State<OrderImformation>
             ),
           ),
           padding: EdgeInsets.only(
-              left: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
-              right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
-             ),
+            left: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
+            right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -773,7 +776,7 @@ class _OrderImformationState extends State<OrderImformation>
                 style: GoogleFonts.montserrat(
                   textStyle: TextStyle(
                     fontSize: windows_width_large_size(w),
-                    color: Color(0xFF426248),
+                    color: Color(0xFF424648),
                   ),
                 ),
               ),
@@ -982,6 +985,20 @@ class _OrderImformationState extends State<OrderImformation>
             Positioned(
               top: 0,
               child: OrderAppbar(
+                clickPage1: () {
+                  if (!_orderStatus.getPage1Status) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OrderShoppingCode()));
+                  }
+                },
+                clickPage2: () {
+                  if (!_orderStatus.getPage2Status) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => OrderPatch()));
+                  }
+                },
                 colorStatus: colorStatus,
               ),
             ),
@@ -990,6 +1007,7 @@ class _OrderImformationState extends State<OrderImformation>
               left: 50,
               child: InkWell(
                 onTap: () {
+                  _orderStatus.setPage2Status(true);
                   Navigator.of(context).pop();
                 },
                 child: Row(

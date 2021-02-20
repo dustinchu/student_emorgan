@@ -1,4 +1,5 @@
 import 'package:emorgan/provider/account.dart';
+import 'package:emorgan/util/order_page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -6,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'order_appbar.dart';
 import 'order_circle.dart';
 import 'order_information.dart';
+import 'order_shopping_code.dart';
 
 class OrderPatch extends StatefulWidget {
   OrderPatch({Key key}) : super(key: key);
@@ -50,8 +52,9 @@ class _OrderPatchState extends State<OrderPatch> {
       pushPageImagePathLeft = "assets/info_buzzy_and_buzzy_left.png";
       pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
     }
-      Provider.of<AccountStatus>(context, listen: false).setAccountName1("SHALI","assets/order_shali.png","Shali");
-                          
+    Provider.of<AccountStatus>(context, listen: false)
+        .setAccountName1("SHALI", "assets/order_shali.png", "Shali");
+
     setState(() {});
   }
 
@@ -83,7 +86,8 @@ class _OrderPatchState extends State<OrderPatch> {
       pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
     }
 
-      Provider.of<AccountStatus>(context, listen: false).setAccountName2("SHALI","assets/order_shali.png","Shali");
+    Provider.of<AccountStatus>(context, listen: false)
+        .setAccountName2("SHALI", "assets/order_shali.png", "Shali");
     setState(() {});
   }
 
@@ -114,7 +118,8 @@ class _OrderPatchState extends State<OrderPatch> {
       pushPageImagePathLeft = "assets/info_buzzy_and_buzzy_left.png";
       pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
     }
-      Provider.of<AccountStatus>(context, listen: false).setAccountName1("OBI","assets/order_obi.png","Obi");
+    Provider.of<AccountStatus>(context, listen: false)
+        .setAccountName1("OBI", "assets/order_obi.png", "Obi");
     setState(() {});
   }
 
@@ -145,7 +150,8 @@ class _OrderPatchState extends State<OrderPatch> {
       pushPageImagePathLeft = "assets/info_buzzy_and_buzzy_left.png";
       pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
     }
-     Provider.of<AccountStatus>(context, listen: false).setAccountName2("OBI","assets/order_obi.png","Obi");
+    Provider.of<AccountStatus>(context, listen: false)
+        .setAccountName2("OBI", "assets/order_obi.png", "Obi");
     setState(() {});
   }
 
@@ -156,7 +162,8 @@ class _OrderPatchState extends State<OrderPatch> {
     rightImagePath = "assets/patch_buzzy_right.png";
     pushPageImagePathLeft = "assets/info_buzzy_and_buzzy_left.png";
     pushPageImagePathRight = "assets/info_buzzy_and_buzzy_right.png";
- Provider.of<AccountStatus>(context, listen: false).setbuzzy("Buzzy","assets/order_buzzy.png","BUZZY");
+    Provider.of<AccountStatus>(context, listen: false)
+        .setbuzzy("Buzzy", "assets/order_buzzy.png", "BUZZY");
     setState(() {});
   }
 
@@ -167,6 +174,8 @@ class _OrderPatchState extends State<OrderPatch> {
     // double h = MediaQuery.of(context).size.height;
     double h = MediaQuery.of(context).size.height;
     List<bool> colorStatus = [false, true, false, false];
+    OrderPageStatus _orderStatus = OrderPageStatus();
+
     Widget title(String text1, String text2, double w, double padding) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -325,7 +334,6 @@ class _OrderPatchState extends State<OrderPatch> {
                     child: Column(
                       children: [
                         Expanded(child: Container()),
-                       
                         title("Human A", "Human B", 350, 100),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -365,6 +373,15 @@ class _OrderPatchState extends State<OrderPatch> {
             Positioned(
               top: 0,
               child: OrderAppbar(
+                clickPage1: () {
+                  print("??==${_orderStatus.getPage1Status.toString()}");
+                  if (!_orderStatus.getPage1Status) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OrderShoppingCode()));
+                  }
+                },
                 colorStatus: colorStatus,
               ),
             ),
@@ -373,6 +390,8 @@ class _OrderPatchState extends State<OrderPatch> {
               left: 40,
               child: InkWell(
                 onTap: () {
+                  _orderStatus.setPage1Status(true);
+                  _orderStatus.setPage2Status(true);
                   Navigator.of(context).pop();
                 },
                 child: Row(
@@ -402,13 +421,14 @@ class _OrderPatchState extends State<OrderPatch> {
                 child: InkWell(
                   onTap: () {
                     if (leftClick != "" && rightClick != "")
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => OrderImformation(
-                                    leftImagePath: pushPageImagePathLeft,
-                                    rightImagePath: pushPageImagePathRight,
-                                  )));
+                      _orderStatus.setPage2Status(false);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OrderImformation(
+                                  leftImagePath: pushPageImagePathLeft,
+                                  rightImagePath: pushPageImagePathRight,
+                                )));
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),

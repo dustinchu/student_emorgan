@@ -1,6 +1,9 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/widgets/circular_container.dart';
+import 'package:emorgan/common/widgets/detsIntroAnimation.dart';
+import 'package:emorgan/common/widgets/product_left_animation_hover.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
+import 'package:emorgan/common/widgets/product_right_animation_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
 import 'package:emorgan/screen/order/order_shopping_code.dart';
 import 'package:flutter/material.dart';
@@ -18,22 +21,63 @@ class ShaliPage1 extends StatefulWidget {
 
 AnimationController controller;
 Animation<Offset> animation;
-bool forksStart = false;
-bool powerStart = false;
-bool lightStart = false;
-bool thermometeStart = false;
+// bool forksStart = false;
+// bool powerStart = false;
+// bool lightStart = false;
+// bool thermometeStart = false;
+DetsIntroAnimation left1InfoAnimation;
+DetsIntroAnimation left2InfoAnimation;
+DetsIntroAnimation right1InfoAnimation;
+DetsIntroAnimation right2InfoAnimation;
+
+AnimationController controllerLeft1;
+AnimationController controllerLeft2;
+AnimationController controllerRight1;
+AnimationController controllerRight2;
 
 class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
   @override
   void initState() {
-    // TODO: implement initState
+    controllerLeft1 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
+    controllerLeft2 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
+    controllerRight1 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
+    controllerRight2 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controllerLeft1.dispose();
+    controllerLeft2.dispose();
+    controllerRight1.dispose();
+    controllerRight2.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = 1100;
+    left1InfoAnimation = DetsIntroAnimation(
+      controllerLeft1,
+      line_left_width_size(w / 6),
+    );
+    left2InfoAnimation = DetsIntroAnimation(
+      controllerLeft2,
+      line_left_width_size(w / 6),
+    );
+    right1InfoAnimation = DetsIntroAnimation(
+      controllerRight1,
+      line_width_right_size2(w / 6),
+    );
+    right2InfoAnimation = DetsIntroAnimation(
+      controllerRight2,
+      line_width_right_size(w / 7),
+    );
 
     Widget circularContainer() {
       return Container(
@@ -80,7 +124,8 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
               child: Material(
                 child: InkWell(
                   onTap: () {
-                   MaterialPageRoute(builder: (context) => OrderShoppingCode());
+                    MaterialPageRoute(
+                        builder: (context) => OrderShoppingCode());
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -151,7 +196,7 @@ DIMENSIONS
                                 fit: BoxFit.cover,
                               ),
                             ),
-                                    width: w / 5 + 20,
+                            width: w / 5 + 20,
                             height: w / 5 + 70,
                           ),
                         ],
@@ -162,24 +207,26 @@ DIMENSIONS
                       //(w-((w / 3 - 150)*2))得到中間頁面的寬度
                       // 白色區域中間(w-((w / 3 - 150)*2))/2,
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 3-10,
+                        top: ((w / 5 + 50) / 10) * 3 - 10,
                         //白色區域分成40等分
                         left: (w - ((w / 3 - 150) * 2)) / 40 * 12.3,
                         child: InkWell(
-                            hoverColor: Colors.transparent,
-                            onTap: () {},
-                            onHover: (value) {
-                              if (value) {
-                                setState(() {
-                                  forksStart = true;
-                                });
-                              } else {
-                                setState(() {
-                                  forksStart = false;
-                                });
-                              }
-                            },
-                            child: CircularContainer()),
+                          hoverColor: Colors.transparent,
+                          onTap: () {},
+                          onHover: (value) {
+                            if (value) {
+                              controllerLeft1.forward();
+                            } else {
+                              controllerLeft1.reverse();
+                            }
+                          },
+                          child: AnimatedBuilder(
+                              animation: left1InfoAnimation.controller,
+                              builder: (BuildContext context, Widget child) {
+                                return CircularContainer(
+                                    infoAnimation: left1InfoAnimation);
+                              }),
+                        ),
                       ),
                       //左二 hover
                       Positioned(
@@ -187,41 +234,45 @@ DIMENSIONS
                         //白色區域分成40等分
                         left: (w - ((w / 3 - 150) * 2)) / 40 * 14,
                         child: InkWell(
-                            hoverColor: Colors.transparent,
-                            onTap: () {},
-                            onHover: (value) {
-                              if (value) {
-                                setState(() {
-                                  powerStart = true;
-                                });
-                              } else {
-                                setState(() {
-                                  powerStart = false;
-                                });
-                              }
-                            },
-                            child: CircularContainer()),
+                          hoverColor: Colors.transparent,
+                          onTap: () {},
+                          onHover: (value) {
+                            if (value) {
+                              controllerLeft2.forward();
+                            } else {
+                              controllerLeft2.reverse();
+                            }
+                          },
+                          child: AnimatedBuilder(
+                              animation: left2InfoAnimation.controller,
+                              builder: (BuildContext context, Widget child) {
+                                return CircularContainer(
+                                    infoAnimation: left2InfoAnimation);
+                              }),
+                        ),
                       ),
                       //右一Hover
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 3-10,
+                        top: ((w / 5 + 50) / 10) * 3 - 10,
                         //白色區域分成40等分
                         right: (w - ((w / 3 - 150) * 2)) / 40 * 14.3,
                         child: InkWell(
-                            hoverColor: Colors.transparent,
-                            onTap: () {},
-                            onHover: (value) {
-                              if (value) {
-                                setState(() {
-                                  thermometeStart = true;
-                                });
-                              } else {
-                                setState(() {
-                                  thermometeStart = false;
-                                });
-                              }
-                            },
-                            child: CircularContainer()),
+                          hoverColor: Colors.transparent,
+                          onTap: () {},
+                          onHover: (value) {
+                            if (value) {
+                              controllerRight1.forward();
+                            } else {
+                              controllerRight1.reverse();
+                            }
+                          },
+                          child: AnimatedBuilder(
+                              animation: right1InfoAnimation.controller,
+                              builder: (BuildContext context, Widget child) {
+                                return CircularContainer(
+                                    infoAnimation: right1InfoAnimation);
+                              }),
+                        ),
                       ),
                       //右二Hover
                       Positioned(
@@ -229,91 +280,147 @@ DIMENSIONS
                         //白色區域分成40等分
                         right: (w - ((w / 3 - 150) * 2)) / 40 * 10.5,
                         child: InkWell(
-                            hoverColor: Colors.transparent,
-                            onTap: () {},
-                            onHover: (value) {
-                              if (value) {
-                                setState(() {
-                                  lightStart = true;
-                                });
-                              } else {
-                                setState(() {
-                                  lightStart = false;
-                                });
-                              }
-                            },
-                            child: CircularContainer()),
+                          hoverColor: Colors.transparent,
+                          onTap: () {},
+                          onHover: (value) {
+                            if (value) {
+                              controllerRight2.forward();
+                            } else {
+                              controllerRight2.reverse();
+                            }
+                          },
+                          child: AnimatedBuilder(
+                              animation: right2InfoAnimation.controller,
+                              builder: (BuildContext context, Widget child) {
+                                return CircularContainer(
+                                    infoAnimation: right2InfoAnimation);
+                              }),
+                        ),
                       ),
                       Positioned(
                         top: ((w / 5 + 50) / 10) * 3,
                         left: 0,
-                        child: AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 600),
-                          child: forksStart
-                              ? Product_left_hover(
-                                  lineWidth: line_left_width_size(w / 6),
-                                  title: "Fixed Forks",
-                                  body: '''\nThere will be 4 forks made
+                        child: AnimatedBuilder(
+                            animation: left1InfoAnimation.controller,
+                            builder: (BuildContext context, Widget child) {
+                              return Product_left_animation_hover(
+                                infoAnimation: left1InfoAnimation,
+                                // lineWidth:
+                                //     line_page1_left_width_size(w / 7.8),
+                                title: "Fixed Forks",
+                                body: '''\nThere will be 4 forks made
 of Nitinol with shape
 memory to fix emorgan at
 the right position.''',
-                                )
-                              : Container(),
-                        ),
+                              );
+                            }),
+//                         child: AnimatedSwitcher(
+//                           duration: const Duration(milliseconds: 600),
+//                           child: forksStart
+//                               ? Product_left_hover(
+//                                   lineWidth: line_left_width_size(w / 6),
+//                                   title: "Fixed Forks",
+//                                   body: '''\nThere will be 4 forks made
+// of Nitinol with shape
+// memory to fix emorgan at
+// the right position.''',
+//                                 )
+//                               : Container(),
+//                         ),
                       ),
                       //左二資訊
                       Positioned(
                         top: ((w / 5 + 50) / 10) * 8,
                         left: 0,
-                        child: AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 600),
-                          child: powerStart
-                              ? Product_left_hover(
-                                  lineWidth: line_left_width_size(w / 6),
-                                  title: "Blood Flow Power",
-                                  body: '''\nWhile blood is flowing in
+
+                        child: AnimatedBuilder(
+                            animation: left2InfoAnimation.controller,
+                            builder: (BuildContext context, Widget child) {
+                              return Product_left_animation_hover(
+                                infoAnimation: left2InfoAnimation,
+                                // lineWidth:
+                                //     line_page1_left_width_size(w / 7.8),
+                                title: "Blood Flow Power",
+                                body: '''\nWhile blood is flowing in
 vein, it will move the leads
 back and forth to generate
 electricity.''',
-                                )
-                              : Container(),
-                        ),
+                              );
+                            }),
+//                         child: AnimatedSwitcher(
+//                           duration: const Duration(milliseconds: 600),
+//                           child: powerStart
+//                               ? Product_left_hover(
+//                                   lineWidth: line_left_width_size(w / 6),
+//                                   title: "Blood Flow Power",
+//                                   body: '''\nWhile blood is flowing in
+// vein, it will move the leads
+// back and forth to generate
+// electricity.''',
+//                                 )
+//                               : Container(),
+//                         ),
                       ),
                       //右一資訊
                       Positioned(
                         top: ((w / 5 + 50) / 10) * 3,
                         right: 0,
-                        child: AnimatedSwitcher(
-                            duration: const Duration(milliseconds: 600),
-                            child: thermometeStart
-                                ? Product_Right_hover(
-                                    lineWidth: line_width_right_size2(w / 6),
-                                    title: "Thermomete",
-                                    body: '''\nShali will enhance the taste 
+                        child: AnimatedBuilder(
+                            animation: right1InfoAnimation.controller,
+                            builder: (BuildContext context, Widget child) {
+                              return Product_right_animation_hover(
+                                infoAnimation: right1InfoAnimation,
+                                title: "Thermomete",
+                                body: '''\nShali will enhance the taste 
 density while it detects
 user’s body temperature
 changed by emotion.
 ''',
-                                  )
-                                : Container()),
+                              );
+                            }),
+//                         child: AnimatedSwitcher(
+//                             duration: const Duration(milliseconds: 600),
+//                             child: thermometeStart
+//                                 ? Product_Right_hover(
+//                                     lineWidth: line_width_right_size2(w / 6),
+//                                     title: "Thermomete",
+//                                     body: '''\nShali will enhance the taste
+// density while it detects
+// user’s body temperature
+// changed by emotion.
+// ''',
+//                                   )
+//                                 : Container()),
                       ),
                       //右二資訊
                       Positioned(
                         top: ((w / 5 + 50) / 10) * 8,
                         right: 0,
-                        child: AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 600),
-                          child: lightStart
-                              ? Product_Right_hover(
-                                  lineWidth: line_width_right_size(w / 7),
-                                  title: "Light Sign",
-                                  body: '''\nDuring the operation,
+                        child: AnimatedBuilder(
+                            animation: right2InfoAnimation.controller,
+                            builder: (BuildContext context, Widget child) {
+                              return Product_right_animation_hover(
+                                infoAnimation: right2InfoAnimation,
+                                title: "Light Sign",
+                                body: '''\nDuring the operation,
 the light will remind
 doctors if the pairing is
 successful.''',
-                                )
-                              : Container(),
-                        ),
+                              );
+                            }),
+//                         child: AnimatedSwitcher(
+//                           duration: const Duration(milliseconds: 600),
+//                           child: lightStart
+//                               ? Product_Right_hover(
+//                                   lineWidth: line_width_right_size(w / 7),
+//                                   title: "Light Sign",
+//                                   body: '''\nDuring the operation,
+// the light will remind
+// doctors if the pairing is
+// successful.''',
+//                                 )
+//                               : Container(),
+//                         ),
                       )
                     ],
                   ),

@@ -1,3 +1,4 @@
+import 'package:emorgan/util/order_page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -32,6 +33,9 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
   }
 
   Widget build(BuildContext context) {
+  OrderPageStatus _orderStatus = OrderPageStatus();
+    // _orderStatus.setPage1Status(true);
+    // _orderStatus.setPage2Status(true);
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
     double h = 900;
@@ -108,6 +112,8 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                               InkWell(
                                 onTap: () {
                                   if (editStatus) {
+                                    _orderStatus.setPage1Status(false);
+                                   print("?1?==${_orderStatus.getPage1Status.toString()}");
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(

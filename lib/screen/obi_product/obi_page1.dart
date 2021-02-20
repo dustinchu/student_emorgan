@@ -1,6 +1,9 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/widgets/circular_container.dart';
+import 'package:emorgan/common/widgets/detsIntroAnimation.dart';
+import 'package:emorgan/common/widgets/product_left_animation_hover.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
+import 'package:emorgan/common/widgets/product_right_animation_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
 import 'package:emorgan/screen/order/order_shopping_code.dart';
 import 'package:flutter/material.dart';
@@ -18,21 +21,52 @@ class ObiPage1 extends StatefulWidget {
 
 AnimationController controller;
 Animation<Offset> animation;
-bool powerStart = false;
-bool forksStart = false;
-bool lightStart = false;
+DetsIntroAnimation left1InfoAnimation;
+DetsIntroAnimation right1InfoAnimation;
+DetsIntroAnimation right2InfoAnimation;
+
+AnimationController controllerLeft1;
+AnimationController controllerRight1;
+AnimationController controllerRight2;
 
 class _ObiPage1State extends State<ObiPage1> with TickerProviderStateMixin {
   @override
   void initState() {
-    // TODO: implement initState
+    controllerLeft1 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
+    controllerRight1 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
+    controllerRight2 = new AnimationController(
+        duration: const Duration(milliseconds: 1800), vsync: this);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controllerLeft1.dispose();
+    controllerRight1.dispose();
+    controllerRight2.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = 1100;
+
+    left1InfoAnimation = DetsIntroAnimation(
+      controllerLeft1,
+      line_page1_left_width_size(w / 13),
+    );
+    right1InfoAnimation = DetsIntroAnimation(
+      controllerRight1,
+      line_page1_width_right1_size(w / 13),
+    );
+    right2InfoAnimation = DetsIntroAnimation(
+      controllerRight2,
+      line_page1_width_right2_size(w / 15),
+    );
+
     return Container(
       width: w,
       height: h,
@@ -70,7 +104,8 @@ class _ObiPage1State extends State<ObiPage1> with TickerProviderStateMixin {
               child: Material(
                 child: InkWell(
                   onTap: () {
-                     MaterialPageRoute(builder: (context) => OrderShoppingCode());
+                    MaterialPageRoute(
+                        builder: (context) => OrderShoppingCode());
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -114,9 +149,9 @@ class _ObiPage1State extends State<ObiPage1> with TickerProviderStateMixin {
           ),
           Container(
             padding:
-                  EdgeInsets.symmetric(horizontal: w / 3 - 100, vertical: 70),
+                EdgeInsets.symmetric(horizontal: w / 3 - 100, vertical: 70),
             child: Padding(
-               padding: const EdgeInsets.only(left: 50),
+              padding: const EdgeInsets.only(left: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -139,8 +174,8 @@ DIMENSIONS
                                 fit: BoxFit.fill,
                               ),
                             ),
-                      width: w / 5 + 20,
-                            height: w / 5 + 70,
+                            width: w / 5 ,
+                            height: w / 5 ,
                           ),
                         ],
                       ),
@@ -158,16 +193,16 @@ DIMENSIONS
                             onTap: () {},
                             onHover: (value) {
                               if (value) {
-                                setState(() {
-                                  powerStart = true;
-                                });
+                                controllerLeft1.forward();
                               } else {
-                                setState(() {
-                                  powerStart = false;
-                                });
+                                controllerLeft1.reverse();
                               }
                             },
-                            child: CircularContainer()),
+                            child: AnimatedBuilder(
+                                animation: left1InfoAnimation.controller,
+                                builder: (BuildContext context, Widget child) {
+                                    return CircularContainer(infoAnimation:left1InfoAnimation);
+                                }),),
                       ),
                       //右一Hover
                       Positioned(
@@ -179,16 +214,16 @@ DIMENSIONS
                             onTap: () {},
                             onHover: (value) {
                               if (value) {
-                                setState(() {
-                                  forksStart = true;
-                                });
+                                controllerRight1.forward();
                               } else {
-                                setState(() {
-                                  forksStart = false;
-                                });
+                                controllerRight1.reverse();
                               }
                             },
-                            child: CircularContainer()),
+                           child: AnimatedBuilder(
+                                animation: right1InfoAnimation.controller,
+                                builder: (BuildContext context, Widget child) {
+                                      return CircularContainer(infoAnimation:right1InfoAnimation);
+                                }),),
                       ),
                       //右二Hover
                       Positioned(
@@ -200,71 +235,92 @@ DIMENSIONS
                             onTap: () {},
                             onHover: (value) {
                               if (value) {
-                                setState(() {
-                                  lightStart = true;
-                                });
+                                controllerRight2.forward();
                               } else {
-                                setState(() {
-                                  lightStart = false;
-                                });
+                                controllerRight2.reverse();
                               }
                             },
-                            child: CircularContainer()),
+                            child: AnimatedBuilder(
+                                animation: right2InfoAnimation.controller,
+                                builder: (BuildContext context, Widget child) {
+                                  return CircularContainer(infoAnimation:right2InfoAnimation);
+                                }),),
                       ),
 
                       //左1
                       Positioned(
                         top: ((w / 5 + 50) / 10) * 4.3,
                         left: 0,
-                        child: AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 600),
-                          child: powerStart
-                              ? Product_left_hover(
-                                  lineWidth: line_page1_left_width_size(w / 13),
-                                  title: "Blood Flow Power",
-                                  body: '''\nWhile blood is flowing in 
+                        child: AnimatedBuilder(
+                            animation: left1InfoAnimation.controller,
+                            builder: (BuildContext context, Widget child) {
+                              return Product_left_animation_hover(
+                                infoAnimation: left1InfoAnimation,
+                                // lineWidth:
+                                //     line_page1_left_width_size(w / 7.8),
+                                title: "Blood Flow Power",
+                                body: '''\nWhile blood is flowing in 
 vein, it will move the leads
 back and forth to generate
 electricity.''',
-                                )
-                              : Container(),
-                        ),
+                              );
+                            }),
                       ),
                       //右一資訊
                       Positioned(
                         top: ((w / 5 + 50) / 10) * 1.96,
                         right: 0,
-                        child: AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 600),
-                          child: forksStart
-                              ? Product_Right_hover(
-                                  lineWidth: line_page1_width_right1_size(w / 13),
-                                  title: "Fixed Forks",
-                                  body: '''\nThere will be 4 forks made
+                        child: AnimatedBuilder(
+                            animation: right1InfoAnimation.controller,
+                            builder: (BuildContext context, Widget child) {
+                              return Product_right_animation_hover(
+                                infoAnimation: right1InfoAnimation,
+                                title: "Fixed Forks",
+                                body: '''\nThere will be 4 forks made
 of Nitinol with shape
 memory to fix emorgan at
 the right position.
 ''',
-                                )
-                              : Container(),
-                        ),
+                              );
+                            }),
+//                         child: forksStart
+//                             ? Product_Right_hover(
+//                                 lineWidth:
+//                                     line_page1_width_right1_size(w / 13),
+//                                 title: "Fixed Forks",
+//                                 body: '''\nThere will be 4 forks made
+// of Nitinol with shape
+// memory to fix emorgan at
+// the right position.
+// ''',
+//                               )
+//                             : Container(),
                       ),
                       //右二資訊
                       Positioned(
                         top: ((w / 5 + 50) / 10) * 7.6,
                         right: 0,
-                        child: AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 600),
-                          child: lightStart
-                              ? Product_Right_hover(
-                                  lineWidth: line_page1_width_right2_size(w / 15),
-                                  title: "Light Sign",
-                                  body: '''\nDuring the operation, the
+                        child: AnimatedBuilder(
+                            animation: right2InfoAnimation.controller,
+                            builder: (BuildContext context, Widget child) {
+                              return Product_right_animation_hover(
+                                infoAnimation: right2InfoAnimation,
+                                title: "Light Sign",
+                                body: '''\nDuring the operation, the
 light will remind doctors if
 the pairing is successful.''',
-                                )
-                              : Container(),
-                        ),
+                              );
+                            }),
+//                         child: lightStart
+//                             ? Product_Right_hover(
+//                                 lineWidth:
+//                                     line_page1_width_right2_size(w / 15),
+//                                 title: "Light Sign",
+//                                 body: '''\nDuring the operation, the
+// light will remind doctors if
+// the pairing is successful.''',
+//                               )
+//                             : Container(),
                       )
                     ],
                   ),
@@ -273,8 +329,7 @@ the pairing is successful.''',
                   ),
                   title(
                       "Design",
-                      '''\nThe shape idea is from human heart. The main form is a short ellipse with smooth surface and tissue-friendly to avoid any
-danger during transplantation and removal.''',
+                      '''\nThe shape idea is from human heart. The main form is a short ellipse with smooth surface and tissue-friendly to avoid any danger during transplantation and removal.''',
                       w),
                   SizedBox(
                     height: 60,
@@ -291,7 +346,7 @@ Biomedical Polymer
 All the materials are also non-toxic and
 biological.''',
                           w),
-                            Expanded(child: Container()),
+                      Expanded(child: Container()),
                       msg(
                           "Technology",
                           '''Hertz Creation
