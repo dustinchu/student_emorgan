@@ -419,15 +419,16 @@ class _OrderPatchState extends State<OrderPatch> {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    if (leftClick != "" && rightClick != "")
+                    if (leftClick != "" && rightClick != "") {
                       _orderStatus.setPage2Status(false);
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OrderImformation(
-                                  leftImagePath: pushPageImagePathLeft,
-                                  rightImagePath: pushPageImagePathRight,
-                                )));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OrderImformation(
+                                    leftImagePath: pushPageImagePathLeft,
+                                    rightImagePath: pushPageImagePathRight,
+                                  )));
+                    }
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),

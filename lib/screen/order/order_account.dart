@@ -191,56 +191,62 @@ class _OrderAccountState extends State<OrderAccount> {
               fit: BoxFit.cover,
             ),
           ),
-          padding: EdgeInsets.only(top: 130, left: 100, right: 100),
+          padding: EdgeInsets.only(left: 100, right: 100),
           height: h,
           width: w / 2,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(child: Container()),
-              Text(
-                "Enter Account Detail",
-                style: GoogleFonts.montserrat(
-                  textStyle: TextStyle(color: Color(0xFF424648), fontSize: 32),
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(child: Container()),
+                  Text(
+                    "Enter Account Detail",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(color: Color(0xFF424648), fontSize: 32),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  LeftInput(
+                    firstNameTextEditingController: firstNameTextEditingController,
+                    emailAddressTextEditingController:
+                        emailAddressTextEditingController,
+                    yotrLastNameTextEditingController:
+                        yotrLastNameTextEditingController,
+                    phoneNumberTextEditingController:
+                        phoneNumberTextEditingController,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 50),
+                    width: w / 2 / 3 * 2 + 30,
+                    height: 1,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "Payment",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(color: Color(0xFF424648), fontSize: 32),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  LeftInput2(
+                    nameOrCardTextEditingController:
+                        nameOrCardTextEditingController,
+                    creditTextEditingController: creditTextEditingController,
+                    creditCardTextEditingController:
+                        creditCardTextEditingController,
+                    ccvTextEditingController: ccvTextEditingController,
+                    billingTextEditingController: billingTextEditingController,
+                  ),
+                   Expanded(child: Container()),
+                ],
               ),
-              SizedBox(
-                height: 50,
-              ),
-              LeftInput(
-                firstNameTextEditingController: firstNameTextEditingController,
-                emailAddressTextEditingController:
-                    emailAddressTextEditingController,
-                yotrLastNameTextEditingController:
-                    yotrLastNameTextEditingController,
-                phoneNumberTextEditingController:
-                    phoneNumberTextEditingController,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 50),
-                width: w / 2 / 3 * 2 + 30,
-                height: 1,
-                color: Colors.white,
-              ),
-              Text(
-                "Payment",
-                style: GoogleFonts.montserrat(
-                  textStyle: TextStyle(color: Color(0xFF424648), fontSize: 32),
-                ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              LeftInput2(
-                nameOrCardTextEditingController:
-                    nameOrCardTextEditingController,
-                creditTextEditingController: creditTextEditingController,
-                creditCardTextEditingController:
-                    creditCardTextEditingController,
-                ccvTextEditingController: ccvTextEditingController,
-                billingTextEditingController: billingTextEditingController,
-              ),
-               Expanded(child: Container()),
             ],
           ));
     }
@@ -307,139 +313,141 @@ class _OrderAccountState extends State<OrderAccount> {
               fit: BoxFit.cover,
             ),
           ),
-          padding: EdgeInsets.only(left: w / 2 / 6, right: w / 2 / 6, top: 130),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-               Expanded(child: Container()),
-              orderTitleAndLine("Emorgan"),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    children: [
-                      Circle(
-                        isLeft: true,
-                        isClick: false,
-                        isDefault: true,
-                        imgPath:accountStatus.getAccount1ImangePath,
-                        text: accountStatus.getAccount1Name,
-                        smill: true,
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Text(
-                        "Human A",
-                        style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: windows_width_medium_size(w),
-                              color: Color(0xFF424648)),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  Column(
-                    children: [
-                      Circle(
+          padding: EdgeInsets.only(left: w / 2 / 6, right: w / 2 / 6),
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                 Expanded(child: Container()),
+                orderTitleAndLine("Emorgan"),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      children: [
+                        Circle(
                           isLeft: true,
-                        isClick: false,
-                        isDefault: true,
-                        imgPath: accountStatus.getAccount2ImangePath,
-                        text: accountStatus.getAccount2Name,
-                        smill: true,
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Text(
-                        "Human B",
-                        style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                              fontSize: windows_width_medium_size(w),
-                              color: Color(0xFF424648)),
+                          isClick: false,
+                          isDefault: true,
+                          imgPath:accountStatus.getAccount1ImangePath,
+                          text: accountStatus.getAccount1Name,
+                          smill: true,
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          "Human A",
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                fontSize: windows_width_medium_size(w),
+                                color: Color(0xFF424648)),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 50,
+                    ),
+                    Column(
+                      children: [
+                        Circle(
+                            isLeft: true,
+                          isClick: false,
+                          isDefault: true,
+                          imgPath: accountStatus.getAccount2ImangePath,
+                          text: accountStatus.getAccount2Name,
+                          smill: true,
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          "Human B",
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                fontSize: windows_width_medium_size(w),
+                                color: Color(0xFF424648)),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                orderTitleAndLine("Operation"),
+                SizedBox(
+                  height: 10,
+                ),
+                order_dobdy("Date", "2024/12/25 14:00"),
+                SizedBox(
+                  height: 30,
+                ),
+                order_dobdy("Place", "EMORGAN RoomA"),
+                SizedBox(
+                  height: 40,
+                ),
+                orderTitleAndLine("Summary"),
+                SizedBox(
+                  height: 10,
+                ),
+                order_dobdy(accountStatus.getAccountOrderName1, "0.99 BTC"),
+                SizedBox(
+                  height: 30,
+                ),
+                order_dobdy(accountStatus.getAccountOrderName2, "0.99 BTC"),
+                SizedBox(
+                  height: 30,
+                ),
+                order_dobdy("Operation", "0.02 BTC"),
+                SizedBox(
+                  height: 30,
+                ),
+                Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    height: 1,
+                    color: Color(0xFFC8C1EF)),
+                Row(
+                  children: [
+                    Text(
+                      "Purchase Price",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                          fontSize: windows_width_medium_size(w),
+                          color: Color(0xFF424648),
                         ),
                       ),
-                    ],
-                  )
-                ],
-              ),
-              orderTitleAndLine("Operation"),
-              SizedBox(
-                height: 10,
-              ),
-              order_dobdy("Date", "2024/12/25 14:00"),
-              SizedBox(
-                height: 30,
-              ),
-              order_dobdy("Place", "EMORGAN RoomA"),
-              SizedBox(
-                height: 40,
-              ),
-              orderTitleAndLine("Summary"),
-              SizedBox(
-                height: 10,
-              ),
-              order_dobdy(accountStatus.getAccountOrderName1, "0.99 BTC"),
-              SizedBox(
-                height: 30,
-              ),
-              order_dobdy(accountStatus.getAccountOrderName2, "0.99 BTC"),
-              SizedBox(
-                height: 30,
-              ),
-              order_dobdy("Operation", "0.02 BTC"),
-              SizedBox(
-                height: 30,
-              ),
-              Container(
-                  margin: EdgeInsets.symmetric(vertical: 10),
-                  height: 1,
-                  color: Color(0xFFC8C1EF)),
-              Row(
-                children: [
-                  Text(
-                    "Purchase Price",
-                    style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
-                        fontSize: windows_width_medium_size(w),
-                        color: Color(0xFF424648),
+                    ),
+                    Expanded(child: Container()),
+                    Text(
+                      "2.00",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                          fontSize: windows_width_large_size(w),
+                          color: Color(0xFF424648),
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(child: Container()),
-                  Text(
-                    "2.00",
-                    style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
-                        fontSize: windows_width_large_size(w),
-                        color: Color(0xFF424648),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text(
+                      "BTC",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                          fontSize: windows_width_medium_size(w),
+                          color: Color(0xFF424648),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    "BTC",
-                    style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
-                        fontSize: windows_width_medium_size(w),
-                        color: Color(0xFF424648),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-               Expanded(child: Container()),
-            ],
+                  ],
+                ),
+                 Expanded(child: Container()),
+              ],
+            ),
           ),
         ),
       );

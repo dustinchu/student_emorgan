@@ -51,11 +51,12 @@ class OrderAppbar extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    print("????");
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                         margin: EdgeInsets.only(left: 50, right: 10),

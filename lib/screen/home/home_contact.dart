@@ -111,7 +111,7 @@ class _HomeContactState extends State<HomeContact>
 
     return Container(
       width: w,
-      height: 1300,
+      height: 1400,
       child: Stack(
         children: [
           Container(

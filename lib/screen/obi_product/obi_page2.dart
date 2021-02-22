@@ -37,13 +37,13 @@ class _ObiPage2State extends State<ObiPage2> with TickerProviderStateMixin {
   @override
   void initState() {
     controllerLeft1 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     controllerLeft2 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     controllerRight1 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     controllerRight2 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     super.initState();
   }
 
@@ -66,7 +66,7 @@ class _ObiPage2State extends State<ObiPage2> with TickerProviderStateMixin {
     );
     left2InfoAnimation = DetsIntroAnimation(
       controllerLeft2,
-      line_page2_left2_width_size(w / 7),
+      line_page2_left2_width_size(w / 6.5),
     );
     right1InfoAnimation = DetsIntroAnimation(
         controllerRight1, line_page2_right1_width_size(w / 7));

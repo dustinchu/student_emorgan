@@ -37,13 +37,13 @@ class _ShaliPage2State extends State<ShaliPage2> with TickerProviderStateMixin {
   @override
    void initState() {
     controllerLeft1 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     controllerLeft2 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     controllerRight1 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     controllerRight2 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     super.initState();
   }
 

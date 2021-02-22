@@ -6,7 +6,7 @@ class DetsIntroAnimation {
             new CurvedAnimation(
                 parent: controller,
                 curve: new Interval(0.3, 0.600, curve: Curves.easeIn))),
-        dividerWidth = new Tween(begin: 0.6, end: containerDividerWidth)
+        dividerWidth = new Tween(begin: 0.0, end: containerDividerWidth)
             .animate(new CurvedAnimation(
                 parent: controller,
                 curve: new Interval(0.0, 0.3, curve: Curves.fastOutSlowIn))),

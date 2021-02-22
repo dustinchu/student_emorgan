@@ -2,6 +2,7 @@ import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/menu_btn.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/provider/book_state.dart';
+import 'package:emorgan/util/dateString.dart';
 import 'package:emorgan/util/order_page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -688,7 +689,8 @@ class _OrderImformationState extends State<OrderImformation>
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
-     OrderPageStatus _orderStatus = OrderPageStatus();
+    OrderPageStatus _orderStatus = OrderPageStatus();
+    GetDateStr _getDateStr = GetDateStr();
     // double h = 900;
     List<bool> colorStatus = [false, false, true, false];
     Widget infoInput() {
@@ -702,49 +704,71 @@ class _OrderImformationState extends State<OrderImformation>
           padding: EdgeInsets.only(left: 100, right: 100),
           height: h,
           width: w / 2,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
             children: [
               Expanded(child: Container()),
-              Text(
-                "Personal Information",
-                style: GoogleFonts.montserrat(
-                  textStyle: TextStyle(color: Color(0xFF424648), fontSize: 32),
-                ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              LeftInput(
-                imagePath: widget.leftImagePath,
-                firstNameTextEditingController: firstNameTextEditingController1,
-                idNumberTextEditingController: idNumberTextEditingController1,
-                emailAddressTextEditingController:
-                    emailAddressTextEditingController1,
-                lastNameTextEditingController: lastNameTextEditingController1,
-                birthday1TextEditingController: birthday1TextEditingController1,
-                birthday2TextEditingController: birthday2TextEditingController1,
-                birthday3TextEditingController: birthday3TextEditingController1,
-                phoneNumberTextEditingController:
-                    phoneNumberTextEditingController1,
-              ),
-              Container(
-                width: double.infinity,
-                height: 1,
-                color: Colors.white,
-              ),
-              LeftInput(
-                imagePath: widget.rightImagePath,
-                firstNameTextEditingController: firstNameTextEditingController2,
-                idNumberTextEditingController: idNumberTextEditingController2,
-                emailAddressTextEditingController:
-                    emailAddressTextEditingController2,
-                lastNameTextEditingController: lastNameTextEditingController2,
-                birthday1TextEditingController: birthday1TextEditingController2,
-                birthday2TextEditingController: birthday2TextEditingController2,
-                birthday3TextEditingController: birthday3TextEditingController2,
-                phoneNumberTextEditingController:
-                    phoneNumberTextEditingController2,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(child: Container()),
+                  Text(
+                    "Personal Information",
+                    style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(color: Color(0xFF424648), fontSize: 32),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  LeftInput(
+                    imageTitle: "Human A",
+                    imagePath: widget.leftImagePath,
+                    firstNameTextEditingController:
+                        firstNameTextEditingController1,
+                    idNumberTextEditingController:
+                        idNumberTextEditingController1,
+                    emailAddressTextEditingController:
+                        emailAddressTextEditingController1,
+                    lastNameTextEditingController:
+                        lastNameTextEditingController1,
+                    birthday1TextEditingController:
+                        birthday1TextEditingController1,
+                    birthday2TextEditingController:
+                        birthday2TextEditingController1,
+                    birthday3TextEditingController:
+                        birthday3TextEditingController1,
+                    phoneNumberTextEditingController:
+                        phoneNumberTextEditingController1,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 30),
+                    width: 610,
+                    height: 1,
+                    color: Colors.white,
+                  ),
+                  LeftInput(
+                    imageTitle:"Human B" ,
+                    imagePath: widget.rightImagePath,
+                    firstNameTextEditingController:
+                        firstNameTextEditingController2,
+                    idNumberTextEditingController:
+                        idNumberTextEditingController2,
+                    emailAddressTextEditingController:
+                        emailAddressTextEditingController2,
+                    lastNameTextEditingController:
+                        lastNameTextEditingController2,
+                    birthday1TextEditingController:
+                        birthday1TextEditingController2,
+                    birthday2TextEditingController:
+                        birthday2TextEditingController2,
+                    birthday3TextEditingController:
+                        birthday3TextEditingController2,
+                    phoneNumberTextEditingController:
+                        phoneNumberTextEditingController2,
+                  ),
+                  Expanded(child: Container()),
+                ],
               ),
               Expanded(child: Container()),
             ],
@@ -798,7 +822,7 @@ class _OrderImformationState extends State<OrderImformation>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   new DateWidget(
-                    title: "Mon.",
+                    title: _getDateStr.getDateStr(1),
                     dateStr: "12/2",
                     index: 0,
                     openStatus: statusList[0],
@@ -807,7 +831,7 @@ class _OrderImformationState extends State<OrderImformation>
                     items: selectedList[0],
                   ),
                   new DateWidget(
-                    title: "Tue",
+                    title: _getDateStr.getDateStr(2),
                     dateStr: "12/3",
                     index: 1,
                     openStatus: statusList[1],
@@ -816,7 +840,7 @@ class _OrderImformationState extends State<OrderImformation>
                     items: selectedList[1],
                   ),
                   new DateWidget(
-                    title: "Wed.",
+                    title: _getDateStr.getDateStr(3),
                     dateStr: "12/4",
                     index: 2,
                     openStatus: statusList[2],
@@ -825,7 +849,7 @@ class _OrderImformationState extends State<OrderImformation>
                     items: selectedList[2],
                   ),
                   new DateWidget(
-                    title: "Thu.",
+                    title: _getDateStr.getDateStr(4),
                     dateStr: "12/5",
                     index: 3,
                     openStatus: statusList[3],
@@ -834,7 +858,7 @@ class _OrderImformationState extends State<OrderImformation>
                     items: selectedList[3],
                   ),
                   new DateWidget(
-                    title: "Fri",
+                    title: _getDateStr.getDateStr(5),
                     dateStr: "12/6",
                     index: 4,
                     openStatus: statusList[4],
@@ -843,7 +867,7 @@ class _OrderImformationState extends State<OrderImformation>
                     items: selectedList[4],
                   ),
                   new DateWidget(
-                    title: "Sat.",
+                    title: _getDateStr.getDateStr(6),
                     dateStr: "12/7",
                     index: 5,
                     openStatus: statusList[5],
@@ -1173,6 +1197,7 @@ class _DateWidgetState extends State<DateWidget> {
 class LeftInput extends StatelessWidget {
   const LeftInput(
       {Key key,
+      @required this.imageTitle,
       @required this.imagePath,
       @required this.firstNameTextEditingController,
       @required this.idNumberTextEditingController,
@@ -1184,6 +1209,7 @@ class LeftInput extends StatelessWidget {
       @required this.phoneNumberTextEditingController})
       : super(key: key);
   final String imagePath;
+  final String imageTitle;
   final TextEditingController firstNameTextEditingController;
   final TextEditingController idNumberTextEditingController;
   final TextEditingController emailAddressTextEditingController;
@@ -1255,11 +1281,23 @@ class LeftInput extends StatelessWidget {
 
     return Row(
       children: [
-        new Image.asset(
-          imagePath,
-          fit: BoxFit.contain,
-          width: 150.0,
-          height: 300.0,
+        Column(
+          children: [
+            Text(
+              imageTitle,
+              style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                    fontSize: windows_width_small_size(w),
+                    color: Color(0xFF424648)),
+              ),
+            ),
+            new Image.asset(
+              imagePath,
+              fit: BoxFit.fill,
+              width: 150.0,
+              height: 200.0,
+            ),
+          ],
         ),
         SizedBox(
           width: 20,

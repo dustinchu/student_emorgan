@@ -33,11 +33,11 @@ class _ObiPage1State extends State<ObiPage1> with TickerProviderStateMixin {
   @override
   void initState() {
     controllerLeft1 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     controllerRight1 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     controllerRight2 = new AnimationController(
-        duration: const Duration(milliseconds: 1800), vsync: this);
+        duration: const Duration(milliseconds: 1300), vsync: this);
     super.initState();
   }
 
@@ -174,8 +174,8 @@ DIMENSIONS
                                 fit: BoxFit.fill,
                               ),
                             ),
-                            width: w / 5 ,
-                            height: w / 5 ,
+                            width: w / 6 ,
+                            height: w / 6 ,
                           ),
                         ],
                       ),

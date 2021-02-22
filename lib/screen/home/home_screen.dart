@@ -51,8 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
   double pageAnimate = 0;
   bool scrollStatus = true;
   void scrollPageNext(h) {
-    if (pageIndex == 0) pageAnimate += 1300 + ((h - 1300) / 2);
-    else  pageAnimate += 1300 ;
+    if (pageIndex == 0) pageAnimate += 1400 + ((h - 1400) / 2);
+    else  pageAnimate += 1400 ;
     // pageAnimate += 1300;
     // else
     // pageAnimate += 1700;
