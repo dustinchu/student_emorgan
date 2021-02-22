@@ -2,6 +2,7 @@ import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/menu_btn.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/provider/book_state.dart';
+import 'package:emorgan/util/dateString.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -135,18 +136,6 @@ class _HomeBookingState extends State<HomeBooking>
     }
   }
 
-  //得到日期
-  String getDateStr(int addDate) {
-    String date = DateFormat("E.", "en_US")
-        .format(DateTime.now().add(new Duration(days: addDate + dateIndex)));
-    if (date == "Sun.") {
-      date = DateFormat("E.", "en_US").format(
-          DateTime.now().add(new Duration(days: addDate + dateIndex + 1)));
-      dateIndex = 1;
-    }
-
-    return date;
-  }
 
   //循環list把點擊的那一個index bool改變 給下拉選單用
   void listLoor(int index) {
@@ -343,7 +332,7 @@ class _HomeBookingState extends State<HomeBooking>
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
     double h = 1400;
-
+GetDateStr _getDateStr = GetDateStr();
     Widget edit(title, control) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -564,7 +553,7 @@ class _HomeBookingState extends State<HomeBooking>
                   height: windowsSizeboxHightSize(15),
                 ),
                 Text(
-                  "2024",
+                  "2021",
                   style: GoogleFonts.montserrat(
                     textStyle: TextStyle(
                         fontSize: windows_width_large_size(w),
@@ -578,8 +567,8 @@ class _HomeBookingState extends State<HomeBooking>
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     new DateWidget(
-                      title: "Mon.",
-                      dateStr: "12/2",
+                     title: _getDateStr.getDateStr(1),
+                    dateStr: _getDateStr.getDateNumStr(1),
                       index: 0,
                       openStatus: statusList[0],
                       upBtn: dateBtn0,
@@ -587,8 +576,8 @@ class _HomeBookingState extends State<HomeBooking>
                       items: selectedList[0],
                     ),
                     new DateWidget(
-                      title: "Tue",
-                      dateStr: "12/3",
+                      title: _getDateStr.getDateStr(2),
+                    dateStr: _getDateStr.getDateNumStr(2),
                       index: 1,
                       openStatus: statusList[1],
                       upBtn: dateBtn1,
@@ -596,8 +585,8 @@ class _HomeBookingState extends State<HomeBooking>
                       items: selectedList[1],
                     ),
                     new DateWidget(
-                      title: "Wed.",
-                      dateStr: "12/4",
+                     title: _getDateStr.getDateStr(3),
+                    dateStr: _getDateStr.getDateNumStr(3),
                       index: 2,
                       openStatus: statusList[2],
                       upBtn: dateBtn2,
@@ -605,8 +594,8 @@ class _HomeBookingState extends State<HomeBooking>
                       items: selectedList[2],
                     ),
                     new DateWidget(
-                      title: "Thu.",
-                      dateStr: "12/5",
+                     title: _getDateStr.getDateStr(4),
+                    dateStr: _getDateStr.getDateNumStr(4),
                       index: 3,
                       openStatus: statusList[3],
                       upBtn: dateBtn3,
@@ -614,8 +603,8 @@ class _HomeBookingState extends State<HomeBooking>
                       items: selectedList[3],
                     ),
                     new DateWidget(
-                      title: "Fri",
-                      dateStr: "12/6",
+                     title: _getDateStr.getDateStr(5),
+                    dateStr: _getDateStr.getDateNumStr(5),
                       index: 4,
                       openStatus: statusList[4],
                       upBtn: dateBtn4,
@@ -623,8 +612,8 @@ class _HomeBookingState extends State<HomeBooking>
                       items: selectedList[4],
                     ),
                     new DateWidget(
-                      title: "Sat.",
-                      dateStr: "12/7",
+                      title: _getDateStr.getDateStr(6),
+                    dateStr: _getDateStr.getDateNumStr(6),
                       index: 5,
                       openStatus: statusList[5],
                       upBtn: dateBtn5,
@@ -756,12 +745,12 @@ class DateWidget extends StatefulWidget {
 List<String> defDataItem = [
   '10:00',
   '11:00',
-  '12:00',
-  '13:00',
+  // '12:00',
+  // '13:00',
   '14:00',
   '15:00',
   '16:00',
-  '17:00',
+  // '17:00',
 ];
 
 //點擊動畫展開下半部
@@ -811,7 +800,7 @@ class _DateWidgetState extends State<DateWidget> {
           duration: const Duration(milliseconds: 700),
           //讓沒元件的時候一樣高
           firstChild: Column(children: [
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 5; i++)
               Container(
                 padding: EdgeInsets.all(0),
                 width: windowsSizeboxWidthSize(60),
@@ -822,7 +811,7 @@ class _DateWidgetState extends State<DateWidget> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 5; i++)
                   InkWell(
                     child: Container(
                       padding: EdgeInsets.all(0),

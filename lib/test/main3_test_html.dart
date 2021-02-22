@@ -25,6 +25,7 @@ class Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int dateIndex = 0;
+    int dateNumIndex = 0;
     //得到日期
     String getDateStr(int addDate) {
       String date = DateFormat("E.", "en_US")
@@ -38,17 +39,30 @@ class Page extends StatelessWidget {
       return date;
     }
 
+    //得到日期
+    String getDateNumStr(int addDate) {
+      String date = DateFormat("E.", "en_US")
+          .format(DateTime.now().add(new Duration(days: addDate + dateIndex)));
+
+      if (date == "Sun.") {
+        dateIndex = 1;
+      }
+
+      return DateFormat("Md")
+          .format(DateTime.now().add(new Duration(days: addDate + dateIndex)));
+    }
+
     return Scaffold(
       body: Container(
           child: Center(
         child: FlatButton(
           onPressed: () {
-            print("Date===${getDateStr(1)}");
-            print("Date===${getDateStr(2)}");
-            print("Date===${getDateStr(3)}");
-            print("Date===${getDateStr(4)}");
-            print("Date===${getDateStr(5)}");
-            print("Date===${getDateStr(6)}");
+            print("Date===${getDateNumStr(1)}");
+            print("Date===${getDateNumStr(2)}");
+            print("Date===${getDateNumStr(3)}");
+            print("Date===${getDateNumStr(4)}");
+            print("Date===${getDateNumStr(5)}");
+            print("Date===${getDateNumStr(6)}");
           },
           child: Text("!@3213"),
         ),
