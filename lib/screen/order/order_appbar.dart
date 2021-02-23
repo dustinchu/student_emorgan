@@ -23,13 +23,11 @@ class OrderAppbar extends StatelessWidget {
             ),
           ),
           Expanded(child: Container()),
-          status
-              ? Container(
-                  color: Color(0xFF7A82A7),
-                  height: 6,
-                  width: 180,
-                )
-              : Container()
+          Container(
+            color: status ? Color(0xFF7A82A7) : Color(0x807A82A7),
+            height: 6,
+            width: 180,
+          )
         ],
       );
     }
@@ -71,9 +69,10 @@ class OrderAppbar extends StatelessWidget {
                       ),
                       Text(
                         "Emorgan",
-                        style:TextStyle(
-                          fontFamily: 'Beware',
-                                color: Color(0xFF7A82A7), fontSize: 32),
+                        style: TextStyle(
+                            fontFamily: 'Beware',
+                            color: Color(0xFF7A82A7),
+                            fontSize: 32),
                       ),
                     ],
                   ),
