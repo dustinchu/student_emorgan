@@ -232,7 +232,7 @@ class _HomeHelpState extends State<HomeHelp>
               width: 100,
             ),
             Container(
-              padding: EdgeInsets.only(top: 350),
+              padding: EdgeInsets.only(top: 250),
               child: Text(
                 '''We understand that when you come to this website, you want a better solution. There might
 be some problems with you and your partner.
