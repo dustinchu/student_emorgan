@@ -201,7 +201,7 @@ class _HomeHelpState extends State<HomeHelp>
           children: [
             Expanded(child: Container()),
             Container(
-              padding: EdgeInsets.only(top: 350),
+              padding: EdgeInsets.only(top: 250),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
