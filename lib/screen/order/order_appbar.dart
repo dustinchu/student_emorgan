@@ -19,12 +19,12 @@ class OrderAppbar extends StatelessWidget {
           Text(
             text,
             style: GoogleFonts.montserrat(
-              textStyle: TextStyle(fontSize: 18, color: Color(0xFF364146)),
+              textStyle: TextStyle(fontSize: 18, color: status ?Color(0xFF364146):Color(0x80364146)),
             ),
           ),
           Expanded(child: Container()),
           Container(
-            color: status ? Color(0xFF7A82A7) : Color(0x807A82A7),
+            color:  status?Color(0xFF7A82A7):Colors.transparent,
             height: 6,
             width: 180,
           )
@@ -67,12 +67,15 @@ class OrderAppbar extends StatelessWidget {
                         width: 30,
                         height: 30,
                       ),
-                      Text(
-                        "Emorgan",
-                        style: TextStyle(
-                            fontFamily: 'Beware',
-                            color: Color(0xFF7A82A7),
-                            fontSize: 32),
+                      Container(
+                        // padding: EdgeInsets.only(bottom: 10),
+                        child: Text(
+                          "Emorgan",
+                          style: TextStyle(
+                              fontFamily: 'Beware',
+                              color: Color(0xFF7A82A7),
+                              fontSize: 34),
+                        ),
                       ),
                     ],
                   ),

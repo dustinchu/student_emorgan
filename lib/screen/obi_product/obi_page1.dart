@@ -174,8 +174,8 @@ DIMENSIONS
                                 fit: BoxFit.fill,
                               ),
                             ),
-                            width: w / 6 ,
-                            height: w / 6 ,
+                            width: w / 7 ,
+                            height: w / 7 ,
                           ),
                         ],
                       ),
@@ -185,9 +185,9 @@ DIMENSIONS
                       //(w-((w / 3 - 150)*2))得到中間頁面的寬度
                       // 白色區域中間(w-((w / 3 - 150)*2))/2,
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 4,
+                        top: ((w / 5 + 50) / 10) * 4.2,
                         //白色區域分成40等分
-                        left: (w - ((w / 3 - 150) * 2)) / 40 * 9,
+                        left: (w - ((w / 3 - 150) * 2)) / 40 * 8,
                         child: InkWell(
                             hoverColor: Colors.transparent,
                             onTap: () {},

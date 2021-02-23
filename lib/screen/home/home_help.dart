@@ -67,16 +67,22 @@ class _HomeHelpState extends State<HomeHelp>
           Column(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 100, bottom: 100),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                height: 750,
+                // padding: EdgeInsets.only(top: 100, bottom: 100),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    stepList[0],
-                    stepList[1],
-                    stepList[2],
-                    stepList[3],
-                    stepList[4],
-                    stepList[5],
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        stepList[0],
+                        stepList[1],
+                        stepList[2],
+                        stepList[3],
+                        stepList[4],
+                        stepList[5],
+                      ],
+                    ),
                   ],
                 ),
               ),
