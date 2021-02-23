@@ -34975,8 +34975,7 @@ r=T.ab(f,T.a6(H.b([L.F("Voice to Vibrate",f,f,f,B.P(A.G(f,f,new P.i(d),f,f,f,f,f
 p=c/3
 o=p-100
 n=M.adN("Emorgan","DIMENSIONS\n26.0  x  26.7  x  36.0  mm",c)
-m=c/8
-m=T.ao(H.b([M.q(f,f,f,f,new S.ak(f,X.aU(C.bD,new L.aI("assets/obi_item.png",f,f)),f,f,f,f,C.n),m,new V.K(0,25,0,25),f,m)],b),C.l,C.y,C.f)
+m=T.ao(H.b([M.q(f,f,f,f,new S.ak(f,X.aU(C.bD,new L.aI("assets/obi_item.png",f,f)),f,f,f,f,C.n),c/7,new V.K(0,25,0,25),f,c/8)],b),C.l,C.y,C.f)
 l=(c/5+50)/10
 p=(c-(p-150)*2)/40
 k=$.adj.a
@@ -35414,7 +35413,7 @@ r=t.t
 return T.a6(H.b([M.q(p,Z.l8("Name on Card",q.c,o),p,p,p,p,p,p,m),T.N(p,20,p),M.q(p,Z.l8("Credit Card Number",q.d,o),p,p,p,p,p,p,m),T.N(p,20,p),T.N(p,p,20),T.ao(H.b([M.q(p,Z.l8("CreDit Card Number",q.e,o),p,p,p,p,p,p,s),T.N(p,p,20),M.q(p,Z.l8("CCV",q.f,o),p,p,p,p,p,p,s),T.N(p,p,20),M.q(p,Z.l8("Billing Zip Code",q.r,o),p,p,p,p,p,p,n)],r),C.l,C.i,C.f)],r),C.p,C.i,C.f)}}
 X.ma.prototype={
 D:function(a,b){var s=null,r=b.I(t.w).f,q=new X.VA(),p=X.aU(C.x,new L.aI("assets/appbar_bk.png",s,s)),o=t.t,n=this.c
-return M.q(s,T.ao(H.b([M.q(s,T.ao(H.b([R.aQ(!1,!0,T.ao(H.b([M.q(s,s,s,s,new S.ak(s,X.aU(C.x,new L.aI("assets/logo.png",s,s)),s,s,s,s,C.n),30,new V.K(50,0,10,0),s,30),M.q(s,L.F("Emorgan",s,s,s,A.G(s,s,new P.i(4286218919),s,s,s,s,s,"Beware",s,s,34,s,s,s,s,!0,s,s,s,s,s,s),s),s,s,s,s,s,new V.K(0,0,0,10),s)],o),C.l,C.y,C.f),s,!0,s,s,s,s,s,s,s,s,s,new X.VB(b),s,s,s),T.aY(M.q(s,T.ao(H.b([R.aQ(!1,!0,q.$2("1. Shopping Code",n[0]),s,!0,s,s,s,s,s,s,s,s,s,this.d,s,s,s),R.aQ(!1,!0,q.$2("2. Emorgan Patch",n[1]),s,!0,s,s,s,s,s,s,s,s,s,this.e,s,s,s),q.$2("3. Operation Date",n[2]),q.$2("4. Payment",n[3])],o),C.l,C.b2,C.f),s,s,s,s,s,new V.K(70,0,70,0),s))],o),C.l,C.i,C.f),s,s,new S.ak(s,p,s,s,s,s,C.n),80,s,s,r.a.a)],o),C.l,C.i,C.f),s,s,s,s,s,s,s)}}
+return M.q(s,T.ao(H.b([M.q(s,T.ao(H.b([R.aQ(!1,!0,T.ao(H.b([M.q(s,s,s,s,new S.ak(s,X.aU(C.x,new L.aI("assets/logo.png",s,s)),s,s,s,s,C.n),30,new V.K(50,0,10,0),s,30),M.q(s,L.F("Emorgan",s,s,s,A.G(s,s,new P.i(4286218919),s,s,s,s,s,"Beware",s,s,34,s,s,s,s,!0,s,s,s,s,s,s),s),s,s,s,s,s,new V.K(0,0,0,15),s)],o),C.l,C.y,C.f),s,!0,s,s,s,s,s,s,s,s,s,new X.VB(b),s,s,s),T.aY(M.q(s,T.ao(H.b([R.aQ(!1,!0,q.$2("1. Shopping Code",n[0]),s,!0,s,s,s,s,s,s,s,s,s,this.d,s,s,s),R.aQ(!1,!0,q.$2("2. Emorgan Patch",n[1]),s,!0,s,s,s,s,s,s,s,s,s,this.e,s,s,s),q.$2("3. Operation Date",n[2]),q.$2("4. Payment",n[3])],o),C.l,C.b2,C.f),s,s,s,s,s,new V.K(70,0,70,0),s))],o),C.l,C.i,C.f),s,s,new S.ak(s,p,s,s,s,s,C.n),80,s,s,r.a.a)],o),C.l,C.i,C.f),s,s,s,s,s,s,s)}}
 X.VA.prototype={
 $2:function(a,b){var s=null,r=T.aY(M.q(s,s,s,s,s,s,s,s,s)),q=L.F(a,s,s,s,B.P(A.G(s,s,b?new P.i(4281745734):new P.i(2151039302),s,s,s,s,s,s,s,s,18,s,s,s,s,!0,s,s,s,s,s,s)),s),p=T.aY(M.q(s,s,s,s,s,s,s,s,s))
 return T.a6(H.b([r,q,p,M.q(s,s,b?new P.i(4286218919):C.v,s,s,6,s,s,180)],t.t),C.l,C.i,C.f)},

@@ -175,7 +175,7 @@ DIMENSIONS
                               ),
                             ),
                             width: w / 8 ,
-                            height: w / 8 ,
+                            height: w / 7 ,
                           ),
                         ],
                       ),

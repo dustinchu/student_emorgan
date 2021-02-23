@@ -68,7 +68,7 @@ class OrderAppbar extends StatelessWidget {
                         height: 30,
                       ),
                       Container(
-                        padding: EdgeInsets.only(bottom: 10),
+                        padding: EdgeInsets.only(bottom: 15),
                         child: Text(
                           "Emorgan",
                           style: TextStyle(
