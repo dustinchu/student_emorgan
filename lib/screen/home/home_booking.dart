@@ -331,7 +331,7 @@ class _HomeBookingState extends State<HomeBooking>
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h = 1400;
+    double h = 1500;
 GetDateStr _getDateStr = GetDateStr();
     Widget edit(title, control) {
       return Column(

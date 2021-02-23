@@ -58,7 +58,7 @@ class _HomeProductBannerState extends State<HomeProductBanner>
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h = 1400;
+    double h = 1500;
     return Stack(
       children: [
         Container(
@@ -93,7 +93,19 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                         // width: 100,
                         // height: 100,
                       )
-                    : Container()
+                    : EasyWebView(
+                        onLoaded: () {
+                          // print("onload~");
+                        },
+                        src: widget.path,
+                        isHtml: false, // Use Html syntax
+                        isMarkdown: false, // Use markdown syntax
+                        convertToWidgets:
+                            false, // Try to convert to flutter widgets
+                        // width: 100,
+                        // height: 100,
+                      )
+                // : Container()
                 // : FlatButton(
                 //     onPressed: () {
                 //       Provider.of<BookStatus>(context, listen: false)
@@ -150,7 +162,6 @@ class _HomeProductBannerState extends State<HomeProductBanner>
       ],
     );
   }
-
 }
 
 class InnerLayout extends StatefulWidget {
