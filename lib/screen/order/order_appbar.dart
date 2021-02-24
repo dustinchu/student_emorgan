@@ -4,22 +4,23 @@ import 'package:google_fonts/google_fonts.dart';
 
 class OrderAppbar extends StatelessWidget {
   const OrderAppbar(
-      {Key key, this.colorStatus, this.clickPage1, this.clickPage2})
+      {Key key, this.colorStatus, this.clickPage1, this.clickPage2,this.beforStatus})
       : super(key: key);
+       final List<bool> beforStatus;
   final List<bool> colorStatus;
   final VoidCallback clickPage1;
   final VoidCallback clickPage2;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    Widget appbarText(String text, bool status) {
+    Widget appbarText(String text, bool status,bool  beforStatus) {
       return Column(
         children: [
           Expanded(child: Container()),
           Text(
             text,
             style: GoogleFonts.montserrat(
-              textStyle: TextStyle(fontSize: 18, color: status ?Color(0xFF364146):Color(0x80364146)),
+              textStyle: TextStyle(fontSize: 18, color: status ?Color(0xFF364146):beforStatus?Color(0xFF364146):Color(0x80364146)),
             ),
           ),
           Expanded(child: Container()),
@@ -89,13 +90,13 @@ class OrderAppbar extends StatelessWidget {
                       InkWell(
                           onTap: clickPage1,
                           child:
-                              appbarText("1. Shopping Code", colorStatus[0])),
+                              appbarText("1. Shopping Code", colorStatus[0],beforStatus[0])),
                       InkWell(
                           onTap: clickPage2,
                           child:
-                              appbarText("2. Emorgan Patch", colorStatus[1])),
-                      appbarText("3. Operation Date", colorStatus[2]),
-                      appbarText("4. Payment", colorStatus[3]),
+                              appbarText("2. Emorgan Patch", colorStatus[1],beforStatus[1])),
+                      appbarText("3. Operation Date", colorStatus[2],beforStatus[2]),
+                      appbarText("4. Payment", colorStatus[3],beforStatus[3]),
                     ],
                   ),
                 ))

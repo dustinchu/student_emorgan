@@ -183,6 +183,7 @@ class _OrderAccountState extends State<OrderAccount> {
     var accountStatus = Provider.of<AccountStatus>(context);
     // double h = 900;
     List<bool> colorStatus = [false, false, false, true];
+    List<bool> beforColorStatus = [true, true, true, true];
     Widget infoInput() {
       return Container(
           decoration: BoxDecoration(
@@ -196,7 +197,7 @@ class _OrderAccountState extends State<OrderAccount> {
           width: w / 2,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-             crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,14 +206,16 @@ class _OrderAccountState extends State<OrderAccount> {
                   Text(
                     "Enter Account Detail",
                     style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(color: Color(0xFF424648), fontSize: 32),
+                      textStyle:
+                          TextStyle(color: Color(0xFF424648), fontSize: 32),
                     ),
                   ),
                   SizedBox(
                     height: 50,
                   ),
                   LeftInput(
-                    firstNameTextEditingController: firstNameTextEditingController,
+                    firstNameTextEditingController:
+                        firstNameTextEditingController,
                     emailAddressTextEditingController:
                         emailAddressTextEditingController,
                     yotrLastNameTextEditingController:
@@ -229,7 +232,8 @@ class _OrderAccountState extends State<OrderAccount> {
                   Text(
                     "Payment",
                     style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(color: Color(0xFF424648), fontSize: 32),
+                      textStyle:
+                          TextStyle(color: Color(0xFF424648), fontSize: 32),
                     ),
                   ),
                   SizedBox(
@@ -244,7 +248,7 @@ class _OrderAccountState extends State<OrderAccount> {
                     ccvTextEditingController: ccvTextEditingController,
                     billingTextEditingController: billingTextEditingController,
                   ),
-                   Expanded(child: Container()),
+                  Expanded(child: Container()),
                 ],
               ),
             ],
@@ -318,7 +322,7 @@ class _OrderAccountState extends State<OrderAccount> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 Expanded(child: Container()),
+                Expanded(child: Container()),
                 orderTitleAndLine("Emorgan"),
                 SizedBox(
                   height: 10,
@@ -333,7 +337,7 @@ class _OrderAccountState extends State<OrderAccount> {
                           isLeft: true,
                           isClick: false,
                           isDefault: true,
-                          imgPath:accountStatus.getAccount1ImangePath,
+                          imgPath: accountStatus.getAccount1ImangePath,
                           text: accountStatus.getAccount1Name,
                           smill: true,
                         ),
@@ -356,7 +360,7 @@ class _OrderAccountState extends State<OrderAccount> {
                     Column(
                       children: [
                         Circle(
-                            isLeft: true,
+                          isLeft: true,
                           isClick: false,
                           isDefault: true,
                           imgPath: accountStatus.getAccount2ImangePath,
@@ -445,7 +449,7 @@ class _OrderAccountState extends State<OrderAccount> {
                     ),
                   ],
                 ),
-                 Expanded(child: Container()),
+                Expanded(child: Container()),
               ],
             ),
           ),
@@ -541,6 +545,7 @@ class _OrderAccountState extends State<OrderAccount> {
               top: 0,
               child: OrderAppbar(
                 colorStatus: colorStatus,
+                beforStatus: beforColorStatus,
               ),
             ),
             Positioned(
@@ -719,13 +724,13 @@ class LeftInput2 extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-            width: (w / 2 / 3 * 2)+20,
+            width: (w / 2 / 3 * 2) + 20,
             child: edit("Name on Card", nameOrCardTextEditingController, w)),
         SizedBox(
           height: 20,
         ),
         Container(
-            width: (w / 2 / 3 * 2)+20,
+            width: (w / 2 / 3 * 2) + 20,
             child: edit("Credit Card Number", creditTextEditingController, w)),
         SizedBox(
           height: 20,
@@ -736,14 +741,14 @@ class LeftInput2 extends StatelessWidget {
         Row(
           children: [
             Container(
-                width: (w / 2 / 3 * 2 / 3)-10 ,
+                width: (w / 2 / 3 * 2 / 3) - 10,
                 child: edit(
                     "CreDit Card Number", creditCardTextEditingController, w)),
             SizedBox(
               width: 20,
             ),
             Container(
-                width: (w / 2 / 3 * 2 / 3)-10 ,
+                width: (w / 2 / 3 * 2 / 3) - 10,
                 child: edit("CCV", ccvTextEditingController, w)),
             SizedBox(
               width: 20,

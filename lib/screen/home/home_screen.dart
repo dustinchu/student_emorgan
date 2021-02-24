@@ -51,8 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
   double pageAnimate = 0;
   bool scrollStatus = true;
   void scrollPageNext(h) {
-    if (pageIndex == 0) pageAnimate += 1400 + ((h - 1400) / 2);
-    else  pageAnimate += 1400 ;
+    if (pageIndex == 0) pageAnimate += 1500 + ((h - 1400) / 2);
+    else  pageAnimate += 1500 ;
     // pageAnimate += 1300;
     // else
     // pageAnimate += 1700;
@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void scrollPageBack(h) {
     pageIndex -= 1;
-    pageAnimate -= 1300;
+    pageAnimate -= 1500;
     // pageAnimate -= 1700;
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
@@ -150,40 +150,40 @@ class _HomeScreenState extends State<HomeScreen> {
             height: h,
             width: w,
             child: Listener(
-              // onPointerUp: (details) {
-              //   // upBtn();
-              //   print("up");
-              // },
-              // onPointerSignal: (pointerSignal) async {
-              //   if (scrollStatus) {
-              //     if (pointerSignal is PointerScrollEvent) {
-              //       scrollStatus = false;
-              //       // print("d:${pointerSignal.scrollDelta}");
-              //       // print("Y:${pointerSignal.scrollDelta.dy}");
+              onPointerUp: (details) {
+                // upBtn();
+                print("up");
+              },
+              onPointerSignal: (pointerSignal) async {
+                if (scrollStatus) {
+                  if (pointerSignal is PointerScrollEvent) {
+                    scrollStatus = false;
+                    // print("d:${pointerSignal.scrollDelta}");
+                    // print("Y:${pointerSignal.scrollDelta.dy}");
 
-              //       if (pointerSignal.scrollDelta.dy > 0 &&
-              //           pageAnimate != 14300) {
-              //         print("?");
-              //         scrollPageNext(h);
-              //       }
-              //       if (pointerSignal.scrollDelta.dy < 0 && pageAnimate != 0) {
-              //         scrollPageBack(h);
-              //       }
-              //       //延遲兩秒
-              //       await Future.delayed(Duration(milliseconds: 1500));
-              //       if (pageIndex == 2)
-              //         Provider.of<BannerStatus>(context, listen: false)
-              //             .showBanner1();
-              //       else if (pageIndex == 3)
-              //         Provider.of<BannerStatus>(context, listen: false)
-              //             .showBanner2();
-              //       else if (pageIndex == 4)
-              //         Provider.of<BannerStatus>(context, listen: false)
-              //             .showBanner3();
-              //       scrollStatus = true;
-              //     }
-              //   }
-              // },
+                    if (pointerSignal.scrollDelta.dy > 0 &&
+                        pageAnimate != 14300) {
+                      print("?");
+                      scrollPageNext(h);
+                    }
+                    if (pointerSignal.scrollDelta.dy < 0 && pageAnimate != 0) {
+                      scrollPageBack(h);
+                    }
+                    //延遲兩秒
+                    await Future.delayed(Duration(milliseconds: 1500));
+                    if (pageIndex == 2)
+                      Provider.of<BannerStatus>(context, listen: false)
+                          .showBanner1();
+                    else if (pageIndex == 3)
+                      Provider.of<BannerStatus>(context, listen: false)
+                          .showBanner2();
+                    else if (pageIndex == 4)
+                      Provider.of<BannerStatus>(context, listen: false)
+                          .showBanner3();
+                    scrollStatus = true;
+                  }
+                }
+              },
               child: VsScrollbar(
                 controller: _scrollController,
                 // @REQUIRED
@@ -202,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       _scrollController, // use same scrollController object to support drag functionality
                   shrinkWrap: true,
                   //關閉滾動
-                  // physics: const NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   children: [
                     Column(
                       children: [

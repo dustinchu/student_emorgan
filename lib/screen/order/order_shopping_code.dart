@@ -1,3 +1,4 @@
+import 'package:emorgan/screen/home/home_screen.dart';
 import 'package:emorgan/util/order_page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,13 +34,14 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
   }
 
   Widget build(BuildContext context) {
-  OrderPageStatus _orderStatus = OrderPageStatus();
+    OrderPageStatus _orderStatus = OrderPageStatus();
     // _orderStatus.setPage1Status(true);
     // _orderStatus.setPage2Status(true);
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
     double h = 900;
     List<bool> colorStatus = [true, false, false, false];
+    List<bool> beforColorStatus = [true, false, false, false];
     return Scaffold(
       body: Container(
         width: w,
@@ -154,27 +156,35 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                       Positioned(
                           right: 70,
                           bottom: 80,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Book a counseling",
-                                style: GoogleFonts.montserrat(
-                                  textStyle: TextStyle(
-                                      fontSize: 16, color: Color(0x80364146)),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomeScreen()));
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Book a counseling",
+                                  style: GoogleFonts.montserrat(
+                                    textStyle: TextStyle(
+                                        fontSize: 16, color: Color(0x80364146)),
+                                  ),
                                 ),
-                              ),
-                              Icon(
-                                Icons.keyboard_arrow_right_outlined,
-                                color: Color(0xFF7A82A7),
-                                size: 19,
-                              ),
-                              // Icon(
-                              //   Icons.keyboard_arrow_right_outlined,
-                              //   color: Color(0xFF7A82A7),
-                              //   size: 18,
-                              // )
-                            ],
+                                Icon(
+                                  Icons.keyboard_arrow_right_outlined,
+                                  color: Color(0xFF7A82A7),
+                                  size: 19,
+                                ),
+                                // Icon(
+                                //   Icons.keyboard_arrow_right_outlined,
+                                //   color: Color(0xFF7A82A7),
+                                //   size: 18,
+                                // )
+                              ],
+                            ),
                           )),
                     ],
                   ),
@@ -184,6 +194,7 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                 top: 0,
                 child: OrderAppbar(
                   colorStatus: colorStatus,
+                  beforStatus: beforColorStatus,
                 ),
               )
             ],

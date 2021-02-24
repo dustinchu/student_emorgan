@@ -693,6 +693,7 @@ class _OrderImformationState extends State<OrderImformation>
     GetDateStr _getDateStr = GetDateStr();
     // double h = 900;
     List<bool> colorStatus = [false, false, true, false];
+    List<bool> beforColorStatus = [true, true, true, false];
     Widget infoInput() {
       return Container(
           decoration: BoxDecoration(
@@ -1024,6 +1025,7 @@ class _OrderImformationState extends State<OrderImformation>
                   }
                 },
                 colorStatus: colorStatus,
+                beforStatus: beforColorStatus,
               ),
             ),
             Positioned(

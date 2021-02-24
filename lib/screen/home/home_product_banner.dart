@@ -72,40 +72,28 @@ class _HomeProductBannerState extends State<HomeProductBanner>
           ),
           height: h,
           width: w,
-          // child: Center(
-          //   child: Text("123"),
-          // ),
           child: Container(
             padding: widget.isLeft
                 ? EdgeInsets.only(left: w / 3)
                 : EdgeInsets.only(right: w / 3),
             child: Center(
                 child: widget.status
-                    ? EasyWebView(
-                        onLoaded: () {
-                          // print("onload~");
-                        },
-                        src: widget.path,
-                        isHtml: false, // Use Html syntax
-                        isMarkdown: false, // Use markdown syntax
-                        convertToWidgets:
-                            false, // Try to convert to flutter widgets
-                        // width: 100,
-                        // height: 100,
-                      )
-                    : EasyWebView(
-                        onLoaded: () {
-                          // print("onload~");
-                        },
-                        src: widget.path,
-                        isHtml: false, // Use Html syntax
-                        isMarkdown: false, // Use markdown syntax
-                        convertToWidgets:
-                            false, // Try to convert to flutter widgets
-                        // width: 100,
-                        // height: 100,
-                      )
-                // : Container()
+                    ? Align(
+                      alignment: Alignment.center,
+                      child: EasyWebView(
+                          onLoaded: () {
+                            // print("onload~");
+                          },
+                          src: widget.path,
+                          isHtml: false, // Use Html syntax
+                          isMarkdown: false, // Use markdown syntax
+                          convertToWidgets:
+                              false, // Try to convert to flutter widgets
+                          width:800,
+                          height: 800,
+                        ),
+                    )
+                : Container()
                 // : FlatButton(
                 //     onPressed: () {
                 //       Provider.of<BookStatus>(context, listen: false)
@@ -198,7 +186,7 @@ class _InnerLayoutState extends State<InnerLayout> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-    double h = 1400;
+    double h = 1500;
     return Container(
       child: Container(
         padding: EdgeInsets.only(left: 26, right: 26, bottom: 50),

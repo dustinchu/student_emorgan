@@ -4,9 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "d437f1cbf3f5ac9b7a710fa814217dbf",
-"index.html": "a3f04d6031d7b19af510898a960affa9",
-"/": "a3f04d6031d7b19af510898a960affa9",
-"main.dart.js": "931163586d8c10ac90753fd93c1a6a2e",
+"index.html": "cca0847301693f08168c91a0443ac55a",
+"/": "cca0847301693f08168c91a0443ac55a",
+"main.dart.js": "9906c6db5e1fa95bdd593b99e4d67956",
 "favicon.png": "bded570080bd67f70737d5b23cad022f",
 "icons/Icon-192.png": "42c2aa62a4a11c93b56bb73a70d570a3",
 "icons/Icon-512.png": "5986ba0e4e756ec1c4ddd53e245b03d1",
@@ -195,7 +195,7 @@ const RESOURCES = {
 "assets/assets/obi/47.png": "743fa857f9e14d2d340b447a5ff72e8b",
 "assets/assets/obi/46.png": "d451160df515af0f322f57d47856c694",
 "assets/assets/obi/52.png": "9cff2b0fae7ac9230b92bfc31e57cd12",
-"assets/assets/shail_img2.png": "32a5e55bd4cdd980ed56272301de2414",
+"assets/assets/shail_img2.png": "3047bc27ae3592b72c4abb81e21fe0eb",
 "assets/assets/logo.png": "2b1e5cff4ac3e9acda644a401e32c5d1",
 "assets/assets/order_people.png": "ae602a84564a591c560e773e568e64aa",
 "assets/assets/loding_icon.png": "e85a30e6b9ad1479709b8d03a613ef5c",

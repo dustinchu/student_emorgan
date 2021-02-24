@@ -174,6 +174,7 @@ class _OrderPatchState extends State<OrderPatch> {
     // double h = MediaQuery.of(context).size.height;
     double h = MediaQuery.of(context).size.height;
     List<bool> colorStatus = [false, true, false, false];
+        List<bool> beforcolorStatus = [true, true, false, false];
     OrderPageStatus _orderStatus = OrderPageStatus();
 
     Widget title(String text1, String text2, double w, double padding) {
@@ -381,6 +382,7 @@ class _OrderPatchState extends State<OrderPatch> {
                             builder: (context) => OrderShoppingCode()));
                   }
                 },
+                beforStatus:beforcolorStatus,
                 colorStatus: colorStatus,
               ),
             ),

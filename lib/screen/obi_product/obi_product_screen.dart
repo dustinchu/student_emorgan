@@ -1,3 +1,4 @@
+import 'package:emorgan/common/widgets/product_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
 
@@ -6,7 +7,6 @@ import 'obi_page2.dart';
 import 'obi_page3.dart';
 import 'obi_page4.dart';
 import 'obi_page5.dart';
-
 
 class ObiProductScreen extends StatefulWidget {
   ObiProductScreen({Key key}) : super(key: key);
@@ -45,11 +45,19 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
                 physics: BouncingScrollPhysics(),
                 children: [
                   ObiPage1(),
-                    SizedBox(height: 200,),
+                  SizedBox(
+                    height: 200,
+                  ),
+                  ProductCircle(),
                   ObiPage2(),
-                    SizedBox(height: 200,),
+                  SizedBox(
+                    height: 200,
+                  ),
+                  ProductCircle(),
                   ObiPage3(),
+                  ProductCircle(),
                   ObiPage4(),
+                  ProductCircle(),
                   ObiPage5(),
                 ],
               ),
@@ -60,4 +68,3 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
     );
   }
 }
-

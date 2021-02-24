@@ -42,8 +42,8 @@ class MyApp extends StatelessWidget {
           //     child: Scaffold(body: HomeScreen()),
           //   ),
           // );
-          home: HomeScreen()),
-      // home: ObiProductScreen()),
+          // home: HomeScreen()),
+      home: OrderShoppingCode()),
     );
   }
 }
