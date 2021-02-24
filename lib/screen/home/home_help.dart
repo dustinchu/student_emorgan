@@ -48,7 +48,7 @@ class _HomeHelpState extends State<HomeHelp>
       child: Stack(
         children: [
           Positioned(
-            top: 60,
+            top: 50,
             right: 22,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,

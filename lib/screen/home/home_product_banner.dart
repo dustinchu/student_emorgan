@@ -79,8 +79,8 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                 ? EdgeInsets.only(left: w / 3)
                 : EdgeInsets.only(right: w / 3),
             child: Container(
-              padding: widget.isTop
-                  ? EdgeInsets.only(top: 20)
+              margin: widget.isTop
+                  ? EdgeInsets.only(top: 300)
                   : EdgeInsets.only(top: 0),
               child: Center(
                   child: widget.status
@@ -146,7 +146,7 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                 )),
 
         Positioned(
-            top: 60,
+            top: 50,
             right: 20,
             child: PointerInterceptor(
               child: IconButton(
