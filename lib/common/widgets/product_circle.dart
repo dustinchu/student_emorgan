@@ -5,8 +5,8 @@ class ProductCircle extends StatelessWidget {
 
   Widget circle() {
     return Container(
-      width: 12,
-      height: 12,
+      width: 6,
+      height: 6,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Color(0xFF7A82A7),

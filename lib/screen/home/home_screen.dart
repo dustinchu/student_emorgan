@@ -51,8 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
   double pageAnimate = 0;
   bool scrollStatus = true;
   void scrollPageNext(h) {
-    if (pageIndex == 0) pageAnimate += 1500 + ((h - 1400) / 2);
-    else  pageAnimate += 1500 ;
+    if (pageIndex == 0)
+      pageAnimate += 1500 + ((h - 1400) / 2);
+    else
+      pageAnimate += 1500;
     // pageAnimate += 1300;
     // else
     // pageAnimate += 1700;
@@ -224,8 +226,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           path: "https://eloquent-engelbart-9e449d.netlify.app",
                           // path: "assets/shali145.html",
                           status: bannerStatus.getBanner1Status,
-                          imgWidth: 1100,
-                          imgHeigh: 1100,
+                          imgWidth: 1000,
+                          imgHeigh: 1000,
+                          isTop: false,
                         ),
                         new HomeProductBanner(
                           id: "obi",
@@ -243,6 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           status: bannerStatus.getBanner2Status,
                           imgWidth: 1300,
                           imgHeigh: 1300,
+                          isTop: true,
                         ),
                         new HomeProductBanner(
                           id: "buzzy",
@@ -261,6 +265,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           status: bannerStatus.getBanner3Status,
                           imgWidth: 1200,
                           imgHeigh: 1200,
+                          isTop: false,
                         ),
                         HomeHelp(upBtn: upBtn),
                         HomeBooking(

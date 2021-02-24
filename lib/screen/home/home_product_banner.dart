@@ -26,7 +26,8 @@ class HomeProductBanner extends StatefulWidget {
       this.path,
       this.imgWidth,
       this.imgHeigh,
-      this.isLeft})
+      this.isLeft,
+      this.isTop})
       : super(key: key);
   final VoidCallback upBtn;
   final String title;
@@ -41,6 +42,7 @@ class HomeProductBanner extends StatefulWidget {
   final double imgWidth;
   final double imgHeigh;
   final String id;
+  final bool isTop;
   final bool status;
   @override
   _HomeProductBannerState createState() => _HomeProductBannerState();
@@ -76,38 +78,43 @@ class _HomeProductBannerState extends State<HomeProductBanner>
             padding: widget.isLeft
                 ? EdgeInsets.only(left: w / 3)
                 : EdgeInsets.only(right: w / 3),
-            child: Center(
-                child: widget.status
-                    ? Align(
-                      alignment: Alignment.center,
-                      child: EasyWebView(
-                          onLoaded: () {
-                            // print("onload~");
-                          },
-                          src: widget.path,
-                          isHtml: false, // Use Html syntax
-                          isMarkdown: false, // Use markdown syntax
-                          convertToWidgets:
-                              false, // Try to convert to flutter widgets
-                          width:widget.imgWidth,
-                          height:  widget.imgHeigh,
-                        ),
-                    )
-                : Container()
-                // : FlatButton(
-                //     onPressed: () {
-                //       Provider.of<BookStatus>(context, listen: false)
-                //           .setImageStatus(true);
-                //     },
-                //     child: Text("play")),
-                // child: HomeProduct360Html(
-                //     valueID: widget.finderName, path: widget.path),
-                // child: ImagePage(
-                //   w: widget.imgWidth,
-                //   h: widget.imgHeigh,
-                //   finderName: widget.finderName,
-                // ),
-                ),
+            child: Container(
+              padding: widget.isTop
+                  ? EdgeInsets.only(top: 20)
+                  : EdgeInsets.only(top: 0),
+              child: Center(
+                  child: widget.status
+                      ? Align(
+                          alignment: Alignment.center,
+                          child: EasyWebView(
+                            onLoaded: () {
+                              // print("onload~");
+                            },
+                            src: widget.path,
+                            isHtml: false, // Use Html syntax
+                            isMarkdown: false, // Use markdown syntax
+                            convertToWidgets:
+                                false, // Try to convert to flutter widgets
+                            width: widget.imgWidth,
+                            height: widget.imgHeigh,
+                          ),
+                        )
+                      : Container()
+                  // : FlatButton(
+                  //     onPressed: () {
+                  //       Provider.of<BookStatus>(context, listen: false)
+                  //           .setImageStatus(true);
+                  //     },
+                  //     child: Text("play")),
+                  // child: HomeProduct360Html(
+                  //     valueID: widget.finderName, path: widget.path),
+                  // child: ImagePage(
+                  //   w: widget.imgWidth,
+                  //   h: widget.imgHeigh,
+                  //   finderName: widget.finderName,
+                  // ),
+                  ),
+            ),
           ),
         ),
         // backround(w, h),
