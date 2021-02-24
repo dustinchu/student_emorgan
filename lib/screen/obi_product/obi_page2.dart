@@ -59,7 +59,7 @@ class _ObiPage2State extends State<ObiPage2> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 1000;
+    double h = 1100;
     left1InfoAnimation = DetsIntroAnimation(
       controllerLeft1,
       line_page2_left_width_size(w / 7),
