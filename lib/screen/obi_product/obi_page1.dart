@@ -167,7 +167,7 @@ DIMENSIONS
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(top: 25, bottom: 25),
+                            margin: EdgeInsets.only(top: 50, bottom: 50),
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage("assets/obi_item.png"),

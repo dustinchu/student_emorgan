@@ -224,8 +224,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           path: "https://eloquent-engelbart-9e449d.netlify.app",
                           // path: "assets/shali145.html",
                           status: bannerStatus.getBanner1Status,
-                          imgWidth: 768,
-                          imgHeigh: 717,
+                          imgWidth: 1100,
+                          imgHeigh: 1100,
                         ),
                         new HomeProductBanner(
                           id: "obi",
@@ -241,8 +241,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           // path: "assets/obi150.html",
                           path: "https://obi1.netlify.app/",
                           status: bannerStatus.getBanner2Status,
-                          imgWidth: 1024,
-                          imgHeigh: 668,
+                          imgWidth: 1300,
+                          imgHeigh: 1300,
                         ),
                         new HomeProductBanner(
                           id: "buzzy",
@@ -259,8 +259,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           // path: "assets/buzzy151.html",
                           path: "https://buzzy1.netlify.app",
                           status: bannerStatus.getBanner3Status,
-                          imgWidth: 1024,
-                          imgHeigh: 795,
+                          imgWidth: 1200,
+                          imgHeigh: 1200,
                         ),
                         HomeHelp(upBtn: upBtn),
                         HomeBooking(

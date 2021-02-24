@@ -16495,9 +16495,9 @@ _.bg$=a
 _.a=null
 _.b=b
 _.c=null},a4S:function a4S(){},a4R:function a4R(a){this.a=a},Nq:function Nq(){},
-agb:function(a,b,c,d,e,f,g,h,i,j,k,l,m,n){return new K.tW(n,l,m,a,b,g,h,i,j,k,null)},
+agb:function(a,b,c,d,e,f,g,h,i,j,k,l,m,n){return new K.tW(n,l,m,a,b,g,h,i,j,f,e,k,null)},
 ajW:function(a,b,c,d,e,f,g){return new K.u3(e,f,a,b,c,d,null)},
-tW:function tW(a,b,c,d,e,f,g,h,i,j,k){var _=this
+tW:function tW(a,b,c,d,e,f,g,h,i,j,k,l,m){var _=this
 _.c=a
 _.d=b
 _.e=c
@@ -16507,8 +16507,10 @@ _.x=f
 _.y=g
 _.z=h
 _.ch=i
-_.dx=j
-_.a=k},
+_.cx=j
+_.cy=k
+_.dx=l
+_.a=m},
 Jz:function Jz(a,b){var _=this
 _.bg$=a
 _.a=null
@@ -34973,7 +34975,7 @@ a4:function(){return new K.Js(null,C.o)}}
 K.Js.prototype={
 gfB:function(){return!0},
 D:function(a,b){var s=null,r="Wen-Chien,Wu",q=4281483590,p="Emorgan Designer",o=2151827016,n=4281745734,m="Participation",l="Animator",k=b.G(t.w).f.a.a,j=new K.a4S(),i=new K.a4R(k),h=X.aT(C.x,new L.aH("assets/help.png",s,s)),g=k/3,f=g*2,e=t.t
-return M.p(s,T.aq(H.b([M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.al(s,X.aT(C.x,new L.aH("assets/people.png",s,s)),s,s,s,s,C.n),1000,s,s,f),M.p(s,T.aq(H.b([T.aZ(T.ad(H.b([L.I(r,s,s,s,A.H(s,s,new P.i(q),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s),s),L.I(p,s,s,s,A.H(s,s,new P.i(o),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s),s)],e),C.l,C.z,C.e),1),T.aZ(T.ad(H.b([L.I(r,s,s,s,A.H(s,s,new P.i(q),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s),s),L.I(p,s,s,s,A.H(s,s,new P.i(o),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s),s)],e),C.l,C.z,C.e),1)],e),C.l,C.i,C.e),s,s,s,300,s,s,s)],e),C.l,C.i,C.e),s,s,s,s,s,s,f),T.by(C.R,H.b([M.p(C.R,T.ad(H.b([T.M(s,40,s),L.I("About EMOGRAN",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s)),s),L.I("For Love, For Future",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,50,s),L.I("Emorgan wishes every couple has another\nchance to love again.\n\n\nWe care about human mental needs.\nWe focus on development of biomedical\ntechnology and materials.\n\n\nEmorgan has three sets of products:\n\u201cObi\u201d,\u201cShali\u201d and \u201cBuzzy\u201d.\n\n\nWe are simultaneously developing\nmore products that will help humans to be\nspiritually assisted.",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,50,s),L.I(m,s,s,s,B.U(A.H(s,s,new P.i(4286218919),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,20,s),j.$2("Dustin, Chu     ","Website Engineer"),T.M(s,10,s),j.$2("Chih Hung, Lin",l),T.M(s,10,s),j.$2("Osborne, Zhu  ",l),T.M(s,10,s),j.$2("Gimmyfoto      ","Photographer"),T.M(s,50,s),i.$2("assets/email.png",m),T.M(s,10,s),i.$2("assets/phone.png","0912-283-063"),T.M(s,10,s),i.$2("assets/ig.png","emorgan_creation"),T.M(s,100,s)],e),C.p,C.i,C.nK),C.m,s,s,1500,s,new V.K(0,20,0,0),g),T.aj(20,L.I("\xa9 2020-2047 EMORGAN",s,s,s,B.U(A.H(s,s,new P.i(4291346927),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),s,s,s,s,s,s),T.aj(s,B.oq(U.iW("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,40,s)],e),C.t,C.B)],e),C.p,C.i,C.e),s,s,new S.al(s,h,s,s,s,s,C.n),1500,s,s,k)}}
+return M.p(s,T.aq(H.b([M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.al(s,X.aT(C.x,new L.aH("assets/people.png",s,s)),s,s,s,s,C.n),1000,s,s,f),M.p(s,T.aq(H.b([T.aZ(T.ad(H.b([L.I(r,s,s,s,A.H(s,s,new P.i(q),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s),s),L.I(p,s,s,s,A.H(s,s,new P.i(o),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s),s)],e),C.l,C.z,C.e),1),T.aZ(T.ad(H.b([L.I(r,s,s,s,A.H(s,s,new P.i(q),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s),s),L.I(p,s,s,s,A.H(s,s,new P.i(o),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s),s)],e),C.l,C.z,C.e),1)],e),C.l,C.i,C.e),s,s,s,300,s,s,s)],e),C.l,C.i,C.e),s,s,s,s,s,s,f),T.by(C.R,H.b([M.p(C.R,T.ad(H.b([T.M(s,40,s),L.I("About EMOGRAN",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s)),s),L.I("For Love, For Future",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,50,s),L.I("Emorgan wishes every couple has another\nchance to love again.\n\n\nWe care about human mental needs.\nWe focus on development of biomedical\ntechnology and materials.\n\n\nEmorgan has three sets of products:\n\u201cObi\u201d,\u201cShali\u201d and \u201cBuzzy\u201d.\n\n\nWe are simultaneously developing\nmore products that will help humans to be\nspiritually assisted.",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,50,s),L.I(m,s,s,s,B.U(A.H(s,s,new P.i(4286218919),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,20,s),j.$2("Dustin, Chu     ","Website Engineer"),T.M(s,10,s),j.$2("Chih Hung, Lin",l),T.M(s,10,s),j.$2("Osborne, Zhu  ",l),T.M(s,10,s),j.$2("Gimmyfoto      ","Photographer"),T.M(s,50,s),i.$2("assets/email.png",m),T.M(s,10,s),i.$2("assets/phone.png","0912-283-063"),T.M(s,10,s),i.$2("assets/ig.png","emorgan_creation"),T.M(s,100,s)],e),C.p,C.i,C.nK),C.m,s,s,1500,s,new V.K(0,20,0,0),g),T.aj(20,L.I("\xa9 2020-2047 EMORGAN",s,s,s,B.U(A.H(s,s,new P.i(4291346927),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),s,s,s,s,s,s),T.aj(s,B.oq(U.iW("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,60,s)],e),C.t,C.B)],e),C.p,C.i,C.e),s,s,new S.al(s,h,s,s,s,s,C.n),1500,s,s,k)}}
 K.a4S.prototype={
 $2:function(a,b){var s=null
 return T.aq(H.b([L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4281745734),s,s,s,s,s,s,s,s,12,s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,s,160),L.I(b,s,s,s,B.U(A.H(s,s,new P.i(2151827016),s,s,s,s,s,s,s,s,12,s,s,s,s,!0,s,s,s,s,s,s)),s)],t.t),C.l,C.i,C.nK)},
@@ -34992,7 +34994,7 @@ B.tP.prototype={
 a4:function(){return new B.Jt(C.o)}}
 B.Jt.prototype={
 D:function(a,b){var s=null,r=4286218919,q=b.G(t.w).f,p=X.aT(C.x,new L.aH("assets/big_banner_backroung.png",s,s)),o=t.t
-return T.by(C.F,H.b([M.p(s,M.p(s,T.ad(H.b([T.aq(H.b([L.I("EMORGAN",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,44,s,s,s,s,!0,s,s,s,s,s,s)),s)],o),C.p,C.i,C.e),T.aZ(M.p(s,s,s,s,new S.al(s,X.aT(C.x,new L.aH("assets/big_banner.png",s,s)),s,s,s,s,C.n),s,s,s,s),1),T.aq(H.b([L.I("FOR LOVE FOR FUTURE",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,44,s,s,s,s,!0,s,s,s,s,s,s)),s)],o),C.jy,C.h8,C.e)],o),C.l,C.i,C.e),s,s,s,s,s,new V.K(200,50,200,50),s),s,s,new S.al(s,p,s,s,s,s,C.n),1500,s,s,q.a.a),T.aj(s,B.oq(U.iW("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,40,s)],o),C.t,C.B)}}
+return T.by(C.F,H.b([M.p(s,M.p(s,T.ad(H.b([T.aq(H.b([L.I("EMORGAN",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,44,s,s,s,s,!0,s,s,s,s,s,s)),s)],o),C.p,C.i,C.e),T.aZ(M.p(s,s,s,s,new S.al(s,X.aT(C.x,new L.aH("assets/big_banner.png",s,s)),s,s,s,s,C.n),s,s,s,s),1),T.aq(H.b([L.I("FOR LOVE FOR FUTURE",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,44,s,s,s,s,!0,s,s,s,s,s,s)),s)],o),C.jy,C.h8,C.e)],o),C.l,C.i,C.e),s,s,s,s,s,new V.K(200,50,200,50),s),s,s,new S.al(s,p,s,s,s,s,C.n),1500,s,s,q.a.a),T.aj(s,B.oq(U.iW("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,60,s)],o),C.t,C.B)}}
 A.tQ.prototype={
 a4:function(){var s=t.i
 return new A.xx(H.b([!0,!0,!0,!0,!0,!0,!0],t.jf),H.b([H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s)],t.TE),null,C.o)}}
@@ -35049,7 +35051,7 @@ q=F.iJ(r&&n.e&&n.f&&n.r&&n.x&&n.y&&n.z?new P.i(l):new P.i(k),2)
 p=r&&n.e&&n.f&&n.r&&n.x&&n.y&&n.z?new P.i(l):C.v
 o=K.dB(60)
 r=r&&n.e&&n.f&&n.r&&n.x&&n.y&&n.z?C.m:new P.i(k)
-return M.p(m,T.by(C.F,H.b([s,e,T.aj(50,M.i_(C.ab,m,R.aR(!1,!0,M.p(m,L.I("Book NOW",m,m,m,B.U(A.H(m,m,r,m,m,m,m,m,m,m,m,V.bb(j),m,m,m,m,!0,m,m,m,m,m,m)),m),m,m,new S.al(p,m,q,o,m,m,C.n),m,m,new V.K(10,5,10,5),m),m,!0,m,m,m,m,m,m,m,m,m,new A.a4U(n),m,m,m),C.Q,C.v,0,m,m,m,m,C.aQ),m,m,m,50,m,m),T.aj(m,B.oq(U.iW("assets/icon_up.png",m,m,m),n.a.c,m),m,m,m,20,40,m)],h),C.t,C.B),m,m,new S.al(m,i,m,m,m,m,C.n),1500,m,m,j)}}
+return M.p(m,T.by(C.F,H.b([s,e,T.aj(50,M.i_(C.ab,m,R.aR(!1,!0,M.p(m,L.I("Book NOW",m,m,m,B.U(A.H(m,m,r,m,m,m,m,m,m,m,m,V.bb(j),m,m,m,m,!0,m,m,m,m,m,m)),m),m,m,new S.al(p,m,q,o,m,m,C.n),m,m,new V.K(10,5,10,5),m),m,!0,m,m,m,m,m,m,m,m,m,new A.a4U(n),m,m,m),C.Q,C.v,0,m,m,m,m,C.aQ),m,m,m,50,m,m),T.aj(m,B.oq(U.iW("assets/icon_up.png",m,m,m),n.a.c,m),m,m,m,20,60,m)],h),C.t,C.B),m,m,new S.al(m,i,m,m,m,m,C.n),1500,m,m,j)}}
 A.a5q.prototype={
 $0:function(){this.a.z=!0},
 $S:1}
@@ -35289,7 +35291,7 @@ q=F.iJ(r&&n.e&&n.f?new P.i(k):new P.i(j),2)
 p=r&&n.e&&n.f?new P.i(k):C.v
 o=K.dB(60)
 r=r&&n.e&&n.f?C.m:new P.i(j)
-return M.p(m,T.by(C.F,H.b([M.p(m,T.aq(H.b([d,c,M.p(m,T.ad(H.b([b,a,h,s,T.aq(H.b([R.aR(!1,!0,M.p(m,L.I("Send Message",m,m,m,B.U(A.H(m,m,r,m,m,m,m,m,m,m,m,V.bb(i),m,m,m,m,!0,m,m,m,m,m,m)),m),m,m,new S.al(p,m,q,o,m,m,C.n),m,m,new V.K(10,5,10,5),m),m,!0,m,m,m,m,m,m,m,m,m,new Z.a5t(n),m,m,m)],e),C.l,C.h8,C.e)],e),C.l,C.i,C.e),C.m,m,m,600,new V.K(0,50,0,50),new V.K(50,50,50,50),900)],e),C.l,C.z,C.e),m,m,new S.al(m,f,m,m,m,m,C.n),1500,m,new V.K(g,50,g,50),i),T.aj(m,B.oq(U.iW("assets/icon_up.png",m,m,m),n.a.c,m),m,m,m,20,40,m)],e),C.t,C.B),m,m,m,1500,m,m,i)}}
+return M.p(m,T.by(C.F,H.b([M.p(m,T.aq(H.b([d,c,M.p(m,T.ad(H.b([b,a,h,s,T.aq(H.b([R.aR(!1,!0,M.p(m,L.I("Send Message",m,m,m,B.U(A.H(m,m,r,m,m,m,m,m,m,m,m,V.bb(i),m,m,m,m,!0,m,m,m,m,m,m)),m),m,m,new S.al(p,m,q,o,m,m,C.n),m,m,new V.K(10,5,10,5),m),m,!0,m,m,m,m,m,m,m,m,m,new Z.a5t(n),m,m,m)],e),C.l,C.h8,C.e)],e),C.l,C.i,C.e),C.m,m,m,600,new V.K(0,50,0,50),new V.K(50,50,50,50),900)],e),C.l,C.z,C.e),m,m,new S.al(m,f,m,m,m,m,C.n),1500,m,new V.K(g,50,g,50),i),T.aj(m,B.oq(U.iW("assets/icon_up.png",m,m,m),n.a.c,m),m,m,m,20,60,m)],e),C.t,C.B),m,m,m,1500,m,m,i)}}
 Z.a5B.prototype={
 $0:function(){var s=this.a
 if(s.r.a.a.length>0)s.t(new Z.a5z(s))
@@ -35360,7 +35362,7 @@ D:function(a,b){var s,r=null,q=4282533448,p=t.w,o=b.G(p).f.a.a
 b.G(p).toString
 p=X.aT(C.x,new L.aH("assets/feedback.png",r,r))
 s=t.t
-return T.by(C.F,H.b([M.p(r,T.aq(H.b([M.p(r,T.aq(H.b([T.ad(H.b([L.I("User Feedback",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(o),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I("See How They Feel",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(o),r,r,r,r,!0,r,r,r,r,r,r)),r)],s),C.p,C.z,C.e),T.M(r,r,50),T.ad(H.b([L.I("Here are some Emo\u2019s feedback of Emorgan.\n",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(o),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I("We collected Emos\u2019 feedbacks who have used\nEMORGAN for more than one year to provide\reference for new EMOs.",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(o),r,r,r,r,!0,r,r,r,r,r,r)),r)],s),C.p,C.z,C.e)],s),C.l,C.i,C.e),r,r,r,r,r,r,r)],s),C.l,C.z,C.e),r,r,new S.al(r,p,r,r,r,r,C.n),800,r,new V.K(0,50,0,50),o),T.aj(r,B.oq(U.iW("assets/icon_up.png",r,r,r),this.a.c,r),r,r,r,20,40,r)],s),C.t,C.B)}}
+return T.by(C.F,H.b([M.p(r,T.aq(H.b([M.p(r,T.aq(H.b([T.ad(H.b([L.I("User Feedback",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(o),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I("See How They Feel",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(o),r,r,r,r,!0,r,r,r,r,r,r)),r)],s),C.p,C.z,C.e),T.M(r,r,50),T.ad(H.b([L.I("Here are some Emo\u2019s feedback of Emorgan.\n",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(o),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I("We collected Emos\u2019 feedbacks who have used\nEMORGAN for more than one year to provide\reference for new EMOs.",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(o),r,r,r,r,!0,r,r,r,r,r,r)),r)],s),C.p,C.z,C.e)],s),C.l,C.i,C.e),r,r,r,r,r,r,r)],s),C.l,C.z,C.e),r,r,new S.al(r,p,r,r,r,r,C.n),800,r,new V.K(0,50,0,50),o),T.aj(r,B.oq(U.iW("assets/icon_up.png",r,r,r),this.a.c,r),r,r,r,20,60,r)],s),C.t,C.B)}}
 O.Nr.prototype={
 ac:function(){this.ax()
 this.f8()},
@@ -35372,7 +35374,7 @@ a4:function(){return new A.Jw(null,C.o)}}
 A.Jw.prototype={
 gfB:function(){return!0},
 D:function(a,b){var s=this,r=null,q=4281745734,p=b.G(t.w).f.a.a,o=[s.jZ(0,"Step 1.","assets/step1.png","Book a counseling","Online","",p),s.jZ(0,"Step 2.","assets/step2.png","Get the consent and","emorgan-purchse code","from the psychologist",p),s.jZ(0,"Step 3.","assets/step3.png","Purchase Obi, Shali or","Buzzy online","",p),s.jZ(0,"Step 4.","assets/step4.png","Put on your Obi, Shali or","Buzzy","",p),s.jZ(0,"Step 5.","assets/step5.png","Exchange of emotion","experience with your","partner",p),s.jZ(0,"Step 6.","assets/step6.png","Go back for a","follow-up consultation","",p),s.jZ(0,"Step 7.","assets/step7.png","Keep your relationship ","","",p)],n=X.aT(C.x,new L.aH("assets/help.png",r,r)),m=t.t
-return M.p(r,T.by(C.F,H.b([T.aj(r,T.aq(H.b([B.oq(U.iW("assets/icon_up.png",r,r,r),s.a.c,r)],m),C.p,C.h8,C.e),r,r,r,22,40,r),T.ad(H.b([M.p(r,T.ad(H.b([T.aq(H.b([o[0],o[1],o[2],o[3],o[4],o[5]],m),C.l,C.rz,C.e)],m),C.l,C.z,C.e),r,r,r,750,r,r,r),T.aZ(M.p(r,T.aq(H.b([T.aZ(M.p(r,r,r,r,r,r,r,r,r),1),M.p(r,T.ad(H.b([L.I("Purchase Process",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.M(r,5,r),L.I("Know Your Needs First",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(p),r,r,r,r,!0,r,r,r,r,r,r)),r)],m),C.p,C.i,C.e),r,r,r,r,r,new V.K(0,250,0,0),r),T.M(r,r,100),M.p(r,L.I("We understand that when you come to this website, you want a better solution. There might\nbe some problems with you and your partner.\n\nYou have tried many methods, but they were not satisfied.\n\nWe suggest that you and your partner can talk to our psychological counselors first, they will\nnhelp you with relationship and emotion problems, and  also make a serious decision\nwhether you need emorgans and help you grow in understanding each other.\n                  ",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(p),r,r,r,r,!0,r,r,r,r,r,r)),r),r,r,r,r,r,new V.K(0,250,0,0),r),T.aZ(M.p(r,r,r,r,r,r,r,r,r),1)],m),C.p,C.i,C.e),C.m,r,r,r,r,r,p),1)],m),C.l,C.i,C.e)],m),C.t,C.B),r,r,new S.al(r,n,r,r,r,r,C.n),1500,r,r,p)},
+return M.p(r,T.by(C.F,H.b([T.aj(r,T.aq(H.b([B.oq(U.iW("assets/icon_up.png",r,r,r),s.a.c,r)],m),C.p,C.h8,C.e),r,r,r,22,60,r),T.ad(H.b([M.p(r,T.ad(H.b([T.aq(H.b([o[0],o[1],o[2],o[3],o[4],o[5]],m),C.l,C.rz,C.e)],m),C.l,C.z,C.e),r,r,r,750,r,r,r),T.aZ(M.p(r,T.aq(H.b([T.aZ(M.p(r,r,r,r,r,r,r,r,r),1),M.p(r,T.ad(H.b([L.I("Purchase Process",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.M(r,5,r),L.I("Know Your Needs First",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(p),r,r,r,r,!0,r,r,r,r,r,r)),r)],m),C.p,C.i,C.e),r,r,r,r,r,new V.K(0,250,0,0),r),T.M(r,r,100),M.p(r,L.I("We understand that when you come to this website, you want a better solution. There might\nbe some problems with you and your partner.\n\nYou have tried many methods, but they were not satisfied.\n\nWe suggest that you and your partner can talk to our psychological counselors first, they will\nnhelp you with relationship and emotion problems, and  also make a serious decision\nwhether you need emorgans and help you grow in understanding each other.\n                  ",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(p),r,r,r,r,!0,r,r,r,r,r,r)),r),r,r,r,r,r,new V.K(0,250,0,0),r),T.aZ(M.p(r,r,r,r,r,r,r,r,r),1)],m),C.p,C.i,C.e),C.m,r,r,r,r,r,p),1)],m),C.l,C.i,C.e)],m),C.t,C.B),r,r,new S.al(r,n,r,r,r,r,C.n),1500,r,r,p)},
 jZ:function(a,b,c,d,e,f,g){var s=4282533448,r=null
 return T.ad(H.b([L.I(b,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,V.em(g),r,r,r,r,!0,r,r,r,r,r,r)),r),M.p(r,r,r,r,new S.al(r,X.aT(C.x,new L.aH(c,r,r)),r,r,r,r,C.n),120,new V.K(0,10,0,10),r,120),L.I(d,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,V.bb(g),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I(e,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,V.bb(g),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I(f,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,V.bb(g),r,r,r,r,!0,r,r,r,r,r,r)),r)],t.t),C.l,C.i,C.e)}}
 A.Ns.prototype={
@@ -35449,7 +35451,11 @@ a4:function(){return new K.Jz(null,C.o)}}
 K.Jz.prototype={
 gfB:function(){return!0},
 D:function(a,b){var s,r,q,p,o,n=null,m=b.G(t.w).f.a.a,l=this.a,k=l.x,j=X.aT(C.x,k?new L.aH("assets/backround_right.png",n,n):new L.aH("assets/backround_left.png",n,n)),i=k?new V.K(m/3,0,0,0):new V.K(0,0,m/3,0)
-j=M.p(n,M.p(n,T.e3(l.dx?new T.jX(C.R,n,n,new L.ti(1200,l.ch,1200,!1,!1,!1,new K.a5K(),n),n):M.p(n,n,n,n,n,n,n,n,n),n,n),n,n,n,n,n,i,n),n,n,new S.al(n,j,n,n,n,n,C.n),1500,n,n,m)
+if(l.dx){s=l.ch
+r=l.cx
+r=new T.jX(C.R,n,n,new L.ti(l.cy,s,r,!1,!1,!1,new K.a5K(),n),n)
+s=r}else s=M.p(n,n,n,n,n,n,n,n,n)
+j=M.p(n,M.p(n,T.e3(s,n,n),n,n,n,n,n,i,n),n,n,new S.al(n,j,n,n,n,n,C.n),1500,n,n,m)
 i=l.y
 s=l.z
 r=l.d
@@ -35461,7 +35467,7 @@ k=k?T.aj(0,K.ajW(p,o,i,s,r,q,l),n,n,0,n,n,n):T.aj(0,K.ajW(p,o,i,s,r,q,l),n,n,n,0
 l=B.oq(U.iW("assets/icon_up.png",n,n,n),l,n)
 if(!$.akI){L.an6(!1)
 L.an6(!0)
-$.akI=!0}return T.by(C.F,H.b([j,k,T.aj(n,new L.EH(l,n),n,n,n,20,40,n)],t.t),C.t,C.B)}}
+$.akI=!0}return T.by(C.F,H.b([j,k,T.aj(n,new L.EH(l,n),n,n,n,20,60,n)],t.t),C.t,C.B)}}
 K.a5K.prototype={
 $0:function(){},
 $S:1}
@@ -35512,7 +35518,7 @@ s=P.aO(0,0,500,0)
 r=P.aO(0,0,800,0)
 q=o.ga5M()
 p=t.t
-return M.ia(T.by(C.F,H.b([M.p(n,T.Da(C.jQ,B.a2d(!0,B.Vp(!0,H.b([T.ad(H.b([new Q.tX(n),new B.tP(q,n),K.agb("Human A wears a tear patch","Human B wears taste salivary","shali","shali",717,768,!0,new V.a6_(b),m,"https://eloquent-engelbart-9e449d.netlify.app",i.a,"Tear to Taste","SHALI",q),K.agb("Human A wears a voice patch","Human B wears a tactile heart","obi","obi",668,1024,!1,new V.a5Y(b),m,"https://obi1.netlify.app/",i.b,"Voice to Vibrate","OBI",q),K.agb("Human A&B both wear patches with","pulse detection and low freqency electric shock","buzzy","buzzy",795,1024,!0,new V.a5L(b),m,"https://buzzy1.netlify.app",i.c,"Pulse to Pain","BUZZY",q),new A.tT(q,n),new A.tQ(q,n),new M.tU(n),new O.tS(q,n),new Z.tR(q,n),new K.tO(q,n)],p),C.l,C.i,C.e)],p),l,n,C.rN,!0),new P.i(4291346927),l,50,n,s,r,8),n,n,new V.a5N(o,j,b),new V.a5O()),n,n,n,j,n,n,k.a.a),T.aj(n,new A.tV(new V.a5S(o),new V.a5T(),new V.a5U(o),new V.a5Q(o),new V.a5V(o),new V.a5R(o),new V.a5P(o),n),300,n,18,n,j/2,400)],p),C.t,C.B),n)}}
+return M.ia(T.by(C.F,H.b([M.p(n,T.Da(C.jQ,B.a2d(!0,B.Vp(!0,H.b([T.ad(H.b([new Q.tX(n),new B.tP(q,n),K.agb("Human A wears a tear patch","Human B wears taste salivary","shali","shali",1100,1100,!0,new V.a6_(b),m,"https://eloquent-engelbart-9e449d.netlify.app",i.a,"Tear to Taste","SHALI",q),K.agb("Human A wears a voice patch","Human B wears a tactile heart","obi","obi",1300,1300,!1,new V.a5Y(b),m,"https://obi1.netlify.app/",i.b,"Voice to Vibrate","OBI",q),K.agb("Human A&B both wear patches with","pulse detection and low freqency electric shock","buzzy","buzzy",1200,1200,!0,new V.a5L(b),m,"https://buzzy1.netlify.app",i.c,"Pulse to Pain","BUZZY",q),new A.tT(q,n),new A.tQ(q,n),new M.tU(n),new O.tS(q,n),new Z.tR(q,n),new K.tO(q,n)],p),C.l,C.i,C.e)],p),l,n,C.rN,!0),new P.i(4291346927),l,50,n,s,r,8),n,n,new V.a5N(o,j,b),new V.a5O()),n,n,n,j,n,n,k.a.a),T.aj(n,new A.tV(new V.a5S(o),new V.a5T(),new V.a5U(o),new V.a5Q(o),new V.a5V(o),new V.a5R(o),new V.a5P(o),n),300,n,18,n,j/2,400)],p),C.t,C.B),n)}}
 V.a61.prototype={
 $0:function(){},
 $S:1}
@@ -35658,7 +35664,7 @@ r=T.aj(f,T.ad(H.b([L.I("Voice to Vibrate",f,f,f,B.U(A.H(f,f,new P.i(d),f,f,f,f,f
 p=c/3
 o=p-100
 n=M.afj("Emorgan","DIMENSIONS\n26.0  x  26.7  x  36.0  mm",c)
-m=T.aq(H.b([M.p(f,f,f,f,new S.al(f,X.aT(C.bE,new L.aH("assets/obi_item.png",f,f)),f,f,f,f,C.n),c/7,new V.K(0,25,0,25),f,c/8)],b),C.l,C.z,C.e)
+m=T.aq(H.b([M.p(f,f,f,f,new S.al(f,X.aT(C.bE,new L.aH("assets/obi_item.png",f,f)),f,f,f,f,C.n),c/7,new V.K(0,50,0,50),f,c/8)],b),C.l,C.z,C.e)
 l=(c/5+50)/10
 p=(c-(p-150)*2)/40
 k=$.aeQ.a

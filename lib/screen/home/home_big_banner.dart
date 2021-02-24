@@ -70,7 +70,7 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
           ),
         ),
         Positioned(
-            top: 40,
+            top: 60,
             right: 20,
             child: IconButton(
               icon: Image.asset('assets/icon_up.png'),
