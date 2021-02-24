@@ -706,7 +706,7 @@ GetDateStr _getDateStr = GetDateStr();
             ),
           ),
           Positioned(
-              top: 20,
+              top: 40,
               right: 20,
               child: IconButton(
                 icon: Image.asset('assets/icon_up.png'),

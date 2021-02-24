@@ -89,8 +89,8 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                           isMarkdown: false, // Use markdown syntax
                           convertToWidgets:
                               false, // Try to convert to flutter widgets
-                          width:800,
-                          height: 800,
+                          width:1200,
+                          height: 1200,
                         ),
                     )
                 : Container()
@@ -139,7 +139,7 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                 )),
 
         Positioned(
-            top: 20,
+            top: 40,
             right: 20,
             child: PointerInterceptor(
               child: IconButton(
