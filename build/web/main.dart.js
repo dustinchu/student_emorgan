@@ -6552,7 +6552,7 @@ anc:function(a,b){return P.bj(H.r3(C.d.aK((a.gp(a)>>>24&255)*b),0,255),a.gp(a)>>
 bj:function(a,b,c,d){return new P.i(((a&255)<<24|(b&255)<<16|(c&255)<<8|d&255)>>>0)},
 afU:function(a){if(a<=0.03928)return a/12.92
 return Math.pow((a+0.055)/1.055,2.4)},
-L:function(a,b,c){if(b==null)if(a==null)return null
+M:function(a,b,c){if(b==null)if(a==null)return null
 else return P.anc(a,1-c)
 else if(a==null)return P.anc(b,c)
 else return P.bj(H.r3(C.d.e1(P.adB(a.gp(a)>>>24&255,b.gp(b)>>>24&255,c)),0,255),H.r3(C.d.e1(P.adB(a.gp(a)>>>16&255,b.gp(b)>>>16&255,c)),0,255),H.r3(C.d.e1(P.adB(a.gp(a)>>>8&255,b.gp(b)>>>8&255,c)),0,255),H.r3(C.d.e1(P.adB(a.gp(a)&255,b.gp(b)&255,c)),0,255))},
@@ -8341,7 +8341,7 @@ aqZ:function(a,b,c){var s,r,q,p=a==null
 if(p&&b==null)return null
 if(p)return b.b6(0,c)
 if(b==null)return a.b6(0,1-c)
-p=P.L(a.a,b.a,c)
+p=P.M(a.a,b.a,c)
 p.toString
 s=P.agv(a.b,b.b,c)
 s.toString
@@ -8813,7 +8813,7 @@ r=a[s]
 q=s+1
 p=a[q]
 o=b[s]
-o=P.L(r,p,(c-o)/(b[q]-o))
+o=P.M(r,p,(c-o)/(b[q]-o))
 o.toString
 return o},
 awP:function(a,b,c,d,e){var s,r,q=P.a0G(null,null,t.d)
@@ -9128,7 +9128,7 @@ alm:function(a,b){return new T.q0(E.aka(a),C.R,!0,b,null)},
 arp:function(a,b,c,d){return new T.Bb(b,!1,c,a,null)},
 ajM:function(a,b,c){return new T.Cl(c,b,a,null)},
 e3:function(a,b,c){return new T.AY(C.R,c,b,a,null)},
-M:function(a,b,c){return new T.id(c,b,a,null)},
+L:function(a,b,c){return new T.id(c,b,a,null)},
 ayr:function(a,b,c){var s,r
 switch(b){case C.q:s=a.G(t.I)
 s.toString
@@ -9503,7 +9503,7 @@ _.e=e
 _.f=f},
 TN:function TN(){},
 km:function(a,b,c){var s,r=null,q=a==null,p=q?r:a.a,o=b==null
-p=P.L(p,o?r:b.a,c)
+p=P.M(p,o?r:b.a,c)
 s=q?r:a.gdJ(a)
 s=P.ag(s,o?r:b.gdJ(b),c)
 q=q?r:a.c
@@ -10024,8 +10024,8 @@ H:function(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,a0,a1,a2,a3){return new A.y(q,c
 bs:function(a5,a6,a7){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3=null,a4=a5==null
 if(a4&&a6==null)return a3
 if(a4){a4=a6.a
-s=P.L(a3,a6.b,a7)
-r=P.L(a3,a6.c,a7)
+s=P.M(a3,a6.b,a7)
+r=P.M(a3,a6.c,a7)
 q=a7<0.5
 p=q?a3:a6.d
 o=q?a3:a6.gdE()
@@ -10042,11 +10042,11 @@ e=q?a3:a6.dx
 d=q?a3:a6.dy
 c=q?a3:a6.id
 b=q?a3:a6.k1
-a=P.L(a3,a6.fr,a7)
+a=P.M(a3,a6.fr,a7)
 a0=q?a3:a6.fx
 return A.H(e,r,s,a3,d,a,a0,q?a3:a6.fy,p,o,b,n,l,m,f,h,a4,k,g,a3,c,i,j)}if(a6==null){a4=a5.a
-s=P.L(a5.b,a3,a7)
-r=P.L(a3,a5.c,a7)
+s=P.M(a5.b,a3,a7)
+r=P.M(a3,a5.c,a7)
 q=a7<0.5
 p=q?a5.d:a3
 o=q?a5.gdE():a3
@@ -10063,15 +10063,15 @@ e=q?a5.dx:a3
 d=q?a5.id:a3
 c=q?a5.k1:a3
 b=q?a5.dy:a3
-a=P.L(a5.fr,a3,a7)
+a=P.M(a5.fr,a3,a7)
 a0=q?a5.fx:a3
 return A.H(e,r,s,a3,b,a,a0,q?a5.fy:a3,p,o,c,n,l,m,f,h,a4,k,g,a3,d,i,j)}a4=a6.a
 s=a5.db
 r=s==null
-q=r&&a6.db==null?P.L(a5.b,a6.b,a7):a3
+q=r&&a6.db==null?P.M(a5.b,a6.b,a7):a3
 p=a5.dx
 o=p==null
-n=o&&a6.dx==null?P.L(a5.c,a6.c,a7):a3
+n=o&&a6.dx==null?P.M(a5.c,a6.c,a7):a3
 m=a7<0.5
 l=m?a5.d:a6.d
 k=m?a5.gdE():a6.gdE()
@@ -10115,7 +10115,7 @@ r.saB(0,p)}}else r=a3
 p=m?a5.id:a6.id
 o=m?a5.k1:a6.k1
 b=m?a5.dy:a6.dy
-a=P.L(a5.fr,a6.fr,a7)
+a=P.M(a5.fr,a6.fr,a7)
 m=m?a5.fx:a6.fx
 a0=a5.fy
 a1=a0==null?a6.fy:a0
@@ -10679,7 +10679,7 @@ s.toString
 if(s<0)return C.D
 r=a.c
 q=b.c
-if(r===q){q=P.L(a.a,b.a,c)
+if(r===q){q=P.M(a.a,b.a,c)
 q.toString
 return new Y.dL(q,s,r)}switch(r){case C.a9:p=a.a
 break
@@ -10691,7 +10691,7 @@ break
 case C.ae:r=b.a
 o=P.bj(0,r.gp(r)>>>16&255,r.gp(r)>>>8&255,r.gp(r)&255)
 break
-default:throw H.a(H.m(n))}r=P.L(p,o,c)
+default:throw H.a(H.m(n))}r=P.M(p,o,c)
 r.toString
 return new Y.dL(r,s,C.a9)},
 hr:function(a,b,c){var s,r=b!=null?b.dG(a,c):null
@@ -13243,7 +13243,7 @@ atl:function(a,b,c){var s,r,q,p,o,n=null,m=a==null
 if(m&&b==null)return n
 s=m?n:a.a
 r=b==null
-s=P.L(s,r?n:b.a,c)
+s=P.M(s,r?n:b.a,c)
 q=m?n:a.b
 q=Y.hr(q,r?n:b.b,c)
 p=m?n:a.c
@@ -13280,11 +13280,11 @@ auj:function(a,b,c){var s,r,q,p=null,o=a==null
 if(o&&b==null)return p
 s=o?p:a.a
 r=b==null
-s=P.L(s,r?p:b.a,c)
+s=P.M(s,r?p:b.a,c)
 q=o?p:a.b
-q=P.L(q,r?p:b.b,c)
+q=P.M(q,r?p:b.b,c)
 o=o?p:a.c
-return new R.ws(s,q,P.L(o,r?p:b.c,c))},
+return new R.ws(s,q,P.M(o,r?p:b.c,c))},
 ali:function(a){var s
 a.G(t.bZ)
 s=K.bt(a)
@@ -14470,7 +14470,7 @@ _.c=a
 _.d=b
 _.e=c
 _.a=d},
-lu:function(a,b,c){var s=null,r=L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4282533448),s,s,s,s,s,s,s,s,V.bb(c),s,s,s,s,!0,s,s,s,s,s,s)),s),q=T.M(s,5,s),p=K.dB(60)
+lu:function(a,b,c){var s=null,r=L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4282533448),s,s,s,s,s,s,s,s,V.bb(c),s,s,s,s,!0,s,s,s,s,s,s)),s),q=T.L(s,5,s),p=K.dB(60)
 return T.ad(H.b([r,q,M.p(s,Z.wn(!1,b,new P.i(4291812857),L.oz(s,C.c8,new V.J(10,0,0,20),s,s,s,s,!0,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s),s,1,s,s),s,s,new S.al(C.m,s,s,p,s,s,C.n),30,s,s,s)],t.t),C.p,C.i,C.e)},
 my:function my(a){this.a=a},
 Kz:function Kz(a){var _=this
@@ -16624,25 +16624,25 @@ are:function(a0,a1,a2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=null,a=a0==null
 if(a&&a1==null)return b
 s=a?b:a0.a
 r=a1==null
-s=P.L(s,r?b:a1.a,a2)
+s=P.M(s,r?b:a1.a,a2)
 s.toString
 q=a?b:a0.b
-q=P.L(q,r?b:a1.b,a2)
+q=P.M(q,r?b:a1.b,a2)
 p=a?b:a0.c
-p=P.L(p,r?b:a1.c,a2)
+p=P.M(p,r?b:a1.c,a2)
 p.toString
 o=a?b:a0.d
-o=P.L(o,r?b:a1.d,a2)
+o=P.M(o,r?b:a1.d,a2)
 o.toString
 n=a?b:a0.e
-n=P.L(n,r?b:a1.e,a2)
+n=P.M(n,r?b:a1.e,a2)
 n.toString
 m=a?b:a0.f
-m=P.L(m,r?b:a1.f,a2)
+m=P.M(m,r?b:a1.f,a2)
 l=a?b:a0.r
-l=P.L(l,r?b:a1.r,a2)
+l=P.M(l,r?b:a1.r,a2)
 k=a?b:a0.y
-k=P.L(k,r?b:a1.y,a2)
+k=P.M(k,r?b:a1.y,a2)
 j=a?b:a0.z
 j=V.iS(j,r?b:a1.z,a2)
 i=a?b:a0.Q
@@ -17674,7 +17674,7 @@ asZ:function(a,b,c){var s,r,q,p,o,n,m,l,k=null,j=a==null
 if(j&&b==null)return k
 s=j?k:a.a
 r=b==null
-s=P.L(s,r?k:b.a,c)
+s=P.M(s,r?k:b.a,c)
 q=j?k:a.b
 q=P.ag(q,r?k:b.b,c)
 p=j?k:a.c
@@ -18638,11 +18638,11 @@ aqR:function(a,b,c){var s,r,q,p,o,n,m=null,l=a==null
 if(l&&b==null)return m
 s=l?m:a.a
 r=b==null
-s=P.L(s,r?m:b.a,c)
+s=P.M(s,r?m:b.a,c)
 q=l?m:a.b
 q=P.ag(q,r?m:b.b,c)
 p=l?m:a.c
-p=P.L(p,r?m:b.c,c)
+p=P.M(p,r?m:b.c,c)
 o=l?m:a.d
 o=P.ag(o,r?m:b.d,c)
 n=l?m:a.e
@@ -19455,15 +19455,15 @@ as_:function(a,b,c){var s,r,q,p,o,n,m,l,k,j,i,h=null,g=a==null
 if(g&&b==null)return h
 s=g?h:a.a
 r=b==null
-s=P.L(s,r?h:b.a,c)
+s=P.M(s,r?h:b.a,c)
 q=g?h:a.b
-q=P.L(q,r?h:b.b,c)
+q=P.M(q,r?h:b.b,c)
 p=g?h:a.c
-p=P.L(p,r?h:b.c,c)
+p=P.M(p,r?h:b.c,c)
 o=g?h:a.d
-o=P.L(o,r?h:b.d,c)
+o=P.M(o,r?h:b.d,c)
 n=g?h:a.e
-n=P.L(n,r?h:b.e,c)
+n=P.M(n,r?h:b.e,c)
 m=g?h:a.f
 m=P.ag(m,r?h:b.f,c)
 l=g?h:a.r
@@ -19497,27 +19497,27 @@ s=A.bs(s,r?d:b.a,a0)
 q=c?d:a.b
 q=S.aqX(q,r?d:b.b,a0)
 p=c?d:a.c
-p=P.L(p,r?d:b.c,a0)
+p=P.M(p,r?d:b.c,a0)
 o=c?d:a.d
-o=P.L(o,r?d:b.d,a0)
+o=P.M(o,r?d:b.d,a0)
 n=c?d:a.e
-n=P.L(n,r?d:b.e,a0)
+n=P.M(n,r?d:b.e,a0)
 m=c?d:a.f
-m=P.L(m,r?d:b.f,a0)
+m=P.M(m,r?d:b.f,a0)
 l=c?d:a.r
-l=P.L(l,r?d:b.r,a0)
+l=P.M(l,r?d:b.r,a0)
 k=c?d:a.x
-k=P.L(k,r?d:b.x,a0)
+k=P.M(k,r?d:b.x,a0)
 j=c?d:a.z
-j=P.L(j,r?d:b.z,a0)
+j=P.M(j,r?d:b.z,a0)
 i=c?d:a.y
-i=P.L(i,r?d:b.y,a0)
+i=P.M(i,r?d:b.y,a0)
 h=c?d:a.Q
-h=P.L(h,r?d:b.Q,a0)
+h=P.M(h,r?d:b.Q,a0)
 g=c?d:a.ch
-g=P.L(g,r?d:b.ch,a0)
+g=P.M(g,r?d:b.ch,a0)
 f=c?d:a.cx
-f=P.L(f,r?d:b.cx,a0)
+f=P.M(f,r?d:b.cx,a0)
 e=c?d:a.db
 e=K.AE(e,r?d:b.db,a0)
 c=c?d:a.cy
@@ -19596,7 +19596,7 @@ zK:function zK(){},
 aj1:function(a,b,c){var s,r,q,p,o,n,m
 if(c===0)return a
 if(c===1)return b
-s=P.L(a.a,b.a,c)
+s=P.M(a.a,b.a,c)
 r=c<0.5
 q=r?a.b:b.b
 p=F.aj0(a.c,b.c,c)
@@ -34410,7 +34410,7 @@ cF:function(a){return this.f!=a.f}}
 Y.EE.prototype={
 D:function(a,b){var s=b.G(t.FR).f,r=t.w,q=b.G(r).f
 r=b.G(r).f
-return T.e3(T.M(new T.nR(new Y.Xd().$1(b),new Y.Xc(new Y.Xb()).$2(s,b),null),q.a.b,r.a.a),null,null)}}
+return T.e3(T.L(new T.nR(new Y.Xd().$1(b),new Y.Xc(new Y.Xb()).$2(s,b),null),q.a.b,r.a.a),null,null)}}
 Y.Xd.prototype={
 $1:function(a){var s=a.G(t.w).f.a,r=s.a,q=s.b
 return r>q?r/q:q/r},
@@ -34637,13 +34637,13 @@ Y.DS.prototype={
 D:function(a,b){var s,r=this,q=r.c
 if(q==null||r.d==null)return new A.CW(new Y.Wx(r),null)
 s=r.d
-return T.M(r.e.$2(q,s),s,q)}}
+return T.L(r.e.$2(q,s),s,q)}}
 Y.Wx.prototype={
 $2:function(a,b){var s,r=this.a,q=r.c
 if(q==null)q=b.b
 s=r.d
 if(s==null)s=b.d
-return T.M(r.e.$2(q,s),s,q)},
+return T.L(r.e.$2(q,s),s,q)},
 $S:259}
 L.ti.prototype={
 a4:function(){return new L.IV(C.o)},
@@ -34710,12 +34710,12 @@ G.mM.prototype={
 ys:function(){var s=null
 return M.p(s,s,s,s,new S.al(new P.i(4286218919),s,s,s,s,s,C.bq),6,s,s,6)},
 D:function(a,b){var s=null
-return T.aq(H.b([this.ys(),T.M(s,s,20),this.ys(),T.M(s,s,20),this.ys()],t.t),C.l,C.z,C.e)}}
+return T.aq(H.b([this.ys(),T.L(s,s,20),this.ys(),T.L(s,s,20),this.ys()],t.t),C.l,C.z,C.e)}}
 Z.eA.prototype={
 D:function(a,b){var s,r,q,p,o=null,n=b.G(t.w).f.a.a,m=V.dn(n),l=this.c,k=l.c,j=k.b
 k=k.a
 m=L.I(this.d,o,o,o,A.H(o,o,P.bj(C.d.aK(255*j.ah(0,k.gp(k))),66,70,72),o,o,o,o,o,o,o,o,m,o,o,o,o,!0,o,o,o,o,o,o),C.E)
-s=T.M(o,o,10)
+s=T.L(o,o,10)
 r=l.d
 q=r.a
 q=M.p(o,o,C.v,o,o,0.1,o,o,r.b.ah(0,q.gp(q)))
@@ -34728,7 +34728,7 @@ return M.p(o,T.ad(H.b([r,L.I(this.e,o,o,o,A.H(o,o,P.bj(C.d.aK(255*j.ah(0,k.gp(k)
 L.ec.prototype={
 D:function(a,b){var s,r,q,p,o,n=null,m=b.G(t.w).f.a.a,l=this.c,k=l.b,j=k.a
 j=M.p(n,n,new P.i(4282533448),n,n,1,new V.J(0,10,0,0),n,k.b.ah(0,j.gp(j)))
-k=T.M(n,n,10)
+k=T.L(n,n,10)
 s=l.d
 r=s.a
 r=M.p(n,n,C.v,n,n,0.1,n,n,s.b.ah(0,r.gp(r)))
@@ -34774,7 +34774,7 @@ else{o=X.aT(C.x,new L.aH("assets/loding_bk.png",q,q))
 s=t.t
 if(this.f)r=T.e3(M.p(q,T.e3(T.ad(H.b([L.I("Thanks for your ordering  :D",q,q,q,A.H(q,q,new P.i(p),q,q,q,q,q,q,q,q,V.em(n),q,q,q,q,!0,q,q,q,q,q,q),q),M.p(q,q,q,q,new S.al(q,X.aT(C.x,new L.aH("assets/successful.png",q,q)),q,q,q,q,C.n),80,new V.J(0,10,0,10),q,80),L.I("We have sent you a confirmation email.\nPlease check your mailbox.\n                ",q,q,q,A.H(q,q,new P.i(p),q,q,q,q,q,q,q,q,V.bb(n),q,q,q,q,!0,q,q,q,q,q,q),C.bA)],s),C.l,C.z,C.e),q,q),C.m,q,q,m/4,q,q,n/4+20),q,q)
 else{r=this.e
-r=T.e3(M.p(q,T.e3(T.ad(H.b([K.agG(C.R,M.p(q,q,q,q,new S.al(q,X.aT(C.x,new L.aH("assets/loding_icon.png",q,q)),q,q,q,q,C.n),60,q,q,60),r),T.M(q,10,q),L.I("Loading\u2026",q,q,q,A.H(q,q,new P.i(p),q,q,q,q,q,q,q,q,q,q,q,q,q,!0,q,q,q,q,q,q),q)],s),C.l,C.z,C.e),q,q),C.m,q,q,m/4,q,q,n/4+20),q,q)}o=M.p(q,G.aiO(r,C.hZ),q,q,new S.al(q,o,q,q,q,q,C.n),m,q,q,n)
+r=T.e3(M.p(q,T.e3(T.ad(H.b([K.agG(C.R,M.p(q,q,q,q,new S.al(q,X.aT(C.x,new L.aH("assets/loding_icon.png",q,q)),q,q,q,q,C.n),60,q,q,60),r),T.L(q,10,q),L.I("Loading\u2026",q,q,q,A.H(q,q,new P.i(p),q,q,q,q,q,q,q,q,q,q,q,q,q,!0,q,q,q,q,q,q),q)],s),C.l,C.z,C.e),q,q),C.m,q,q,m/4,q,q,n/4+20),q,q)}o=M.p(q,G.aiO(r,C.hZ),q,q,new S.al(q,o,q,q,q,q,C.n),m,q,q,n)
 r=X.aT(C.x,new L.aH("assets/appbar_bk.png",q,q))
 s=M.ia(T.by(C.F,H.b([o,T.aj(q,M.p(q,T.aq(H.b([M.p(q,q,q,q,new S.al(q,X.aT(C.x,new L.aH("assets/logo.png",q,q)),q,q,q,q,C.n),30,new V.J(50,0,10,0),q,30),L.I("Emorgan",q,q,q,A.H(q,q,new P.i(4286218919),q,q,q,q,q,q,q,q,32,q,q,q,q,!0,q,q,q,q,q,q),q)],s),C.l,C.i,C.e),q,q,new S.al(q,r,q,q,q,q,C.n),80,q,q,n),q,q,0,q,0,q)],s),C.t,C.B),q)
 o=s}return G.aiO(o,C.hZ)},
@@ -34845,7 +34845,7 @@ f=T.aj(b,R.aR(!1,!0,K.aW(g,new G.a3l(),b),b,!0,b,b,b,C.v,b,b,b,new G.a3m(),b,new
 e=$.af4.a
 d=T.aj(b,R.aR(!1,!0,K.aW(e,new G.a3o(),b),b,!0,b,b,b,C.v,b,b,b,new G.a3p(),b,new G.a3q(),b,b,b),b,b,b,o*12,l*5,b)
 c=$.af9.a
-return M.p(b,T.by(C.F,H.b([r,p,q,M.p(b,new T.cN(C.mG,T.ad(H.b([m,T.by(C.F,H.b([k,h,f,d,T.aj(b,R.aR(!1,!0,K.aW(c,new G.a3c(),b),b,!0,b,b,b,C.v,b,b,b,new G.a3d(),b,new G.a3e(),b,b,b),b,b,b,o*11.5,l*9,b),T.aj(b,K.aW(i,new G.a3f(),b),b,b,0,b,j,b),T.aj(b,K.aW(g,new G.a3g(),b),b,b,0,b,l*7.3,b),T.aj(b,K.aW(e,new G.a3h(),b),b,b,b,0,l*5.3,b),T.aj(b,K.aW(c,new G.a3i(),b),b,b,b,0,l*9.3,b)],s),C.t,C.B),T.M(b,15,b),M.ao7("Design","\nImitate the shape of human spine. The main form is an long acute triangle with smooth surface.",a1),T.M(b,60,b),T.aq(H.b([M.ai1("Material","Biomedical Metal \nBiomedical Ceramics\nBiomedical Silicone\n\nAll the materials are also non-toxic and\nbiological.",a1),T.aZ(M.p(b,b,b,b,b,b,b,b,b),1),M.ai1("Technology","PhotoPlethysmoGraphy\nLow-frequency Therapy\n\nBuzzy patches create the electric shock\ntransferred from partners\u2019 pulse.",a1)],s),C.p,C.i,C.e)],s),C.p,C.i,C.e),b),b,b,b,b,b,new V.J(n,70,n,70),b)],s),C.t,C.B),b,b,b,1100,b,b,a1)}}
+return M.p(b,T.by(C.F,H.b([r,p,q,M.p(b,new T.cN(C.mG,T.ad(H.b([m,T.by(C.F,H.b([k,h,f,d,T.aj(b,R.aR(!1,!0,K.aW(c,new G.a3c(),b),b,!0,b,b,b,C.v,b,b,b,new G.a3d(),b,new G.a3e(),b,b,b),b,b,b,o*11.5,l*9,b),T.aj(b,K.aW(i,new G.a3f(),b),b,b,0,b,j,b),T.aj(b,K.aW(g,new G.a3g(),b),b,b,0,b,l*7.3,b),T.aj(b,K.aW(e,new G.a3h(),b),b,b,b,0,l*5.3,b),T.aj(b,K.aW(c,new G.a3i(),b),b,b,b,0,l*9.3,b)],s),C.t,C.B),T.L(b,15,b),M.ao7("Design","\nImitate the shape of human spine. The main form is an long acute triangle with smooth surface.",a1),T.L(b,60,b),T.aq(H.b([M.ai1("Material","Biomedical Metal \nBiomedical Ceramics\nBiomedical Silicone\n\nAll the materials are also non-toxic and\nbiological.",a1),T.aZ(M.p(b,b,b,b,b,b,b,b,b),1),M.ai1("Technology","PhotoPlethysmoGraphy\nLow-frequency Therapy\n\nBuzzy patches create the electric shock\ntransferred from partners\u2019 pulse.",a1)],s),C.p,C.i,C.e)],s),C.p,C.i,C.e),b),b,b,b,b,b,new V.J(n,70,n,70),b)],s),C.t,C.B),b,b,b,1100,b,b,a1)}}
 G.a39.prototype={
 $0:function(){K.cG(this.a,!1).cR(0)},
 $S:1}
@@ -34939,7 +34939,7 @@ G.AQ.prototype={
 D:function(a,b){var s,r=null,q=4282533448,p="assets/buzzy_human.png",o=b.G(t.w).f.a.a,n=o/3,m=n-100,l=o/5,k=l-50
 l+=50
 s=t.t
-k=T.ad(H.b([T.aq(H.b([M.p(r,T.ad(H.b([L.I("Human A",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.dn(o),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.al(r,X.aT(C.x,new L.aH(p,r,r)),r,r,r,r,C.n),l,new V.J(0,25,0,25),r,k)],s),C.p,C.i,C.e)],s),C.l,C.i,C.e),r,r,r,r,r,r,k),M.p(r,T.ad(H.b([L.I("Human B",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.dn(o),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.al(r,X.aT(C.x,new L.aH(p,r,r)),r,r,r,r,C.n),l,new V.J(0,25,0,25),r,k)],s),C.p,C.i,C.e)],s),C.l,C.i,C.e),r,r,r,r,r,r,k)],s),C.l,C.b2,C.e),T.M(r,10,r),M.ai1("How to put on Buzzy Patch","The doctor will simulate your body action in any state with your 3D model \non the computer first. \n\nThen decide the final position according to the feeling of placing it directly\non your body and the product functions.\n",o)],s),C.l,C.i,C.e)
+k=T.ad(H.b([T.aq(H.b([M.p(r,T.ad(H.b([L.I("Human A",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.dn(o),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.al(r,X.aT(C.x,new L.aH(p,r,r)),r,r,r,r,C.n),l,new V.J(0,25,0,25),r,k)],s),C.p,C.i,C.e)],s),C.l,C.i,C.e),r,r,r,r,r,r,k),M.p(r,T.ad(H.b([L.I("Human B",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.dn(o),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.al(r,X.aT(C.x,new L.aH(p,r,r)),r,r,r,r,C.n),l,new V.J(0,25,0,25),r,k)],s),C.p,C.i,C.e)],s),C.l,C.i,C.e),r,r,r,r,r,r,k)],s),C.l,C.b2,C.e),T.L(r,10,r),M.ai1("How to put on Buzzy Patch","The doctor will simulate your body action in any state with your 3D model \non the computer first. \n\nThen decide the final position according to the feeling of placing it directly\non your body and the product functions.\n",o)],s),C.l,C.i,C.e)
 l=new G.Pq().$1(o)
 return M.p(r,M.p(r,new T.cN(C.cd,T.by(C.F,H.b([k,T.aj(r,M.p(r,r,r,r,new S.al(r,X.aT(C.x,new L.aH("assets/human_line.png",r,r)),r,r,r,r,C.n),20,new V.J(0,0,0,0),r,250),r,r,n/2-40,r,257.14285714285717-l,r)],s),C.t,C.B),r),r,r,r,r,r,new V.J(m,40,m,40),r),r,r,r,900,r,r,o)}}
 G.Pq.prototype={
@@ -34957,7 +34957,7 @@ D:function(a,b){var s=null,r=4282533448,q=b.G(t.w).f.a.a
 return T.ad(H.b([L.I(this.c,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.dn(q),s,s,s,s,!0,s,s,s,s,s,s)),s),M.p(s,s,s,s,new S.al(s,X.aT(C.x,new L.aH(this.d,s,s)),s,s,s,s,C.n),100,new V.J(0,25,0,25),s,100),L.I(this.e,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fj(q),s,s,s,s,!0,s,s,s,s,s,s)),C.bA)],t.t),C.l,C.z,C.e)}}
 O.AS.prototype={
 D:function(a,b){var s=null,r=b.G(t.w).f.a.a,q=r/3-100
-return M.p(s,M.p(s,new T.cN(C.mH,T.aq(H.b([new O.vU("PhotoPlethysmoGraphy\n","assets/buzzy_img1.png","When measuring, it emits green light and penetrates the skin. The human blood is red and will absorb green light. When the heart beats, the blood flow increases, and the amount of green light absorption increases, and vice versa. Thereby, the heart rate is measured based on the blood absorbance.",s),T.M(s,s,50),new O.vU("Low-frequency Therapy\n","assets/buzzy_img2.png","Use low-frequency current to control the user\u2019s muscle expansion and transform the partner\u2019s emotions into a sense of touch.",s)],t.t),C.p,C.z,C.e),s),s,s,s,s,s,new V.J(q,40,q,0),s),s,s,s,650,s,s,r)}}
+return M.p(s,M.p(s,new T.cN(C.mH,T.aq(H.b([new O.vU("PhotoPlethysmoGraphy\n","assets/buzzy_img1.png","When measuring, it emits green light and penetrates the skin. The human blood is red and will absorb green light. When the heart beats, the blood flow increases, and the amount of green light absorption increases, and vice versa. Thereby, the heart rate is measured based on the blood absorbance.",s),T.L(s,s,50),new O.vU("Low-frequency Therapy\n","assets/buzzy_img2.png","Use low-frequency current to control the user\u2019s muscle expansion and transform the partner\u2019s emotions into a sense of touch.",s)],t.t),C.p,C.z,C.e),s),s,s,s,s,s,new V.J(q,40,q,0),s),s,s,s,650,s,s,r)}}
 O.vU.prototype={
 D:function(a,b){var s=null,r=4282533448,q=b.G(t.w).f.a.a
 return M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.al(s,X.aT(C.bE,new L.aH(this.d,s,s)),s,s,s,s,C.n),200,new V.J(0,25,0,25),s,240),L.I(this.c,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.dn(q),s,s,s,s,!0,s,s,s,s,s,s)),C.E),L.I(this.e,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fj(q),s,s,s,s,!0,s,s,s,s,s,s)),C.E)],t.t),C.p,C.i,C.e),s,s,s,s,s,s,240)}}
@@ -34970,20 +34970,20 @@ s=this.d
 r=P.aO(0,0,500,0)
 q=P.aO(0,0,800,0)
 p=t.t
-return M.ia(T.by(C.F,H.b([M.p(o,B.a2d(!0,B.Vp(!0,H.b([new G.rC(o),T.M(o,200,o),new G.AQ(o),T.M(o,100,o),new L.AR(o),new O.AS(o)],p),s,o,new L.lH(o),!0),new P.i(4291346927),s,50,o,r,q,8),o,o,o,n.a.b,o,o,m.a.a)],p),C.t,C.B),o)}}
+return M.ia(T.by(C.F,H.b([M.p(o,B.a2d(!0,B.Vp(!0,H.b([new G.rC(o),T.L(o,200,o),new G.AQ(o),T.L(o,100,o),new L.AR(o),new O.AS(o)],p),s,o,new L.lH(o),!0),new P.i(4291346927),s,50,o,r,q,8),o,o,o,n.a.b,o,o,m.a.a)],p),C.t,C.B),o)}}
 K.tO.prototype={
 a4:function(){return new K.Js(null,C.o)}}
 K.Js.prototype={
 gfB:function(){return!0},
 D:function(a,b){var s=null,r="Wen-Chien,Wu",q=4281483590,p="Emorgan Designer",o=2151827016,n=4281745734,m="Participation",l="Animator",k=b.G(t.w).f.a.a,j=new K.a4S(),i=new K.a4R(k),h=X.aT(C.x,new L.aH("assets/help.png",s,s)),g=k/3,f=g*2,e=t.t
-return M.p(s,T.aq(H.b([M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.al(s,X.aT(C.x,new L.aH("assets/people.png",s,s)),s,s,s,s,C.n),1000,s,s,f),M.p(s,T.aq(H.b([T.aZ(T.ad(H.b([L.I(r,s,s,s,A.H(s,s,new P.i(q),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s),s),L.I(p,s,s,s,A.H(s,s,new P.i(o),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s),s)],e),C.l,C.z,C.e),1),T.aZ(T.ad(H.b([L.I(r,s,s,s,A.H(s,s,new P.i(q),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s),s),L.I(p,s,s,s,A.H(s,s,new P.i(o),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s),s)],e),C.l,C.z,C.e),1)],e),C.l,C.i,C.e),s,s,s,300,s,s,s)],e),C.l,C.i,C.e),s,s,s,s,s,s,f),T.by(C.R,H.b([M.p(C.R,T.ad(H.b([T.M(s,40,s),L.I("About EMOGRAN",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s)),s),L.I("For Love, For Future",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,50,s),L.I("Emorgan wishes every couple has another\nchance to love again.\n\n\nWe care about human mental needs.\nWe focus on development of biomedical\ntechnology and materials.\n\n\nEmorgan has three sets of products:\n\u201cObi\u201d,\u201cShali\u201d and \u201cBuzzy\u201d.\n\n\nWe are simultaneously developing\nmore products that will help humans to be\nspiritually assisted.",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,50,s),L.I(m,s,s,s,B.U(A.H(s,s,new P.i(4286218919),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,20,s),j.$2("Dustin, Chu     ","Website Engineer"),T.M(s,10,s),j.$2("Chih Hung, Lin",l),T.M(s,10,s),j.$2("Osborne, Zhu  ",l),T.M(s,10,s),j.$2("Gimmyfoto      ","Photographer"),T.M(s,50,s),i.$2("assets/email.png",m),T.M(s,10,s),i.$2("assets/phone.png","0912-283-063"),T.M(s,10,s),i.$2("assets/ig.png","emorgan_creation"),T.M(s,100,s)],e),C.p,C.i,C.nK),C.m,s,s,1500,s,new V.J(0,20,0,0),g),T.aj(20,L.I("\xa9 2020-2047 EMORGAN",s,s,s,B.U(A.H(s,s,new P.i(4291346927),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),s,s,s,s,s,s),T.aj(s,B.oq(U.iW("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,50,s)],e),C.t,C.B)],e),C.p,C.i,C.e),s,s,new S.al(s,h,s,s,s,s,C.n),1500,s,s,k)}}
+return M.p(s,T.aq(H.b([M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.al(s,X.aT(C.x,new L.aH("assets/people.png",s,s)),s,s,s,s,C.n),1000,s,s,f),M.p(s,T.aq(H.b([T.aZ(T.ad(H.b([L.I(r,s,s,s,A.H(s,s,new P.i(q),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s),s),L.I(p,s,s,s,A.H(s,s,new P.i(o),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s),s)],e),C.l,C.z,C.e),1),T.aZ(T.ad(H.b([L.I(r,s,s,s,A.H(s,s,new P.i(q),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s),s),L.I(p,s,s,s,A.H(s,s,new P.i(o),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s),s)],e),C.l,C.z,C.e),1)],e),C.l,C.i,C.e),s,s,s,300,s,s,s)],e),C.l,C.i,C.e),s,s,s,s,s,s,f),T.by(C.R,H.b([M.p(C.R,T.ad(H.b([T.L(s,40,s),L.I("About EMOGRAN",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.em(k),s,s,s,s,!0,s,s,s,s,s,s)),s),L.I("For Love, For Future",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.fQ(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,50,s),L.I("Emorgan wishes every couple has another\nchance to love again.\n\n\nWe care about human mental needs.\nWe focus on development of biomedical\ntechnology and materials.\n\n\nEmorgan has three sets of products:\n\u201cObi\u201d,\u201cShali\u201d and \u201cBuzzy\u201d.\n\n\nWe are simultaneously developing\nmore products that will help humans to be\nspiritually assisted.",s,s,s,B.U(A.H(s,s,new P.i(n),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,50,s),L.I(m,s,s,s,B.U(A.H(s,s,new P.i(4286218919),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,20,s),j.$2("Dustin, Chu     ","Website Engineer"),T.L(s,10,s),j.$2("Chih Hung, Lin",l),T.L(s,10,s),j.$2("Osborne, Zhu  ",l),T.L(s,10,s),j.$2("Gimmyfoto      ","Photographer"),T.L(s,50,s),i.$2("assets/email.png",m),T.L(s,10,s),i.$2("assets/phone.png","0912-283-063"),T.L(s,10,s),i.$2("assets/ig.png","emorgan_creation"),T.L(s,100,s)],e),C.p,C.i,C.nK),C.m,s,s,1500,s,new V.J(0,20,0,0),g),T.aj(20,L.I("\xa9 2020-2047 EMORGAN",s,s,s,B.U(A.H(s,s,new P.i(4291346927),s,s,s,s,s,s,s,s,V.bb(k),s,s,s,s,!0,s,s,s,s,s,s)),s),s,s,s,s,s,s),T.aj(s,B.oq(U.iW("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,50,s)],e),C.t,C.B)],e),C.p,C.i,C.e),s,s,new S.al(s,h,s,s,s,s,C.n),1500,s,s,k)}}
 K.a4S.prototype={
 $2:function(a,b){var s=null
-return T.aq(H.b([L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4281745734),s,s,s,s,s,s,s,s,12,s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,s,160),L.I(b,s,s,s,B.U(A.H(s,s,new P.i(2151827016),s,s,s,s,s,s,s,s,12,s,s,s,s,!0,s,s,s,s,s,s)),s)],t.t),C.l,C.i,C.nK)},
+return T.aq(H.b([L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4281745734),s,s,s,s,s,s,s,s,12,s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,s,160),L.I(b,s,s,s,B.U(A.H(s,s,new P.i(2151827016),s,s,s,s,s,s,s,s,12,s,s,s,s,!0,s,s,s,s,s,s)),s)],t.t),C.l,C.i,C.nK)},
 $S:67}
 K.a4R.prototype={
 $2:function(a,b){var s=null
-return T.aq(H.b([U.iW(a,s,15,15),T.M(s,s,10),L.I(b,s,s,s,B.U(A.H(s,s,new P.i(4286218919),s,s,s,s,s,s,s,s,V.bb(this.a),s,s,s,s,!0,s,s,s,s,s,s)),s)],t.t),C.l,C.i,C.nK)},
+return T.aq(H.b([U.iW(a,s,15,15),T.L(s,s,10),L.I(b,s,s,s,B.U(A.H(s,s,new P.i(4286218919),s,s,s,s,s,s,s,s,V.bb(this.a),s,s,s,s,!0,s,s,s,s,s,s)),s)],t.t),C.l,C.i,C.nK)},
 $S:67}
 K.Nq.prototype={
 ac:function(){this.ax()
@@ -35043,7 +35043,7 @@ s=r.dx.u$
 s.Z(s.c,new B.ac(new A.a5i(r)),!1)
 s=r.dy.u$
 s.Z(s.c,new B.ac(new A.a5j(r)),!1)},
-D:function(a,b){var s,r,q,p,o,n=this,m=null,l=4286218919,k=2151039302,j=b.G(t.w).f.a.a,i=new A.a4V(j),h=t.t,g=H.b([T.aZ(i.$2("Your First Name",n.ch),1),T.M(m,m,20),T.aZ(i.$2("Your Last Name",n.cx),1)],h),f=H.b([T.aZ(i.$2("Email Address",n.cy),1),T.M(m,m,20),T.aZ(i.$2("Phone Number",n.db),1)],h),e=H.b([T.aZ(i.$2("Partner's First Name",n.dx),1),T.M(m,m,20),T.aZ(i.$2("Partner's Last Name",n.dy),1)],h)
+D:function(a,b){var s,r,q,p,o,n=this,m=null,l=4286218919,k=2151039302,j=b.G(t.w).f.a.a,i=new A.a4V(j),h=t.t,g=H.b([T.aZ(i.$2("Your First Name",n.ch),1),T.L(m,m,20),T.aZ(i.$2("Your Last Name",n.cx),1)],h),f=H.b([T.aZ(i.$2("Email Address",n.cy),1),T.L(m,m,20),T.aZ(i.$2("Phone Number",n.db),1)],h),e=H.b([T.aZ(i.$2("Partner's First Name",n.dx),1),T.L(m,m,20),T.aZ(i.$2("Partner's Last Name",n.dy),1)],h)
 i=X.aT(C.x,new L.aH("assets/help.png",m,m))
 s=new A.a4T(1500,j).$0()
 e=new A.a4W(n,j,1500,g,f,e,new S.Cp()).$0()
@@ -35169,33 +35169,33 @@ A.a53.prototype={
 $0:function(){this.a.y=!1},
 $S:1}
 A.a4V.prototype={
-$2:function(a,b){var s=null,r=L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4282533448),s,s,s,s,s,s,s,s,V.bb(this.a),s,s,s,s,!0,s,s,s,s,s,s)),s),q=T.M(s,5,s),p=K.dB(60)
+$2:function(a,b){var s=null,r=L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4282533448),s,s,s,s,s,s,s,s,V.bb(this.a),s,s,s,s,!0,s,s,s,s,s,s)),s),q=T.L(s,5,s),p=K.dB(60)
 return T.ad(H.b([r,q,M.p(s,Z.wn(!1,b,new P.i(4291346927),L.oz(s,C.c8,new V.J(10,0,0,20),s,s,s,s,!0,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s),s,1,s,s),s,s,new S.al(C.m,s,s,p,s,s,C.n),30,s,s,s)],t.t),C.p,C.i,C.e)},
 $S:98}
 A.a4T.prototype={
 $0:function(){var s=null,r=4281745734,q=G.hM(200),p=this.b,o=t.t
-return T.aj(s,M.p(s,T.aq(H.b([T.aZ(M.p(s,s,s,s,s,s,s,s,s),1),T.ad(H.b([L.I("Book a Psychological Counseling",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,10,s),L.I("Professional Assistance",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fQ(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,20,s),L.I("Choose a time for counseling.",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,20,s),L.I("It will be a new way to improve\na relationship.",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,20,s),L.I("After a series of counselors,\nthe psychologist will decide if\nyou and your partner need to\ntransplant emorgans.\n",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,20,s),L.I("If the answer is yes,\nyou\u2019ll get a purchase code.\nYou can get back to here to\ndecide which emorgan is more\nsuitable for you and your partner.\n",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s)],o),C.p,C.i,C.e),T.aZ(M.p(s,s,s,s,s,s,s,s,s),1)],o),C.l,C.i,C.e),C.m,s,s,this.a,s,new V.J(30,q,10,0),p/3),s,s,0,s,0,s)},
+return T.aj(s,M.p(s,T.aq(H.b([T.aZ(M.p(s,s,s,s,s,s,s,s,s),1),T.ad(H.b([L.I("Book a Psychological Counseling",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,10,s),L.I("Professional Assistance",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fQ(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,20,s),L.I("Choose a time for counseling.",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,20,s),L.I("It will be a new way to improve\na relationship.",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,20,s),L.I("After a series of counselors,\nthe psychologist will decide if\nyou and your partner need to\ntransplant emorgans.\n",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,20,s),L.I("If the answer is yes,\nyou\u2019ll get a purchase code.\nYou can get back to here to\ndecide which emorgan is more\nsuitable for you and your partner.\n",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(p),s,s,s,s,!0,s,s,s,s,s,s)),s)],o),C.p,C.i,C.e),T.aZ(M.p(s,s,s,s,s,s,s,s,s),1)],o),C.l,C.i,C.e),C.m,s,s,this.a,s,new V.J(30,q,10,0),p/3),s,s,0,s,0,s)},
 $S:29}
 A.a4W.prototype={
 $0:function(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8=this,a9=null,b0=4282533448,b1=a8.b,b2=b1/3,b3=b2*2,b4=b3/4-20,b5=G.Oo(b4)
 b4=G.Oo(b4)
 s=G.hM(200)
 r=L.I("Enter Booking Detail",a9,a9,a9,B.U(A.H(a9,a9,new P.i(b0),a9,a9,a9,a9,a9,a9,a9,a9,V.fQ(b1),a9,a9,a9,a9,!0,a9,a9,a9,a9,a9,a9)),a9)
-q=T.M(a9,G.hM(30),a9)
+q=T.L(a9,G.hM(30),a9)
 p=T.aq(a8.d,C.l,C.i,C.e)
-o=T.M(a9,G.hM(20),a9)
+o=T.L(a9,G.hM(20),a9)
 n=T.aq(a8.e,C.l,C.i,C.e)
-m=T.M(a9,G.hM(20),a9)
+m=T.L(a9,G.hM(20),a9)
 l=M.p(a9,a9,C.m,a9,a9,2,a9,a9,b1)
-k=T.M(a9,G.hM(20),a9)
+k=T.L(a9,G.hM(20),a9)
 j=T.aq(a8.f,C.l,C.i,C.e)
-i=T.M(a9,G.hM(20),a9)
+i=T.L(a9,G.hM(20),a9)
 h=M.p(a9,a9,C.m,a9,a9,2,a9,a9,b1)
-g=T.M(a9,G.hM(20),a9)
+g=T.L(a9,G.hM(20),a9)
 f=L.I("Booking Date",a9,a9,a9,B.U(A.H(a9,a9,new P.i(b0),a9,a9,a9,a9,a9,a9,a9,a9,V.em(b1),a9,a9,a9,a9,!0,a9,a9,a9,a9,a9,a9)),a9)
-e=T.M(a9,G.hM(15),a9)
+e=T.L(a9,G.hM(15),a9)
 b1=L.I("2021",a9,a9,a9,B.U(A.H(a9,a9,new P.i(b0),a9,a9,a9,a9,a9,a9,a9,a9,V.fQ(b1),a9,a9,a9,a9,!0,a9,a9,a9,a9,a9,a9)),a9)
-d=T.M(a9,G.hM(15),a9)
+d=T.L(a9,G.hM(15),a9)
 c=a8.r
 b=c.eX(1)
 a=c.eW(1)
@@ -35284,9 +35284,9 @@ s=r.x.u$
 s.Z(s.c,new B.ac(new Z.a5C(r)),!1)
 s=r.y.u$
 s.Z(s.c,new B.ac(new Z.a5D(r)),!1)},
-D:function(a0,a1){var s,r,q,p,o,n=this,m=null,l=4282533448,k=4286218919,j=2151039302,i=a1.G(t.w).f.a.a,h=new Z.a5u(i),g=G.Oo(100),f=X.aT(C.x,new L.aH("assets/help.png",m,m)),e=t.t,d=T.ad(H.b([L.I("Contact us",m,m,m,B.U(A.H(m,m,new P.i(l),m,m,m,m,m,m,m,m,V.em(i),m,m,m,m,!0,m,m,m,m,m,m)),m),L.I("Tell us your Thoughts",m,m,m,B.U(A.H(m,m,new P.i(l),m,m,m,m,m,m,m,m,V.fQ(i),m,m,m,m,!0,m,m,m,m,m,m)),m),L.I("\nWe are looking forward to hearing from you.\n",m,m,m,B.U(A.H(m,m,new P.i(l),m,m,m,m,m,m,m,m,V.bb(i),m,m,m,m,!0,m,m,m,m,m,m)),m),L.I("You can tell us about your ideas, or ask us \nquestions. Any suggestions are welcome :)",m,m,m,B.U(A.H(m,m,new P.i(l),m,m,m,m,m,m,m,m,V.bb(i),m,m,m,m,!0,m,m,m,m,m,m)),m)],e),C.p,C.z,C.e),c=T.M(m,m,200),b=T.aq(H.b([T.aZ(h.$4("Your Name",n.r,30,1),1),T.M(m,m,20),T.aZ(h.$4("Your Email",n.x,30,1),1)],e),C.l,C.i,C.e),a=T.M(m,30,m)
+D:function(a0,a1){var s,r,q,p,o,n=this,m=null,l=4282533448,k=4286218919,j=2151039302,i=a1.G(t.w).f.a.a,h=new Z.a5u(i),g=G.Oo(100),f=X.aT(C.x,new L.aH("assets/help.png",m,m)),e=t.t,d=T.ad(H.b([L.I("Contact us",m,m,m,B.U(A.H(m,m,new P.i(l),m,m,m,m,m,m,m,m,V.em(i),m,m,m,m,!0,m,m,m,m,m,m)),m),L.I("Tell us your Thoughts",m,m,m,B.U(A.H(m,m,new P.i(l),m,m,m,m,m,m,m,m,V.fQ(i),m,m,m,m,!0,m,m,m,m,m,m)),m),L.I("\nWe are looking forward to hearing from you.\n",m,m,m,B.U(A.H(m,m,new P.i(l),m,m,m,m,m,m,m,m,V.bb(i),m,m,m,m,!0,m,m,m,m,m,m)),m),L.I("You can tell us about your ideas, or ask us \nquestions. Any suggestions are welcome :)",m,m,m,B.U(A.H(m,m,new P.i(l),m,m,m,m,m,m,m,m,V.bb(i),m,m,m,m,!0,m,m,m,m,m,m)),m)],e),C.p,C.z,C.e),c=T.L(m,m,200),b=T.aq(H.b([T.aZ(h.$4("Your Name",n.r,30,1),1),T.L(m,m,20),T.aZ(h.$4("Your Email",n.x,30,1),1)],e),C.l,C.i,C.e),a=T.L(m,30,m)
 h=T.aZ(h.$4("Message",n.y,300,14),1)
-s=T.M(m,10,m)
+s=T.L(m,10,m)
 r=n.d
 q=F.iJ(r&&n.e&&n.f?new P.i(k):new P.i(j),2)
 p=r&&n.e&&n.f?new P.i(k):C.v
@@ -35327,7 +35327,7 @@ Z.a5w.prototype={
 $0:function(){this.a.f=!1},
 $S:1}
 Z.a5u.prototype={
-$4:function(a,b,c,d){var s=null,r=L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4282533448),s,s,s,s,s,s,s,s,V.bb(this.a),s,s,s,s,!0,s,s,s,s,s,s)),s),q=T.M(s,5,s),p=A.H(s,s,s,s,s,s,s,s,"",s,s,20,s,s,s,1,!0,s,s,s,s,s,s)
+$4:function(a,b,c,d){var s=null,r=L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4282533448),s,s,s,s,s,s,s,s,V.bb(this.a),s,s,s,s,!0,s,s,s,s,s,s)),s),q=T.L(s,5,s),p=A.H(s,s,s,s,s,s,s,s,"",s,s,20,s,s,s,1,!0,s,s,s,s,s,s)
 return T.ad(H.b([r,q,M.p(s,Z.wn(!0,b,new P.i(4291346927),L.oz(s,C.c8,new V.J(10,d>1?10:0,0,20),s,s,s,s,!0,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s),C.lK,d,C.rN,p),new P.i(4294177528),s,s,c,s,s,s)],t.t),C.p,C.i,C.e)},
 $S:337}
 Z.a5t.prototype={
@@ -35363,7 +35363,7 @@ D:function(a,b){var s,r=null,q=4282533448,p=t.w,o=b.G(p).f.a.a
 b.G(p).toString
 p=X.aT(C.x,new L.aH("assets/feedback.png",r,r))
 s=t.t
-return T.by(C.F,H.b([M.p(r,T.aq(H.b([M.p(r,T.aq(H.b([T.ad(H.b([L.I("User Feedback",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(o),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I("See How They Feel",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(o),r,r,r,r,!0,r,r,r,r,r,r)),r)],s),C.p,C.z,C.e),T.M(r,r,50),T.ad(H.b([L.I("Here are some Emo\u2019s feedback of Emorgan.\n",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(o),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I("We collected Emos\u2019 feedbacks who have used\nEMORGAN for more than one year to provide\reference for new EMOs.",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(o),r,r,r,r,!0,r,r,r,r,r,r)),r)],s),C.p,C.z,C.e)],s),C.l,C.i,C.e),r,r,r,r,r,r,r)],s),C.l,C.z,C.e),r,r,new S.al(r,p,r,r,r,r,C.n),800,r,new V.J(0,50,0,50),o),T.aj(r,B.oq(U.iW("assets/icon_up.png",r,r,r),this.a.c,r),r,r,r,20,50,r)],s),C.t,C.B)}}
+return T.by(C.F,H.b([M.p(r,T.aq(H.b([M.p(r,T.aq(H.b([T.ad(H.b([L.I("User Feedback",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(o),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I("See How They Feel",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(o),r,r,r,r,!0,r,r,r,r,r,r)),r)],s),C.p,C.z,C.e),T.L(r,r,50),T.ad(H.b([L.I("Here are some Emo\u2019s feedback of Emorgan.\n",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(o),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I("We collected Emos\u2019 feedbacks who have used\nEMORGAN for more than one year to provide\reference for new EMOs.",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(o),r,r,r,r,!0,r,r,r,r,r,r)),r)],s),C.p,C.z,C.e)],s),C.l,C.i,C.e),r,r,r,r,r,r,r)],s),C.l,C.z,C.e),r,r,new S.al(r,p,r,r,r,r,C.n),800,r,new V.J(0,50,0,50),o),T.aj(r,B.oq(U.iW("assets/icon_up.png",r,r,r),this.a.c,r),r,r,r,20,50,r)],s),C.t,C.B)}}
 O.Nr.prototype={
 ac:function(){this.ax()
 this.f8()},
@@ -35375,7 +35375,7 @@ a4:function(){return new A.Jw(null,C.o)}}
 A.Jw.prototype={
 gfB:function(){return!0},
 D:function(a,b){var s=this,r=null,q=4281745734,p=b.G(t.w).f.a.a,o=[s.jZ(0,"Step 1.","assets/step1.png","Book a counseling","Online","",p),s.jZ(0,"Step 2.","assets/step2.png","Get the consent and","emorgan-purchse code","from the psychologist",p),s.jZ(0,"Step 3.","assets/step3.png","Purchase Obi, Shali or","Buzzy online","",p),s.jZ(0,"Step 4.","assets/step4.png","Put on your Obi, Shali or","Buzzy","",p),s.jZ(0,"Step 5.","assets/step5.png","Exchange of emotion","experience with your","partner",p),s.jZ(0,"Step 6.","assets/step6.png","Go back for a","follow-up consultation","",p),s.jZ(0,"Step 7.","assets/step7.png","Keep your relationship ","","",p)],n=X.aT(C.x,new L.aH("assets/help.png",r,r)),m=t.t
-return M.p(r,T.by(C.F,H.b([T.aj(r,T.aq(H.b([B.oq(U.iW("assets/icon_up.png",r,r,r),s.a.c,r)],m),C.p,C.h8,C.e),r,r,r,22,50,r),T.ad(H.b([M.p(r,T.ad(H.b([T.aq(H.b([o[0],o[1],o[2],o[3],o[4],o[5]],m),C.l,C.rz,C.e)],m),C.l,C.z,C.e),r,r,r,750,r,r,r),T.aZ(M.p(r,T.aq(H.b([T.aZ(M.p(r,r,r,r,r,r,r,r,r),1),M.p(r,T.ad(H.b([L.I("Purchase Process",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.M(r,5,r),L.I("Know Your Needs First",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(p),r,r,r,r,!0,r,r,r,r,r,r)),r)],m),C.p,C.i,C.e),r,r,r,r,r,new V.J(0,250,0,0),r),T.M(r,r,100),M.p(r,L.I("We understand that when you come to this website, you want a better solution. There might\nbe some problems with you and your partner.\n\nYou have tried many methods, but they were not satisfied.\n\nWe suggest that you and your partner can talk to our psychological counselors first, they will\nnhelp you with relationship and emotion problems, and  also make a serious decision\nwhether you need emorgans and help you grow in understanding each other.\n                  ",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(p),r,r,r,r,!0,r,r,r,r,r,r)),r),r,r,r,r,r,new V.J(0,250,0,0),r),T.aZ(M.p(r,r,r,r,r,r,r,r,r),1)],m),C.p,C.i,C.e),C.m,r,r,r,r,r,p),1)],m),C.l,C.i,C.e)],m),C.t,C.B),r,r,new S.al(r,n,r,r,r,r,C.n),1500,r,r,p)},
+return M.p(r,T.by(C.F,H.b([T.aj(r,T.aq(H.b([B.oq(U.iW("assets/icon_up.png",r,r,r),s.a.c,r)],m),C.p,C.h8,C.e),r,r,r,22,50,r),T.ad(H.b([M.p(r,T.ad(H.b([T.aq(H.b([o[0],o[1],o[2],o[3],o[4],o[5]],m),C.l,C.rz,C.e)],m),C.l,C.z,C.e),r,r,r,750,r,r,r),T.aZ(M.p(r,T.aq(H.b([T.aZ(M.p(r,r,r,r,r,r,r,r,r),1),M.p(r,T.ad(H.b([L.I("Purchase Process",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.L(r,5,r),L.I("Know Your Needs First",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(p),r,r,r,r,!0,r,r,r,r,r,r)),r)],m),C.p,C.i,C.e),r,r,r,r,r,new V.J(0,250,0,0),r),T.L(r,r,100),M.p(r,L.I("We understand that when you come to this website, you want a better solution. There might\nbe some problems with you and your partner.\n\nYou have tried many methods, but they were not satisfied.\n\nWe suggest that you and your partner can talk to our psychological counselors first, they will\nnhelp you with relationship and emotion problems, and  also make a serious decision\nwhether you need emorgans and help you grow in understanding each other.\n                  ",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(p),r,r,r,r,!0,r,r,r,r,r,r)),r),r,r,r,r,r,new V.J(0,250,0,0),r),T.aZ(M.p(r,r,r,r,r,r,r,r,r),1)],m),C.p,C.i,C.e),C.m,r,r,r,r,r,p),1)],m),C.l,C.i,C.e)],m),C.t,C.B),r,r,new S.al(r,n,r,r,r,r,C.n),1500,r,r,p)},
 jZ:function(a,b,c,d,e,f,g){var s=4282533448,r=null
 return T.ad(H.b([L.I(b,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,V.em(g),r,r,r,r,!0,r,r,r,r,r,r)),r),M.p(r,r,r,r,new S.al(r,X.aT(C.x,new L.aH(c,r,r)),r,r,r,r,C.n),120,new V.J(0,10,0,10),r,120),L.I(d,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,V.bb(g),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I(e,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,V.bb(g),r,r,r,r,!0,r,r,r,r,r,r)),r),L.I(f,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,V.bb(g),r,r,r,r,!0,r,r,r,r,r,r)),r)],t.t),C.l,C.i,C.e)}}
 A.Ns.prototype={
@@ -35417,7 +35417,7 @@ r=t.wr
 n.e=new R.aJ(n.d,new R.aC(new P.r(-1.5,0),new P.r(0,0),r),r.i("aJ<az.T>"))
 r=t.o0
 r=R.aR(!1,!0,T.ad(P.aG(new H.aD(s,new A.a5F(),r),!0,r.i("aS.E")),C.l,C.i,C.e),m,!0,m,m,m,m,m,m,m,new A.a5G(n),m,new A.a5H(),m,m,m)
-q=T.M(m,m,5)
+q=T.L(m,m,5)
 p=n.e
 o=t.t
 return T.aq(H.b([r,q,K.a0r(R.aR(!1,!0,T.ad(H.b([n.kP(s[0],n.a.d),n.kP(s[1],n.a.e),n.kP(s[2],n.a.f),n.kP(s[3],n.a.r),n.kP(s[4],n.a.x),n.kP(s[5],n.a.y),n.kP(s[6],n.a.z)],o),C.p,C.i,C.e),m,!0,m,m,m,m,m,m,m,new A.a5I(n),m,new A.a5J(),m,m,m),p,m,!0)],o),C.l,C.i,C.e)},
@@ -35475,14 +35475,14 @@ $S:1}
 K.u3.prototype={
 a4:function(){return new K.JI(C.o)}}
 K.JI.prototype={
-D:function(a1,a2){var s,r,q,p,o=this,n=null,m=4281745734,l=4286218919,k=a2.G(t.w).f.a.a,j=T.aZ(M.p(n,n,n,n,n,n,n,n,n),1),i=T.M(n,41,n),h=L.I(o.a.d,n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.em(k),n,n,n,n,!0,n,n,n,n,n,n)),n),g=L.I(o.a.e,n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.fQ(k),n,n,n,n,!0,n,n,n,n,n,n)),n),f=T.M(n,36,n),e=L.I(o.a.f,n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.bb(k),n,n,n,n,!0,n,n,n,n,n,n)),n),d=L.I(o.a.r,n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.bb(k),n,n,n,n,!0,n,n,n,n,n,n)),n),c=T.M(n,50,n),b=o.a.y,a=t.t,a0=T.aq(H.b([L.I(" Learn more",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.bb(k),n,n,n,n,!0,n,n,n,n,n,n)),C.bA),L.m9(C.qO,new P.i(l),V.em(k))],a),C.p,C.i,C.e)
+D:function(a1,a2){var s,r,q,p,o=this,n=null,m=4281745734,l=4286218919,k=a2.G(t.w).f.a.a,j=T.aZ(M.p(n,n,n,n,n,n,n,n,n),1),i=T.L(n,41,n),h=L.I(o.a.d,n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.em(k),n,n,n,n,!0,n,n,n,n,n,n)),n),g=L.I(o.a.e,n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.fQ(k),n,n,n,n,!0,n,n,n,n,n,n)),n),f=T.L(n,36,n),e=L.I(o.a.f,n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.bb(k),n,n,n,n,!0,n,n,n,n,n,n)),n),d=L.I(o.a.r,n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.bb(k),n,n,n,n,!0,n,n,n,n,n,n)),n),c=T.L(n,50,n),b=o.a.y,a=t.t,a0=T.aq(H.b([L.I(" Learn more",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.bb(k),n,n,n,n,!0,n,n,n,n,n,n)),C.bA),L.m9(C.qO,new P.i(l),V.em(k))],a),C.p,C.i,C.e)
 b=M.i_(C.ab,n,R.aR(!1,!0,M.p(n,T.ad(H.b([a0,$.anN?M.p(n,n,new P.i(l),n,n,3,n,n,V.bb(k)*6):M.p(n,n,n,n,n,n,n,n,n)],a),C.l,C.i,C.e),n,n,n,n,n,n,n),n,!0,n,n,n,n,n,n,n,new K.a6f(o),n,b,n,n,n),C.Q,C.v,0,n,n,n,n,C.aQ)
-a0=T.M(n,n,G.r7(20))
+a0=T.L(n,n,G.r7(20))
 s=o.a.z
 r=F.iJ(new P.i(l),4)
 q=$.anU?new P.i(l):C.v
 p=K.dB(60)
-return M.p(n,M.p(n,T.ad(H.b([T.M(T.aq(H.b([j,T.ad(H.b([i,h,g,f,e,d,c,T.aq(H.b([b,a0,M.i_(C.ab,n,R.aR(!1,!0,M.p(n,L.I("ORDER NOW",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.bb(k)-1,n,n,n,n,!0,n,n,n,n,n,n)),n),n,n,new S.al(q,n,r,p,n,n,C.n),n,n,new V.J(10,5,10,5),n),n,!0,n,n,n,n,n,n,n,new K.a6g(o),n,s,n,n,n),C.Q,n,0,n,n,n,n,C.aQ)],a),C.l,C.h8,C.e)],a),C.p,C.i,C.e),T.aZ(M.p(n,n,n,n,n,n,n,n,n),1)],a),C.l,C.i,C.e),362,440)],a),C.l,C.z,C.e),n,n,new S.al(C.m,n,n,n,n,n,C.n),1500,n,new V.J(26,0,26,50),k/3),n,n,n,n,n,n,n)}}
+return M.p(n,M.p(n,T.ad(H.b([T.L(T.aq(H.b([j,T.ad(H.b([i,h,g,f,e,d,c,T.aq(H.b([b,a0,M.i_(C.ab,n,R.aR(!1,!0,M.p(n,L.I("ORDER NOW",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,V.bb(k)-1,n,n,n,n,!0,n,n,n,n,n,n)),n),n,n,new S.al(q,n,r,p,n,n,C.n),n,n,new V.J(10,5,10,5),n),n,!0,n,n,n,n,n,n,n,new K.a6g(o),n,s,n,n,n),C.Q,n,0,n,n,n,n,C.aQ)],a),C.l,C.h8,C.e)],a),C.p,C.i,C.e),T.aZ(M.p(n,n,n,n,n,n,n,n,n),1)],a),C.l,C.i,C.e),362,440)],a),C.l,C.z,C.e),n,n,new S.al(C.m,n,n,n,n,n,C.n),1500,n,new V.J(26,0,26,50),k/3),n,n,n,n,n,n,n)}}
 K.a6f.prototype={
 $1:function(a){P.iE(a)
 this.a.t(new K.a6e(a))},
@@ -35673,7 +35673,7 @@ j=T.aj(f,R.aR(!1,!0,K.aW(k,new D.a73(),f),f,!0,f,f,f,C.v,f,f,f,new D.a77(),f,new
 i=$.af6.a
 h=T.aj(f,R.aR(!1,!0,K.aW(i,new D.a79(),f),f,!0,f,f,f,C.v,f,f,f,new D.a7a(),f,new D.a7b(),f,f,f),f,f,f,p*8.5,l*1.7,f)
 g=$.afb.a
-return M.p(f,T.by(C.F,H.b([s,q,r,M.p(f,new T.cN(C.mG,T.ad(H.b([n,T.by(C.F,H.b([m,j,h,T.aj(f,R.aR(!1,!0,K.aW(g,new D.a7c(),f),f,!0,f,f,f,C.v,f,f,f,new D.a7d(),f,new D.a7e(),f,f,f),f,f,f,p*8.8,l*7.2,f),T.aj(f,K.aW(k,new D.a74(),f),f,f,0,f,l*4.3,f),T.aj(f,K.aW(i,new D.a75(),f),f,f,f,0,l*1.96,f),T.aj(f,K.aW(g,new D.a76(),f),f,f,f,0,l*7.6,f)],b),C.t,C.B),T.M(f,15,f),M.afj("Design","\nThe shape idea is from human heart. The main form is a short ellipse with smooth surface and tissue-friendly to avoid any danger during transplantation and removal.",c),T.M(f,60,f),T.aq(H.b([M.A_("Material","TBiomedical Metal\nBiomedical Ceramics\nBiomedical Polymer\n\nAll the materials are also non-toxic and\nbiological.",c),T.aZ(M.p(f,f,f,f,f,f,f,f,f),1),M.A_("Technology","Hertz Creation\n\nProviding the vibrate which was transferred from\nvoice ingredient by Obi patch.",c)],b),C.p,C.i,C.e)],b),C.p,C.i,C.e),f),f,f,f,f,f,new V.J(o,70,o,70),f)],b),C.t,C.B),f,f,f,1100,f,f,c)}}
+return M.p(f,T.by(C.F,H.b([s,q,r,M.p(f,new T.cN(C.mG,T.ad(H.b([n,T.by(C.F,H.b([m,j,h,T.aj(f,R.aR(!1,!0,K.aW(g,new D.a7c(),f),f,!0,f,f,f,C.v,f,f,f,new D.a7d(),f,new D.a7e(),f,f,f),f,f,f,p*8.8,l*7.2,f),T.aj(f,K.aW(k,new D.a74(),f),f,f,0,f,l*4.3,f),T.aj(f,K.aW(i,new D.a75(),f),f,f,f,0,l*1.96,f),T.aj(f,K.aW(g,new D.a76(),f),f,f,f,0,l*7.6,f)],b),C.t,C.B),T.L(f,15,f),M.afj("Design","\nThe shape idea is from human heart. The main form is a short ellipse with smooth surface and tissue-friendly to avoid any danger during transplantation and removal.",c),T.L(f,60,f),T.aq(H.b([M.A_("Material","TBiomedical Metal\nBiomedical Ceramics\nBiomedical Polymer\n\nAll the materials are also non-toxic and\nbiological.",c),T.aZ(M.p(f,f,f,f,f,f,f,f,f),1),M.A_("Technology","Hertz Creation\n\nProviding the vibrate which was transferred from\nvoice ingredient by Obi patch.",c)],b),C.p,C.i,C.e)],b),C.p,C.i,C.e),f),f,f,f,f,f,new V.J(o,70,o,70),f)],b),C.t,C.B),f,f,f,1100,f,f,c)}}
 D.a71.prototype={
 $0:function(){K.cG(this.a,!1).cR(0)},
 $S:1}
@@ -35790,7 +35790,7 @@ l=T.aj(d,K.aW(j,new Y.a7k(),d),d,d,0,d,l,d)
 f=N.afm(q,f)
 f=T.aj(d,K.aW(h,new Y.a7l(),d),d,d,d,0,f,d)
 p=N.afm(q,p*7.4)
-return M.p(d,M.p(d,new T.cN(C.cd,T.ad(H.b([r,T.by(C.F,H.b([n,k,i,m,b,e,l,f,T.aj(d,K.aW(g,new Y.a7m(),d),d,d,d,0,p,d)],o),C.t,C.B),T.M(d,15,d),M.afj("Design","\nObi Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",c),T.M(d,40,d),T.aq(H.b([M.A_("Material",u.K,c),T.aZ(M.p(d,d,d,d,d,d,d,d,d),1),M.A_("Technology",u.d,c)],o),C.p,C.i,C.e)],o),C.p,C.i,C.e),d),d,d,d,d,d,new V.J(s,70,s,70),d),d,d,d,950,d,d,c)}}
+return M.p(d,M.p(d,new T.cN(C.cd,T.ad(H.b([r,T.by(C.F,H.b([n,k,i,m,b,e,l,f,T.aj(d,K.aW(g,new Y.a7m(),d),d,d,d,0,p,d)],o),C.t,C.B),T.L(d,15,d),M.afj("Design","\nObi Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",c),T.L(d,40,d),T.aq(H.b([M.A_("Material",u.K,c),T.aZ(M.p(d,d,d,d,d,d,d,d,d),1),M.A_("Technology",u.d,c)],o),C.p,C.i,C.e)],o),C.p,C.i,C.e),d),d,d,d,d,d,new V.J(s,70,s,70),d),d,d,d,950,d,d,c)}}
 Y.a7h.prototype={
 $0:function(){},
 $S:1}
@@ -35893,7 +35893,7 @@ D:function(a,b){var s=null,r=4282533448,q=b.G(t.w).f.a.a
 return T.ad(H.b([L.I(this.c,s,s,s,A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.dn(q),s,s,s,s,!0,s,s,s,s,s,s),s),M.p(s,s,s,s,new S.al(s,X.aT(C.x,new L.aH(this.d,s,s)),s,s,s,s,C.n),100,new V.J(0,25,0,25),s,100),L.I(this.e,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fj(q),s,s,s,s,!0,s,s,s,s,s,s)),C.bA)],t.t),C.l,C.z,C.e)}}
 Z.DM.prototype={
 D:function(a,b){var s=null,r=b.G(t.w).f.a.a,q=r/3-100
-return M.p(s,M.p(s,new T.cN(C.mH,T.aq(H.b([new Z.py("Blood Flow Power\n","assets/shail_img1.png",u.W,s),T.M(s,s,10),new Z.py("Nitinol\n","assets/shail_img2.png","4 forks are made of this material. When implanting EMORGAN, retract the protective sheath outside of the pacemaker, and the forks will automatically open to hook on the body destination.",s),T.M(s,s,10),new Z.py("Titanium Alloy &\nBiomedical Ceramics\n","assets/shail_img3.png","They have good affinity with organisms and does not produce toxic corrosion and decomposition substance. Moreover, They don\u2019t cause biological cell mutation, necrosis, inflammation and growth Granulation. According to the above, the materials can be used for long- term in human body.",s)],t.t),C.p,C.b2,C.e),s),s,s,s,s,s,new V.J(q,40,q,0),s),s,s,s,650,s,s,r)}}
+return M.p(s,M.p(s,new T.cN(C.mH,T.aq(H.b([new Z.py("Blood Flow Power\n","assets/shail_img1.png",u.W,s),T.L(s,s,10),new Z.py("Nitinol\n","assets/shail_img2.png","4 forks are made of this material. When implanting EMORGAN, retract the protective sheath outside of the pacemaker, and the forks will automatically open to hook on the body destination.",s),T.L(s,s,10),new Z.py("Titanium Alloy &\nBiomedical Ceramics\n","assets/shail_img3.png","They have good affinity with organisms and does not produce toxic corrosion and decomposition substance. Moreover, They don\u2019t cause biological cell mutation, necrosis, inflammation and growth Granulation. According to the above, the materials can be used for long- term in human body.",s)],t.t),C.p,C.b2,C.e),s),s,s,s,s,s,new V.J(q,40,q,0),s),s,s,s,650,s,s,r)}}
 Z.py.prototype={
 D:function(a,b){var s=null,r=4282533448,q=b.G(t.w).f.a.a
 return M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.al(s,X.aT(C.bE,new L.aH(this.d,s,s)),s,s,s,s,C.n),200,new V.J(0,25,0,25),s,240),L.I(this.c,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.dn(q),s,s,s,s,!0,s,s,s,s,s,s)),C.E),L.I(this.e,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fj(q),s,s,s,s,!0,s,s,s,s,s,s)),C.E)],t.t),C.p,C.i,C.e),s,s,s,s,s,s,240)}}
@@ -35906,7 +35906,7 @@ s=this.d
 r=P.aO(0,0,500,0)
 q=P.aO(0,0,800,0)
 p=t.t
-return M.ia(T.by(C.F,H.b([M.p(o,B.a2d(!0,B.Vp(!0,H.b([new D.uR(o),T.M(o,200,o),new G.mM(o),new Y.uS(o),T.M(o,200,o),new G.mM(o),new Q.DK(o),new G.mM(o),new E.DL(o),new G.mM(o),new Z.DM(o)],p),s,o,new L.lH(o),!0),new P.i(4291346927),s,50,o,r,q,8),o,o,o,n.a.b,o,o,m.a.a)],p),C.t,C.B),o)}}
+return M.ia(T.by(C.F,H.b([M.p(o,B.a2d(!0,B.Vp(!0,H.b([new D.uR(o),T.L(o,200,o),new G.mM(o),new Y.uS(o),T.L(o,200,o),new G.mM(o),T.L(o,100,o),new Q.DK(o),T.L(o,100,o),new G.mM(o),new E.DL(o),new G.mM(o),T.L(o,100,o),new Z.DM(o)],p),s,o,new L.lH(o),!0),new P.i(4291346927),s,50,o,r,q,8),o,o,o,n.a.b,o,o,m.a.a)],p),C.t,C.B),o)}}
 Z.my.prototype={
 a4:function(){return new Z.Kz(C.o)}}
 Z.Kz.prototype={
@@ -36074,7 +36074,7 @@ $0:function(){this.a.ch=!1},
 $S:1}
 Z.a7x.prototype={
 $0:function(){var s=null,r=4282533448,q=X.aT(C.x,new L.aH("assets/order_left_backround.png",s,s)),p=this.c/2,o=this.a,n=t.t
-return M.p(s,T.aq(H.b([T.ad(H.b([T.aZ(M.p(s,s,s,s,s,s,s,s,s),1),L.I("Enter Account Detail",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,32,s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,50,s),new Z.D_(o.cx,o.cy,o.db,o.dx,s),M.p(s,s,C.m,s,s,1,new V.J(0,50,0,50),s,p/3*2+30),L.I("Payment",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,32,s,s,s,s,!0,s,s,s,s,s,s)),s),T.M(s,50,s),new Z.D1(o.dy,o.fr,o.fx,o.fy,o.go,s),T.aZ(M.p(s,s,s,s,s,s,s,s,s),1)],n),C.p,C.i,C.e)],n),C.l,C.z,C.e),s,s,new S.al(s,q,s,s,s,s,C.n),this.b,s,new V.J(100,0,100,0),p)},
+return M.p(s,T.aq(H.b([T.ad(H.b([T.aZ(M.p(s,s,s,s,s,s,s,s,s),1),L.I("Enter Account Detail",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,32,s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,50,s),new Z.D_(o.cx,o.cy,o.db,o.dx,s),M.p(s,s,C.m,s,s,1,new V.J(0,50,0,50),s,p/3*2+30),L.I("Payment",s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,32,s,s,s,s,!0,s,s,s,s,s,s)),s),T.L(s,50,s),new Z.D1(o.dy,o.fr,o.fx,o.fy,o.go,s),T.aZ(M.p(s,s,s,s,s,s,s,s,s),1)],n),C.p,C.i,C.e)],n),C.l,C.z,C.e),s,s,new S.al(s,q,s,s,s,s,C.n),this.b,s,new V.J(100,0,100,0),p)},
 $S:29}
 Z.a7z.prototype={
 $1:function(a){var s=null
@@ -36082,11 +36082,11 @@ return T.ad(H.b([L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4282533448),s,s,s,s,s,s,s,s,V.e
 $S:448}
 Z.a7A.prototype={
 $2:function(a,b){var s=null,r=4282533448,q=this.a
-return T.aq(H.b([T.M(s,s,120),L.I(a,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(q),s,s,s,s,!0,s,s,s,s,s,s)),s),T.aZ(M.p(s,s,s,s,s,s,s,s,s),1),L.I(b,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(q),s,s,s,s,!0,s,s,s,s,s,s)),s)],t.t),C.l,C.i,C.e)},
+return T.aq(H.b([T.L(s,s,120),L.I(a,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(q),s,s,s,s,!0,s,s,s,s,s,s)),s),T.aZ(M.p(s,s,s,s,s,s,s,s,s),1),L.I(b,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.bb(q),s,s,s,s,!0,s,s,s,s,s,s)),s)],t.t),C.l,C.i,C.e)},
 $S:67}
 Z.a7y.prototype={
 $0:function(){var s=this,r=null,q=4282533448,p="Operation",o="0.99 BTC",n=s.b,m=n/2,l=X.aT(C.x,new L.aH(u.H,r,r)),k=m/6,j=s.c,i=s.d,h=t.t,g=s.e
-return M.p(r,M.p(r,T.e3(T.ad(H.b([T.aZ(M.p(r,r,r,r,r,r,r,r,r),1),j.$1("Emorgan"),T.M(r,10,r),T.aq(H.b([T.ad(H.b([Y.lP(i.c,!1,!0,!0,!0,i.a,r),T.M(r,30,r),L.I("Human A",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(n),r,r,r,r,!0,r,r,r,r,r,r)),r)],h),C.l,C.i,C.e),T.M(r,r,50),T.ad(H.b([Y.lP(i.d,!1,!0,!0,!0,i.b,r),T.M(r,30,r),L.I("Human B",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(n),r,r,r,r,!0,r,r,r,r,r,r)),r)],h),C.l,C.i,C.e)],h),C.jy,C.h8,C.e),j.$1(p),T.M(r,10,r),g.$2("Date","2024/12/25 14:00"),T.M(r,30,r),g.$2("Place","EMORGAN RoomA"),T.M(r,40,r),j.$1("Summary"),T.M(r,10,r),g.$2(i.e,o),T.M(r,30,r),g.$2(i.f,o),T.M(r,30,r),g.$2(p,"0.02 BTC"),T.M(r,30,r),M.p(r,r,new P.i(4291346927),r,r,1,new V.J(0,10,0,10),r,r),T.aq(H.b([L.I("Purchase Price",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(n),r,r,r,r,!0,r,r,r,r,r,r)),r),T.aZ(M.p(r,r,r,r,r,r,r,r,r),1),L.I("2.00",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(n),r,r,r,r,!0,r,r,r,r,r,r)),r),T.M(r,r,20),L.I("BTC",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(n),r,r,r,r,!0,r,r,r,r,r,r)),r)],h),C.l,C.i,C.e),T.aZ(M.p(r,r,r,r,r,r,r,r,r),1)],h),C.p,C.i,C.e),r,r),r,r,new S.al(r,l,r,r,r,r,C.n),r,r,new V.J(k,0,k,0),r),r,r,r,s.a,r,r,m)},
+return M.p(r,M.p(r,T.e3(T.ad(H.b([T.aZ(M.p(r,r,r,r,r,r,r,r,r),1),j.$1("Emorgan"),T.L(r,10,r),T.aq(H.b([T.ad(H.b([Y.lP(i.c,!1,!0,!0,!0,i.a,r),T.L(r,30,r),L.I("Human A",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(n),r,r,r,r,!0,r,r,r,r,r,r)),r)],h),C.l,C.i,C.e),T.L(r,r,50),T.ad(H.b([Y.lP(i.d,!1,!0,!0,!0,i.b,r),T.L(r,30,r),L.I("Human B",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(n),r,r,r,r,!0,r,r,r,r,r,r)),r)],h),C.l,C.i,C.e)],h),C.jy,C.h8,C.e),j.$1(p),T.L(r,10,r),g.$2("Date","2024/12/25 14:00"),T.L(r,30,r),g.$2("Place","EMORGAN RoomA"),T.L(r,40,r),j.$1("Summary"),T.L(r,10,r),g.$2(i.e,o),T.L(r,30,r),g.$2(i.f,o),T.L(r,30,r),g.$2(p,"0.02 BTC"),T.L(r,30,r),M.p(r,r,new P.i(4291346927),r,r,1,new V.J(0,10,0,10),r,r),T.aq(H.b([L.I("Purchase Price",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(n),r,r,r,r,!0,r,r,r,r,r,r)),r),T.aZ(M.p(r,r,r,r,r,r,r,r,r),1),L.I("2.00",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.fQ(n),r,r,r,r,!0,r,r,r,r,r,r)),r),T.L(r,r,20),L.I("BTC",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.em(n),r,r,r,r,!0,r,r,r,r,r,r)),r)],h),C.l,C.i,C.e),T.aZ(M.p(r,r,r,r,r,r,r,r,r),1)],h),C.p,C.i,C.e),r,r),r,r,new S.al(r,l,r,r,r,r,C.n),r,r,new V.J(k,0,k,0),r),r,r,r,s.a,r,r,m)},
 $S:29}
 Z.a7v.prototype={
 $0:function(){var s=this.a
@@ -36097,13 +36097,13 @@ $0:function(){K.cG(this.a,!1).cR(0)},
 $S:1}
 Z.D_.prototype={
 D:function(a,b){var s=this,r=null,q=b.G(t.w).f.a.a,p=q/2/3,o=t.t
-return T.aq(H.b([T.ad(H.b([M.p(r,Z.lu("Your First Name",s.c,q),r,r,r,r,r,r,p),T.M(r,20,r),M.p(r,Z.lu("Email Address",s.d,q),r,r,r,r,r,r,p),T.M(r,20,r)],o),C.l,C.i,C.e),T.M(r,r,20),T.ad(H.b([M.p(r,Z.lu("Your Last Name",s.e,q),r,r,r,r,r,r,p),T.M(r,20,r),M.p(r,Z.lu("Phone Number",s.f,q),r,r,r,r,r,r,p),T.M(r,20,r)],o),C.l,C.i,C.e)],o),C.l,C.i,C.e)}}
+return T.aq(H.b([T.ad(H.b([M.p(r,Z.lu("Your First Name",s.c,q),r,r,r,r,r,r,p),T.L(r,20,r),M.p(r,Z.lu("Email Address",s.d,q),r,r,r,r,r,r,p),T.L(r,20,r)],o),C.l,C.i,C.e),T.L(r,r,20),T.ad(H.b([M.p(r,Z.lu("Your Last Name",s.e,q),r,r,r,r,r,r,p),T.L(r,20,r),M.p(r,Z.lu("Phone Number",s.f,q),r,r,r,r,r,r,p),T.L(r,20,r)],o),C.l,C.i,C.e)],o),C.l,C.i,C.e)}}
 Z.D1.prototype={
 D:function(a,b){var s,r,q=this,p=null,o=b.G(t.w).f.a.a,n=o/2/3*2,m=n+20
 n/=3
 s=n-10
 r=t.t
-return T.ad(H.b([M.p(p,Z.lu("Name on Card",q.c,o),p,p,p,p,p,p,m),T.M(p,20,p),M.p(p,Z.lu("Credit Card Number",q.d,o),p,p,p,p,p,p,m),T.M(p,20,p),T.M(p,p,20),T.aq(H.b([M.p(p,Z.lu("CreDit Card Number",q.e,o),p,p,p,p,p,p,s),T.M(p,p,20),M.p(p,Z.lu("CCV",q.f,o),p,p,p,p,p,p,s),T.M(p,p,20),M.p(p,Z.lu("Billing Zip Code",q.r,o),p,p,p,p,p,p,n)],r),C.l,C.i,C.e)],r),C.p,C.i,C.e)}}
+return T.ad(H.b([M.p(p,Z.lu("Name on Card",q.c,o),p,p,p,p,p,p,m),T.L(p,20,p),M.p(p,Z.lu("Credit Card Number",q.d,o),p,p,p,p,p,p,m),T.L(p,20,p),T.L(p,p,20),T.aq(H.b([M.p(p,Z.lu("CreDit Card Number",q.e,o),p,p,p,p,p,p,s),T.L(p,p,20),M.p(p,Z.lu("CCV",q.f,o),p,p,p,p,p,p,s),T.L(p,p,20),M.p(p,Z.lu("Billing Zip Code",q.r,o),p,p,p,p,p,p,n)],r),C.l,C.i,C.e)],r),C.p,C.i,C.e)}}
 X.mz.prototype={
 D:function(a,b){var s=this,r=null,q=b.G(t.w).f,p=new X.Wz(),o=X.aT(C.x,new L.aH("assets/appbar_bk.png",r,r)),n=t.t,m=s.d,l=s.c
 return M.p(r,T.aq(H.b([M.p(r,T.aq(H.b([R.aR(!1,!0,T.aq(H.b([M.p(r,r,r,r,new S.al(r,X.aT(C.x,new L.aH("assets/logo.png",r,r)),r,r,r,r,C.n),30,new V.J(50,0,10,0),r,30),M.p(r,L.I("Emorgan",r,r,r,A.H(r,r,new P.i(4286218919),r,r,r,r,r,"Beware",r,r,34,r,r,r,r,!0,r,r,r,r,r,r),r),r,r,r,r,r,new V.J(0,0,0,15),r)],n),C.l,C.z,C.e),r,!0,r,r,r,r,r,r,r,r,r,new X.WA(b),r,r,r),T.aZ(M.p(r,T.aq(H.b([R.aR(!1,!0,p.$3("1. Shopping Code",m[0],l[0]),r,!0,r,r,r,r,r,r,r,r,r,s.e,r,r,r),R.aR(!1,!0,p.$3("2. Emorgan Patch",m[1],l[1]),r,!0,r,r,r,r,r,r,r,r,r,s.f,r,r,r),p.$3("3. Operation Date",m[2],l[2]),p.$3("4. Payment",m[3],l[3])],n),C.l,C.b2,C.e),r,r,r,r,r,new V.J(70,0,70,0),r),1)],n),C.l,C.i,C.e),r,r,new S.al(r,o,r,r,r,r,C.n),80,r,r,q.a.a)],n),C.l,C.i,C.e),r,r,r,r,r,r,r)}}
@@ -36129,7 +36129,7 @@ else s=C.m
 r=n?80:120
 q=n?80:120
 r=M.p(o,o,o,o,new S.al(o,X.aT(C.bE,new L.aH(p.e,o,o)),o,o,o,o,C.n),q,o,o,r)
-q=T.M(o,10,o)
+q=T.L(o,10,o)
 n=n?16:20
 return R.aR(!1,!0,M.p(o,T.ad(H.b([r,q,L.I(p.f,o,o,o,B.U(A.H(o,o,new P.i(4282533448),o,o,o,o,o,o,o,o,n,o,o,o,o,!0,o,o,o,o,o,o)),o)],t.t),C.l,C.z,C.e),o,o,new S.al(s,o,o,o,o,o,C.bq),l,o,o,m),o,!0,o,o,o,C.v,o,o,o,o,o,p.c,o,o,o)}}
 T.mA.prototype={
@@ -36675,7 +36675,7 @@ T.a8i.prototype={
 $0:function(){this.a.fx=!1},
 $S:1}
 T.a8a.prototype={
-$0:function(){var s,r,q=null,p=X.aT(C.x,new L.aH("assets/order_left_backround.png",q,q)),o=T.aZ(M.p(q,q,q,q,q,q,q,q,q),1),n=T.aZ(M.p(q,q,q,q,q,q,q,q,q),1),m=L.I("Personal Information",q,q,q,B.U(A.H(q,q,new P.i(4282533448),q,q,q,q,q,q,q,q,32,q,q,q,q,!0,q,q,q,q,q,q)),q),l=T.M(q,50,q),k=this.a,j=k.a,i=j.c,h=k.go,g=k.id,f=k.k1,e=k.k2
+$0:function(){var s,r,q=null,p=X.aT(C.x,new L.aH("assets/order_left_backround.png",q,q)),o=T.aZ(M.p(q,q,q,q,q,q,q,q,q),1),n=T.aZ(M.p(q,q,q,q,q,q,q,q,q),1),m=L.I("Personal Information",q,q,q,B.U(A.H(q,q,new P.i(4282533448),q,q,q,q,q,q,q,q,32,q,q,q,q,!0,q,q,q,q,q,q)),q),l=T.L(q,50,q),k=this.a,j=k.a,i=j.c,h=k.go,g=k.id,f=k.k1,e=k.k2
 e=T.ak5(k.k3,k.k4,k.r1,f,h,g,i,"Human A",e,k.r2)
 i=M.p(q,q,C.m,q,q,1,new V.J(0,30,0,30),q,610)
 j=j.d
@@ -36691,9 +36691,9 @@ $0:function(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c=this,b=null,a=4282533448,a0=
 a2=G.Oo(a2)
 s=T.aZ(M.p(b,b,b,b,b,b,b,b,b),1)
 r=L.I("Booking Date",b,b,b,B.U(A.H(b,b,new P.i(a),b,b,b,b,b,b,b,b,V.fQ(a0),b,b,b,b,!0,b,b,b,b,b,b)),b)
-q=T.M(b,G.hM(100),b)
+q=T.L(b,G.hM(100),b)
 p=L.I("2021",b,b,b,B.U(A.H(b,b,new P.i(a),b,b,b,b,b,b,b,b,V.fQ(a0),b,b,b,b,!0,b,b,b,b,b,b)),b)
-o=T.M(b,G.hM(35),b)
+o=T.L(b,G.hM(35),b)
 n=c.d
 m=n.eX(1)
 l=n.eW(1)
@@ -36780,13 +36780,13 @@ return s},
 $S:99}
 T.D0.prototype={
 D:function(a,b){var s=this,r=null,q=4282533448,p=b.G(t.w).f.a.a,o=new T.Vj(),n=new T.Vi(p),m=t.t
-return T.aq(H.b([T.ad(H.b([L.I(s.d,r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(p),r,r,r,r,!0,r,r,r,r,r,r)),r),U.iW(s.c,C.bE,200,150)],m),C.l,C.i,C.e),T.M(r,r,20),T.ad(H.b([M.p(r,n.$2("First Name",s.e),r,r,r,r,r,r,210),T.M(r,20,r),M.p(r,n.$2("ID number",s.f),r,r,r,r,r,r,210),T.M(r,20,r),M.p(r,n.$2("Email Address",s.r),r,r,r,r,r,r,210)],m),C.l,C.i,C.e),T.M(r,r,20),T.ad(H.b([M.p(r,n.$2("Last Name",s.x),r,r,r,r,r,r,210),T.M(r,20,r),M.p(r,T.ad(H.b([L.I("Birthday",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.M(r,5,r),T.aq(H.b([o.$1(s.y),T.M(r,r,7.5),o.$1(s.z),T.M(r,r,7.5),o.$1(s.Q)],m),C.l,C.i,C.e)],m),C.p,C.i,C.e),r,r,r,r,r,r,210),T.M(r,20,r),M.p(r,n.$2("Phone Number",s.ch),r,r,r,r,r,r,210)],m),C.l,C.i,C.e)],m),C.l,C.i,C.e)}}
+return T.aq(H.b([T.ad(H.b([L.I(s.d,r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(p),r,r,r,r,!0,r,r,r,r,r,r)),r),U.iW(s.c,C.bE,200,150)],m),C.l,C.i,C.e),T.L(r,r,20),T.ad(H.b([M.p(r,n.$2("First Name",s.e),r,r,r,r,r,r,210),T.L(r,20,r),M.p(r,n.$2("ID number",s.f),r,r,r,r,r,r,210),T.L(r,20,r),M.p(r,n.$2("Email Address",s.r),r,r,r,r,r,r,210)],m),C.l,C.i,C.e),T.L(r,r,20),T.ad(H.b([M.p(r,n.$2("Last Name",s.x),r,r,r,r,r,r,210),T.L(r,20,r),M.p(r,T.ad(H.b([L.I("Birthday",r,r,r,B.U(A.H(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.bb(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.L(r,5,r),T.aq(H.b([o.$1(s.y),T.L(r,r,7.5),o.$1(s.z),T.L(r,r,7.5),o.$1(s.Q)],m),C.l,C.i,C.e)],m),C.p,C.i,C.e),r,r,r,r,r,r,210),T.L(r,20,r),M.p(r,n.$2("Phone Number",s.ch),r,r,r,r,r,r,210)],m),C.l,C.i,C.e)],m),C.l,C.i,C.e)}}
 T.Vj.prototype={
 $1:function(a){var s=null,r=K.dB(60)
 return M.p(s,Z.wn(!1,a,new P.i(4291812857),L.oz(s,C.c8,new V.J(10,0,0,20),s,s,s,s,!0,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s),s,1,s,s),s,s,new S.al(C.m,s,s,r,s,s,C.n),30,s,s,65)},
 $S:149}
 T.Vi.prototype={
-$2:function(a,b){var s=null,r=L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4282533448),s,s,s,s,s,s,s,s,V.bb(this.a),s,s,s,s,!0,s,s,s,s,s,s)),s),q=T.M(s,5,s),p=K.dB(60)
+$2:function(a,b){var s=null,r=L.I(a,s,s,s,B.U(A.H(s,s,new P.i(4282533448),s,s,s,s,s,s,s,s,V.bb(this.a),s,s,s,s,!0,s,s,s,s,s,s)),s),q=T.L(s,5,s),p=K.dB(60)
 return T.ad(H.b([r,q,M.p(s,Z.wn(!1,b,new P.i(4291812857),L.oz(s,C.c8,new V.J(10,0,0,20),s,s,s,s,!0,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s,s,s,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s),s,1,s,s),s,s,new S.al(C.m,s,s,p,s,s,C.n),30,s,s,s)],t.t),C.p,C.i,C.e)},
 $S:98}
 T.zD.prototype={
@@ -36890,7 +36890,7 @@ q=new T.aa1()
 p=X.aT(C.x,new L.aH("assets/help.png",g,g))
 o=t.t
 n=h.ga_T()
-q=T.aq(H.b([T.aZ(M.p(g,T.ad(H.b([T.aZ(M.p(g,g,g,g,g,g,g,g,g),1),q.$4("Human A","Human B",200,50),T.aq(H.b([Y.lP(f,h.e==="shali",!0,!0,!1,"SHALI",h.ga3D()),T.M(g,g,50),Y.lP(f,h.f==="shali",!0,!1,!1,"SHALI",h.ga5o())],o),C.l,C.z,C.e),T.M(g,20,g),T.aq(H.b([Y.lP(e,h.e==="obi",!0,!0,!1,"OBI",h.ga3B()),T.M(g,g,50),Y.lP(e,h.f==="obi",!0,!1,!1,"OBI",h.ga5m())],o),C.l,C.z,C.e),T.M(g,20,g),M.p(g,g,C.m,g,g,2,g,g,450),T.M(g,20,g),T.aq(H.b([Y.lP(d,h.e==="buzzy",!0,!0,!1,"BUZZY",n),T.M(g,g,50),Y.lP(d,h.f==="buzzy",!0,!1,!1,"BUZZY",n)],o),C.l,C.z,C.e),T.aZ(M.p(g,g,g,g,g,g,g,g,g),1)],o),C.l,C.i,C.e),C.v,g,g,a1,g,g,a0),1),T.aZ(M.p(g,T.ad(H.b([T.aZ(M.p(g,g,g,g,g,g,g,g,g),1),q.$4("Human A","Human B",350,100),T.aq(H.b([M.p(g,g,g,g,new S.al(g,X.aT(C.bE,new L.aH(h.r,g,g)),g,g,g,g,C.n),650,g,g,350),T.M(g,g,100),M.p(g,g,g,g,new S.al(g,X.aT(C.bE,new L.aH(h.x,g,g)),g,g,g,g,C.n),650,g,g,350)],o),C.l,C.z,C.e),T.aZ(M.p(g,g,g,g,g,g,g,g,g),1)],o),C.l,C.i,C.e),C.m,g,g,a1,g,g,a0),1)],o),C.l,C.i,C.e)
+q=T.aq(H.b([T.aZ(M.p(g,T.ad(H.b([T.aZ(M.p(g,g,g,g,g,g,g,g,g),1),q.$4("Human A","Human B",200,50),T.aq(H.b([Y.lP(f,h.e==="shali",!0,!0,!1,"SHALI",h.ga3D()),T.L(g,g,50),Y.lP(f,h.f==="shali",!0,!1,!1,"SHALI",h.ga5o())],o),C.l,C.z,C.e),T.L(g,20,g),T.aq(H.b([Y.lP(e,h.e==="obi",!0,!0,!1,"OBI",h.ga3B()),T.L(g,g,50),Y.lP(e,h.f==="obi",!0,!1,!1,"OBI",h.ga5m())],o),C.l,C.z,C.e),T.L(g,20,g),M.p(g,g,C.m,g,g,2,g,g,450),T.L(g,20,g),T.aq(H.b([Y.lP(d,h.e==="buzzy",!0,!0,!1,"BUZZY",n),T.L(g,g,50),Y.lP(d,h.f==="buzzy",!0,!1,!1,"BUZZY",n)],o),C.l,C.z,C.e),T.aZ(M.p(g,g,g,g,g,g,g,g,g),1)],o),C.l,C.i,C.e),C.v,g,g,a1,g,g,a0),1),T.aZ(M.p(g,T.ad(H.b([T.aZ(M.p(g,g,g,g,g,g,g,g,g),1),q.$4("Human A","Human B",350,100),T.aq(H.b([M.p(g,g,g,g,new S.al(g,X.aT(C.bE,new L.aH(h.r,g,g)),g,g,g,g,C.n),650,g,g,350),T.L(g,g,100),M.p(g,g,g,g,new S.al(g,X.aT(C.bE,new L.aH(h.x,g,g)),g,g,g,g,C.n),650,g,g,350)],o),C.l,C.z,C.e),T.aZ(M.p(g,g,g,g,g,g,g,g,g),1)],o),C.l,C.i,C.e),C.m,g,g,a1,g,g,a0),1)],o),C.l,C.i,C.e)
 n=T.aj(g,new X.mz(r,s,new T.a9Z(a,a3),g,g),g,g,g,g,0,g)
 m=T.aj(40,R.aR(!1,!0,T.aq(H.b([L.m9(C.fu,new P.i(c),g),L.I("Back ",g,g,g,B.U(A.H(g,g,new P.i(4281745734),g,g,g,g,g,g,g,g,16,g,g,g,g,!0,g,g,g,g,g,g)),g)],o),C.l,C.z,C.e),g,!0,g,g,g,g,g,g,g,g,g,new T.aa_(a,a3),g,g,g),g,g,40,g,g,g)
 l=h.e!==""
@@ -36915,7 +36915,7 @@ $0:function(){},
 $S:1}
 T.aa1.prototype={
 $4:function(a,b,c,d){var s=4282533448,r=null
-return T.aq(H.b([M.p(C.R,L.I(a,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,22,r,r,r,r,!0,r,r,r,r,r,r)),r),r,r,r,100,r,r,c),T.M(r,r,d),M.p(C.R,L.I(b,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,22,r,r,r,r,!0,r,r,r,r,r,r)),r),r,r,r,r,r,r,c)],t.t),C.l,C.z,C.e)},
+return T.aq(H.b([M.p(C.R,L.I(a,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,22,r,r,r,r,!0,r,r,r,r,r,r)),r),r,r,r,100,r,r,c),T.L(r,r,d),M.p(C.R,L.I(b,r,r,r,B.U(A.H(r,r,new P.i(s),r,r,r,r,r,r,r,r,22,r,r,r,r,!0,r,r,r,r,r,r)),r),r,r,r,r,r,r,c)],t.t),C.l,C.z,C.e)},
 $S:150}
 T.a9Z.prototype={
 $0:function(){if(!this.a.a){var s=V.dN(new T.a9Y(),null,t.z)
@@ -36958,9 +36958,9 @@ s=a2.G(s).f
 q=X.aT(C.x,new L.aH("assets/help.png",d,d))
 n=L.I("Shopping Code",d,d,d,B.U(A.H(d,d,new P.i(c),d,d,d,d,d,d,d,d,22,d,d,d,d,!0,d,d,d,d,d,d)),d)
 m=L.I("Enter the code from counselor.",d,d,d,B.U(A.H(d,d,new P.i(c),d,d,d,d,d,d,d,d,30,d,d,d,d,!0,d,d,d,d,d,d)),d)
-l=T.M(d,20,d)
+l=T.L(d,20,d)
 k=T.aZ(M.p(d,Z.wn(!1,this.d,new P.i(4291346927),L.oz(d,C.c8,new V.J(10,0,0,0),d,d,d,d,!0,d,d,d,d,d,d,d,d,d,d,d,!0,d,d,d,d,d,d,d,d,!1,d,d,d,d,d,d,d,d,d,d,d,d,d,d),d,1,d,d),new P.i(4294177528),d,d,d,d,d,d),1)
-j=T.M(d,d,20)
+j=T.L(d,d,20)
 i=this.e
 h=F.iJ(i?C.v:new P.i(b),2)
 g=i?new P.i(a):C.v
@@ -37015,7 +37015,7 @@ D:function(a,b){var s=null,r=4282533448,q=b.G(t.w).f.a.a
 return T.ad(H.b([L.I(this.c,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.dn(q),s,s,s,s,!0,s,s,s,s,s,s)),s),M.p(s,s,s,s,new S.al(s,X.aT(C.x,new L.aH(this.d,s,s)),s,s,s,s,C.n),100,new V.J(0,25,0,25),s,100),L.I(this.e,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fj(q),s,s,s,s,!0,s,s,s,s,s,s)),C.bA)],t.t),C.l,C.z,C.e)}}
 R.G6.prototype={
 D:function(a,b){var s=null,r=b.G(t.w).f.a.a,q=r/3-100
-return M.p(s,M.p(s,new T.cN(C.mH,T.aq(H.b([new R.pz("Blood Flow Power\n","assets/shail_img1.png",u.W,s),T.M(s,s,10),new R.pz("Nitinol\n","assets/shail_img2.png","4 forks are made of this material. When implanting EMORGAN, retract the protective sheath outside of the pacemaker, and the forks will  automatically open to hook on the  body destination.",s),T.M(s,s,10),new R.pz("Titanium Alloy &\nBiomedical Ceramics\n","assets/shail_img3.png","They have good affinity with  organisms and does not produce  toxic corrosion and decomposition  substance. Moreover, They don\u2019t  cause biological cell mutation, necrosis, inflammation and growth Granulation. According to the above, the materials can be used for long-term in human body.",s)],t.t),C.p,C.b2,C.e),s),s,s,s,s,s,new V.J(q,40,q,0),s),s,s,s,700,s,s,r)}}
+return M.p(s,M.p(s,new T.cN(C.mH,T.aq(H.b([new R.pz("Blood Flow Power\n","assets/shail_img1.png",u.W,s),T.L(s,s,10),new R.pz("Nitinol\n","assets/shail_img2.png","4 forks are made of this material. When implanting EMORGAN, retract the protective sheath outside of the pacemaker, and the forks will  automatically open to hook on the  body destination.",s),T.L(s,s,10),new R.pz("Titanium Alloy &\nBiomedical Ceramics\n","assets/shail_img3.png","They have good affinity with  organisms and does not produce  toxic corrosion and decomposition  substance. Moreover, They don\u2019t  cause biological cell mutation, necrosis, inflammation and growth Granulation. According to the above, the materials can be used for long-term in human body.",s)],t.t),C.p,C.b2,C.e),s),s,s,s,s,s,new V.J(q,40,q,0),s),s,s,s,700,s,s,r)}}
 R.pz.prototype={
 D:function(a,b){var s=null,r=4282533448,q=b.G(t.w).f.a.a
 return M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.al(s,X.aT(C.bE,new L.aH(this.d,s,s)),s,s,s,s,C.n),200,new V.J(0,25,0,25),s,240),L.I(this.c,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.dn(q),s,s,s,s,!0,s,s,s,s,s,s)),C.E),L.I(this.e,s,s,s,B.U(A.H(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fj(q),s,s,s,s,!0,s,s,s,s,s,s)),C.E)],t.t),C.p,C.i,C.e),s,s,s,s,s,s,240)}}
@@ -37061,7 +37061,7 @@ e=$.af8.a
 j=T.aj(b,R.aR(!1,!0,K.aW(e,new S.abJ(),b),b,!0,b,b,b,C.v,b,b,b,new S.abK(),b,new S.abL(),b,b,b),b,b,b,p*14.3,j,b)
 d=$.afd.a
 c=m*8
-return M.p(b,T.by(C.F,H.b([s,q,r,M.p(b,new T.cN(C.mG,T.ad(H.b([n,T.by(C.F,H.b([l,h,f,j,T.aj(b,R.aR(!1,!0,K.aW(d,new S.abx(),b),b,!0,b,b,b,C.v,b,b,b,new S.aby(),b,new S.abz(),b,b,b),b,b,b,p*10.5,m*7.8,b),T.aj(b,K.aW(i,new S.abA(),b),b,b,0,b,k,b),T.aj(b,K.aW(g,new S.abB(),b),b,b,0,b,c,b),T.aj(b,K.aW(e,new S.abC(),b),b,b,b,0,k,b),T.aj(b,K.aW(d,new S.abD(),b),b,b,b,0,c,b)],a2),C.t,C.B),T.M(b,15,b),M.afk("Design","\nThe shape idea is from human salivary glands. The main form is a long ellipse with smooth surface and tissue-friendly to avoidany danger during transplantation and removal.",a1),T.M(b,60,b),T.aq(H.b([M.A0("Material","Biomedical Metal\nBiomedical Ceramics\nBiomedical Polymer\n\nAll the materials are also non-toxic and\nbiological.",a1),T.aZ(M.p(b,b,b,b,b,b,b,b,b),1),M.A0("Technology","Artificial aromatic compounds\n\nProviding the taste which was transferred from\ntear ingredient by Shali patch.",a1)],a2),C.p,C.i,C.e)],a2),C.p,C.i,C.e),b),b,b,b,b,b,new V.J(o,70,o,70),b)],a2),C.t,C.B),b,b,b,1100,b,b,a1)}}
+return M.p(b,T.by(C.F,H.b([s,q,r,M.p(b,new T.cN(C.mG,T.ad(H.b([n,T.by(C.F,H.b([l,h,f,j,T.aj(b,R.aR(!1,!0,K.aW(d,new S.abx(),b),b,!0,b,b,b,C.v,b,b,b,new S.aby(),b,new S.abz(),b,b,b),b,b,b,p*10.5,m*7.8,b),T.aj(b,K.aW(i,new S.abA(),b),b,b,0,b,k,b),T.aj(b,K.aW(g,new S.abB(),b),b,b,0,b,c,b),T.aj(b,K.aW(e,new S.abC(),b),b,b,b,0,k,b),T.aj(b,K.aW(d,new S.abD(),b),b,b,b,0,c,b)],a2),C.t,C.B),T.L(b,15,b),M.afk("Design","\nThe shape idea is from human salivary glands. The main form is a long ellipse with smooth surface and tissue-friendly to avoidany danger during transplantation and removal.",a1),T.L(b,60,b),T.aq(H.b([M.A0("Material","Biomedical Metal\nBiomedical Ceramics\nBiomedical Polymer\n\nAll the materials are also non-toxic and\nbiological.",a1),T.aZ(M.p(b,b,b,b,b,b,b,b,b),1),M.A0("Technology","Artificial aromatic compounds\n\nProviding the taste which was transferred from\ntear ingredient by Shali patch.",a1)],a2),C.p,C.i,C.e)],a2),C.p,C.i,C.e),b),b,b,b,b,b,new V.J(o,70,o,70),b)],a2),C.t,C.B),b,b,b,1100,b,b,a1)}}
 S.abu.prototype={
 $0:function(){K.cG(this.a,!1).cR(0)},
 $S:1}
@@ -37196,7 +37196,7 @@ d=T.aj(c,K.aW(i,new O.abR(),c),c,c,0,c,d,c)
 o=N.afn(p,o*1.7)
 o=T.aj(c,K.aW(g,new O.abS(),c),c,c,c,0,o,c)
 l=N.afn(p,l)
-return M.p(c,M.p(c,new T.cN(C.cd,T.ad(H.b([q,T.by(C.F,H.b([m,k,h,f,j,s,d,o,T.aj(c,K.aW(e,new O.abT(),c),c,c,c,0,l,c)],n),C.t,C.B),T.M(c,15,c),M.afk("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",b),T.M(c,40,c),T.aq(H.b([M.A0("Material",u.K,b),T.aZ(M.p(c,c,c,c,c,c,c,c,c),1),M.A0("Technology",u.d,b)],n),C.p,C.i,C.e)],n),C.p,C.i,C.e),c),c,c,c,c,c,new V.J(r,70,r,70),c),c,c,c,950,c,c,b)}}
+return M.p(c,M.p(c,new T.cN(C.cd,T.ad(H.b([q,T.by(C.F,H.b([m,k,h,f,j,s,d,o,T.aj(c,K.aW(e,new O.abT(),c),c,c,c,0,l,c)],n),C.t,C.B),T.L(c,15,c),M.afk("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",b),T.L(c,40,c),T.aq(H.b([M.A0("Material",u.K,b),T.aZ(M.p(c,c,c,c,c,c,c,c,c),1),M.A0("Technology",u.d,b)],n),C.p,C.i,C.e)],n),C.p,C.i,C.e),c),c,c,c,c,c,new V.J(r,70,r,70),c),c,c,c,950,c,c,b)}}
 O.abO.prototype={
 $0:function(){},
 $S:1}
@@ -37286,7 +37286,7 @@ s=this.d
 r=P.aO(0,0,500,0)
 q=P.aO(0,0,800,0)
 p=t.t
-return M.ia(T.by(C.F,H.b([M.p(o,B.a2d(!0,B.Vp(!0,H.b([new S.vW(o),T.M(o,200,o),new O.vX(o),T.M(o,200,o),new G.G4(o),new S.G5(o),new R.G6(o)],p),s,o,new L.lH(o),!0),new P.i(4291346927),s,50,o,r,q,8),o,o,o,n.a.b,o,o,m.a.a)],p),C.t,C.B),o)}}
+return M.ia(T.by(C.F,H.b([M.p(o,B.a2d(!0,B.Vp(!0,H.b([new S.vW(o),T.L(o,200,o),new O.vX(o),T.L(o,200,o),new G.G4(o),new S.G5(o),new R.G6(o)],p),s,o,new L.lH(o),!0),new P.i(4291346927),s,50,o,r,q,8),o,o,o,n.a.b,o,o,m.a.a)],p),C.t,C.B),o)}}
 S.Cp.prototype={
 eX:function(a){var s=T.QI("E.","en_US").kG(new P.cB(Date.now(),!1).I(0,P.aO(a+this.a,0,0,0)))
 if(s==="Sun."){s=T.QI("E.","en_US").kG(new P.cB(Date.now(),!1).I(0,P.aO(a+this.a+1,0,0,0)))
@@ -37701,7 +37701,7 @@ saT:function(a,b){return this.b=b}}
 R.vC.prototype={
 dF:function(a){return this.c.dF(1-a)}}
 R.eL.prototype={
-dF:function(a){return P.L(this.a,this.b,a)}}
+dF:function(a){return P.M(this.a,this.b,a)}}
 R.Gc.prototype={
 dF:function(a){return P.al8(this.a,this.b,a)}}
 R.EW.prototype={
@@ -40213,7 +40213,7 @@ if(J.X(b)!==H.C(s))return!1
 return b instanceof S.ty&&J.d(b.a,s.a)&&J.d(b.b,s.b)&&J.d(b.c,s.c)&&J.d(b.d,s.d)&&J.d(b.e,s.e)&&b.f==s.f&&b.r==s.r&&b.x==s.x&&b.y==s.y&&b.z==s.z&&J.d(b.Q,s.Q)}}
 S.J6.prototype={}
 B.Cz.prototype={
-D:function(a,b){var s,r,q,p,o,n,m=null,l=K.bt(b),k=l.a,j=new T.iN(k.Jx(C.vf),new T.cN(C.fq,T.M(new T.jX(C.R,m,m,Y.ajT(this.x,new T.fs(m,m,24)),m),24,24),m),m),i=this.fx
+D:function(a,b){var s,r,q,p,o,n,m=null,l=K.bt(b),k=l.a,j=new T.iN(k.Jx(C.vf),new T.cN(C.fq,T.L(new T.jX(C.R,m,m,Y.ajT(this.x,new T.fs(m,m,24)),m),24,24),m),m),i=this.fx
 if(i!=null)j=S.auo(j,i)
 i=l.cy
 s=l.db
@@ -42670,7 +42670,7 @@ a.dk(0,p,o)},
 jX:function(a){return!J.d(this.b,a.b)}}
 F.a6E.prototype={
 q0:function(a){return C.AQ},
-Iy:function(a,b,c){var s=null,r=K.bt(a),q=R.ali(a).c,p=T.M(T.oa(s,s,s,new F.Mx(q==null?r.A.a:q,s),C.y),22,22)
+Iy:function(a,b,c){var s=null,r=K.bt(a),q=R.ali(a).c,p=T.L(T.oa(s,s,s,new F.Mx(q==null?r.A.a:q,s),C.y),22,22)
 switch(b){case C.hD:return T.alm(1.5707963267948966,p)
 case C.hE:return p
 case C.ja:return T.alm(0.7853981633974483,p)
@@ -42782,68 +42782,68 @@ p=P.ag(r,q,t2)
 p.toString
 q=P.ag(r,q,t2)
 q.toString
-r=P.L(t1.b,s.b,t2)
+r=P.M(t1.b,s.b,t2)
 r.toString
 o=t2<0.5
 n=o?t1.c:s.c
-m=P.L(t1.d,s.d,t2)
+m=P.M(t1.d,s.d,t2)
 m.toString
-l=P.L(t1.e,s.e,t2)
+l=P.M(t1.e,s.e,t2)
 l.toString
-k=P.L(t1.f,s.f,t2)
+k=P.M(t1.f,s.f,t2)
 k.toString
-j=P.L(t1.r,s.r,t2)
+j=P.M(t1.r,s.r,t2)
 j.toString
-i=P.L(t1.x,s.x,t2)
+i=P.M(t1.x,s.x,t2)
 i.toString
 h=o?t1.y:s.y
-g=P.L(t1.z,s.z,t2)
+g=P.M(t1.z,s.z,t2)
 g.toString
-f=P.L(t1.Q,s.Q,t2)
+f=P.M(t1.Q,s.Q,t2)
 f.toString
-e=P.L(t1.ch,s.ch,t2)
+e=P.M(t1.ch,s.ch,t2)
 e.toString
-d=P.L(t1.cx,s.cx,t2)
+d=P.M(t1.cx,s.cx,t2)
 d.toString
-c=P.L(t1.cy,s.cy,t2)
+c=P.M(t1.cy,s.cy,t2)
 c.toString
-b=P.L(t1.db,s.db,t2)
+b=P.M(t1.db,s.db,t2)
 b.toString
-a=P.L(t1.dx,s.dx,t2)
+a=P.M(t1.dx,s.dx,t2)
 a.toString
-a0=P.L(t1.dy,s.dy,t2)
+a0=P.M(t1.dy,s.dy,t2)
 a0.toString
 a1=o?t1.fr:s.fr
-a2=P.L(t1.fx,s.fx,t2)
+a2=P.M(t1.fx,s.fx,t2)
 a2.toString
-a3=P.L(t1.fy,s.fy,t2)
+a3=P.M(t1.fy,s.fy,t2)
 a3.toString
-a4=P.L(t1.go,s.go,t2)
+a4=P.M(t1.go,s.go,t2)
 a4.toString
 a5=o?t1.id:s.id
 a6=S.aun(t1.k1,s.k1,t2)
 a6.toString
-a7=P.L(t1.k2,s.k2,t2)
+a7=P.M(t1.k2,s.k2,t2)
 a7.toString
-a8=P.L(t1.k3,s.k3,t2)
+a8=P.M(t1.k3,s.k3,t2)
 a8.toString
-a9=P.L(t1.k4,s.k4,t2)
+a9=P.M(t1.k4,s.k4,t2)
 a9.toString
-b0=P.L(t1.r1,s.r1,t2)
+b0=P.M(t1.r1,s.r1,t2)
 b0.toString
-b1=P.L(t1.r2,s.r2,t2)
+b1=P.M(t1.r2,s.r2,t2)
 b1.toString
-b2=P.L(t1.rx,s.rx,t2)
+b2=P.M(t1.rx,s.rx,t2)
 b2.toString
-b3=P.L(t1.ry,s.ry,t2)
+b3=P.M(t1.ry,s.ry,t2)
 b3.toString
-b4=P.L(t1.x1,s.x1,t2)
+b4=P.M(t1.x1,s.x1,t2)
 b4.toString
-b5=P.L(t1.x2,s.x2,t2)
+b5=P.M(t1.x2,s.x2,t2)
 b5.toString
-b6=P.L(t1.y1,s.y1,t2)
+b6=P.M(t1.y1,s.y1,t2)
 b6.toString
-b7=P.L(t1.y2,s.y2,t2)
+b7=P.M(t1.y2,s.y2,t2)
 b7.toString
 b8=R.l_(t1.a2,s.a2,t2)
 b9=R.l_(t1.ap,s.ap,t2)
@@ -42855,19 +42855,19 @@ c4=T.km(t1.aW,s.aW,t2)
 c5=t1.ay
 c6=s.ay
 c7=P.ag(c5.a,c6.a,t2)
-c8=P.L(c5.b,c6.b,t2)
-c9=P.L(c5.c,c6.c,t2)
-d0=P.L(c5.d,c6.d,t2)
-d1=P.L(c5.e,c6.e,t2)
-d2=P.L(c5.f,c6.f,t2)
-d3=P.L(c5.r,c6.r,t2)
-d4=P.L(c5.x,c6.x,t2)
-d5=P.L(c5.y,c6.y,t2)
-d6=P.L(c5.z,c6.z,t2)
-d7=P.L(c5.Q,c6.Q,t2)
-d8=P.L(c5.ch,c6.ch,t2)
-d9=P.L(c5.cx,c6.cx,t2)
-e0=P.L(c5.cy,c6.cy,t2)
+c8=P.M(c5.b,c6.b,t2)
+c9=P.M(c5.c,c6.c,t2)
+d0=P.M(c5.d,c6.d,t2)
+d1=P.M(c5.e,c6.e,t2)
+d2=P.M(c5.f,c6.f,t2)
+d3=P.M(c5.r,c6.r,t2)
+d4=P.M(c5.x,c6.x,t2)
+d5=P.M(c5.y,c6.y,t2)
+d6=P.M(c5.z,c6.z,t2)
+d7=P.M(c5.Q,c6.Q,t2)
+d8=P.M(c5.ch,c6.ch,t2)
+d9=P.M(c5.cx,c6.cx,t2)
+e0=P.M(c5.cy,c6.cy,t2)
 e1=o?c5.db:c6.db
 e2=o?c5.dx:c6.dx
 e3=o?c5.dy:c6.dy
@@ -42885,10 +42885,10 @@ c6=t1.b2
 f3=s.b2
 f4=Z.QQ(c6.a,f3.a,t2)
 f5=o?c6.b:f3.b
-f6=P.L(c6.c,f3.c,t2)
+f6=P.M(c6.c,f3.c,t2)
 f7=V.iS(c6.d,f3.d,t2)
 f8=A.bs(c6.e,f3.e,t2)
-f9=P.L(c6.f,f3.f,t2)
+f9=P.M(c6.f,f3.f,t2)
 f3=A.bs(c6.r,f3.r,t2)
 c6=T.auq(t1.b3,s.b3,t2)
 c6.toString
@@ -42896,8 +42896,8 @@ g0=t1.bP
 g1=s.bP
 if(o)g2=g0.a
 else g2=g1.a
-g3=P.L(g0.b,g1.b,t2)
-g4=P.L(g0.c,g1.c,t2)
+g3=P.M(g0.b,g1.b,t2)
+g4=P.M(g0.c,g1.c,t2)
 g5=P.ag(g0.d,g1.d,t2)
 g6=V.iS(g0.e,g1.e,t2)
 g0=Y.hr(g0.f,g1.f,t2)
@@ -42910,11 +42910,11 @@ h0=t1.cN
 h1=s.cN
 if(o)h2=h0.a
 else h2=h1.a
-h3=P.L(h0.b,h1.b,t2)
-h4=P.L(h0.c,h1.c,t2)
-h5=P.L(h0.d,h1.d,t2)
+h3=P.M(h0.b,h1.b,t2)
+h4=P.M(h0.c,h1.c,t2)
+h5=P.M(h0.d,h1.d,t2)
 h6=P.ag(h0.e,h1.e,t2)
-h7=P.L(h0.f,h1.f,t2)
+h7=P.M(h0.f,h1.f,t2)
 h8=T.km(h0.r,h1.r,t2)
 h9=T.km(h0.x,h1.x,t2)
 i0=R.l_(h0.y,h1.y,t2)
@@ -42927,40 +42927,40 @@ if(o)h0=h0.cy
 else h0=h1.cy
 h1=t1.cX
 i5=s.cX
-i6=P.L(h1.a,i5.a,t2)
+i6=P.M(h1.a,i5.a,t2)
 i7=P.ag(h1.b,i5.b,t2)
 if(o)h1=h1.c
 else h1=i5.c
 i5=t1.A
 i8=s.A
-i9=P.L(i5.a,i8.a,t2)
+i9=P.M(i5.a,i8.a,t2)
 i9.toString
-j0=P.L(i5.b,i8.b,t2)
+j0=P.M(i5.b,i8.b,t2)
 j0.toString
-j1=P.L(i5.c,i8.c,t2)
+j1=P.M(i5.c,i8.c,t2)
 j1.toString
-j2=P.L(i5.d,i8.d,t2)
+j2=P.M(i5.d,i8.d,t2)
 j2.toString
-j3=P.L(i5.e,i8.e,t2)
+j3=P.M(i5.e,i8.e,t2)
 j3.toString
-j4=P.L(i5.f,i8.f,t2)
+j4=P.M(i5.f,i8.f,t2)
 j4.toString
-j5=P.L(i5.r,i8.r,t2)
+j5=P.M(i5.r,i8.r,t2)
 j5.toString
-j6=P.L(i5.x,i8.x,t2)
+j6=P.M(i5.x,i8.x,t2)
 j6.toString
-j7=P.L(i5.y,i8.y,t2)
+j7=P.M(i5.y,i8.y,t2)
 j7.toString
-j8=P.L(i5.z,i8.z,t2)
+j8=P.M(i5.z,i8.z,t2)
 j8.toString
-j9=P.L(i5.Q,i8.Q,t2)
+j9=P.M(i5.Q,i8.Q,t2)
 j9.toString
-k0=P.L(i5.ch,i8.ch,t2)
+k0=P.M(i5.ch,i8.ch,t2)
 k0.toString
 i5=o?i5.cx:i8.cx
 i8=t1.S
 k1=s.S
-k2=P.L(i8.a,k1.a,t2)
+k2=P.M(i8.a,k1.a,t2)
 k3=P.ag(i8.b,k1.b,t2)
 k4=Y.hr(i8.c,k1.c,t2)
 k5=A.bs(i8.d,k1.d,t2)
@@ -42979,9 +42979,9 @@ k8=R.l_(k7.e,k8.e,t2)
 k7=o?t1.aJ:s.aJ
 l3=t1.H
 l4=s.H
-l5=P.L(l3.a,l4.a,t2)
-l6=P.L(l3.b,l4.b,t2)
-l7=P.L(l3.c,l4.c,t2)
+l5=P.M(l3.a,l4.a,t2)
+l6=P.M(l3.b,l4.b,t2)
+l7=P.M(l3.c,l4.c,t2)
 l8=A.bs(l3.d,l4.d,t2)
 l9=P.ag(l3.e,l4.e,t2)
 m0=Y.hr(l3.f,l4.f,t2)
@@ -42993,13 +42993,13 @@ m1=R.atl(t1.bi,s.bi,t2)
 m1.toString
 m2=t1.bX
 m3=s.bX
-m4=P.L(m2.a,m3.a,t2)
+m4=P.M(m2.a,m3.a,t2)
 m5=A.bs(m2.b,m3.b,t2)
 m6=V.iS(m2.c,m3.c,t2)
 m2=V.iS(m2.d,m3.d,t2)
 m3=t1.bF
 m7=s.bF
-m8=P.L(m3.a,m7.a,t2)
+m8=P.M(m3.a,m7.a,t2)
 m9=P.ag(m3.b,m7.b,t2)
 n0=P.ag(m3.c,m7.c,t2)
 n1=P.ag(m3.d,m7.d,t2)
@@ -43008,12 +43008,12 @@ m7=M.ar_(t1.cq,s.cq,t2)
 m7.toString
 n2=t1.cO
 n3=s.cO
-n4=P.L(n2.a,n3.a,t2)
+n4=P.M(n2.a,n3.a,t2)
 n5=P.ag(n2.b,n3.b,t2)
 n6=T.km(n2.c,n3.c,t2)
 n7=T.km(n2.d,n3.d,t2)
-n8=P.L(n2.e,n3.e,t2)
-n9=P.L(n2.f,n3.f,t2)
+n8=P.M(n2.e,n3.e,t2)
+n9=P.M(n2.f,n3.f,t2)
 o0=A.bs(n2.r,n3.r,t2)
 o1=A.bs(n2.x,n3.x,t2)
 if(o)o2=n2.y
@@ -43031,15 +43031,15 @@ else o7=!1
 if(o7)o5=null
 else if(o6)o5=o4.dx
 else{o6=o4.dx
-if(!(o6==null))o5=Y.bf(o5,o6,t2)}o6=P.L(n3.a,o4.a,t2)
-o7=P.L(n3.b,o4.b,t2)
-o8=P.L(n3.c,o4.c,t2)
-o9=P.L(n3.d,o4.d,t2)
-p0=P.L(n3.e,o4.e,t2)
-p1=P.L(n3.f,o4.f,t2)
-p2=P.L(n3.r,o4.r,t2)
-p3=P.L(n3.x,o4.x,t2)
-p4=P.L(n3.y,o4.y,t2)
+if(!(o6==null))o5=Y.bf(o5,o6,t2)}o6=P.M(n3.a,o4.a,t2)
+o7=P.M(n3.b,o4.b,t2)
+o8=P.M(n3.c,o4.c,t2)
+o9=P.M(n3.d,o4.d,t2)
+p0=P.M(n3.e,o4.e,t2)
+p1=P.M(n3.f,o4.f,t2)
+p2=P.M(n3.r,o4.r,t2)
+p3=P.M(n3.x,o4.x,t2)
+p4=P.M(n3.y,o4.y,t2)
 p5=A.bs(n3.z,o4.z,t2)
 p6=A.bs(n3.Q,o4.Q,t2)
 p7=A.bs(n3.ch,o4.ch,t2)
@@ -43892,7 +43892,7 @@ return"BorderDirectional("+C.c.bk(r,", ")+")"}}
 S.al.prototype={
 geQ:function(a){var s=this.c
 return s==null?null:s.ght()},
-b6:function(a,b){var s=this,r=null,q=P.L(r,s.a,b),p=F.aj0(r,s.c,b),o=K.lF(r,s.d,b),n=O.aj3(r,s.e,b)
+b6:function(a,b){var s=this,r=null,q=P.M(r,s.a,b),p=F.aj0(r,s.c,b),o=K.lF(r,s.d,b),n=O.aj3(r,s.e,b)
 return new S.al(q,s.b,p,o,n,r,s.x)},
 gzZ:function(){return this.e!=null},
 dG:function(a,b){if(a==null)return this.b6(0,b)
@@ -44185,7 +44185,7 @@ T.adP.prototype={
 $1:function(a){return a<=this.a},
 $S:230}
 T.adz.prototype={
-$1:function(a){var s=this,r=P.L(T.anb(s.a,s.b,a),T.anb(s.c,s.d,a),s.e)
+$1:function(a){var s=this,r=P.M(T.anb(s.a,s.b,a),T.anb(s.c,s.d,a),s.e)
 r.toString
 return r},
 $S:231}
@@ -44204,7 +44204,7 @@ return P.a9(s.d,s.e,s.f,P.ek(s.a),P.ek(s.b),C.a,C.a,C.a,C.a,C.a,C.a,C.a,C.a,C.a,
 j:function(a){var s=this
 return"LinearGradient("+H.c(s.d)+", "+H.c(s.e)+", "+H.c(s.a)+", "+H.c(s.b)+", "+s.f.j(0)+")"}}
 T.Vk.prototype={
-$1:function(a){var s=P.L(null,a,this.a)
+$1:function(a){var s=P.M(null,a,this.a)
 s.toString
 return s},
 $S:107}
@@ -57009,9 +57009,9 @@ tM:function(){if(this.c!=null)this.t(new T.a4N(this))},
 D:function(a,b){var s,r=this,q=null,p=r.e,o=p==null,n=!o
 if(n)r.a.toString
 if(n&&!r.f){o=p.a
-return T.M(q,p.b,o)}s=o?q:p.a
+return T.L(q,p.b,o)}s=o?q:p.a
 p=o?q:p.b
-return T.M(new T.oZ(n,new U.nd(o,new T.kt(r.a.e,r.d),q),q),p,s)}}
+return T.L(new T.oZ(n,new U.nd(o,new T.kt(r.a.e,r.d),q),q),p,s)}}
 T.a4O.prototype={
 $0:function(){var s=this.b.rx
 s.toString
@@ -57274,7 +57274,7 @@ l.hP(0,-1,1,1)
 n=T.a1G(C.R,n,l,!1)
 break
 case C.u:break
-default:throw H.a(H.m(u.I))}return T.dv(m,new T.kc(!0,T.M(T.e3(n,m,m),q,q),m),!1,m,m,!1,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m)}}
+default:throw H.a(H.m(u.I))}return T.dv(m,new T.kc(!0,T.L(T.e3(n,m,m),q,q),m),!1,m,m,!1,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m)}}
 X.or.prototype={
 l:function(a,b){var s=this
 if(b==null)return!1
@@ -65078,7 +65078,7 @@ s(P,"ayK","aho",453)
 k(P,"aza",2,null,["$1$2","$2"],["anR",function(a,b){return P.anR(a,b,t.Ci)}],454,1)
 k(P,"azC",3,null,["$3"],["al8"],455,0)
 k(P,"azD",3,null,["$3"],["ag"],456,0)
-k(P,"fk",3,null,["$3"],["L"],457,0)
+k(P,"fk",3,null,["$3"],["M"],457,0)
 q(P.yS.prototype,"ga3c","hF",24)
 o(h=O.rM.prototype,"gAb","mv",95)
 j(h,"gTH",0,3,null,["$3"],["TI"],220,0)

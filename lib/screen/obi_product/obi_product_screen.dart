@@ -54,10 +54,19 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
                     height: 200,
                   ),
                   ProductCircle(),
+                     SizedBox(
+                    height: 100,
+                  ),
                   ObiPage3(),
+                     SizedBox(
+                    height: 100,
+                  ),
                   ProductCircle(),
                   ObiPage4(),
                   ProductCircle(),
+                     SizedBox(
+                    height: 100,
+                  ),
                   ObiPage5(),
                 ],
               ),
