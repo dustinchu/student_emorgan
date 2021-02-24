@@ -59,7 +59,7 @@ class _ObiPage2State extends State<ObiPage2> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 950;
+    double h = 1000;
     left1InfoAnimation = DetsIntroAnimation(
       controllerLeft1,
       line_page2_left_width_size(w / 7),
@@ -96,7 +96,7 @@ DIMENSIONS
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 25, bottom: 25),
+                        margin: EdgeInsets.only(top: 25),
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("assets/obi_sub_item.png"),
