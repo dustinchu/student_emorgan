@@ -56,6 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
       pageAnimate += 1500 + ((h - 1400) / 2);
     else
       pageAnimate += 1500;
+
+    print("index ==$pageIndex   animate==$pageAnimate");
     // pageAnimate += 1300;
     // else
     // pageAnimate += 1700;
@@ -71,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void scrollPageBack(h) {
     pageIndex -= 1;
     pageAnimate -= 1500;
+    print("index ==$pageIndex   animate==$pageAnimate");
     // pageAnimate -= 1700;
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
@@ -120,60 +123,59 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuEmorgan() {
-      pageAnimate=1500 + ((h - 1400) / 2);
+      pageAnimate = 1500 + ((h - 1400) / 2);
       _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-          pageIndex=1;
-           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
-
+      pageIndex = 1;
+      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuProducts() {
-       pageAnimate=3000 + ((h - 1400) / 2);
-  _scrollController.animateTo(pageAnimate,
+      pageAnimate = 3000 + ((h - 1400) / 2);
+      _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-          pageIndex=2;
-           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
-
+      pageIndex = 2;
+      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
+
     void menuPurchase() {
-      pageAnimate=7500 + ((h - 1400) / 2);
-     _scrollController.animateTo(pageAnimate,
+      pageAnimate = 7500 + ((h - 1400) / 2);
+      _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-          pageIndex=5;
-           Provider.of<MenuStatus>(context, listen: false).setPageIndex(5);
+      pageIndex = 5;
+      Provider.of<MenuStatus>(context, listen: false).setPageIndex(5);
     }
 
     void menuBook() {
-        pageAnimate=9000 + ((h - 1400) / 2);
-     _scrollController.animateTo(pageAnimate,
+      pageAnimate = 9000 + ((h - 1400) / 2);
+      _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-          pageIndex=6;
-           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      pageIndex = 6;
+      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuUser() {
-        pageAnimate=10500 + ((h - 1400) / 2);
-     _scrollController.animateTo(pageAnimate,
+      pageAnimate = 10500 + ((h - 1400) / 2);
+      _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-          pageIndex=7;
-           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      pageIndex = 7;
+      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuContact() {
-        pageAnimate=12000 + ((h - 1400) / 2);
+      pageAnimate = 12000 + ((h - 1400) / 2);
       _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-          pageIndex=8;
-           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      pageIndex = 8;
+      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuAbout() {
-        pageAnimate=13500 + ((h - 1400) / 2);
-    _scrollController.animateTo(pageAnimate,
+      pageAnimate = 13500 + ((h - 1400) / 2);
+      _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-          pageIndex=9;
-           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      pageIndex = 9;
+      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     var bannerStatus = Provider.of<BannerStatus>(context);
