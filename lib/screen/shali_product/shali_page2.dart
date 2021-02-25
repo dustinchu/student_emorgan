@@ -59,16 +59,16 @@ class _ShaliPage2State extends State<ShaliPage2> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 950;
+    double h = 1100;
      left1InfoAnimation = DetsIntroAnimation(
-        controllerLeft1, line_left1_patch_width_size(w / 6.4),);
+        controllerLeft1, line_left1_patch_width_size(w / 6.1),);
     left2InfoAnimation = DetsIntroAnimation(
-        controllerLeft2, line_left2_patch_width_size(w / 8),);
+        controllerLeft2, line_left2_patch_width_size(w / 7.8),);
     right1InfoAnimation = DetsIntroAnimation(
-        controllerRight1, line_right1_patch_width_size(w / 8.5),);
+        controllerRight1, line_right1_patch_width_size(w / 7.2),);
     right2InfoAnimation = DetsIntroAnimation(
       controllerRight2,
-     line_right2_patch_width_size(w / 7),
+     line_right2_patch_width_size(w / 6.5),
     );
     return Container(
       width: w,
@@ -113,7 +113,7 @@ DIMENSIONS
                   Positioned(
                     top: ((w / 5 + 50) / 10) * 2,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 18,
+                    left: (w - ((w / 3 - 150) * 2)) / 40 * 18.4,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                         onTap: () {},
@@ -134,7 +134,7 @@ DIMENSIONS
                   Positioned(
                     top: ((w / 5 + 50) / 10) * 6.7,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 9.5,
+                    left: (w - ((w / 3 - 150) * 2)) / 40 * 9.85,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                         onTap: () {},
@@ -155,7 +155,7 @@ DIMENSIONS
                   Positioned(
                     top: ((w / 5 + 50) / 10) * 1.4,
                     //白色區域分成40等分
-                    right: (w - ((w / 3 - 150) * 2)) / 40 * 9.3,
+                    right: (w - ((w / 3 - 150) * 2)) / 40 * 9.8,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                         onTap: () {},

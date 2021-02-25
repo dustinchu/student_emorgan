@@ -1,5 +1,6 @@
 import 'package:emorgan/provider/banner.dart';
 import 'package:emorgan/provider/book_state.dart';
+import 'package:emorgan/provider/menu.dart';
 import 'package:emorgan/screen/buy/buy_loding.dart';
 import 'package:emorgan/screen/buzzy_product/buzzy_product_screen.dart';
 import 'package:emorgan/screen/home/home_vidio.dart';
@@ -63,6 +64,8 @@ class _HomeScreenState extends State<HomeScreen> {
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
         duration: Duration(seconds: 1), curve: Curves.ease);
+
+    Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
   }
 
   void scrollPageBack(h) {
@@ -72,6 +75,8 @@ class _HomeScreenState extends State<HomeScreen> {
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
         duration: Duration(seconds: 1), curve: Curves.ease);
+
+    Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
   }
 
   @override
@@ -90,6 +95,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
+
     void shaliLearn() {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => ShaliProductScreen()));
@@ -112,38 +120,55 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuEmorgan() {
-      _scrollController.animateTo(.0,
+      _scrollController.animateTo(1500 + ((h - 1400) / 2),
           duration: Duration(milliseconds: 200), curve: Curves.ease);
+          pageIndex=1;
+           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+
     }
 
-    void menuProducts() {}
-    void menuPurchase() {
-      _scrollController.animateTo(2698,
+    void menuProducts() {
+  _scrollController.animateTo(3000 + ((h - 1400) / 2),
           duration: Duration(milliseconds: 200), curve: Curves.ease);
+          pageIndex=2;
+           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+
+    }
+    void menuPurchase() {
+     _scrollController.animateTo(7500 + ((h - 1400) / 2),
+          duration: Duration(milliseconds: 200), curve: Curves.ease);
+          pageIndex=5;
+           Provider.of<MenuStatus>(context, listen: false).setPageIndex(5);
     }
 
     void menuBook() {
-      _scrollController.animateTo(3600,
+     _scrollController.animateTo(9000 + ((h - 1400) / 2),
           duration: Duration(milliseconds: 200), curve: Curves.ease);
+          pageIndex=6;
+           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuUser() {
-      _scrollController.animateTo(4873,
+     _scrollController.animateTo(10500 + ((h - 1400) / 2),
           duration: Duration(milliseconds: 200), curve: Curves.ease);
+          pageIndex=7;
+           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuContact() {
-      _scrollController.animateTo(5254,
+      _scrollController.animateTo(12000 + ((h - 1400) / 2),
           duration: Duration(milliseconds: 200), curve: Curves.ease);
+          pageIndex=8;
+           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuAbout() {
-      _scrollController.animateTo(6125,
+    _scrollController.animateTo(13500 + ((h - 1400) / 2),
           duration: Duration(milliseconds: 200), curve: Curves.ease);
+          pageIndex=9;
+           Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
-    double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
     var bannerStatus = Provider.of<BannerStatus>(context);
     return Scaffold(
       body: Stack(

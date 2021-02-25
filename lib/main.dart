@@ -6,6 +6,7 @@ import 'package:url_strategy/url_strategy.dart';
 import 'provider/account.dart';
 import 'provider/banner.dart';
 import 'provider/book_state.dart';
+import 'provider/menu.dart';
 import 'screen/about/about_animator_screen.dart';
 import 'screen/about/about_dets_page.dart';
 import 'screen/buzzy_product/buzzy_product_screen.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider.value(value: MenuStatus()),
         ChangeNotifierProvider.value(value: BookStatus()),
         ChangeNotifierProvider.value(value: BannerStatus()),
         ChangeNotifierProvider.value(value: AccountStatus()),

@@ -329,7 +329,6 @@ class _InnerLayoutState extends State<InnerLayout> {
                             child: InkWell(
                               onTap: widget.nowBtn,
                               onHover: (value) {
-                                print(value);
                                 setState(() {
                                   orderStatus = value;
                                 });

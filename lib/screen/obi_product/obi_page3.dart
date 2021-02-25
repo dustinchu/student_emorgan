@@ -73,7 +73,7 @@ gland.
                                 margin: EdgeInsets.only(top: 25, bottom: 25),
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage("assets/human_a.png"),
+                                    image: AssetImage("assets/obi_human_a.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),

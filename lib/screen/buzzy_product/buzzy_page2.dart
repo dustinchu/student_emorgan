@@ -77,7 +77,7 @@ on your body and the product functions.
                                     margin: EdgeInsets.only(top: 25, bottom: 25),
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image: AssetImage("assets/buzzy_human.png"),
+                                        image: AssetImage("assets/buzzy_human_a.png"),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -108,7 +108,7 @@ on your body and the product functions.
                                     margin: EdgeInsets.only(top: 25, bottom: 25),
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image: AssetImage("assets/buzzy_human.png"),
+                                        image: AssetImage("assets/buzzy_human_b.png"),
                                         fit: BoxFit.cover,
                                       ),
                                     ),

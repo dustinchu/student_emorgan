@@ -64,7 +64,7 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
     double h = 1100;
     left1InfoAnimation = DetsIntroAnimation(
       controllerLeft1,
-      line_left_width_size(w / 6),
+      line_left_width_size(w / 5.7),
     );
     left2InfoAnimation = DetsIntroAnimation(
       controllerLeft2,
@@ -72,11 +72,11 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
     );
     right1InfoAnimation = DetsIntroAnimation(
       controllerRight1,
-      line_width_right_size2(w / 6),
+      line_width_right_size2(w / 5.5),
     );
     right2InfoAnimation = DetsIntroAnimation(
       controllerRight2,
-      line_width_right_size(w / 7),
+      line_width_right_size(w / 6.5),
     );
 
     Widget circularContainer() {
@@ -93,82 +93,60 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
       height: h,
       child: Stack(
         children: [
-          Positioned(
-            top: 40,
-            left: 40,
-            child: InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.keyboard_arrow_left_outlined,
-                    color: Color(0xFF7A82A7),
-                  ),
-                  Text(
-                    "Back",
-                    style: GoogleFonts.montserrat(
-                        textStyle:
-                            TextStyle(fontSize: 16, color: Color(0xFF364146))),
-                  )
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-              right: 40,
-              top: 40,
-              child: Material(
-                child: InkWell(
-                  onTap: () {
-                    MaterialPageRoute(
-                        builder: (context) => OrderShoppingCode());
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: new BoxDecoration(
-                      border: new Border.all(
-                          color: Color(0xFF7A82A7), width: 4), // 邊色寬度
-                      color: Color(0xFF7A82A7),
-                      borderRadius: new BorderRadius.circular((60)), // 圆角度
-                    ),
-                    child: Text(
-                      "ORDER NOW",
-                      style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: windows_width_small_size(w) - 1,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-              )),
-          Positioned(
-            left: 40,
-            top: h / 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Tear to Taste",
-                  style: GoogleFonts.montserrat(
-                    textStyle:
-                        TextStyle(fontSize: 22, color: Color(0xFF364146)),
-                  ),
-                ),
-                Text(
-                  "Shali",
-                  style: GoogleFonts.montserrat(
-                    textStyle:
-                        TextStyle(fontSize: 32, color: Color(0xFF364146)),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // Positioned(
+          //   top: 40,
+          //   left: 40,
+          //   child: InkWell(
+          //     onTap: () {
+          //       Navigator.of(context).pop();
+          //     },
+          //     child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       crossAxisAlignment: CrossAxisAlignment.center,
+          //       children: [
+          //         Icon(
+          //           Icons.keyboard_arrow_left_outlined,
+          //           color: Color(0xFF7A82A7),
+          //         ),
+          //         Text(
+          //           "Back",
+          //           style: GoogleFonts.montserrat(
+          //               textStyle:
+          //                   TextStyle(fontSize: 16, color: Color(0xFF364146))),
+          //         )
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          // Positioned(
+          //     right: 40,
+          //     top: 40,
+          //     child: Material(
+          //       child: InkWell(
+          //         onTap: () {
+          //           MaterialPageRoute(
+          //               builder: (context) => OrderShoppingCode());
+          //         },
+          //         child: Container(
+          //           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          //           decoration: new BoxDecoration(
+          //             border: new Border.all(
+          //                 color: Color(0xFF7A82A7), width: 4), // 邊色寬度
+          //             color: Color(0xFF7A82A7),
+          //             borderRadius: new BorderRadius.circular((60)), // 圆角度
+          //           ),
+          //           child: Text(
+          //             "ORDER NOW",
+          //             style: GoogleFonts.montserrat(
+          //               textStyle: TextStyle(
+          //                   fontSize: windows_width_small_size(w) - 1,
+          //                   color: Colors.white),
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     )),
+         
           Container(
             padding:
                 EdgeInsets.symmetric(horizontal: w / 3 - 100, vertical: 70),

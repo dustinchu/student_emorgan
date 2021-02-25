@@ -56,15 +56,15 @@ class _ObiPage1State extends State<ObiPage1> with TickerProviderStateMixin {
 
     left1InfoAnimation = DetsIntroAnimation(
       controllerLeft1,
-      line_page1_left_width_size(w / 13),
+      line_page1_left_width_size(w / 4.9),
     );
     right1InfoAnimation = DetsIntroAnimation(
       controllerRight1,
-      line_page1_width_right1_size(w / 13),
+      line_page1_width_right1_size(w / 4.5),
     );
     right2InfoAnimation = DetsIntroAnimation(
       controllerRight2,
-      line_page1_width_right2_size(w / 15),
+      line_page1_width_right2_size(w / 4.6),
     );
 
     return Container(
@@ -72,81 +72,7 @@ class _ObiPage1State extends State<ObiPage1> with TickerProviderStateMixin {
       height: h,
       child: Stack(
         children: [
-          Positioned(
-            top: 40,
-            left: 40,
-            child: InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.keyboard_arrow_left_outlined,
-                    color: Color(0xFF7A82A7),
-                  ),
-                  Text(
-                    "Back",
-                    style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(fontSize: 16, color: Color(0xFF364146)),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-              right: 40,
-              top: 40,
-              child: Material(
-                child: InkWell(
-                  onTap: () {
-                    MaterialPageRoute(
-                        builder: (context) => OrderShoppingCode());
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: new BoxDecoration(
-                      border: new Border.all(
-                          color: Color(0xFF7A82A7), width: 4), // 邊色寬度
-                      color: Color(0xFF7A82A7),
-                      borderRadius: new BorderRadius.circular((60)), // 圆角度
-                    ),
-                    child: Text(
-                      "ORDER NOW",
-                      style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: windows_width_small_size(w) - 1,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-              )),
-          Positioned(
-            left: 40,
-            top: h / 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Voice to Vibrate",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(fontSize: 22, color: Color(0xFF364146))),
-                ),
-                Text(
-                  "Obi",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(fontSize: 32, color: Color(0xFF364146))),
-                ),
-              ],
-            ),
-          ),
+         
           Container(
             padding:
                 EdgeInsets.symmetric(horizontal: w / 3 - 100, vertical: 70),
@@ -187,7 +113,7 @@ DIMENSIONS
                       Positioned(
                         top: ((w / 5 + 50) / 10) * 4.2,
                         //白色區域分成40等分
-                        left: (w - ((w / 3 - 150) * 2)) / 40 * 8,
+                        left: (w - ((w / 3 - 150) * 2)) / 40 * 12,
                         child: InkWell(
                             hoverColor: Colors.transparent,
                             onTap: () {},
@@ -206,9 +132,9 @@ DIMENSIONS
                       ),
                       //右一Hover
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 1.7,
+                        top: ((w / 5 + 50) / 10) * 3,
                         //白色區域分成40等分
-                        right: (w - ((w / 3 - 150) * 2)) / 40 * 8.5,
+                        right: (w - ((w / 3 - 150) * 2)) / 40 * 11.4,
                         child: InkWell(
                             hoverColor: Colors.transparent,
                             onTap: () {},
@@ -227,9 +153,9 @@ DIMENSIONS
                       ),
                       //右二Hover
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 7.2,
+                        top: ((w / 5 + 50) / 10) * 6.5,
                         //白色區域分成40等分
-                        right: (w - ((w / 3 - 150) * 2)) / 40 * 8.8,
+                        right: (w - ((w / 3 - 150) * 2)) / 40 * 12.5,
                         child: InkWell(
                             hoverColor: Colors.transparent,
                             onTap: () {},
@@ -268,7 +194,7 @@ electricity.''',
                       ),
                       //右一資訊
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 1.96,
+                        top: ((w / 5 + 50) / 10) * 3.2,
                         right: 0,
                         child: AnimatedBuilder(
                             animation: right1InfoAnimation.controller,
@@ -298,7 +224,7 @@ the right position.
                       ),
                       //右二資訊
                       Positioned(
-                        top: ((w / 5 + 50) / 10) * 7.6,
+                        top: ((w / 5 + 50) / 10) * 6.7,
                         right: 0,
                         child: AnimatedBuilder(
                             animation: right2InfoAnimation.controller,

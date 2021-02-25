@@ -643,8 +643,8 @@ GetDateStr _getDateStr = GetDateStr();
           about(),
           input(),
           Positioned(
-            bottom: 50,
-            right: 50,
+            bottom: 200,
+            right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
             child: Material(
               color: Colors.transparent,
               child: InkWell(

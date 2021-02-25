@@ -1,5 +1,8 @@
+import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/widgets/product_circle.dart';
+import 'package:emorgan/screen/order/order_shopping_code.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
 
 import 'obi_page1.dart';
@@ -23,7 +26,30 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(
+        
         children: [
+          
+          Positioned(
+            left: 40,
+            top: h / 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Voice to Vibrate",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 22, color: Color(0xFF364146))),
+                ),
+                Text(
+                  "Obi",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 32, color: Color(0xFF364146))),
+                ),
+              ],
+            ),
+          ),
           Container(
             height: h,
             width: w,
@@ -50,6 +76,7 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
                   ),
                   ProductCircle(),
                   ObiPage2(),
+
                   SizedBox(
                     height: 100,
                   ),
@@ -57,11 +84,14 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
                      SizedBox(
                     height: 100,
                   ),
+
                   ObiPage3(),
+
                      SizedBox(
                     height: 100,
                   ),
                   ProductCircle(),
+                  
                   ObiPage4(),
                   ProductCircle(),
                      SizedBox(
@@ -72,6 +102,61 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
               ),
             ),
           ),
+           Positioned(
+            top: 40,
+            left: 40,
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.keyboard_arrow_left_outlined,
+                    color: Color(0xFF7A82A7),
+                  ),
+                  Text(
+                    "Back",
+                    style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 16, color: Color(0xFF364146)),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+         
+           Positioned(
+              right: 40,
+              top: 40,
+              child: Material(
+                child: InkWell(
+                  onTap: () {
+                      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => OrderShoppingCode()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: new BoxDecoration(
+                      border: new Border.all(
+                          color: Color(0xFF7A82A7), width: 4), // 邊色寬度
+                      color: Color(0xFF7A82A7),
+                      borderRadius: new BorderRadius.circular((60)), // 圆角度
+                    ),
+                    child: Text(
+                      "ORDER NOW",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            fontSize: windows_width_small_size(w) - 1,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+              )),
         ],
       ),
     );

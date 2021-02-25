@@ -69,10 +69,10 @@ class _ObiPage2State extends State<ObiPage2> with TickerProviderStateMixin {
       line_page2_left2_width_size(w / 6.5),
     );
     right1InfoAnimation = DetsIntroAnimation(
-        controllerRight1, line_page2_right1_width_size(w / 7));
+        controllerRight1, line_page2_right1_width_size(w / 6));
     right2InfoAnimation = DetsIntroAnimation(
       controllerRight2,
-      line_page2_right2_width_size(w / 8.5),
+      line_page2_right2_width_size(w / 7.5),
     );
     return Container(
       width: w,
@@ -136,7 +136,7 @@ DIMENSIONS
                   ),
                   //左二 hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 5.3,
+                    top: ((w / 5 + 50) / 10) * 5,
                     //白色區域分成40等分
                     left: (w - ((w / 3 - 150) * 2)) / 40 * 12.5,
                     child: InkWell(
@@ -159,7 +159,7 @@ DIMENSIONS
                   Positioned(
                     top: ((w / 5 + 50) / 10) * 1.7,
                     //白色區域分成40等分
-                    right: (w - ((w / 3 - 150) * 2)) / 40 * 14.5,
+                    right: (w - ((w / 3 - 150) * 2)) / 40 * 15.2,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                         onTap: () {},
@@ -234,7 +234,7 @@ facial expression.''',
                   ),
                   //左二資訊
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 5.6),
+                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 5.4),
                     left: 0,
 
                     child: AnimatedBuilder(
@@ -297,7 +297,7 @@ for 14 years.
                   ),
 //                 //右二資訊
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 7.4),
+                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 7.2),
                     right: 0,
                     child: AnimatedBuilder(
                         animation: right2InfoAnimation.controller,

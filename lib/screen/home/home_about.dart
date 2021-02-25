@@ -84,7 +84,7 @@ class _HomeAboutState extends State<HomeAbout>
               children: [
                 Container(
                   width: (w / 3) * 2,
-                  height: 1000,
+                  height: 1200,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/people.png"),
@@ -117,7 +117,7 @@ class _HomeAboutState extends State<HomeAbout>
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text("Wen-Chien,Wu",
+                            Text("Xi-Le, Huang",
                                 style: TextStyle(
                                     color: Color(0xFF324146),
                                     fontSize: windows_width_large_size(w))),
