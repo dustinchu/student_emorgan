@@ -27,29 +27,6 @@ class _BuzzyProductScreenState extends State<BuzzyProductScreen> {
       body: Stack(
         children: [
          
-            Positioned(
-              left: 40,
-              top: h / 2,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Pulse to Pain",
-                    style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(fontSize: 22, color: Color(0xFF364146)),
-                    ),
-                  ),
-                  Text(
-                    "Buzzy",
-                    style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(fontSize: 32, color: Color(0xFF364146)),
-                    ),
-                  ),
-                ],
-              ),
-            ),
           Container(
             height: h,
             width: w,
@@ -117,6 +94,30 @@ class _BuzzyProductScreenState extends State<BuzzyProductScreen> {
                     )
                   ],
                 ),
+              ),
+            ),
+
+            Positioned(
+              left: 40,
+              top: h / 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Pulse to Pain",
+                    style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 22, color: Color(0xFF364146)),
+                    ),
+                  ),
+                  Text(
+                    "Buzzy",
+                    style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 32, color: Color(0xFF364146)),
+                    ),
+                  ),
+                ],
               ),
             ),
             Positioned(

@@ -206,6 +206,7 @@ electricity.''',
 of Nitinol with shape
 memory to fix emorgan at
 the right position.
+
 ''',
                               );
                             }),
@@ -234,7 +235,9 @@ the right position.
                                 title: "Light Sign",
                                 body: '''\nDuring the operation, the
 light will remind doctors if
-the pairing is successful.''',
+the pairing is successful.
+
+''',
                               );
                             }),
 //                         child: lightStart
@@ -270,7 +273,9 @@ Biomedical Ceramics
 Biomedical Polymer
 
 All the materials are also non-toxic and
-biological.''',
+biological.
+
+''',
                           w),
                       Expanded(child: Container()),
                       msg(
@@ -278,7 +283,9 @@ biological.''',
                           '''Hertz Creation
 
 Providing the vibrate which was transferred from
-voice ingredient by Obi patch.''',
+voice ingredient by Obi patch.
+
+''',
                           w)
                     ],
                   )

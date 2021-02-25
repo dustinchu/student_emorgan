@@ -34965,17 +34965,17 @@ return M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.al(s,X.aT(C.bE,new L.aH(this.d,s,s)),s,
 N.lM.prototype={
 a4:function(){return new N.I3(F.vL(),C.o)}}
 N.I3.prototype={
-D:function(a,b){var s,r,q,p,o,n=null,m=4281745734,l=4286218919,k=t.w,j=b.G(k).f.a.a,i=b.G(k).f.a.b
-k=t.t
-s=T.aj(n,T.ad(H.b([L.I("Pulse to Pain",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,22,n,n,n,n,!0,n,n,n,n,n,n)),n),L.I("Buzzy",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,32,n,n,n,n,!0,n,n,n,n,n,n)),n)],k),C.p,C.i,C.e),n,n,40,n,i/2,n)
-r=this.d
-q=P.aN(0,0,500,0)
-p=P.aN(0,0,800,0)
-p=M.p(n,B.a2e(!0,B.Vr(!0,H.b([new G.rC(n),T.L(n,100,n),new G.eB(n),T.L(n,100,n),new G.AS(n),T.L(n,100,n),new G.eB(n),new L.AT(n),new G.eB(n),T.L(n,100,n),new O.AU(n)],k),r,n,new L.lI(n),!0),new P.i(4291346927),r,50,n,q,p,8),n,n,n,i,n,n,j)
-q=T.aj(n,R.aR(!1,!0,T.aq(H.b([L.ma(C.fu,new P.i(l),n),L.I("Back",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,16,n,n,n,n,!0,n,n,n,n,n,n)),n)],k),C.l,C.z,C.e),n,!0,n,n,n,n,n,n,n,n,n,new N.a3q(b),n,n,n),n,n,40,n,40,n)
-r=F.iL(new P.i(l),4)
+D:function(a,b){var s,r,q,p,o,n=null,m=4286218919,l=4281745734,k=t.w,j=b.G(k).f.a.a,i=b.G(k).f.a.b
+k=this.d
+s=P.aN(0,0,500,0)
+r=P.aN(0,0,800,0)
+q=t.t
+r=M.p(n,B.a2e(!0,B.Vr(!0,H.b([new G.rC(n),T.L(n,100,n),new G.eB(n),T.L(n,100,n),new G.AS(n),T.L(n,100,n),new G.eB(n),new L.AT(n),new G.eB(n),T.L(n,100,n),new O.AU(n)],q),k,n,new L.lI(n),!0),new P.i(4291346927),k,50,n,s,r,8),n,n,n,i,n,n,j)
+s=T.aj(n,R.aR(!1,!0,T.aq(H.b([L.ma(C.fu,new P.i(m),n),L.I("Back",n,n,n,B.U(A.H(n,n,new P.i(l),n,n,n,n,n,n,n,n,16,n,n,n,n,!0,n,n,n,n,n,n)),n)],q),C.l,C.z,C.e),n,!0,n,n,n,n,n,n,n,n,n,new N.a3q(b),n,n,n),n,n,40,n,40,n)
+k=T.aj(n,T.ad(H.b([L.I("Pulse to Pain",n,n,n,B.U(A.H(n,n,new P.i(l),n,n,n,n,n,n,n,n,22,n,n,n,n,!0,n,n,n,n,n,n)),n),L.I("Buzzy",n,n,n,B.U(A.H(n,n,new P.i(l),n,n,n,n,n,n,n,n,32,n,n,n,n,!0,n,n,n,n,n,n)),n)],q),C.p,C.i,C.e),n,n,40,n,i/2,n)
+p=F.iL(new P.i(m),4)
 o=K.dC(60)
-return M.id(T.by(C.F,H.b([s,p,q,T.aj(n,M.i2(C.ab,n,R.aR(!1,!0,M.p(n,L.I("ORDER NOW",n,n,n,B.U(A.H(n,n,C.m,n,n,n,n,n,n,n,n,V.bb(j)-1,n,n,n,n,!0,n,n,n,n,n,n)),n),n,n,new S.al(new P.i(l),n,r,o,n,n,C.n),n,n,new V.J(10,5,10,5),n),n,!0,n,n,n,n,n,n,n,n,n,new N.a3r(b),n,n,n),C.Q,n,0,n,n,n,n,C.aQ),n,n,n,40,40,n)],k),C.t,C.B),n)}}
+return M.id(T.by(C.F,H.b([r,s,k,T.aj(n,M.i2(C.ab,n,R.aR(!1,!0,M.p(n,L.I("ORDER NOW",n,n,n,B.U(A.H(n,n,C.m,n,n,n,n,n,n,n,n,V.bb(j)-1,n,n,n,n,!0,n,n,n,n,n,n)),n),n,n,new S.al(new P.i(m),n,p,o,n,n,C.n),n,n,new V.J(10,5,10,5),n),n,!0,n,n,n,n,n,n,n,n,n,new N.a3r(b),n,n,n),C.Q,n,0,n,n,n,n,C.aQ),n,n,n,40,40,n)],q),C.t,C.B),n)}}
 N.a3q.prototype={
 $0:function(){K.ci(this.a,!1).cR(0)},
 $S:1}
@@ -35729,7 +35729,7 @@ l=T.aj(h,R.aR(!1,!0,K.aW(m,new D.a7_(),h),h,!0,h,h,h,C.v,h,h,h,new D.a70(),h,new
 k=$.af5.a
 j=T.aj(h,R.aR(!1,!0,K.aW(k,new D.a73(),h),h,!0,h,h,h,C.v,h,h,h,new D.a74(),h,new D.a75(),h,h,h),h,h,h,s*11.4,n*3,h)
 i=$.afa.a
-return M.p(h,T.by(C.F,H.b([M.p(h,new T.cN(C.mG,T.ad(H.b([q,T.by(C.F,H.b([o,l,j,T.aj(h,R.aR(!1,!0,K.aW(i,new D.a76(),h),h,!0,h,h,h,C.v,h,h,h,new D.a77(),h,new D.a78(),h,h,h),h,h,h,s*12.5,n*6.5,h),T.aj(h,K.aW(m,new D.a79(),h),h,h,0,h,n*4.3,h),T.aj(h,K.aW(k,new D.a7a(),h),h,h,h,0,n*3.2,h),T.aj(h,K.aW(i,new D.a72(),h),h,h,h,0,n*6.7,h)],p),C.t,C.B),T.L(h,15,h),M.afi("Design","\nThe shape idea is from human heart. The main form is a short ellipse with smooth surface and tissue-friendly to avoid any danger during transplantation and removal.",g),T.L(h,60,h),T.aq(H.b([M.A0("Material","TBiomedical Metal\nBiomedical Ceramics\nBiomedical Polymer\n\nAll the materials are also non-toxic and\nbiological.",g),T.aZ(M.p(h,h,h,h,h,h,h,h,h),1),M.A0("Technology","Hertz Creation\n\nProviding the vibrate which was transferred from\nvoice ingredient by Obi patch.",g)],p),C.p,C.i,C.e)],p),C.p,C.i,C.e),h),h,h,h,h,h,new V.J(r,70,r,70),h)],p),C.t,C.B),h,h,h,1100,h,h,g)}}
+return M.p(h,T.by(C.F,H.b([M.p(h,new T.cN(C.mG,T.ad(H.b([q,T.by(C.F,H.b([o,l,j,T.aj(h,R.aR(!1,!0,K.aW(i,new D.a76(),h),h,!0,h,h,h,C.v,h,h,h,new D.a77(),h,new D.a78(),h,h,h),h,h,h,s*12.5,n*6.5,h),T.aj(h,K.aW(m,new D.a79(),h),h,h,0,h,n*4.3,h),T.aj(h,K.aW(k,new D.a7a(),h),h,h,h,0,n*3.2,h),T.aj(h,K.aW(i,new D.a72(),h),h,h,h,0,n*6.7,h)],p),C.t,C.B),T.L(h,15,h),M.afi("Design","\nThe shape idea is from human heart. The main form is a short ellipse with smooth surface and tissue-friendly to avoid any danger during transplantation and removal.",g),T.L(h,60,h),T.aq(H.b([M.A0("Material","TBiomedical Metal\nBiomedical Ceramics\nBiomedical Polymer\n\nAll the materials are also non-toxic and\nbiological.\n\n",g),T.aZ(M.p(h,h,h,h,h,h,h,h,h),1),M.A0("Technology","Hertz Creation\n\nProviding the vibrate which was transferred from\nvoice ingredient by Obi patch.\n\n",g)],p),C.p,C.i,C.e)],p),C.p,C.i,C.e),h),h,h,h,h,h,new V.J(r,70,r,70),h)],p),C.t,C.B),h,h,h,1100,h,h,g)}}
 D.a71.prototype={
 $0:function(){},
 $S:1}
@@ -35775,12 +35775,12 @@ $C:"$2",
 $R:2,
 $S:19}
 D.a7a.prototype={
-$2:function(a,b){return new L.ed($.af5,"Fixed Forks","\nThere will be 4 forks made\nof Nitinol with shape\nmemory to fix emorgan at\nthe right position.\n",null)},
+$2:function(a,b){return new L.ed($.af5,"Fixed Forks","\nThere will be 4 forks made\nof Nitinol with shape\nmemory to fix emorgan at\nthe right position.\n\n",null)},
 $C:"$2",
 $R:2,
 $S:15}
 D.a72.prototype={
-$2:function(a,b){return new L.ed($.afa,"Light Sign","\nDuring the operation, the\nlight will remind doctors if\nthe pairing is successful.",null)},
+$2:function(a,b){return new L.ed($.afa,"Light Sign","\nDuring the operation, the\nlight will remind doctors if\nthe pairing is successful.\n\n",null)},
 $C:"$2",
 $R:2,
 $S:15}
@@ -35947,17 +35947,17 @@ return M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.al(s,X.aT(C.bE,new L.aH(this.d,s,s)),s,
 E.mx.prototype={
 a4:function(){return new E.Kz(F.vL(),C.o)}}
 E.Kz.prototype={
-D:function(a,b){var s,r,q,p,o,n=null,m=4281745734,l=4286218919,k=t.w,j=b.G(k).f.a.a,i=b.G(k).f.a.b
-k=t.t
-s=T.aj(n,T.ad(H.b([L.I("Voice to Vibrate",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,22,n,n,n,n,!0,n,n,n,n,n,n)),n),L.I("Obi",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,32,n,n,n,n,!0,n,n,n,n,n,n)),n)],k),C.p,C.i,C.e),n,n,40,n,i/2,n)
-r=this.d
-q=P.aN(0,0,500,0)
-p=P.aN(0,0,800,0)
-p=M.p(n,B.a2e(!0,B.Vr(!0,H.b([new D.uS(n),T.L(n,100,n),new G.eB(n),new Y.uT(n),T.L(n,100,n),new G.eB(n),T.L(n,100,n),new Q.DM(n),T.L(n,100,n),new G.eB(n),new E.DN(n),new G.eB(n),T.L(n,100,n),new Z.DO(n)],k),r,n,new L.lI(n),!0),new P.i(4291346927),r,50,n,q,p,8),n,n,n,i,n,n,j)
-q=T.aj(n,R.aR(!1,!0,T.aq(H.b([L.ma(C.fu,new P.i(l),n),L.I("Back",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,16,n,n,n,n,!0,n,n,n,n,n,n)),n)],k),C.l,C.z,C.e),n,!0,n,n,n,n,n,n,n,n,n,new E.a7s(b),n,n,n),n,n,40,n,40,n)
-r=F.iL(new P.i(l),4)
+D:function(a,b){var s,r,q,p,o,n=null,m=4286218919,l=4281745734,k=t.w,j=b.G(k).f.a.a,i=b.G(k).f.a.b
+k=this.d
+s=P.aN(0,0,500,0)
+r=P.aN(0,0,800,0)
+q=t.t
+r=M.p(n,B.a2e(!0,B.Vr(!0,H.b([new D.uS(n),T.L(n,100,n),new G.eB(n),new Y.uT(n),T.L(n,100,n),new G.eB(n),T.L(n,100,n),new Q.DM(n),T.L(n,100,n),new G.eB(n),new E.DN(n),new G.eB(n),T.L(n,100,n),new Z.DO(n)],q),k,n,new L.lI(n),!0),new P.i(4291346927),k,50,n,s,r,8),n,n,n,i,n,n,j)
+s=T.aj(n,R.aR(!1,!0,T.aq(H.b([L.ma(C.fu,new P.i(m),n),L.I("Back",n,n,n,B.U(A.H(n,n,new P.i(l),n,n,n,n,n,n,n,n,16,n,n,n,n,!0,n,n,n,n,n,n)),n)],q),C.l,C.z,C.e),n,!0,n,n,n,n,n,n,n,n,n,new E.a7s(b),n,n,n),n,n,40,n,40,n)
+k=T.aj(n,T.ad(H.b([L.I("Voice to Vibrate",n,n,n,B.U(A.H(n,n,new P.i(l),n,n,n,n,n,n,n,n,22,n,n,n,n,!0,n,n,n,n,n,n)),n),L.I("Obi",n,n,n,B.U(A.H(n,n,new P.i(l),n,n,n,n,n,n,n,n,32,n,n,n,n,!0,n,n,n,n,n,n)),n)],q),C.p,C.i,C.e),n,n,40,n,i/2,n)
+p=F.iL(new P.i(m),4)
 o=K.dC(60)
-return M.id(T.by(C.F,H.b([s,p,q,T.aj(n,M.i2(C.ab,n,R.aR(!1,!0,M.p(n,L.I("ORDER NOW",n,n,n,B.U(A.H(n,n,C.m,n,n,n,n,n,n,n,n,V.bb(j)-1,n,n,n,n,!0,n,n,n,n,n,n)),n),n,n,new S.al(new P.i(l),n,r,o,n,n,C.n),n,n,new V.J(10,5,10,5),n),n,!0,n,n,n,n,n,n,n,n,n,new E.a7t(b),n,n,n),C.Q,n,0,n,n,n,n,C.aQ),n,n,n,40,40,n)],k),C.t,C.B),n)}}
+return M.id(T.by(C.F,H.b([r,s,k,T.aj(n,M.i2(C.ab,n,R.aR(!1,!0,M.p(n,L.I("ORDER NOW",n,n,n,B.U(A.H(n,n,C.m,n,n,n,n,n,n,n,n,V.bb(j)-1,n,n,n,n,!0,n,n,n,n,n,n)),n),n,n,new S.al(new P.i(m),n,p,o,n,n,C.n),n,n,new V.J(10,5,10,5),n),n,!0,n,n,n,n,n,n,n,n,n,new E.a7t(b),n,n,n),C.Q,n,0,n,n,n,n,C.aQ),n,n,n,40,40,n)],q),C.t,C.B),n)}}
 E.a7s.prototype={
 $0:function(){K.ci(this.a,!1).cR(0)},
 $S:1}
@@ -37327,17 +37327,17 @@ this.bz()}}
 S.mW.prototype={
 a4:function(){return new S.LW(F.vL(),C.o)}}
 S.LW.prototype={
-D:function(a,b){var s,r,q,p,o,n=null,m=4281745734,l=4286218919,k=t.w,j=b.G(k).f.a.a,i=b.G(k).f.a.b
-k=t.t
-s=T.aj(n,T.ad(H.b([L.I("Tear to Taste",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,22,n,n,n,n,!0,n,n,n,n,n,n)),n),L.I("Shali",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,32,n,n,n,n,!0,n,n,n,n,n,n)),n)],k),C.p,C.i,C.e),n,n,40,n,i/2,n)
-r=this.d
-q=P.aN(0,0,500,0)
-p=P.aN(0,0,800,0)
-p=M.p(n,B.a2e(!0,B.Vr(!0,H.b([new S.vX(n),T.L(n,100,n),new G.eB(n),new O.vY(n),T.L(n,100,n),new G.eB(n),T.L(n,100,n),new G.G6(n),T.L(n,100,n),new G.eB(n),new S.G7(n),new G.eB(n),T.L(n,100,n),new R.G8(n)],k),r,n,new L.lI(n),!0),new P.i(4291346927),r,50,n,q,p,8),n,n,n,i,n,n,j)
-q=T.aj(n,R.aR(!1,!0,T.aq(H.b([L.ma(C.fu,new P.i(l),n),L.I("Back",n,n,n,B.U(A.H(n,n,new P.i(m),n,n,n,n,n,n,n,n,16,n,n,n,n,!0,n,n,n,n,n,n)),n)],k),C.l,C.z,C.e),n,!0,n,n,n,n,n,n,n,n,n,new S.abZ(b),n,n,n),n,n,40,n,40,n)
-r=F.iL(new P.i(l),4)
+D:function(a,b){var s,r,q,p,o,n=null,m=4286218919,l=4281745734,k=t.w,j=b.G(k).f.a.a,i=b.G(k).f.a.b
+k=this.d
+s=P.aN(0,0,500,0)
+r=P.aN(0,0,800,0)
+q=t.t
+r=M.p(n,B.a2e(!0,B.Vr(!0,H.b([new S.vX(n),T.L(n,100,n),new G.eB(n),new O.vY(n),T.L(n,100,n),new G.eB(n),T.L(n,100,n),new G.G6(n),T.L(n,100,n),new G.eB(n),new S.G7(n),new G.eB(n),T.L(n,100,n),new R.G8(n)],q),k,n,new L.lI(n),!0),new P.i(4291346927),k,50,n,s,r,8),n,n,n,i,n,n,j)
+s=T.aj(n,R.aR(!1,!0,T.aq(H.b([L.ma(C.fu,new P.i(m),n),L.I("Back",n,n,n,B.U(A.H(n,n,new P.i(l),n,n,n,n,n,n,n,n,16,n,n,n,n,!0,n,n,n,n,n,n)),n)],q),C.l,C.z,C.e),n,!0,n,n,n,n,n,n,n,n,n,new S.abZ(b),n,n,n),n,n,40,n,40,n)
+k=T.aj(n,T.ad(H.b([L.I("Tear to Taste",n,n,n,B.U(A.H(n,n,new P.i(l),n,n,n,n,n,n,n,n,22,n,n,n,n,!0,n,n,n,n,n,n)),n),L.I("Shali",n,n,n,B.U(A.H(n,n,new P.i(l),n,n,n,n,n,n,n,n,32,n,n,n,n,!0,n,n,n,n,n,n)),n)],q),C.p,C.i,C.e),n,n,40,n,i/2,n)
+p=F.iL(new P.i(m),4)
 o=K.dC(60)
-return M.id(T.by(C.F,H.b([s,p,q,T.aj(n,M.i2(C.ab,n,R.aR(!1,!0,M.p(n,L.I("ORDER NOW",n,n,n,B.U(A.H(n,n,C.m,n,n,n,n,n,n,n,n,V.bb(j)-1,n,n,n,n,!0,n,n,n,n,n,n)),n),n,n,new S.al(new P.i(l),n,r,o,n,n,C.n),n,n,new V.J(10,5,10,5),n),n,!0,n,n,n,n,n,n,n,n,n,new S.ac_(b),n,n,n),C.Q,n,0,n,n,n,n,C.aQ),n,n,n,40,40,n)],k),C.t,C.B),n)}}
+return M.id(T.by(C.F,H.b([r,s,k,T.aj(n,M.i2(C.ab,n,R.aR(!1,!0,M.p(n,L.I("ORDER NOW",n,n,n,B.U(A.H(n,n,C.m,n,n,n,n,n,n,n,n,V.bb(j)-1,n,n,n,n,!0,n,n,n,n,n,n)),n),n,n,new S.al(new P.i(m),n,p,o,n,n,C.n),n,n,new V.J(10,5,10,5),n),n,!0,n,n,n,n,n,n,n,n,n,new S.ac_(b),n,n,n),C.Q,n,0,n,n,n,n,C.aQ),n,n,n,40,40,n)],q),C.t,C.B),n)}}
 S.abZ.prototype={
 $0:function(){K.ci(this.a,!1).cR(0)},
 $S:1}

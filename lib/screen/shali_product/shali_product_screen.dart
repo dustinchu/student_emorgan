@@ -28,29 +28,6 @@ class _ShaliProductScreenState extends State<ShaliProductScreen> {
       body: Stack(
         children: [
           
-           Positioned(
-            left: 40,
-            top: h / 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Tear to Taste",
-                  style: GoogleFonts.montserrat(
-                    textStyle:
-                        TextStyle(fontSize: 22, color: Color(0xFF364146)),
-                  ),
-                ),
-                Text(
-                  "Shali",
-                  style: GoogleFonts.montserrat(
-                    textStyle:
-                        TextStyle(fontSize: 32, color: Color(0xFF364146)),
-                  ),
-                ),
-              ],
-            ),
-          ),
           Container(
             height: h,
             width: w,
@@ -130,6 +107,29 @@ class _ShaliProductScreenState extends State<ShaliProductScreen> {
             ),
           ),
          
+           Positioned(
+            left: 40,
+            top: h / 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Tear to Taste",
+                  style: GoogleFonts.montserrat(
+                    textStyle:
+                        TextStyle(fontSize: 22, color: Color(0xFF364146)),
+                  ),
+                ),
+                Text(
+                  "Shali",
+                  style: GoogleFonts.montserrat(
+                    textStyle:
+                        TextStyle(fontSize: 32, color: Color(0xFF364146)),
+                  ),
+                ),
+              ],
+            ),
+          ),
            Positioned(
               right: 40,
               top: 40,

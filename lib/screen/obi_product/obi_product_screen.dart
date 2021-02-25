@@ -29,27 +29,7 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
         
         children: [
           
-          Positioned(
-            left: 40,
-            top: h / 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Voice to Vibrate",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(fontSize: 22, color: Color(0xFF364146))),
-                ),
-                Text(
-                  "Obi",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(fontSize: 32, color: Color(0xFF364146))),
-                ),
-              ],
-            ),
-          ),
+         
           Container(
             height: h,
             width: w,
@@ -128,7 +108,27 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
               ),
             ),
           ),
-         
+          Positioned(
+            left: 40,
+            top: h / 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Voice to Vibrate",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 22, color: Color(0xFF364146))),
+                ),
+                Text(
+                  "Obi",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 32, color: Color(0xFF364146))),
+                ),
+              ],
+            ),
+          ),
            Positioned(
               right: 40,
               top: 40,
