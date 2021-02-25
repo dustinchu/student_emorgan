@@ -120,7 +120,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuEmorgan() {
-      _scrollController.animateTo(1500 + ((h - 1400) / 2),
+      pageAnimate=1500 + ((h - 1400) / 2);
+      _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
           pageIndex=1;
            Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
@@ -128,42 +129,48 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuProducts() {
-  _scrollController.animateTo(3000 + ((h - 1400) / 2),
+       pageAnimate=3000 + ((h - 1400) / 2);
+  _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
           pageIndex=2;
            Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
 
     }
     void menuPurchase() {
-     _scrollController.animateTo(7500 + ((h - 1400) / 2),
+      pageAnimate=7500 + ((h - 1400) / 2);
+     _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
           pageIndex=5;
            Provider.of<MenuStatus>(context, listen: false).setPageIndex(5);
     }
 
     void menuBook() {
-     _scrollController.animateTo(9000 + ((h - 1400) / 2),
+        pageAnimate=9000 + ((h - 1400) / 2);
+     _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
           pageIndex=6;
            Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuUser() {
-     _scrollController.animateTo(10500 + ((h - 1400) / 2),
+        pageAnimate=10500 + ((h - 1400) / 2);
+     _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
           pageIndex=7;
            Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuContact() {
-      _scrollController.animateTo(12000 + ((h - 1400) / 2),
+        pageAnimate=12000 + ((h - 1400) / 2);
+      _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
           pageIndex=8;
            Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
     }
 
     void menuAbout() {
-    _scrollController.animateTo(13500 + ((h - 1400) / 2),
+        pageAnimate=13500 + ((h - 1400) / 2);
+    _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
           pageIndex=9;
            Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
