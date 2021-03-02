@@ -35,6 +35,38 @@ class _HomeContactState extends State<HomeContact>
     containerSizeControlle.dispose();
   }
 
+  sendemail() async {
+    try {
+      String request = await sendEmail(
+          "${yourNameTextEditingController.text}",
+          "${yourEmailTextEditingController.text}",
+          "${messageTextEditingController.text}");
+    } catch (e) {}
+
+    yourNameTextEditingController.text = "";
+    yourEmailTextEditingController.text = "";
+    messageTextEditingController.text = "";
+  }
+
+  success() async {
+    await Future.delayed(Duration(seconds: 2), () {
+      setState(() {
+        loadingSizeStatus = false;
+      });
+    });
+    setState(() {
+      loading = false;
+    });
+
+    await Future.delayed(Duration(seconds: 2), () {
+      setState(() {
+        print("結束completed");
+        controller.reverse();
+        containerSizeControlle.reverse();
+      });
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -48,31 +80,8 @@ class _HomeContactState extends State<HomeContact>
         setState(() {
           start = true;
         });
-        try {
-          String request = await sendEmail(
-              "${yourNameTextEditingController.text}",
-              "${yourEmailTextEditingController.text}",
-              "${messageTextEditingController.text}");
-        } catch (e) {}
-
-        yourNameTextEditingController.text = "";
-        yourEmailTextEditingController.text = "";
-        messageTextEditingController.text = "";
-        await Future.delayed(Duration(seconds: 2), () {
-          setState(() {
-            loadingSizeStatus = false;
-          });
-        });
-
-        await Future.delayed(Duration(seconds: 2), () {
-          setState(() {
-            loading = false;
-          });
-        });
-
-        print("結束completed");
-        controller.reverse();
-        containerSizeControlle.reverse();
+        sendemail();
+        success();
       } else if (status == AnimationStatus.dismissed) {
         // print("dismissed");
         controller.forward();
