@@ -48,10 +48,13 @@ class _HomeContactState extends State<HomeContact>
         setState(() {
           start = true;
         });
-        String request = await sendEmail(
-            "${yourNameTextEditingController.text}",
-            "${yourEmailTextEditingController.text}",
-            "${messageTextEditingController.text}");
+        try {
+          String request = await sendEmail(
+              "${yourNameTextEditingController.text}",
+              "${yourEmailTextEditingController.text}",
+              "${messageTextEditingController.text}");
+        } catch (e) {}
+
         yourNameTextEditingController.text = "";
         yourEmailTextEditingController.text = "";
         messageTextEditingController.text = "";
@@ -61,8 +64,10 @@ class _HomeContactState extends State<HomeContact>
           });
         });
 
-        setState(() {
-          loading = false;
+        await Future.delayed(Duration(seconds: 2), () {
+          setState(() {
+            loading = false;
+          });
         });
 
         print("結束completed");
