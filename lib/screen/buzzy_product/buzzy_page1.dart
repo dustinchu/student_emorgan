@@ -119,6 +119,7 @@ DIMENSIONS
                           //白色區域分成40等分
                           left: (w - ((w / 3 - 150) * 2)) / 40 * 9,
                           child: InkWell(
+                             splashColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             onTap: () {},
                             onHover: (value) {
@@ -141,6 +142,7 @@ DIMENSIONS
                           //白色區域分成40等分
                           left: (w - ((w / 3 - 150) * 2)) / 40 * 9.2,
                           child: InkWell(
+                             splashColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               onTap: () {},
                               onHover: (value) {
@@ -162,6 +164,7 @@ DIMENSIONS
                           //白色區域分成40等分
                           right: (w - ((w / 3 - 150) * 2)) / 40 * 12,
                           child: InkWell(
+                             splashColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               onTap: () {},
                               onHover: (value) {

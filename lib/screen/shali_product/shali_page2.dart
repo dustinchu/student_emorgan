@@ -116,6 +116,7 @@ DIMENSIONS
                     left: (w - ((w / 3 - 150) * 2)) / 40 * 18.4,
                     child: InkWell(
                         hoverColor: Colors.transparent,
+                         splashColor: Colors.transparent,
                         onTap: () {},
                         onHover: (value) {
                           if (value) {
@@ -137,6 +138,7 @@ DIMENSIONS
                     left: (w - ((w / 3 - 150) * 2)) / 40 * 9.85,
                     child: InkWell(
                         hoverColor: Colors.transparent,
+                         splashColor: Colors.transparent,
                         onTap: () {},
                         onHover: (value) {
                            if (value) {
@@ -158,6 +160,7 @@ DIMENSIONS
                     right: (w - ((w / 3 - 150) * 2)) / 40 * 9.8,
                     child: InkWell(
                         hoverColor: Colors.transparent,
+                         splashColor: Colors.transparent,
                         onTap: () {},
                         onHover: (value) {
                            if (value) {
@@ -179,6 +182,7 @@ DIMENSIONS
                     right: (w - ((w / 3 - 150) * 2)) / 40 * 15,
                     child: InkWell(
                         hoverColor: Colors.transparent,
+                         splashColor: Colors.transparent,
                         onTap: () {},
                         onHover: (value) {
                           if (value) {

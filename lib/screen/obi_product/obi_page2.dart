@@ -62,11 +62,11 @@ class _ObiPage2State extends State<ObiPage2> with TickerProviderStateMixin {
     double h = 1100;
     left1InfoAnimation = DetsIntroAnimation(
       controllerLeft1,
-      line_page2_left_width_size(w / 7),
+      line_page2_left_width_size(w / 6.7),
     );
     left2InfoAnimation = DetsIntroAnimation(
       controllerLeft2,
-      line_page2_left2_width_size(w / 6.5),
+      line_page2_left2_width_size(w / 6.2),
     );
     right1InfoAnimation = DetsIntroAnimation(
         controllerRight1, line_page2_right1_width_size(w / 6));
@@ -119,6 +119,7 @@ DIMENSIONS
                     //白色區域分成40等分
                     left: (w - ((w / 3 - 150) * 2)) / 40 * 11.5,
                     child: InkWell(
+                       splashColor: Colors.transparent,
                         hoverColor: Colors.transparent,
                         onTap: () {},
                         onHover: (value) {
@@ -140,6 +141,7 @@ DIMENSIONS
                     //白色區域分成40等分
                     left: (w - ((w / 3 - 150) * 2)) / 40 * 12.5,
                     child: InkWell(
+                       splashColor: Colors.transparent,
                         hoverColor: Colors.transparent,
                         onTap: () {},
                         onHover: (value) {
@@ -161,6 +163,7 @@ DIMENSIONS
                     //白色區域分成40等分
                     right: (w - ((w / 3 - 150) * 2)) / 40 * 15.2,
                     child: InkWell(
+                       splashColor: Colors.transparent,
                         hoverColor: Colors.transparent,
                         onTap: () {},
                         onHover: (value) {
@@ -182,6 +185,7 @@ DIMENSIONS
                     //白色區域分成40等分
                     right: (w - ((w / 3 - 150) * 2)) / 40 * 12,
                     child: InkWell(
+                       splashColor: Colors.transparent,
                         hoverColor: Colors.transparent,
                         onTap: () {},
                         onHover: (value) {

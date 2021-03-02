@@ -52,7 +52,7 @@ class _ObiPage1State extends State<ObiPage1> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 1100;
+    double h = 1150;
 
     left1InfoAnimation = DetsIntroAnimation(
       controllerLeft1,
@@ -115,6 +115,7 @@ DIMENSIONS
                         //白色區域分成40等分
                         left: (w - ((w / 3 - 150) * 2)) / 40 * 12,
                         child: InkWell(
+                           splashColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             onTap: () {},
                             onHover: (value) {
@@ -136,6 +137,7 @@ DIMENSIONS
                         //白色區域分成40等分
                         right: (w - ((w / 3 - 150) * 2)) / 40 * 11.4,
                         child: InkWell(
+                           splashColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             onTap: () {},
                             onHover: (value) {
@@ -157,6 +159,7 @@ DIMENSIONS
                         //白色區域分成40等分
                         right: (w - ((w / 3 - 150) * 2)) / 40 * 12.5,
                         child: InkWell(
+                           splashColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             onTap: () {},
                             onHover: (value) {

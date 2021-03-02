@@ -21,7 +21,7 @@ String selectedItem;
 String initialValue;
 
 class _HomeBookingState extends State<HomeBooking>
-    with AutomaticKeepAliveClientMixin {
+    with AutomaticKeepAliveClientMixin, TickerProviderStateMixin {
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
@@ -105,6 +105,11 @@ class _HomeBookingState extends State<HomeBooking>
       "",
     ],
   ];
+
+  bool startLoading = true;
+  bool start = false;
+  AnimationController controller;
+  Animation<double> animation;
   //記錄最後一次點擊的index
   int endIndex = 9;
   void selectedListLoor(int index, String value, int ontapIndex) {
@@ -135,7 +140,6 @@ class _HomeBookingState extends State<HomeBooking>
       }
     }
   }
-
 
   //循環list把點擊的那一個index bool改變 給下拉選單用
   void listLoor(int index) {
@@ -258,6 +262,40 @@ class _HomeBookingState extends State<HomeBooking>
     partnerLastNameTextEditingController = TextEditingController();
     selectedKey = keys[0];
 
+    //圖片旋轉動畫
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    animation = Tween(begin: 0.0, end: 0.75).animate(controller);
+
+/*
+    常用的方法有forward()：启动动画；
+    reverse({double from}：倒放动画；
+    reset()：重置动画，将其设置到动画的开始位置；
+    stop({ bool canceled = true })：停止动画。
+    */
+    controller.addStatusListener((status) async {
+      if (status == AnimationStatus.completed) {
+        setState(() {
+          start = true;
+        });
+        await Future.delayed(Duration(seconds: 2), () {
+          // print('延遲1s执行');
+          setState(() {
+            startLoading = true;
+          });
+        });
+        print("結束completed");
+        controller.reverse();
+      } else if (status == AnimationStatus.dismissed) {
+        // print("dismissed");
+        controller.forward();
+      } else if (status == AnimationStatus.forward) {
+        // print("啟動forward");
+      } else if (status == AnimationStatus.reverse) {
+        // print("reverse");
+      }
+    });
+
     firstNameTextEditingController.addListener(() {
       if (firstNameTextEditingController.text.length > 0) {
         setState(() {
@@ -269,6 +307,7 @@ class _HomeBookingState extends State<HomeBooking>
         });
       }
     });
+
     lastNameTextEditingController.addListener(() {
       if (lastNameTextEditingController.text.length > 0) {
         setState(() {
@@ -332,7 +371,7 @@ class _HomeBookingState extends State<HomeBooking>
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
     double h = 1500;
-GetDateStr _getDateStr = GetDateStr();
+    GetDateStr _getDateStr = GetDateStr();
     Widget edit(title, control) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -567,8 +606,8 @@ GetDateStr _getDateStr = GetDateStr();
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     new DateWidget(
-                     title: _getDateStr.getDateStr(1),
-                    dateStr: _getDateStr.getDateNumStr(1),
+                      title: _getDateStr.getDateStr(1),
+                      dateStr: _getDateStr.getDateNumStr(1),
                       index: 0,
                       openStatus: statusList[0],
                       upBtn: dateBtn0,
@@ -577,7 +616,7 @@ GetDateStr _getDateStr = GetDateStr();
                     ),
                     new DateWidget(
                       title: _getDateStr.getDateStr(2),
-                    dateStr: _getDateStr.getDateNumStr(2),
+                      dateStr: _getDateStr.getDateNumStr(2),
                       index: 1,
                       openStatus: statusList[1],
                       upBtn: dateBtn1,
@@ -585,8 +624,8 @@ GetDateStr _getDateStr = GetDateStr();
                       items: selectedList[1],
                     ),
                     new DateWidget(
-                     title: _getDateStr.getDateStr(3),
-                    dateStr: _getDateStr.getDateNumStr(3),
+                      title: _getDateStr.getDateStr(3),
+                      dateStr: _getDateStr.getDateNumStr(3),
                       index: 2,
                       openStatus: statusList[2],
                       upBtn: dateBtn2,
@@ -594,8 +633,8 @@ GetDateStr _getDateStr = GetDateStr();
                       items: selectedList[2],
                     ),
                     new DateWidget(
-                     title: _getDateStr.getDateStr(4),
-                    dateStr: _getDateStr.getDateNumStr(4),
+                      title: _getDateStr.getDateStr(4),
+                      dateStr: _getDateStr.getDateNumStr(4),
                       index: 3,
                       openStatus: statusList[3],
                       upBtn: dateBtn3,
@@ -603,8 +642,8 @@ GetDateStr _getDateStr = GetDateStr();
                       items: selectedList[3],
                     ),
                     new DateWidget(
-                     title: _getDateStr.getDateStr(5),
-                    dateStr: _getDateStr.getDateNumStr(5),
+                      title: _getDateStr.getDateStr(5),
+                      dateStr: _getDateStr.getDateNumStr(5),
                       index: 4,
                       openStatus: statusList[4],
                       upBtn: dateBtn4,
@@ -613,7 +652,7 @@ GetDateStr _getDateStr = GetDateStr();
                     ),
                     new DateWidget(
                       title: _getDateStr.getDateStr(6),
-                    dateStr: _getDateStr.getDateNumStr(6),
+                      dateStr: _getDateStr.getDateNumStr(6),
                       index: 5,
                       openStatus: statusList[5],
                       upBtn: dateBtn5,
@@ -621,6 +660,79 @@ GetDateStr _getDateStr = GetDateStr();
                       items: selectedList[5],
                     )
                   ],
+                )
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    Widget loding() {
+      return Center(
+        child: Container(
+          width: 885,
+          height: 513,
+          color: Colors.white,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RotationTransition(
+                  alignment: Alignment.center,
+                  turns: animation,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/loding_icon.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    width: 60,
+                    height: 60,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Loading…",
+                  style: TextStyle(color: Color(0xFF424648)),
+                )
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    Widget successful() {
+      return Center(
+        child: Container(
+          width: 885,
+          height: 513,
+          color: Colors.white,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/successful.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  width: 80,
+                  height: 80,
+                ),
+                Text(
+                  'Delivered :D',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: windows_width_small_size(w),
+                      color: Color(0xFF424648)),
                 )
               ],
             ),
@@ -641,7 +753,19 @@ GetDateStr _getDateStr = GetDateStr();
       child: Stack(
         children: [
           about(),
-          input(),
+          startLoading
+              ? input()
+              : Container(
+                  padding: EdgeInsets.only(
+                    left: w / 3,
+                  ),
+                  height: h,
+                  width: w,
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 600),
+                    child: start ? successful() : loding(),
+                  ),
+                ),
           Positioned(
             bottom: 200,
             right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
@@ -655,7 +779,14 @@ GetDateStr _getDateStr = GetDateStr();
                       number &&
                       partnerFirstName &&
                       partnerLastName &&
-                      isDate) success();
+                      isDate) {
+                    setState(() {
+                      controller.forward();
+                      start = false;
+                      startLoading = false;
+                      success();
+                    });
+                  }
                 },
                 // onHover: (value) {
                 //   print(value);

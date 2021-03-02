@@ -1,3 +1,4 @@
+import 'package:emorgan/screen/buy/buy_loding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,7 @@ import 'provider/menu.dart';
 import 'screen/about/about_animator_screen.dart';
 import 'screen/about/about_dets_page.dart';
 import 'screen/buzzy_product/buzzy_product_screen.dart';
+import 'screen/home/home_booking.dart';
 import 'screen/home/home_screen.dart';
 import 'screen/obi_product/obi_product_screen.dart';
 import 'screen/order/order_account.dart';
@@ -45,7 +47,11 @@ class MyApp extends StatelessWidget {
           //   ),
           // );
           home: HomeScreen()),
-      // home: ObiProductScreen()),
+          // home: HomeBooking()),
+      // home: OrderImformation(
+      //   rightImagePath: "assets/info_buzzy_and_buzzy_right.png",
+      //   leftImagePath: "assets/info_buzzy_and_buzzy_right.png",
+      // )),
     );
   }
 }

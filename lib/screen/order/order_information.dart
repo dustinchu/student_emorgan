@@ -4,7 +4,9 @@ import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/provider/book_state.dart';
 import 'package:emorgan/util/dateString.dart';
 import 'package:emorgan/util/order_page_status.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
 import 'package:provider/provider.dart';
@@ -68,6 +70,26 @@ class _OrderImformationState extends State<OrderImformation>
   TextEditingController birthday2TextEditingController2;
   TextEditingController birthday3TextEditingController2;
   TextEditingController phoneNumberTextEditingController2;
+
+  FocusNode focusNode;
+  FocusNode myFocusNode1;
+  FocusNode myFocusNode2;
+  FocusNode myFocusNode3;
+  FocusNode myFocusNode4;
+  FocusNode myFocusNode5;
+  FocusNode myFocusNode6;
+  FocusNode myFocusNode7;
+  FocusNode myFocusNode8;
+  FocusNode myFocusNode9;
+  FocusNode myFocusNode10;
+  FocusNode myFocusNode11;
+  FocusNode myFocusNode12;
+  FocusNode myFocusNode13;
+  FocusNode myFocusNode14;
+  FocusNode myFocusNode15;
+  FocusNode myFocusNode16;
+  int textFiledIndex = 0;
+  bool _tempKeyPressedOnce = true;
   List<bool> statusList = [
     true,
     true,
@@ -664,8 +686,47 @@ class _OrderImformationState extends State<OrderImformation>
         });
       }
     });
+
+    focusNode = FocusNode();
+    myFocusNode1 = FocusNode();
+    myFocusNode2 = FocusNode();
+    myFocusNode3 = FocusNode();
+    myFocusNode4 = FocusNode();
+    myFocusNode5 = FocusNode();
+    myFocusNode6 = FocusNode();
+    myFocusNode7 = FocusNode();
+    myFocusNode8 = FocusNode();
+    myFocusNode9 = FocusNode();
+    myFocusNode10 = FocusNode();
+    myFocusNode11 = FocusNode();
+    myFocusNode12 = FocusNode();
+    myFocusNode13 = FocusNode();
+    myFocusNode14 = FocusNode();
+    myFocusNode15 = FocusNode();
+    myFocusNode16 = FocusNode();
   }
 
+  @override
+  void dispose() {
+    focusNode.dispose();
+    myFocusNode1.dispose();
+    myFocusNode2.dispose();
+    myFocusNode3.dispose();
+    myFocusNode4.dispose();
+    myFocusNode5.dispose();
+    myFocusNode6.dispose();
+    myFocusNode7.dispose();
+    myFocusNode8.dispose();
+    myFocusNode9.dispose();
+    myFocusNode10.dispose();
+    myFocusNode11.dispose();
+    myFocusNode12.dispose();
+    myFocusNode13.dispose();
+    myFocusNode14.dispose();
+    myFocusNode15.dispose();
+    myFocusNode16.dispose();
+    super.dispose();
+  }
   // bool isStatus() {
   //   return firstNameStatus1 &&
   //       idNumberStatus1 &&
@@ -691,89 +752,147 @@ class _OrderImformationState extends State<OrderImformation>
     double h = MediaQuery.of(context).size.height;
     OrderPageStatus _orderStatus = OrderPageStatus();
     GetDateStr _getDateStr = GetDateStr();
+
     // double h = 900;
     List<bool> colorStatus = [false, false, true, false];
     List<bool> beforColorStatus = [true, true, true, false];
+
+    void textFildOnTap1() => textFiledIndex = 1;
+    void textFildOnTap2() => textFiledIndex = 2;
+    void textFildOnTap3() => textFiledIndex = 3;
+    void textFildOnTap4() => textFiledIndex = 4;
+    void textFildOnTap5() => textFiledIndex = 5;
+    void textFildOnTap6() => textFiledIndex = 6;
+    void textFildOnTap7() => textFiledIndex = 7;
+
+    void textFildOnTap8() => textFiledIndex = 8;
+    void textFildOnTap9() => textFiledIndex = 9;
+    void textFildOnTap10() => textFiledIndex = 10;
+    void textFildOnTap11() => textFiledIndex = 11;
+    void textFildOnTap12() => textFiledIndex = 12;
+    void textFildOnTap13() => textFiledIndex = 13;
+    void textFildOnTap14() => textFiledIndex = 14;
+    void textFildOnTap15() => textFiledIndex = 15;
+    void textFildOnTap16() => textFiledIndex = 16;
+
     Widget infoInput() {
-      return Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/order_left_backround.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          padding: EdgeInsets.only(left: 100, right: 100),
-          height: h,
-          width: w / 2,
-          child: Row(
-            children: [
-              Expanded(child: Container()),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(child: Container()),
-                  Text(
-                    "Personal Information",
-                    style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(color: Color(0xFF424648), fontSize: 32),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  LeftInput(
-                    imageTitle: "Human A",
-                    imagePath: widget.leftImagePath,
-                    firstNameTextEditingController:
-                        firstNameTextEditingController1,
-                    idNumberTextEditingController:
-                        idNumberTextEditingController1,
-                    emailAddressTextEditingController:
-                        emailAddressTextEditingController1,
-                    lastNameTextEditingController:
-                        lastNameTextEditingController1,
-                    birthday1TextEditingController:
-                        birthday1TextEditingController1,
-                    birthday2TextEditingController:
-                        birthday2TextEditingController1,
-                    birthday3TextEditingController:
-                        birthday3TextEditingController1,
-                    phoneNumberTextEditingController:
-                        phoneNumberTextEditingController1,
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 30),
-                    width: 610,
-                    height: 1,
-                    color: Colors.white,
-                  ),
-                  LeftInput(
-                    imageTitle: "Human B",
-                    imagePath: widget.rightImagePath,
-                    firstNameTextEditingController:
-                        firstNameTextEditingController2,
-                    idNumberTextEditingController:
-                        idNumberTextEditingController2,
-                    emailAddressTextEditingController:
-                        emailAddressTextEditingController2,
-                    lastNameTextEditingController:
-                        lastNameTextEditingController2,
-                    birthday1TextEditingController:
-                        birthday1TextEditingController2,
-                    birthday2TextEditingController:
-                        birthday2TextEditingController2,
-                    birthday3TextEditingController:
-                        birthday3TextEditingController2,
-                    phoneNumberTextEditingController:
-                        phoneNumberTextEditingController2,
-                  ),
-                  Expanded(child: Container()),
-                ],
+      return FocusTraversalGroup(
+        policy: WidgetOrderTraversalPolicy(),
+
+        child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/order_left_backround.png"),
+                fit: BoxFit.cover,
               ),
-              Expanded(child: Container()),
-            ],
-          ));
+            ),
+            padding: EdgeInsets.only(left: 100, right: 100),
+            height: h,
+            width: w / 2,
+            child: Row(
+              children: [
+                Expanded(child: Container()),
+                Form(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(child: Container()),
+                      Text(
+                        "Personal Information",
+                        style: GoogleFonts.montserrat(
+                          textStyle:
+                              TextStyle(color: Color(0xFF424648), fontSize: 32),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      LeftInput(
+                        imageTitle: "Human A",
+                        imagePath: widget.leftImagePath,
+                        firstNameTextEditingController:
+                            firstNameTextEditingController1,
+                        idNumberTextEditingController:
+                            idNumberTextEditingController1,
+                        emailAddressTextEditingController:
+                            emailAddressTextEditingController1,
+                        lastNameTextEditingController:
+                            lastNameTextEditingController1,
+                        birthday1TextEditingController:
+                            birthday1TextEditingController1,
+                        birthday2TextEditingController:
+                            birthday2TextEditingController1,
+                        birthday3TextEditingController:
+                            birthday3TextEditingController1,
+                        phoneNumberTextEditingController:
+                            phoneNumberTextEditingController1,
+                        ontap1: textFildOnTap1,
+                        ontap2: textFildOnTap2,
+                        ontap3: textFildOnTap3,
+                        ontap4: textFildOnTap4,
+                        ontap5: textFildOnTap5,
+                        ontap6: textFildOnTap6,
+                        ontap7: textFildOnTap7,
+                        ontap8: textFildOnTap8,
+                        focusNode1: myFocusNode1,
+                        focusNode2: myFocusNode2,
+                        focusNode3: myFocusNode3,
+                        focusNode4: myFocusNode4,
+                        focusNode5: myFocusNode5,
+                        focusNode6: myFocusNode6,
+                        focusNode7: myFocusNode7,
+                        focusNode8: myFocusNode8,
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 30),
+                        width: 610,
+                        height: 1,
+                        color: Colors.white,
+                      ),
+                      LeftInput(
+                        imageTitle: "Human B",
+                        imagePath: widget.rightImagePath,
+                        firstNameTextEditingController:
+                            firstNameTextEditingController2,
+                        idNumberTextEditingController:
+                            idNumberTextEditingController2,
+                        emailAddressTextEditingController:
+                            emailAddressTextEditingController2,
+                        lastNameTextEditingController:
+                            lastNameTextEditingController2,
+                        birthday1TextEditingController:
+                            birthday1TextEditingController2,
+                        birthday2TextEditingController:
+                            birthday2TextEditingController2,
+                        birthday3TextEditingController:
+                            birthday3TextEditingController2,
+                        phoneNumberTextEditingController:
+                            phoneNumberTextEditingController2,
+                        ontap1: textFildOnTap9,
+                        ontap2: textFildOnTap10,
+                        ontap3: textFildOnTap11,
+                        ontap4: textFildOnTap12,
+                        ontap5: textFildOnTap13,
+                        ontap6: textFildOnTap14,
+                        ontap7: textFildOnTap15,
+                        ontap8: textFildOnTap16,
+                        focusNode1: myFocusNode9,
+                        focusNode2: myFocusNode10,
+                        focusNode3: myFocusNode11,
+                        focusNode4: myFocusNode12,
+                        focusNode5: myFocusNode13,
+                        focusNode6: myFocusNode14,
+                        focusNode7: myFocusNode15,
+                        focusNode8: myFocusNode16,
+                      ),
+                      Expanded(child: Container()),
+                    ],
+                  ),
+                ),
+                Expanded(child: Container()),
+              ],
+            )),
+      );
     }
 
     //輸入頁
@@ -885,6 +1004,97 @@ class _OrderImformationState extends State<OrderImformation>
       );
     }
 
+    void _handleKeyEvent(RawKeyEvent event) async {
+      if (event.logicalKey == LogicalKeyboardKey.keyQ) {
+        print('Pressed the "Q" key!');
+      } else {
+        if (kReleaseMode) {
+        } else {
+          if (event.logicalKey.debugName == 'Tab') {
+            if (_tempKeyPressedOnce) {
+              _tempKeyPressedOnce = false;
+              print("index===$textFiledIndex");
+              // if (textFiledIndex == 1) {
+              // } else if (textFiledIndex == 2) myFocusNode3.requestFocus();
+              // switch (textFiledIndex) {
+              //   case 1:
+              //     myFocusNode2.requestFocus();
+              //     print("focus1");
+              //     break;
+              //   case 2:
+              //     myFocusNode3.requestFocus();
+              //         print("focus2");
+              //     break;
+              //   case 3:
+              //     myFocusNode4.requestFocus();    print("focus3");
+              //     break;
+              //   case 4:
+              //     myFocusNode5.requestFocus();
+              //         print("focus4");
+              //     break;
+              //   case 5:
+              //     myFocusNode6.requestFocus();    print("focus5");
+              //     break;
+              //   case 6:
+              //       print("focus6");
+              //     myFocusNode7.requestFocus();
+              //     break;
+              //   case 7:
+              //       print("focus7");
+              //     myFocusNode8.requestFocus();
+              //     break;
+              //   case 8:
+              //       print("focus8");
+              //     myFocusNode9.requestFocus();
+              //     break;
+              //   case 9:
+              //       print("focus9");
+              //     myFocusNode10.requestFocus();
+              //     break;
+              //   case 10:
+              //       print("focus10");
+              //     myFocusNode11.requestFocus();
+              //     break;
+              //   case 11:
+              //       print("focus11");
+              //     myFocusNode12.requestFocus();
+              //     break;
+              //   case 12:
+              //       print("focus12");
+              //     myFocusNode13.requestFocus();
+              //     break;
+              //   case 13:
+              //       print("focus13");
+              //     myFocusNode14.requestFocus();
+              //     break;
+              //   case 14:
+              //       print("focus14");
+              //     myFocusNode15.requestFocus();
+              //     break;
+
+              //   case 15:
+              //       print("focus15");
+              //     myFocusNode16.requestFocus();
+              //     break;
+              //   case 16:
+              //       print("focus16");
+              //     myFocusNode1.requestFocus();
+              //     break;
+              // }
+              await Future.delayed(Duration(milliseconds: 500));
+              _tempKeyPressedOnce = true;
+              if (textFiledIndex == 16)
+                textFiledIndex = 1;
+              else
+                textFiledIndex++;
+              print('Not a Q: Pressed ${event.logicalKey.debugName}');
+              // _tempKeyPressedOnce = true;
+            }
+          }
+        }
+      }
+    }
+
     return Scaffold(
       body: Container(
         width: w,
@@ -911,29 +1121,31 @@ class _OrderImformationState extends State<OrderImformation>
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    if (firstNameStatus1 &&
-                        idNumberStatus1 &&
-                        emailAddressStatus1 &&
-                        lastNameStatus1 &&
-                        birthday1Status1 &&
-                        birthday2Status1 &&
-                        birthday3Status1 &&
-                        phoneNumberStatus1 &&
-                        firstNameStatus2 &&
-                        idNumberStatus2 &&
-                        emailAddressStatus2 &&
-                        lastNameStatus2 &&
-                        birthday1Status2 &&
-                        birthday2Status2 &&
-                        birthday3Status2 &&
-                        phoneNumberStatus2 &&
-                        isDate) success();
+                    myFocusNode8.requestFocus();
+                    // if (firstNameStatus1 &&
+                    //     idNumberStatus1 &&
+                    //     emailAddressStatus1 &&
+                    //     lastNameStatus1 &&
+                    //     birthday1Status1 &&
+                    //     birthday2Status1 &&
+                    //     birthday3Status1 &&
+                    //     phoneNumberStatus1 &&
+                    //     firstNameStatus2 &&
+                    //     idNumberStatus2 &&
+                    //     emailAddressStatus2 &&
+                    //     lastNameStatus2 &&
+                    //     birthday1Status2 &&
+                    //     birthday2Status2 &&
+                    //     birthday3Status2 &&
+                    //     phoneNumberStatus2 &&
+                    //     isDate) success();
                   },
                   // onHover: (value) {
                   //   print(value);
                   // },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     decoration: new BoxDecoration(
                       border: new Border.all(
                           color: firstNameStatus1 &&
@@ -1020,8 +1232,10 @@ class _OrderImformationState extends State<OrderImformation>
                 },
                 clickPage2: () {
                   if (!_orderStatus.getPage2Status) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => OrderPatch()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OrderPatch()));
                   }
                 },
                 colorStatus: colorStatus,
@@ -1208,7 +1422,23 @@ class LeftInput extends StatelessWidget {
       @required this.birthday1TextEditingController,
       @required this.birthday2TextEditingController,
       @required this.birthday3TextEditingController,
-      @required this.phoneNumberTextEditingController})
+      @required this.phoneNumberTextEditingController,
+      @required this.focusNode1,
+      @required this.focusNode2,
+      @required this.focusNode3,
+      @required this.focusNode4,
+      @required this.focusNode5,
+      @required this.focusNode6,
+      @required this.focusNode7,
+      @required this.focusNode8,
+      @required this.ontap1,
+      @required this.ontap2,
+      @required this.ontap3,
+      @required this.ontap4,
+      @required this.ontap5,
+      @required this.ontap6,
+      @required this.ontap7,
+      @required this.ontap8})
       : super(key: key);
   final String imagePath;
   final String imageTitle;
@@ -1220,11 +1450,26 @@ class LeftInput extends StatelessWidget {
   final TextEditingController birthday2TextEditingController;
   final TextEditingController birthday3TextEditingController;
   final TextEditingController phoneNumberTextEditingController;
-
+  final FocusNode focusNode1;
+  final FocusNode focusNode2;
+  final FocusNode focusNode3;
+  final FocusNode focusNode4;
+  final FocusNode focusNode5;
+  final FocusNode focusNode6;
+  final FocusNode focusNode7;
+  final FocusNode focusNode8;
+  final GestureTapCallback ontap1;
+  final GestureTapCallback ontap2;
+  final GestureTapCallback ontap3;
+  final GestureTapCallback ontap4;
+  final GestureTapCallback ontap5;
+  final GestureTapCallback ontap6;
+  final GestureTapCallback ontap7;
+  final GestureTapCallback ontap8;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    Widget edit2(control) {
+    Widget edit2(control, ontap, focusNode) {
       return Container(
         width: 65,
         decoration: new BoxDecoration(
@@ -1233,6 +1478,8 @@ class LeftInput extends StatelessWidget {
         ),
         height: 30,
         child: TextField(
+          focusNode: focusNode,
+          onTap: ontap,
           cursorColor: Color(0xFFCFDDF9),
           controller: control,
           decoration: InputDecoration(
@@ -1245,7 +1492,7 @@ class LeftInput extends StatelessWidget {
       );
     }
 
-    Widget edit(title, control) {
+    Widget edit(title, control, ontap, focusNode) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -1267,8 +1514,13 @@ class LeftInput extends StatelessWidget {
             ),
             height: 30,
             child: TextField(
+              focusNode: focusNode,
+              onTap: ontap,
               cursorColor: Color(0xFFCFDDF9),
               controller: control,
+              onSubmitted: (value) {
+                print("??");
+              },
               decoration: InputDecoration(
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(
@@ -1309,20 +1561,22 @@ class LeftInput extends StatelessWidget {
           children: [
             Container(
                 width: 210,
-                child: edit("First Name", firstNameTextEditingController)),
+                child: edit("First Name", firstNameTextEditingController,
+                    ontap1, focusNode1)),
             SizedBox(
               height: 20,
             ),
             Container(
                 width: 210,
-                child: edit("ID number", idNumberTextEditingController)),
+                child: edit("ID number", idNumberTextEditingController, ontap2,
+                    focusNode2)),
             SizedBox(
               height: 20,
             ),
             Container(
                 width: 210,
-                child:
-                    edit("Email Address", emailAddressTextEditingController)),
+                child: edit("Email Address", emailAddressTextEditingController,
+                    ontap3, focusNode3)),
           ],
         ),
         SizedBox(
@@ -1333,7 +1587,8 @@ class LeftInput extends StatelessWidget {
           children: [
             Container(
                 width: 210,
-                child: edit("Last Name", lastNameTextEditingController)),
+                child: edit("Last Name", lastNameTextEditingController, ontap4,
+                    focusNode4)),
             SizedBox(
               height: 20,
             ),
@@ -1355,15 +1610,18 @@ class LeftInput extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        edit2(birthday1TextEditingController),
+                        edit2(
+                            birthday1TextEditingController, ontap5, focusNode5),
                         SizedBox(
                           width: 7.5,
                         ),
-                        edit2(birthday2TextEditingController),
+                        edit2(
+                            birthday2TextEditingController, ontap6, focusNode6),
                         SizedBox(
                           width: 7.5,
                         ),
-                        edit2(birthday3TextEditingController),
+                        edit2(
+                            birthday3TextEditingController, ontap7, focusNode7),
                       ],
                     )
                   ],
@@ -1376,7 +1634,8 @@ class LeftInput extends StatelessWidget {
             ),
             Container(
                 width: 210,
-                child: edit("Phone Number", phoneNumberTextEditingController)),
+                child: edit("Phone Number", phoneNumberTextEditingController,
+                    ontap8, focusNode8)),
           ],
         ),
       ],

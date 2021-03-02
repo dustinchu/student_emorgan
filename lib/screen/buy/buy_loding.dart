@@ -19,7 +19,7 @@ class _BuylodingState extends State<Buyloding> with TickerProviderStateMixin {
     super.initState();
     //圖片旋轉動畫
     controller =
-        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
     animation = Tween(begin: 0.0, end: 0.75).animate(controller);
 
     /*
@@ -133,8 +133,8 @@ Please check your mailbox.
   Widget loding(w, h) {
     return Center(
       child: Container(
-        width: (w / 4) + 20,
-        height: h / 4,
+        width:500,
+        height: 500,
         color: Colors.white,
         child: Center(
           child: Column(

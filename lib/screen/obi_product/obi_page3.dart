@@ -98,6 +98,7 @@ gland.
                                   color: Color(0xFF424648)),
                             ),
                           ),
+                          SizedBox(height:50),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -110,7 +111,7 @@ gland.
                                   ),
                                 ),
                                     width: w / 5-50,
-                                height: w / 5 + 50,
+                                height: w / 5 ,
                               ),
                               msg("How to Implant Shali Emorgan", human_bMsg, w),
                             ],

@@ -1,6 +1,7 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/common/sendEmail.dart';
+import 'package:emorgan/common/widgets/homeContactAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,17 +13,95 @@ class HomeContact extends StatefulWidget {
 }
 
 class _HomeContactState extends State<HomeContact>
-    with AutomaticKeepAliveClientMixin {
+    with AutomaticKeepAliveClientMixin, TickerProviderStateMixin {
   bool get wantKeepAlive => true;
   bool nameStatus = false;
   bool addressStatus = false;
   bool messageStatus = false;
+  bool loading = false;
+  bool loadingSizeStatus = false;
+  bool start = false;
+  AnimationController controller;
+  Animation<double> animation;
+  HomeContactAnimation containerSizeAnimation;
+  AnimationController containerSizeControlle;
   TextEditingController yourNameTextEditingController;
   TextEditingController yourEmailTextEditingController;
   TextEditingController messageTextEditingController;
+
+  @override
+  void dispose() {
+    super.dispose();
+    containerSizeControlle.dispose();
+  }
+
   @override
   void initState() {
     super.initState();
+
+    //圖片旋轉動畫
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    animation = Tween(begin: 0.0, end: 0.75).animate(controller);
+    controller.addStatusListener((status) async {
+      if (status == AnimationStatus.completed) {
+        setState(() {
+          start = true;
+        });
+        await Future.delayed(Duration(seconds: 2), () {
+          // print('延遲1s执行');
+          setState(() {
+            loadingSizeStatus = false;
+          });
+        });
+
+        setState(() {
+          loading = false;
+        });
+        print("結束completed");
+        controller.reverse();
+        containerSizeControlle.reverse();
+      } else if (status == AnimationStatus.dismissed) {
+        // print("dismissed");
+        controller.forward();
+      } else if (status == AnimationStatus.forward) {
+        // print("啟動forward");
+      } else if (status == AnimationStatus.reverse) {
+        // print("reverse");
+      }
+    });
+
+    containerSizeControlle = new AnimationController(
+        duration: const Duration(milliseconds: 1300), vsync: this);
+    containerSizeControlle.addStatusListener((status) async {
+      if (status == AnimationStatus.completed) {
+        // setState(() {
+        //   start = true;
+        // });
+        // await Future.delayed(Duration(seconds: 2), () {
+        //   // print('延遲1s执行');
+        //   setState(() {
+        //     loading = false;
+        //   });
+        // });
+        await Future.delayed(Duration(seconds: 1), () {
+          // print('延遲1s执行');
+          setState(() {
+            loadingSizeStatus = true;
+          });
+        });
+        controller.forward();
+        // print("結束completed");
+        // containerSizeControlle.reverse();
+      } else if (status == AnimationStatus.dismissed) {
+        // print("dismissed");
+        containerSizeControlle.forward();
+      } else if (status == AnimationStatus.forward) {
+        // print("啟動forward");
+      } else if (status == AnimationStatus.reverse) {
+        // print("reverse");
+      }
+    });
     yourNameTextEditingController = TextEditingController();
     yourEmailTextEditingController = TextEditingController();
     messageTextEditingController = TextEditingController();
@@ -65,7 +144,8 @@ class _HomeContactState extends State<HomeContact>
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
-
+    containerSizeAnimation =
+        HomeContactAnimation(containerSizeControlle, 900.0, 600.0);
     Widget edit(title, control, h, max) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,6 +186,79 @@ class _HomeContactState extends State<HomeContact>
             ),
           ),
         ],
+      );
+    }
+
+    Widget loding() {
+      return Center(
+        child: Container(
+          width: 885,
+          height: 513,
+          color: Colors.white,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RotationTransition(
+                  alignment: Alignment.center,
+                  turns: animation,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/loding_icon.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    width: 60,
+                    height: 60,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Loading…",
+                  style: TextStyle(color: Color(0xFF424648)),
+                )
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    Widget successful() {
+      return Center(
+        child: Container(
+          width: 885,
+          height: 513,
+          color: Colors.white,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/successful.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  width: 80,
+                  height: 80,
+                ),
+                Text(
+                  'Delivered :D',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: windows_width_small_size(w),
+                      color: Color(0xFF424648)),
+                )
+              ],
+            ),
+          ),
+        ),
       );
     }
 
@@ -192,99 +345,119 @@ class _HomeContactState extends State<HomeContact>
                 SizedBox(
                   width: 200,
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 50, horizontal: 50),
-                  margin: EdgeInsets.symmetric(vertical: 50),
-                  color: Colors.white,
-                  width: 900,
-                  height: 600,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: edit("Your Name",
-                                yourNameTextEditingController, 30, 1),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Expanded(
-                            child: edit("Your Email",
-                                yourEmailTextEditingController, 30, 1),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Expanded(
-                        child: edit(
-                            "Message", messageTextEditingController, 300, 14),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          InkWell(
-                            onTap: () async {
-                              if (nameStatus &&
-                                  addressStatus &&
-                                  messageStatus) {
-                                String request = await sendEmail(
-                                    "${yourNameTextEditingController.text}",
-                                    "${yourEmailTextEditingController.text}",
-                                    "${messageTextEditingController.text}");
+                loading
+                    ? AnimatedBuilder(
+                        animation: containerSizeAnimation.controller,
+                        builder: (BuildContext context, Widget child) {
+                          return Container(
+                              color: Colors.white,
+                              width: containerSizeAnimation.sizeBoxWidth.value,
+                              height:
+                                  containerSizeAnimation.sizeBoxHeight.value,
+                              child: loadingSizeStatus
+                                  ? start
+                                      ? successful()
+                                      : loding()
+                                  : Container());
+                        })
+                    : Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+                        margin: EdgeInsets.symmetric(vertical: 50),
+                        color: Colors.white,
+                        width: 900,
+                        height: 600,
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: edit("Your Name",
+                                      yourNameTextEditingController, 30, 1),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Expanded(
+                                  child: edit("Your Email",
+                                      yourEmailTextEditingController, 30, 1),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Expanded(
+                              child: edit("Message",
+                                  messageTextEditingController, 300, 14),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                InkWell(
+                                  onTap: () async {
+                                    if (nameStatus &&
+                                        addressStatus &&
+                                        messageStatus) {
+                                      String request = await sendEmail(
+                                          "${yourNameTextEditingController.text}",
+                                          "${yourEmailTextEditingController.text}",
+                                          "${messageTextEditingController.text}");
 
-                                yourNameTextEditingController.text = "";
-                                yourEmailTextEditingController.text = "";
-                                messageTextEditingController.text = "";
-                                setState(() {
-                                  nameStatus = false;
-                                  addressStatus = false;
-                                  messageStatus = false;
-                                });
-                              }
-                            },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 5),
-                              decoration: new BoxDecoration(
-                                border: new Border.all(
-                                    color: nameStatus &&
-                                            addressStatus &&
-                                            messageStatus
-                                        ? Color(0xFF7A82A7)
-                                        : Color(0xF80364146),
-                                    width: 2), // 邊色寬度
-                                color:
-                                    nameStatus && addressStatus && messageStatus
-                                        ? Color(0xFF7A82A7)
-                                        : Colors.transparent, // 底色
-                                borderRadius:
-                                    new BorderRadius.circular((60)), // 圆角度
-                              ),
-                              child: Text(
-                                "Send Message",
-                                style: GoogleFonts.montserrat(
-                                  textStyle: TextStyle(
+                                      yourNameTextEditingController.text = "";
+                                      yourEmailTextEditingController.text = "";
+                                      messageTextEditingController.text = "";
+                                      setState(() {
+                                        loading = true;
+                                        containerSizeControlle.forward();
+                                        nameStatus = false;
+                                        addressStatus = false;
+                                        messageStatus = false;
+                                      });
+                                    }
+                                  },
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 10, vertical: 5),
+                                    decoration: new BoxDecoration(
+                                      border: new Border.all(
+                                          color: nameStatus &&
+                                                  addressStatus &&
+                                                  messageStatus
+                                              ? Color(0xFF7A82A7)
+                                              : Color(0xF80364146),
+                                          width: 2), // 邊色寬度
                                       color: nameStatus &&
                                               addressStatus &&
                                               messageStatus
-                                          ? Colors.white
-                                          : Color(0x80364146),
-                                      fontSize: windows_width_small_size(w)),
+                                          ? Color(0xFF7A82A7)
+                                          : Colors.transparent, // 底色
+                                      borderRadius: new BorderRadius.circular(
+                                          (60)), // 圆角度
+                                    ),
+                                    child: Text(
+                                      "Send Message",
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                            color: nameStatus &&
+                                                    addressStatus &&
+                                                    messageStatus
+                                                ? Colors.white
+                                                : Color(0x80364146),
+                                            fontSize:
+                                                windows_width_small_size(w)),
+                                      ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ),
-                        ],
+                              ],
+                            )
+                          ],
+                        ),
                       )
-                    ],
-                  ),
-                )
               ],
             ),
           ),

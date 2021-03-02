@@ -61,7 +61,7 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 1100;
+    double h = 1150;
     left1InfoAnimation = DetsIntroAnimation(
       controllerLeft1,
       line_left_width_size(w / 5.7),
@@ -189,6 +189,7 @@ DIMENSIONS
                         //白色區域分成40等分
                         left: (w - ((w / 3 - 150) * 2)) / 40 * 12.3,
                         child: InkWell(
+                           splashColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           onTap: () {},
                           onHover: (value) {
@@ -211,7 +212,8 @@ DIMENSIONS
                         top: ((w / 5 + 50) / 10) * 7.6,
                         //白色區域分成40等分
                         left: (w - ((w / 3 - 150) * 2)) / 40 * 14,
-                        child: InkWell(
+                         child: InkWell(
+                            splashColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           onTap: () {},
                           onHover: (value) {
@@ -235,6 +237,7 @@ DIMENSIONS
                         //白色區域分成40等分
                         right: (w - ((w / 3 - 150) * 2)) / 40 * 14.3,
                         child: InkWell(
+                           splashColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           onTap: () {},
                           onHover: (value) {
@@ -258,6 +261,7 @@ DIMENSIONS
                         //白色區域分成40等分
                         right: (w - ((w / 3 - 150) * 2)) / 40 * 10.5,
                         child: InkWell(
+                          splashColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           onTap: () {},
                           onHover: (value) {
