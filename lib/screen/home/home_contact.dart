@@ -52,6 +52,9 @@ class _HomeContactState extends State<HomeContact>
             "${yourNameTextEditingController.text}",
             "${yourEmailTextEditingController.text}",
             "${messageTextEditingController.text}");
+        yourNameTextEditingController.text = "";
+        yourEmailTextEditingController.text = "";
+        messageTextEditingController.text = "";
         await Future.delayed(Duration(seconds: 2), () {
           setState(() {
             loadingSizeStatus = false;
@@ -406,9 +409,9 @@ class _HomeContactState extends State<HomeContact>
                                     if (nameStatus &&
                                         addressStatus &&
                                         messageStatus) {
-                                      yourNameTextEditingController.text = "";
-                                      yourEmailTextEditingController.text = "";
-                                      messageTextEditingController.text = "";
+                                      // yourNameTextEditingController.text = "";
+                                      // yourEmailTextEditingController.text = "";
+                                      // messageTextEditingController.text = "";
                                       setState(() {
                                         loading = true;
                                         containerSizeControlle.forward();

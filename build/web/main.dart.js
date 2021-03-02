@@ -35348,7 +35348,10 @@ case 2:p=q.a
 p.v(new Z.a5R(p))
 s=5
 return P.U(X.afd(H.c(p.cy.a.a),H.c(p.db.a.a),H.c(p.dx.a.a)),$async$$1)
-case 5:s=6
+case 5:p.cy.sbs(0,"")
+p.db.sbs(0,"")
+p.dx.sbs(0,"")
+s=6
 return P.U(P.Cr(P.aL(0,0,0,2),new Z.a5S(p),t.P),$async$$1)
 case 6:p.v(new Z.a5T(p))
 P.eM("\u7d50\u675fcompleted")
@@ -35459,10 +35462,8 @@ Z.a5E.prototype={
 $0:function(){var s=0,r=P.R(t.P),q=this,p
 var $async$$0=P.M(function(a,b){if(a===1)return P.O(b,r)
 while(true)switch(s){case 0:p=q.a
-if(p.d&&p.e&&p.f){p.cy.sbs(0,"")
-p.db.sbs(0,"")
-p.dx.sbs(0,"")
-p.v(new Z.a5C(p))}return P.P(null,r)}})
+if(p.d&&p.e&&p.f)p.v(new Z.a5C(p))
+return P.P(null,r)}})
 return P.Q($async$$0,r)},
 $S:189}
 Z.a5C.prototype={
