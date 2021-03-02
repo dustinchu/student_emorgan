@@ -766,60 +766,47 @@ class _HomeBookingState extends State<HomeBooking>
                     child: start ? successful() : loding(),
                   ),
                 ),
-          Positioned(
-            bottom: 200,
-            right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: () {
-                  if (firstName &&
-                      lastName &&
-                      address &&
-                      number &&
-                      partnerFirstName &&
-                      partnerLastName &&
-                      isDate) {
-                    setState(() {
-                      controller.forward();
-                      start = false;
-                      startLoading = false;
-                      success();
-                    });
-                  }
-                },
-                // onHover: (value) {
-                //   print(value);
-                // },
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  decoration: new BoxDecoration(
-                    border: new Border.all(
-                        color: firstName &&
-                                lastName &&
-                                address &&
-                                number &&
-                                partnerFirstName &&
-                                partnerLastName &&
-                                isDate
-                            ? Color(0xFF7A82A7)
-                            : Color(0xF80364146),
-                        width: 2), // 邊色寬度
-                    color: firstName &&
+          startLoading
+              ? Positioned(
+                  bottom: 200,
+                  right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () {
+                        if (firstName &&
                             lastName &&
                             address &&
                             number &&
                             partnerFirstName &&
                             partnerLastName &&
-                            isDate
-                        ? Color(0xFF7A82A7)
-                        : Colors.transparent, // 底色底色
-                    borderRadius: new BorderRadius.circular((60)), // 圆角度
-                  ),
-                  child: Text(
-                    "Book NOW",
-                    style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
+                            isDate) {
+                          setState(() {
+                            controller.forward();
+                            start = false;
+                            startLoading = false;
+                            success();
+                          });
+                        }
+                      },
+                      // onHover: (value) {
+                      //   print(value);
+                      // },
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        decoration: new BoxDecoration(
+                          border: new Border.all(
+                              color: firstName &&
+                                      lastName &&
+                                      address &&
+                                      number &&
+                                      partnerFirstName &&
+                                      partnerLastName &&
+                                      isDate
+                                  ? Color(0xFF7A82A7)
+                                  : Color(0xF80364146),
+                              width: 2), // 邊色寬度
                           color: firstName &&
                                   lastName &&
                                   address &&
@@ -827,15 +814,31 @@ class _HomeBookingState extends State<HomeBooking>
                                   partnerFirstName &&
                                   partnerLastName &&
                                   isDate
-                              ? Colors.white
-                              : Color(0x80364146),
-                          fontSize: windows_width_small_size(w)),
+                              ? Color(0xFF7A82A7)
+                              : Colors.transparent, // 底色底色
+                          borderRadius: new BorderRadius.circular((60)), // 圆角度
+                        ),
+                        child: Text(
+                          "Book NOW",
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                color: firstName &&
+                                        lastName &&
+                                        address &&
+                                        number &&
+                                        partnerFirstName &&
+                                        partnerLastName &&
+                                        isDate
+                                    ? Colors.white
+                                    : Color(0x80364146),
+                                fontSize: windows_width_small_size(w)),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-            ),
-          ),
+                )
+              : Container(),
           Positioned(
               top: 50,
               right: 20,

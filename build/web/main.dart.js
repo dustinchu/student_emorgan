@@ -35019,13 +35019,14 @@ f=X.b2(C.z,new L.aN("assets/help.png",k,k))
 s=new A.a4X(j,g).$0()
 if(l.fy)r=new A.a5_(l,g,j,d,c,b,new S.Cv()).$0()
 else r=M.r(k,new G.rd(l.go?new A.a51(g).$0():new A.a50(l).$0(),C.jF,k),k,k,k,j,k,new V.I(g/3,0,0,0),g)
-q=G.A4(g/3*2/4-20)
+if(l.fy){q=G.A4(g/3*2/4-20)
 p=l.d
 o=F.k1(p&&l.e&&l.f&&l.r&&l.x&&l.y&&l.z?new P.j(i):new P.j(h),2)
 n=p&&l.e&&l.f&&l.r&&l.x&&l.y&&l.z?new P.j(i):C.q
 m=K.e4(60)
 p=p&&l.e&&l.f&&l.r&&l.x&&l.y&&l.z?C.l:new P.j(h)
-return M.r(k,T.bJ(C.I,H.b([s,r,T.an(200,M.j8(C.ad,k,R.aW(!1,!0,M.r(k,L.N("Book NOW",k,k,k,B.Z(A.L(k,k,p,k,k,k,k,k,k,k,k,V.bm(g),k,k,k,k,!0,k,k,k,k,k,k)),k),k,k,new S.ap(n,k,o,m,k,k,C.o),k,k,new V.I(10,5,10,5),k),k,!0,k,k,k,k,k,k,k,k,k,new A.a4Y(l),k,k,k),C.R,C.q,0,k,k,k,k,C.aV),k,k,k,q,k,k),T.an(k,B.om(U.iW("assets/icon_up.png",k,k,k),l.a.c,k),k,k,k,20,50,k)],e),C.v,C.C),k,k,new S.ap(k,f,k,k,k,k,C.o),j,k,k,g)}}
+q=T.an(200,M.j8(C.ad,k,R.aW(!1,!0,M.r(k,L.N("Book NOW",k,k,k,B.Z(A.L(k,k,p,k,k,k,k,k,k,k,k,V.bm(g),k,k,k,k,!0,k,k,k,k,k,k)),k),k,k,new S.ap(n,k,o,m,k,k,C.o),k,k,new V.I(10,5,10,5),k),k,!0,k,k,k,k,k,k,k,k,k,new A.a4Y(l),k,k,k),C.R,C.q,0,k,k,k,k,C.aV),k,k,k,q,k,k)}else q=M.r(k,k,k,k,k,k,k,k,k)
+return M.r(k,T.bJ(C.I,H.b([s,r,q,T.an(k,B.om(U.iW("assets/icon_up.png",k,k,k),l.a.c,k),k,k,k,20,50,k)],e),C.v,C.C),k,k,new S.ap(k,f,k,k,k,k,C.o),j,k,k,g)}}
 A.a5A.prototype={
 $0:function(){this.a.z=!0},
 $S:1}
@@ -35302,7 +35303,7 @@ af:function(){var s,r,q=this,p=null
 q.QG()
 s=q.z=G.aT(p,C.mF,0,p,1,p,q)
 r=t.gI
-q.Q=new R.aF(s,new R.az(0,0.75,r),r.i("aF<ax.T>"))
+q.Q=new R.aF(s,new R.az(0,1,r),r.i("aF<ax.T>"))
 s.cj(new Z.a5U(q))
 s=G.aT(p,C.ab,0,p,1,p,q)
 q.cx=s
@@ -35346,8 +35347,10 @@ break
 case 2:p=q.a
 p.v(new Z.a5R(p))
 s=5
+return P.U(X.afd(H.c(p.cy.a.a),H.c(p.db.a.a),H.c(p.dx.a.a)),$async$$1)
+case 5:s=6
 return P.U(P.Cr(P.aL(0,0,0,2),new Z.a5S(p),t.P),$async$$1)
-case 5:p.v(new Z.a5T(p))
+case 6:p.v(new Z.a5T(p))
 P.eM("\u7d50\u675fcompleted")
 p.z.bl(0)
 p.cx.bl(0)
@@ -35456,15 +35459,10 @@ Z.a5E.prototype={
 $0:function(){var s=0,r=P.R(t.P),q=this,p
 var $async$$0=P.M(function(a,b){if(a===1)return P.O(b,r)
 while(true)switch(s){case 0:p=q.a
-s=p.d&&p.e&&p.f?2:3
-break
-case 2:s=4
-return P.U(X.afd(H.c(p.cy.a.a),H.c(p.db.a.a),H.c(p.dx.a.a)),$async$$0)
-case 4:p.cy.sbs(0,"")
+if(p.d&&p.e&&p.f){p.cy.sbs(0,"")
 p.db.sbs(0,"")
 p.dx.sbs(0,"")
-p.v(new Z.a5C(p))
-case 3:return P.P(null,r)}})
+p.v(new Z.a5C(p))}return P.P(null,r)}})
 return P.Q($async$$0,r)},
 $S:189}
 Z.a5C.prototype={

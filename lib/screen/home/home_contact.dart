@@ -42,14 +42,17 @@ class _HomeContactState extends State<HomeContact>
     //圖片旋轉動畫
     controller =
         AnimationController(duration: const Duration(seconds: 2), vsync: this);
-    animation = Tween(begin: 0.0, end: 0.75).animate(controller);
+    animation = Tween(begin: 0.0, end: 1.0).animate(controller);
     controller.addStatusListener((status) async {
       if (status == AnimationStatus.completed) {
         setState(() {
           start = true;
         });
+        String request = await sendEmail(
+            "${yourNameTextEditingController.text}",
+            "${yourEmailTextEditingController.text}",
+            "${messageTextEditingController.text}");
         await Future.delayed(Duration(seconds: 2), () {
-          // print('延遲1s执行');
           setState(() {
             loadingSizeStatus = false;
           });
@@ -58,6 +61,7 @@ class _HomeContactState extends State<HomeContact>
         setState(() {
           loading = false;
         });
+
         print("結束completed");
         controller.reverse();
         containerSizeControlle.reverse();
@@ -402,11 +406,6 @@ class _HomeContactState extends State<HomeContact>
                                     if (nameStatus &&
                                         addressStatus &&
                                         messageStatus) {
-                                      String request = await sendEmail(
-                                          "${yourNameTextEditingController.text}",
-                                          "${yourEmailTextEditingController.text}",
-                                          "${messageTextEditingController.text}");
-
                                       yourNameTextEditingController.text = "";
                                       yourEmailTextEditingController.text = "";
                                       messageTextEditingController.text = "";
