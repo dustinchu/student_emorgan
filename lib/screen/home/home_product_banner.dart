@@ -123,7 +123,7 @@ Container(
   alignment: Alignment.bottomCenter,
           height: 200,
           width: w,
-          margin: EdgeInsets.only(top: 1200),
+          margin: EdgeInsets.only(top: 1100),
           padding: widget.isLeft
               ? EdgeInsets.only( left: w / 3)
               : EdgeInsets.only( right: w / 3),
@@ -133,8 +133,8 @@ Container(
                   child: Container(
 
 
-                    width: 249,
-                    height: 52,
+                    width: 105,
+                    height: 30,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/html_3dview_icon.png"),

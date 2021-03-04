@@ -184,19 +184,17 @@ Please check your mailbox.
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              margin: EdgeInsets.only(left: 50, right: 10),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/logo.png"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              width: 30,
-              height: 30,
-            ),
-            Text("Emorgan",
-                style: TextStyle(color: Color(0xFF7A82A7), fontSize: 32))
+             Container(
+                        margin: EdgeInsets.only(left: 50, right: 10),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/logo.png"),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        width: 270,
+                        height: 40,
+                      ),
           ],
         ),
       ),

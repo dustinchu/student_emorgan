@@ -1,6 +1,6 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 class Product_Right_hover extends StatelessWidget {
   final String title;
@@ -20,7 +20,7 @@ class Product_Right_hover extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(top:10),
+              margin: EdgeInsets.only(top: 10),
               width: lineWidth,
               height: 1,
               color: Color(0xFF424648),
@@ -35,16 +35,18 @@ class Product_Right_hover extends StatelessWidget {
                 Text(
                   title,
                   textAlign: TextAlign.start,
-                  style: TextStyle(
-                      fontSize: product_width_medium_size(w),
-                      color: Color(0xFF424648)),
+                  style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          color: Color(0xFF424648),
+                          fontSize: product_width_medium_size(w))),
                 ),
                 Text(
                   body,
                   textAlign: TextAlign.start,
-                  style: TextStyle(
-                      fontSize: product_width_small_size(w),
-                      color: Color(0xFF424648)),
+                  style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          color: Color(0xFF424648),
+                          fontSize: product_width_small_size(w))),
                 ),
               ],
             ),

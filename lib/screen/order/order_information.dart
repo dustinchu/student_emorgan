@@ -1549,6 +1549,9 @@ class LeftInput extends StatelessWidget {
                     color: Color(0xFF424648)),
               ),
             ),
+             SizedBox(
+                        height: 20,
+                      ),
             new Image.asset(
               imagePath,
               fit: BoxFit.fill,

@@ -249,7 +249,7 @@ facial expression.''',
                             // lineWidth:
                             //     line_page1_left_width_size(w / 7.8),
                             title: "Microphone",
-                            body: '''\nTCollecting user’s voice and
+                            body: '''\nCollecting user’s voice and
 transfer it into vibrate
 data.''',
                           );

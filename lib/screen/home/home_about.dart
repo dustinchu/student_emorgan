@@ -101,14 +101,23 @@ class _HomeAboutState extends State<HomeAbout>
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                           
                             Text("Wen-Chien,Wu",
-                                style: TextStyle(
-                                    color: Color(0xFF324146),
-                                    fontSize: windows_width_large_size(w))),
+                                style:  GoogleFonts.montserrat(
+                                            textStyle: TextStyle(
+                                              fontSize:
+                                                 windows_width_large_size(w),
+                                              color:Color(0xFF324146),
+                                            ),
+                                          ),),
                             Text("Emorgan Designer",
-                                style: TextStyle(
-                                    color: Color(0x80424648),
-                                    fontSize: windows_width_medium_size(w))),
+                                style:  GoogleFonts.montserrat(
+                                            textStyle: TextStyle(
+                                              fontSize:
+                                                 windows_width_medium_size(w),
+                                              color:Color(0x80424648),
+                                            ),
+                                          ),),
                           ],
                         ),
                       ),
@@ -118,13 +127,21 @@ class _HomeAboutState extends State<HomeAbout>
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text("Xi-Le, Huang",
-                                style: TextStyle(
-                                    color: Color(0xFF324146),
-                                    fontSize: windows_width_large_size(w))),
+                                style: GoogleFonts.montserrat(
+                                            textStyle: TextStyle(
+                                              fontSize:
+                                                 windows_width_large_size(w),
+                                              color:Color(0xFF324146),
+                                            ),
+                                          ),),
                             Text("Emorgan Designer",
-                                style: TextStyle(
-                                    color: Color(0x80424648),
-                                    fontSize: windows_width_medium_size(w))),
+                                style: GoogleFonts.montserrat(
+                                            textStyle: TextStyle(
+                                              fontSize:
+                                                 windows_width_medium_size(w),
+                                              color:Color(0x80424648),
+                                            ),
+                                          ),),
                           ],
                         ),
                       ),
@@ -191,7 +208,7 @@ spiritually assisted.''',
                       height: 50,
                     ),
                     Text(
-                      "emorgancreation@gmail.com",
+                      "Participation",
                       style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
                               color: Color(0xFF7A82A7),
@@ -216,7 +233,7 @@ spiritually assisted.''',
                     SizedBox(
                       height: 50,
                     ),
-                    iconText("assets/email.png", "Participation"),
+                    iconText("assets/email.png", "emorgancreation@gmail.com"),
                     SizedBox(
                       height: 10,
                     ),

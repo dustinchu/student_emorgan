@@ -1,12 +1,13 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 class Product_left_hover extends StatelessWidget {
   final String title;
   final String body;
   final double lineWidth;
-  const Product_left_hover({Key key, this.title, this.body,this.lineWidth}) : super(key: key);
+  const Product_left_hover({Key key, this.title, this.body, this.lineWidth})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +22,10 @@ class Product_left_hover extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.start,
-              style: TextStyle(
-                  fontSize: product_width_medium_size(w),
-                  color: Color(0xFF424648)),
+              style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                      color: Color(0xFF424648),
+                      fontSize: product_width_medium_size(w))),
             ),
             SizedBox(
               width: 10,
@@ -38,8 +40,10 @@ class Product_left_hover extends StatelessWidget {
         Text(
           body,
           textAlign: TextAlign.start,
-          style: TextStyle(
-              fontSize: product_width_small_size(w), color: Color(0xFF424648)),
+          style: GoogleFonts.montserrat(
+              textStyle: TextStyle(
+                  color: Color(0xFF424648),
+                  fontSize: product_width_small_size(w))),
         ),
       ],
     );
