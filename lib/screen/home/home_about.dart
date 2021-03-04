@@ -191,7 +191,7 @@ spiritually assisted.''',
                       height: 50,
                     ),
                     Text(
-                      "Participation",
+                      "emorgancreation@gmail.com",
                       style: GoogleFonts.montserrat(
                           textStyle: TextStyle(
                               color: Color(0xFF7A82A7),

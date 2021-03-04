@@ -135,19 +135,22 @@ class _HomeMenuState extends State<HomeMenu> with TickerProviderStateMixin {
   }
 
   Widget menuItem(String value, VoidCallback ontap, bool isColor) {
-    return InkWell(
-      onTap: ontap,
-      child: Container(
-        padding: EdgeInsets.all(0),
-        height: 20,
-        margin: EdgeInsets.only(bottom: 5),
-        alignment: Alignment.centerLeft,
-        child: Text(
-          "$value",
-          style: GoogleFonts.montserrat(
-              textStyle: TextStyle(
-                  fontSize: 12,
-                  color: isColor ? Color(0xFF424648) : Color(0x80424648))),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: ontap,
+        child: Container(
+          padding: EdgeInsets.all(0),
+          height: 20,
+          margin: EdgeInsets.only(bottom: 5),
+          alignment: Alignment.centerLeft,
+          child: Text(
+            "$value",
+            style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                    fontSize: 12,
+                    color: isColor ? Color(0xFF424648) : Color(0x80424648))),
+          ),
         ),
       ),
     );

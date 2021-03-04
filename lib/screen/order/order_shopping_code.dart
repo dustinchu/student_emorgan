@@ -2,6 +2,7 @@ import 'package:emorgan/screen/home/home_screen.dart';
 import 'package:emorgan/util/order_page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'order_appbar.dart';
 import 'order_patch.dart';
@@ -115,11 +116,12 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                                 onTap: () {
                                   if (editStatus) {
                                     _orderStatus.setPage1Status(false);
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                OrderPatch()));
+                                    Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: OrderPatch()));
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) =>
+                                    //             OrderPatch()));
                                   }
                                 },
                                 child: Container(

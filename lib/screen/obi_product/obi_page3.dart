@@ -14,13 +14,8 @@ class ObiPage3 extends StatelessWidget {
     double h = 900;
     String human_aMsg = '''The doctor will simulate your expression in any
 state with your 3D model on the computer first.
-
-Then decide the final position according to the
-feeling of placing it directly on your face and the
-product functions.''';
-    String human_bMsg = '''The Shali organ will be implanted on the salivary
-gland.
-
+Then decide the final position according to the feeling of placing it directly on your face and the product functions.''';
+    String human_bMsg = '''The Shali organ will be implanted on the salivary gland.
 ''';
     double lineTop(w) {
       if (w > 1600)

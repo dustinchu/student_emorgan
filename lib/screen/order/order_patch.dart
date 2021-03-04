@@ -2,6 +2,7 @@ import 'package:emorgan/provider/account.dart';
 import 'package:emorgan/util/order_page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import 'order_appbar.dart';
@@ -376,10 +377,11 @@ class _OrderPatchState extends State<OrderPatch> {
               child: OrderAppbar(
                 clickPage1: () {
                   if (!_orderStatus.getPage1Status) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OrderShoppingCode()));
+                     Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: OrderShoppingCode()));
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => OrderShoppingCode()));
                   }
                 },
                 beforStatus:beforcolorStatus,
@@ -423,13 +425,17 @@ class _OrderPatchState extends State<OrderPatch> {
                   onTap: () {
                     if (leftClick != "" && rightClick != "") {
                       _orderStatus.setPage2Status(false);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => OrderImformation(
+                      Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: OrderImformation(
                                     leftImagePath: pushPageImagePathLeft,
                                     rightImagePath: pushPageImagePathRight,
                                   )));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => OrderImformation(
+                      //               leftImagePath: pushPageImagePathLeft,
+                      //               rightImagePath: pushPageImagePathRight,
+                      //             )));
                     }
                   },
                   child: Container(

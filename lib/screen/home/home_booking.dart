@@ -768,7 +768,7 @@ class _HomeBookingState extends State<HomeBooking>
                 ),
           startLoading
               ? Positioned(
-                  bottom: 200,
+                  bottom: 600,
                   right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
                   child: Material(
                     color: Colors.transparent,
@@ -819,7 +819,7 @@ class _HomeBookingState extends State<HomeBooking>
                           borderRadius: new BorderRadius.circular((60)), // 圆角度
                         ),
                         child: Text(
-                          "Book NOW",
+                          "Book Now",
                           style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
                                 color: firstName &&

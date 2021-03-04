@@ -239,8 +239,8 @@ be some problems with you and your partner.
 
 You have tried many methods, but they were not satisfied.
 
-We suggest that you and your partner can talk to our psychological counselors first, they will
-nhelp you with relationship and emotion problems, and  also make a serious decision
+We suggest that you and your partner talk to our psychological counselors first, they will
+help you with relationship and emotion problems, and  also make a serious decision
 whether you need emorgans and help you grow in understanding each other.
                   ''',
                 style: GoogleFonts.montserrat(

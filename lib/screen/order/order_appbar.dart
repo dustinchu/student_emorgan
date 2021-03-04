@@ -62,22 +62,22 @@ class OrderAppbar extends StatelessWidget {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("assets/logo.png"),
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
                           ),
                         ),
-                        width: 30,
-                        height: 30,
+                        width: 270,
+                        height: 40,
                       ),
-                      Container(
-                        padding: EdgeInsets.only(bottom: 15),
-                        child: Text(
-                          "Emorgan",
-                          style: TextStyle(
-                              fontFamily: 'Beware',
-                              color: Color(0xFF7A82A7),
-                              fontSize: 34),
-                        ),
-                      ),
+                      // Container(
+                      //   padding: EdgeInsets.only(bottom: 15),
+                      //   child: Text(
+                      //     "Emorgan",
+                      //     style: TextStyle(
+                      //         fontFamily: 'Beware',
+                      //         color: Color(0xFF7A82A7),
+                      //         fontSize: 34),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),

@@ -52,16 +52,18 @@ class _HomeScreenState extends State<HomeScreen> {
   double pageAnimate = 0;
   bool scrollStatus = true;
   void scrollPageNext(h) {
-    if (pageIndex == 0)
-      pageAnimate += 1500 + ((h - 1400) / 2);
-    else
+    if (pageIndex <= 0) {
+      if (h < 1500) {
+        pageAnimate += 1500 + ((1500 - h) / 2);
+      } else
+        pageAnimate += 1500 + ((h - 1500) / 2);
+    } else
       pageAnimate += 1500;
-
-    print("index ==$pageIndex   animate==$pageAnimate");
+    pageIndex += 1;
+    print("next index ==$pageIndex   animate==$pageAnimate");
     // pageAnimate += 1300;
     // else
     // pageAnimate += 1700;
-    pageIndex += 1;
 
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
@@ -72,8 +74,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void scrollPageBack(h) {
     pageIndex -= 1;
-    pageAnimate -= 1500;
-    print("index ==$pageIndex   animate==$pageAnimate");
+    if (pageIndex == 0) {
+      pageAnimate = 0;
+      pageIndex = 0;
+    } else {
+      pageAnimate -= 1500;
+    }
+    
+    print("back index ==$pageIndex   animate==$pageAnimate");
     // pageAnimate -= 1700;
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(pageAnimate,
@@ -101,6 +109,19 @@ class _HomeScreenState extends State<HomeScreen> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
 
+    double returnMoveHeight(index){
+      double moveHeight=0;
+       if (h < 1500) {
+        moveHeight += 1500 + ((1500 - h) / 2);
+      } else
+        moveHeight += 1500 + ((h - 1500) / 2);
+
+        if(index>1){
+          moveHeight += 1500*(index-1);
+        }
+        
+        return moveHeight;
+    }
     void shaliLearn() {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => ShaliProductScreen()));
@@ -123,7 +144,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuEmorgan() {
-      pageAnimate = 1500 + ((h - 1500) / 2);
+      pageAnimate = returnMoveHeight(1);
+    // pageAnimate += 1500 + ((1500 - h) / 2);
       _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
       pageIndex = 1;
@@ -131,7 +153,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuProducts() {
-      pageAnimate = 3000 + ((h - 1400) / 2);
+       pageAnimate = returnMoveHeight(2);
+      // pageAnimate = 3000 + ((h - 1500) / 2);
       _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
       pageIndex = 2;
@@ -139,7 +162,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuPurchase() {
-      pageAnimate = 7500 + ((h - 1400) / 2);
+       pageAnimate = returnMoveHeight(5);
+      // pageAnimate = 7500 + ((h - 1500) / 2);
       _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
       pageIndex = 5;
@@ -147,7 +171,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuBook() {
-      pageAnimate = 9000 + ((h - 1400) / 2);
+       pageAnimate = returnMoveHeight(6);
+      // pageAnimate = 9000 + ((h - 1500) / 2);
       _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
       pageIndex = 6;
@@ -155,7 +180,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuUser() {
-      pageAnimate = 10500 + ((h - 1400) / 2);
+      // pageAnimate = 10500 + ((h - 1500) / 2);
+       pageAnimate = returnMoveHeight(7);
       _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
       pageIndex = 7;
@@ -163,7 +189,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuContact() {
-      pageAnimate = 12000 + ((h - 1400) / 2);
+      // pageAnimate = 12000 + ((h - 1500) / 2);
+       pageAnimate = returnMoveHeight(8);
       _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
       pageIndex = 8;
@@ -171,7 +198,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuAbout() {
-      pageAnimate = 13500 + ((h - 1400) / 2);
+      // pageAnimate = 13500 + ((h - 1500) / 2);
+       pageAnimate = returnMoveHeight(9);
       _scrollController.animateTo(pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
       pageIndex = 9;
@@ -187,7 +215,6 @@ class _HomeScreenState extends State<HomeScreen> {
             width: w,
             child: Listener(
               onPointerUp: (details) {
-                // upBtn();
                 print("up");
               },
               onPointerSignal: (pointerSignal) async {

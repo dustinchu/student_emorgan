@@ -63,6 +63,7 @@ class _HomeProductBannerState extends State<HomeProductBanner>
     double h = 1500;
     return Stack(
       children: [
+        
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -118,6 +119,46 @@ class _HomeProductBannerState extends State<HomeProductBanner>
           ),
         ),
         // backround(w, h),
+Container(
+  alignment: Alignment.bottomCenter,
+          height: 200,
+          width: w,
+          margin: EdgeInsets.only(top: 1200),
+          padding: widget.isLeft
+              ? EdgeInsets.only( left: w / 3)
+              : EdgeInsets.only( right: w / 3),
+          child: widget.status
+              ? Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+
+
+                    width: 249,
+                    height: 52,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/html_3dview_icon.png"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                )
+              : Container(),
+        ),
+        // Align(
+        //   alignment: Alignment.bottomCenter,
+        //   child: Positioned(
+        //     bottom: 200,
+        //     child: Container(
+        //       decoration: BoxDecoration(
+        //         image: DecorationImage(
+        //           image: AssetImage("assets/html_3dview_icon.png"),
+        //           fit: BoxFit.fitHeight,
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ),
 
         widget.isLeft
             ? Positioned(

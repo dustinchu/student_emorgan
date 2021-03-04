@@ -26,10 +26,7 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(
-        
         children: [
-          
-         
           Container(
             height: h,
             width: w,
@@ -56,25 +53,21 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
                   ),
                   ProductCircle(),
                   ObiPage2(),
-
                   SizedBox(
                     height: 100,
                   ),
                   ProductCircle(),
-                     SizedBox(
+                  SizedBox(
                     height: 100,
                   ),
-
                   ObiPage3(),
-
-                     SizedBox(
+                  SizedBox(
                     height: 100,
                   ),
                   ProductCircle(),
-                  
                   ObiPage4(),
                   ProductCircle(),
-                     SizedBox(
+                  SizedBox(
                     height: 100,
                   ),
                   ObiPage5(),
@@ -82,7 +75,58 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
               ),
             ),
           ),
-           Positioned(
+          
+          Positioned(
+            left: 40,
+            top: h / 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Voice to Vibrate",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 22, color: Color(0xFF364146))),
+                ),
+                Text(
+                  "Obi",
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 32, color: Color(0xFF364146))),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+              right: 40,
+              top: 40,
+              child: Material(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OrderShoppingCode()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: new BoxDecoration(
+                      border: new Border.all(
+                          color: Color(0xFF7A82A7), width: 4), // 邊色寬度
+                      color: Color(0xFF7A82A7),
+                      borderRadius: new BorderRadius.circular((60)), // 圆角度
+                    ),
+                    child: Text(
+                      "ORDER NOW",
+                      style: GoogleFonts.montserrat(
+                        textStyle: TextStyle(
+                            fontSize: windows_width_small_size(w) - 1,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+              )),Positioned(
             top: 40,
             left: 40,
             child: InkWell(
@@ -108,55 +152,6 @@ class _ObiProductScreenState extends State<ObiProductScreen> {
               ),
             ),
           ),
-          Positioned(
-            left: 40,
-            top: h / 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Voice to Vibrate",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(fontSize: 22, color: Color(0xFF364146))),
-                ),
-                Text(
-                  "Obi",
-                  style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(fontSize: 32, color: Color(0xFF364146))),
-                ),
-              ],
-            ),
-          ),
-           Positioned(
-              right: 40,
-              top: 40,
-              child: Material(
-                child: InkWell(
-                  onTap: () {
-                      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => OrderShoppingCode()));
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: new BoxDecoration(
-                      border: new Border.all(
-                          color: Color(0xFF7A82A7), width: 4), // 邊色寬度
-                      color: Color(0xFF7A82A7),
-                      borderRadius: new BorderRadius.circular((60)), // 圆角度
-                    ),
-                    child: Text(
-                      "ORDER NOW",
-                      style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: windows_width_small_size(w) - 1,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-              )),
         ],
       ),
     );

@@ -5,6 +5,7 @@ import 'package:emorgan/provider/account.dart';
 import 'package:emorgan/screen/buy/buy_loding.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import 'order_appbar.dart';
@@ -54,8 +55,9 @@ class _OrderAccountState extends State<OrderAccount> {
       ccvTextEditingController.text = "";
       billingTextEditingController.text = "";
     });
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Buyloding()));
+        Navigator.push(context, PageTransition(type: PageTransitionType.fade, child:  Buyloding()));
+    // Navigator.push(
+    //     context, MaterialPageRoute(builder: (context) => Buyloding()));
   }
 
   @override

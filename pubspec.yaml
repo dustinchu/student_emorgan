@@ -33,6 +33,7 @@ dependencies:
   google_fonts: ^1.1.2
   intl: ^0.16.1
   mailer: ^3.3.0
+  page_transition: ^1.1.7+6
   pin_input_text_field: ^3.3.0
   pointer_interceptor: ^0.8.0+2
   provider: ^4.3.3

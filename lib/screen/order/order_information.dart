@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
 import 'package:provider/provider.dart';
 
@@ -304,8 +305,9 @@ class _OrderImformationState extends State<OrderImformation>
         ];
       }
     });
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => OrderAccount()));
+    Navigator.push(context, PageTransition(type: PageTransitionType.fade, child:  OrderAccount()));
+    // Navigator.push(
+    //     context, MaterialPageRoute(builder: (context) => OrderAccount()));
   }
 
   @override
@@ -1121,24 +1123,24 @@ class _OrderImformationState extends State<OrderImformation>
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    myFocusNode8.requestFocus();
-                    // if (firstNameStatus1 &&
-                    //     idNumberStatus1 &&
-                    //     emailAddressStatus1 &&
-                    //     lastNameStatus1 &&
-                    //     birthday1Status1 &&
-                    //     birthday2Status1 &&
-                    //     birthday3Status1 &&
-                    //     phoneNumberStatus1 &&
-                    //     firstNameStatus2 &&
-                    //     idNumberStatus2 &&
-                    //     emailAddressStatus2 &&
-                    //     lastNameStatus2 &&
-                    //     birthday1Status2 &&
-                    //     birthday2Status2 &&
-                    //     birthday3Status2 &&
-                    //     phoneNumberStatus2 &&
-                    //     isDate) success();
+                    // myFocusNode8.requestFocus();
+                    if (firstNameStatus1 &&
+                        idNumberStatus1 &&
+                        emailAddressStatus1 &&
+                        lastNameStatus1 &&
+                        birthday1Status1 &&
+                        birthday2Status1 &&
+                        birthday3Status1 &&
+                        phoneNumberStatus1 &&
+                        firstNameStatus2 &&
+                        idNumberStatus2 &&
+                        emailAddressStatus2 &&
+                        lastNameStatus2 &&
+                        birthday1Status2 &&
+                        birthday2Status2 &&
+                        birthday3Status2 &&
+                        phoneNumberStatus2 &&
+                        isDate) success();
                   },
                   // onHover: (value) {
                   //   print(value);
@@ -1224,18 +1226,20 @@ class _OrderImformationState extends State<OrderImformation>
               child: OrderAppbar(
                 clickPage1: () {
                   if (!_orderStatus.getPage1Status) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OrderShoppingCode()));
+                     Navigator.push(context, PageTransition(type: PageTransitionType.fade, child:  OrderShoppingCode()));
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => OrderShoppingCode()));
                   }
                 },
                 clickPage2: () {
                   if (!_orderStatus.getPage2Status) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => OrderPatch()));
+                      Navigator.push(context, PageTransition(type: PageTransitionType.fade, child:  OrderPatch()));
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => OrderPatch()));
                   }
                 },
                 colorStatus: colorStatus,
