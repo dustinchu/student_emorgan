@@ -412,14 +412,14 @@ class _HomeBookingState extends State<HomeBooking>
       return Positioned(
           left: 0,
           top: 0,
-          child: Padding(
-            padding: const EdgeInsets.only(top:200),
-            child: Container(
-              padding: EdgeInsets.only(
-                  top: windowsSizeboxHightSize(200), left: 30, right: 10),
-              height: h,
-              width: w / 3,
-              color: Colors.white,
+          child: Container(
+            padding: EdgeInsets.only(
+                top: windowsSizeboxHightSize(200), left: 30, right: 10),
+            height: h,
+            width: w / 3,
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.only(top:200),
               child: Row(
                 children: [
                   Expanded(child: Container()),
