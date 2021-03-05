@@ -249,7 +249,7 @@ spiritually assisted.''',
                 ),
               ),
               Positioned(
-                bottom: 100,
+                bottom: 200,
                 child: Text(
                   "© 2020-2047 EMORGAN",
                   style: GoogleFonts.montserrat(
