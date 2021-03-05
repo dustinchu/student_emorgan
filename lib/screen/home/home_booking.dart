@@ -412,87 +412,90 @@ class _HomeBookingState extends State<HomeBooking>
       return Positioned(
           left: 0,
           top: 0,
-          child: Container(
-            padding: EdgeInsets.only(
-                top: windowsSizeboxHightSize(200), left: 30, right: 10),
-            height: h,
-            width: w / 3,
-            color: Colors.white,
-            child: Row(
-              children: [
-                Expanded(child: Container()),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text("Book a Psychological Counseling",
+          child: Padding(
+            padding: const EdgeInsets.only(top:200),
+            child: Container(
+              padding: EdgeInsets.only(
+                  top: windowsSizeboxHightSize(200), left: 30, right: 10),
+              height: h,
+              width: w / 3,
+              color: Colors.white,
+              child: Row(
+                children: [
+                  Expanded(child: Container()),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text("Book a Psychological Counseling",
+                          style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                  fontSize: windows_width_small_size(w),
+                                  color: Color(0xFF364146)))
+                          // style: TextStyle(
+                          //     fontSize: windows_width_small_size(w),
+                          //     color: Color(0xFF364146)),
+                          ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Professional Assistance",
                         style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                                fontSize: windows_width_small_size(w),
-                                color: Color(0xFF364146)))
-                        // style: TextStyle(
-                        //     fontSize: windows_width_small_size(w),
-                        //     color: Color(0xFF364146)),
+                          textStyle: TextStyle(
+                              fontSize: windows_width_large_size(w),
+                              color: Color(0xFF364146)),
                         ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      "Professional Assistance",
-                      style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: windows_width_large_size(w),
-                            color: Color(0xFF364146)),
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "Choose a time for counseling.",
-                      style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: windows_width_small_size(w),
-                            color: Color(0xFF364146)),
+                      SizedBox(
+                        height: 20,
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "It will be a new way to improve\na relationship.",
-                      style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: windows_width_small_size(w),
-                            color: Color(0xFF364146)),
+                      Text(
+                        "Choose a time for counseling.",
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: windows_width_small_size(w),
+                              color: Color(0xFF364146)),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "After a series of counselors,\nthe psychologist will decide if\nyou and your partner need to\ntransplant emorgans.\n",
-                      style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: windows_width_small_size(w),
-                            color: Color(0xFF364146)),
+                      SizedBox(
+                        height: 20,
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "If the answer is yes,\nyou’ll get a purchase code.\nYou can get back to here to\ndecide which emorgan is more\nsuitable for you and your partner.\n",
-                      style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: windows_width_small_size(w),
-                            color: Color(0xFF364146)),
+                      Text(
+                        "It will be a new way to improve\na relationship.",
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: windows_width_small_size(w),
+                              color: Color(0xFF364146)),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Expanded(child: Container()),
-              ],
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "After a series of counselors,\nthe psychologist will decide if\nyou and your partner need to\ntransplant emorgans.\n",
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: windows_width_small_size(w),
+                              color: Color(0xFF364146)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "If the answer is yes,\nyou’ll get a purchase code.\nYou can get back to here to\ndecide which emorgan is more\nsuitable for you and your partner.\n",
+                        style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              fontSize: windows_width_small_size(w),
+                              color: Color(0xFF364146)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Expanded(child: Container()),
+                ],
+              ),
             ),
           ));
     }
@@ -529,139 +532,142 @@ class _HomeBookingState extends State<HomeBooking>
         // /3=白色頁面超過白色頁面為起點
         left: w / 3,
         top: 0,
-        child: Container(
-          height: h,
-          width: w / 3 * 2,
+        child: Padding(
+          padding: const EdgeInsets.only(top:200),
           child: Container(
-            padding: EdgeInsets.only(
-                left: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
-                right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
-                top: windowsSizeboxHightSize(200)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Enter Booking Detail",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                      fontSize: windows_width_large_size(w),
-                      color: Color(0xFF424648),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: windowsSizeboxHightSize(30),
-                ),
-                Row(children: rowEditText1),
-                SizedBox(
-                  height: windowsSizeboxHightSize(20),
-                ),
-                Row(children: rowEditText2),
-                SizedBox(
-                  height: windowsSizeboxHightSize(20),
-                ),
-                Container(
-                  height: 2,
-                  width: w,
-                  color: Colors.white,
-                ),
-                SizedBox(
-                  height: windowsSizeboxHightSize(20),
-                ),
-                Row(children: rowEditText3),
-                SizedBox(
-                  height: windowsSizeboxHightSize(20),
-                ),
-                Container(
-                  height: 2,
-                  width: w,
-                  color: Colors.white,
-                ),
-                SizedBox(
-                  height: windowsSizeboxHightSize(20),
-                ),
-                Text(
-                  "Booking Date",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
-                        fontSize: windows_width_medium_size(w),
-                        color: Color(0xFF424648)),
-                  ),
-                ),
-                SizedBox(
-                  height: windowsSizeboxHightSize(15),
-                ),
-                Text(
-                  "2021",
-                  style: GoogleFonts.montserrat(
-                    textStyle: TextStyle(
+            height: h,
+            width: w / 3 * 2,
+            child: Container(
+              padding: EdgeInsets.only(
+                  left: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
+                  right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
+                  top: windowsSizeboxHightSize(200)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Enter Booking Detail",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
                         fontSize: windows_width_large_size(w),
-                        color: Color(0xFF424648)),
+                        color: Color(0xFF424648),
+                      ),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: windowsSizeboxHightSize(15),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    new DateWidget(
-                      title: _getDateStr.getDateStr(1),
-                      dateStr: _getDateStr.getDateNumStr(1),
-                      index: 0,
-                      openStatus: statusList[0],
-                      upBtn: dateBtn0,
-                      selectedDate: selected0,
-                      items: selectedList[0],
+                  SizedBox(
+                    height: windowsSizeboxHightSize(30),
+                  ),
+                  Row(children: rowEditText1),
+                  SizedBox(
+                    height: windowsSizeboxHightSize(20),
+                  ),
+                  Row(children: rowEditText2),
+                  SizedBox(
+                    height: windowsSizeboxHightSize(20),
+                  ),
+                  Container(
+                    height: 2,
+                    width: w,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    height: windowsSizeboxHightSize(20),
+                  ),
+                  Row(children: rowEditText3),
+                  SizedBox(
+                    height: windowsSizeboxHightSize(20),
+                  ),
+                  Container(
+                    height: 2,
+                    width: w,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    height: windowsSizeboxHightSize(20),
+                  ),
+                  Text(
+                    "Booking Date",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          fontSize: windows_width_medium_size(w),
+                          color: Color(0xFF424648)),
                     ),
-                    new DateWidget(
-                      title: _getDateStr.getDateStr(2),
-                      dateStr: _getDateStr.getDateNumStr(2),
-                      index: 1,
-                      openStatus: statusList[1],
-                      upBtn: dateBtn1,
-                      selectedDate: selected1,
-                      items: selectedList[1],
+                  ),
+                  SizedBox(
+                    height: windowsSizeboxHightSize(15),
+                  ),
+                  Text(
+                    "2021",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                          fontSize: windows_width_large_size(w),
+                          color: Color(0xFF424648)),
                     ),
-                    new DateWidget(
-                      title: _getDateStr.getDateStr(3),
-                      dateStr: _getDateStr.getDateNumStr(3),
-                      index: 2,
-                      openStatus: statusList[2],
-                      upBtn: dateBtn2,
-                      selectedDate: selected2,
-                      items: selectedList[2],
-                    ),
-                    new DateWidget(
-                      title: _getDateStr.getDateStr(4),
-                      dateStr: _getDateStr.getDateNumStr(4),
-                      index: 3,
-                      openStatus: statusList[3],
-                      upBtn: dateBtn3,
-                      selectedDate: selected3,
-                      items: selectedList[3],
-                    ),
-                    new DateWidget(
-                      title: _getDateStr.getDateStr(5),
-                      dateStr: _getDateStr.getDateNumStr(5),
-                      index: 4,
-                      openStatus: statusList[4],
-                      upBtn: dateBtn4,
-                      selectedDate: selected4,
-                      items: selectedList[4],
-                    ),
-                    new DateWidget(
-                      title: _getDateStr.getDateStr(6),
-                      dateStr: _getDateStr.getDateNumStr(6),
-                      index: 5,
-                      openStatus: statusList[5],
-                      upBtn: dateBtn5,
-                      selectedDate: selected5,
-                      items: selectedList[5],
-                    )
-                  ],
-                )
-              ],
+                  ),
+                  SizedBox(
+                    height: windowsSizeboxHightSize(15),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      new DateWidget(
+                        title: _getDateStr.getDateStr(1),
+                        dateStr: _getDateStr.getDateNumStr(1),
+                        index: 0,
+                        openStatus: statusList[0],
+                        upBtn: dateBtn0,
+                        selectedDate: selected0,
+                        items: selectedList[0],
+                      ),
+                      new DateWidget(
+                        title: _getDateStr.getDateStr(2),
+                        dateStr: _getDateStr.getDateNumStr(2),
+                        index: 1,
+                        openStatus: statusList[1],
+                        upBtn: dateBtn1,
+                        selectedDate: selected1,
+                        items: selectedList[1],
+                      ),
+                      new DateWidget(
+                        title: _getDateStr.getDateStr(3),
+                        dateStr: _getDateStr.getDateNumStr(3),
+                        index: 2,
+                        openStatus: statusList[2],
+                        upBtn: dateBtn2,
+                        selectedDate: selected2,
+                        items: selectedList[2],
+                      ),
+                      new DateWidget(
+                        title: _getDateStr.getDateStr(4),
+                        dateStr: _getDateStr.getDateNumStr(4),
+                        index: 3,
+                        openStatus: statusList[3],
+                        upBtn: dateBtn3,
+                        selectedDate: selected3,
+                        items: selectedList[3],
+                      ),
+                      new DateWidget(
+                        title: _getDateStr.getDateStr(5),
+                        dateStr: _getDateStr.getDateNumStr(5),
+                        index: 4,
+                        openStatus: statusList[4],
+                        upBtn: dateBtn4,
+                        selectedDate: selected4,
+                        items: selectedList[4],
+                      ),
+                      new DateWidget(
+                        title: _getDateStr.getDateStr(6),
+                        dateStr: _getDateStr.getDateNumStr(6),
+                        index: 5,
+                        openStatus: statusList[5],
+                        upBtn: dateBtn5,
+                        selectedDate: selected5,
+                        items: selectedList[5],
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -742,7 +748,6 @@ class _HomeBookingState extends State<HomeBooking>
     }
 
     return Container(
-      padding: EdgeInsets.only(top:200),
       width: w,
       height: h,
       decoration: BoxDecoration(
@@ -758,6 +763,7 @@ class _HomeBookingState extends State<HomeBooking>
               ? input()
               : Container(
                   padding: EdgeInsets.only(
+                    top:200,
                     left: w / 3,
                   ),
                   height: h,
@@ -769,7 +775,7 @@ class _HomeBookingState extends State<HomeBooking>
                 ),
           startLoading
               ? Positioned(
-                  bottom: 600,
+                  bottom: 400,
                   right: windowsPaddingWidthSize(((w / 3) * 2 / 4) - 20),
                   child: Material(
                     color: Colors.transparent,

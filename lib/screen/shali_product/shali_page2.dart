@@ -247,7 +247,7 @@ the right position.''',
                                   // lineWidth:
                                   //     line_page1_left_width_size(w / 7.8),
                                   title: "Camera",
-                                  body: '''\nTIt detects user’s partner’s
+                                  body: '''\nIt detects user’s partner’s
 facial expression.''',
                                 );
                               }),
