@@ -39,7 +39,25 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
     // _orderStatus.setPage1Status(true);
     // _orderStatus.setPage2Status(true);
     double w = MediaQuery.of(context).size.width;
-    // double h = MediaQuery.of(context).size.height;
+
+
+    double maxH = MediaQuery.of(context).size.height;
+
+ double returnMoveHeight(index) {
+      double moveHeight = 0;
+      if (maxH < 1500) {
+        moveHeight += 1500 + ((1500 - maxH) / 2);
+      } else
+        moveHeight += 1500 + ((maxH - 1500) / 2);
+
+      if (index > 1) {
+        moveHeight += 1500 * (index - 1);
+      }
+
+      return moveHeight;
+    }
+
+
     double h = 900;
     List<bool> colorStatus = [true, false, false, false];
     List<bool> beforColorStatus = [true, false, false, false];
@@ -163,7 +181,7 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HomeScreen()));
+                                      builder: (context) => HomeScreen(pageAnimate: returnMoveHeight(6),pageIndex: 6,)));
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,

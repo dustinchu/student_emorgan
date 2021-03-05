@@ -22,10 +22,11 @@ import 'home_menu.dart';
 import 'home_product_banner.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key, this.title}) : super(key: key);
+  HomeScreen({Key key, @required this.pageAnimate, @required this.pageIndex})
+      : super(key: key);
 
-  final String title;
-
+  int pageIndex = 0;
+  double pageAnimate = 0;
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -46,51 +47,61 @@ class _HomeScreenState extends State<HomeScreen> {
       // print(_scrollController.offset);
       // upBtn();
     });
+
+    var widgetsBinding = WidgetsBinding.instance;
+    widgetsBinding.addPostFrameCallback((callback) {
+      _scrollController.animateTo(widget.pageAnimate,
+          duration: Duration(seconds: 1), curve: Curves.ease);
+      Provider.of<MenuStatus>(context, listen: false)
+          .setPageIndex(widget.pageIndex);
+    });
   }
 
-  int pageIndex = 0;
-  double pageAnimate = 0;
+  // int pageIndex = 0;
+  // double pageAnimate = 0;
   bool scrollStatus = true;
   void scrollPageNext(h) {
-    if (pageIndex < 9) {
-      print("pageindex ===$pageIndex");
-      if (pageIndex <= 0) {
+    if (widget.pageIndex < 9) {
+      print("pageindex ===$widget.pageIndex");
+      if (widget.pageIndex <= 0) {
         if (h < 1500) {
-          pageAnimate += 1500 + ((1500 - h) / 2);
+          widget.pageAnimate += 1500 + ((1500 - h) / 2);
         } else
-          pageAnimate += 1500 + ((h - 1500) / 2);
+          widget.pageAnimate += 1500 + ((h - 1500) / 2);
       } else
-        pageAnimate += 1500;
-      pageIndex += 1;
-      print("next index ==$pageIndex   animate==$pageAnimate");
+        widget.pageAnimate += 1500;
+      widget.pageIndex += 1;
+      print("next index ==$widget.pageIndex   animate==$widget.pageAnimate");
       // pageAnimate += 1300;
       // else
       // pageAnimate += 1700;
 
       // print("index: $pageIndex   animate:$pageAnimate");
-      _scrollController.animateTo(pageAnimate,
+      _scrollController.animateTo(widget.pageAnimate,
           duration: Duration(seconds: 1), curve: Curves.ease);
 
-      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      Provider.of<MenuStatus>(context, listen: false)
+          .setPageIndex(widget.pageIndex);
     }
   }
 
   void scrollPageBack(h) {
-    pageIndex -= 1;
-    if (pageIndex == 0) {
-      pageAnimate = 0;
-      pageIndex = 0;
+    widget.pageIndex -= 1;
+    if (widget.pageIndex == 0) {
+      widget.pageAnimate = 0;
+      widget.pageIndex = 0;
     } else {
-      pageAnimate -= 1500;
+      widget.pageAnimate -= 1500;
     }
 
-    print("back index ==$pageIndex   animate==$pageAnimate");
+    print("back index ==$widget.pageIndex   animate==$widget.pageAnimate");
     // pageAnimate -= 1700;
     // print("index: $pageIndex   animate:$pageAnimate");
-    _scrollController.animateTo(pageAnimate,
+    _scrollController.animateTo(widget.pageAnimate,
         duration: Duration(seconds: 1), curve: Curves.ease);
 
-    Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+    Provider.of<MenuStatus>(context, listen: false)
+        .setPageIndex(widget.pageIndex);
   }
 
   @override
@@ -103,8 +114,8 @@ class _HomeScreenState extends State<HomeScreen> {
   void upBtn() {
     _scrollController.animateTo(0,
         duration: Duration(milliseconds: 200), curve: Curves.ease);
-    pageIndex = 0;
-    pageAnimate = 0;
+    widget.pageIndex = 0;
+    widget.pageAnimate = 0;
   }
 
   @override
@@ -148,66 +159,72 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void menuEmorgan() {
-      pageAnimate = returnMoveHeight(1);
+      widget.pageAnimate = returnMoveHeight(1);
       // pageAnimate += 1500 + ((1500 - h) / 2);
-      _scrollController.animateTo(pageAnimate,
+      _scrollController.animateTo(widget.pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-      pageIndex = 1;
-      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      widget.pageIndex = 1;
+      Provider.of<MenuStatus>(context, listen: false)
+          .setPageIndex(widget.pageIndex);
     }
 
     void menuProducts() {
-      pageAnimate = returnMoveHeight(2);
+      widget.pageAnimate = returnMoveHeight(2);
       // pageAnimate = 3000 + ((h - 1500) / 2);
-      _scrollController.animateTo(pageAnimate,
+      _scrollController.animateTo(widget.pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-      pageIndex = 2;
-      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      widget.pageIndex = 2;
+      Provider.of<MenuStatus>(context, listen: false)
+          .setPageIndex(widget.pageIndex);
     }
 
     void menuPurchase() {
-      pageAnimate = returnMoveHeight(5);
+      widget.pageAnimate = returnMoveHeight(5);
       // pageAnimate = 7500 + ((h - 1500) / 2);
-      _scrollController.animateTo(pageAnimate,
+      _scrollController.animateTo(widget.pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-      pageIndex = 5;
+      widget.pageIndex = 5;
       Provider.of<MenuStatus>(context, listen: false).setPageIndex(5);
     }
 
     void menuBook() {
-      pageAnimate = returnMoveHeight(6);
+      widget.pageAnimate = returnMoveHeight(6);
       // pageAnimate = 9000 + ((h - 1500) / 2);
-      _scrollController.animateTo(pageAnimate,
+      _scrollController.animateTo(widget.pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-      pageIndex = 6;
-      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      widget.pageIndex = 6;
+      Provider.of<MenuStatus>(context, listen: false)
+          .setPageIndex(widget.pageIndex);
     }
 
     void menuUser() {
       // pageAnimate = 10500 + ((h - 1500) / 2);
-      pageAnimate = returnMoveHeight(7);
-      _scrollController.animateTo(pageAnimate,
+      widget.pageAnimate = returnMoveHeight(7);
+      _scrollController.animateTo(widget.pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-      pageIndex = 7;
-      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      widget.pageIndex = 7;
+      Provider.of<MenuStatus>(context, listen: false)
+          .setPageIndex(widget.pageIndex);
     }
 
     void menuContact() {
       // pageAnimate = 12000 + ((h - 1500) / 2);
-      pageAnimate = returnMoveHeight(8);
-      _scrollController.animateTo(pageAnimate,
+      widget.pageAnimate = returnMoveHeight(8);
+      _scrollController.animateTo(widget.pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-      pageIndex = 8;
-      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      widget.pageIndex = 8;
+      Provider.of<MenuStatus>(context, listen: false)
+          .setPageIndex(widget.pageIndex);
     }
 
     void menuAbout() {
       // pageAnimate = 13500 + ((h - 1500) / 2);
-      pageAnimate = returnMoveHeight(9);
-      _scrollController.animateTo(pageAnimate,
+      widget.pageAnimate = returnMoveHeight(9);
+      _scrollController.animateTo(widget.pageAnimate,
           duration: Duration(milliseconds: 200), curve: Curves.ease);
-      pageIndex = 9;
-      Provider.of<MenuStatus>(context, listen: false).setPageIndex(pageIndex);
+      widget.pageIndex = 9;
+      Provider.of<MenuStatus>(context, listen: false)
+          .setPageIndex(widget.pageIndex);
     }
 
     var bannerStatus = Provider.of<BannerStatus>(context);
@@ -229,22 +246,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     // print("Y:${pointerSignal.scrollDelta.dy}");
 
                     if (pointerSignal.scrollDelta.dy > 0 &&
-                        pageAnimate != 14300) {
+                        widget.pageAnimate != 14300) {
                       print("?");
                       scrollPageNext(h);
                     }
-                    if (pointerSignal.scrollDelta.dy < 0 && pageAnimate != 0) {
+                    if (pointerSignal.scrollDelta.dy < 0 &&
+                        widget.pageAnimate != 0) {
                       scrollPageBack(h);
                     }
                     //延遲兩秒
                     await Future.delayed(Duration(milliseconds: 1500));
-                    if (pageIndex == 2)
+                    if (widget.pageIndex == 2)
                       Provider.of<BannerStatus>(context, listen: false)
                           .showBanner1();
-                    else if (pageIndex == 3)
+                    else if (widget.pageIndex == 3)
                       Provider.of<BannerStatus>(context, listen: false)
                           .showBanner2();
-                    else if (pageIndex == 4)
+                    else if (widget.pageIndex == 4)
                       Provider.of<BannerStatus>(context, listen: false)
                           .showBanner3();
                     scrollStatus = true;

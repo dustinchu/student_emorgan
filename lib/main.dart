@@ -46,8 +46,8 @@ class MyApp extends StatelessWidget {
           //     child: Scaffold(body: HomeScreen()),
           //   ),
           // );
-          // home: HomeScreen()),
-          home: OrderShoppingCode()),
+          home: HomeScreen(pageAnimate: 0,pageIndex: 0,)),
+          // home: OrderShoppingCode()),
       // home: OrderImformation(
       //   rightImagePath: "assets/info_buzzy_and_buzzy_right.png",
       //   leftImagePath: "assets/info_buzzy_and_buzzy_right.png",

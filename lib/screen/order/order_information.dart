@@ -306,7 +306,8 @@ class _OrderImformationState extends State<OrderImformation>
         ];
       }
     });
-    Navigator.push(context, PageTransition(type: PageTransitionType.fade, child:  OrderAccount()));
+    Navigator.push(context,
+        PageTransition(type: PageTransitionType.fade, child: OrderAccount()));
     // Navigator.push(
     //     context, MaterialPageRoute(builder: (context) => OrderAccount()));
   }
@@ -781,7 +782,6 @@ class _OrderImformationState extends State<OrderImformation>
     Widget infoInput() {
       return FocusTraversalGroup(
         policy: WidgetOrderTraversalPolicy(),
-
         child: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -837,14 +837,6 @@ class _OrderImformationState extends State<OrderImformation>
                         ontap6: textFildOnTap6,
                         ontap7: textFildOnTap7,
                         ontap8: textFildOnTap8,
-                        focusNode1: myFocusNode1,
-                        focusNode2: myFocusNode2,
-                        focusNode3: myFocusNode3,
-                        focusNode4: myFocusNode4,
-                        focusNode5: myFocusNode5,
-                        focusNode6: myFocusNode6,
-                        focusNode7: myFocusNode7,
-                        focusNode8: myFocusNode8,
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 30),
@@ -879,14 +871,6 @@ class _OrderImformationState extends State<OrderImformation>
                         ontap6: textFildOnTap14,
                         ontap7: textFildOnTap15,
                         ontap8: textFildOnTap16,
-                        focusNode1: myFocusNode9,
-                        focusNode2: myFocusNode10,
-                        focusNode3: myFocusNode11,
-                        focusNode4: myFocusNode12,
-                        focusNode5: myFocusNode13,
-                        focusNode6: myFocusNode14,
-                        focusNode7: myFocusNode15,
-                        focusNode8: myFocusNode16,
                       ),
                       Expanded(child: Container()),
                     ],
@@ -1147,8 +1131,7 @@ class _OrderImformationState extends State<OrderImformation>
                   //   print(value);
                   // },
                   child: Container(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     decoration: new BoxDecoration(
                       border: new Border.all(
                           color: firstNameStatus1 &&
@@ -1227,7 +1210,11 @@ class _OrderImformationState extends State<OrderImformation>
               child: OrderAppbar(
                 clickPage1: () {
                   if (!_orderStatus.getPage1Status) {
-                     Navigator.push(context, PageTransition(type: PageTransitionType.fade, child:  OrderShoppingCode()));
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.fade,
+                            child: OrderShoppingCode()));
                     // Navigator.push(
                     //     context,
                     //     MaterialPageRoute(
@@ -1236,7 +1223,11 @@ class _OrderImformationState extends State<OrderImformation>
                 },
                 clickPage2: () {
                   if (!_orderStatus.getPage2Status) {
-                      Navigator.push(context, PageTransition(type: PageTransitionType.fade, child:  OrderPatch()));
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.fade,
+                            child: OrderPatch()));
                     // Navigator.push(
                     //     context,
                     //     MaterialPageRoute(
@@ -1399,12 +1390,12 @@ class _DateWidgetState extends State<DateWidget> {
                       ),
                     ),
                     onTap: () {
-
                       Provider.of<AccountStatus>(context, listen: false)
-        .setAccountDate("2021/${widget.dateStr} ${defDataItem[i]}");
+                          .setAccountDate(
+                              "2021/${widget.dateStr} ${defDataItem[i]}");
 
-
-                      print("datastr ==${widget.dateStr}  selectDate==${defDataItem[i]}   $i");
+                      print(
+                          "datastr ==${widget.dateStr}  selectDate==${defDataItem[i]}   $i");
                       widget.selectedDate(defDataItem[i], i);
                       //將點選的資料存到預設的list裡面
                       setState(
@@ -1434,14 +1425,6 @@ class LeftInput extends StatelessWidget {
       @required this.birthday2TextEditingController,
       @required this.birthday3TextEditingController,
       @required this.phoneNumberTextEditingController,
-      @required this.focusNode1,
-      @required this.focusNode2,
-      @required this.focusNode3,
-      @required this.focusNode4,
-      @required this.focusNode5,
-      @required this.focusNode6,
-      @required this.focusNode7,
-      @required this.focusNode8,
       @required this.ontap1,
       @required this.ontap2,
       @required this.ontap3,
@@ -1461,14 +1444,6 @@ class LeftInput extends StatelessWidget {
   final TextEditingController birthday2TextEditingController;
   final TextEditingController birthday3TextEditingController;
   final TextEditingController phoneNumberTextEditingController;
-  final FocusNode focusNode1;
-  final FocusNode focusNode2;
-  final FocusNode focusNode3;
-  final FocusNode focusNode4;
-  final FocusNode focusNode5;
-  final FocusNode focusNode6;
-  final FocusNode focusNode7;
-  final FocusNode focusNode8;
   final GestureTapCallback ontap1;
   final GestureTapCallback ontap2;
   final GestureTapCallback ontap3;
@@ -1480,7 +1455,7 @@ class LeftInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    Widget edit2(control, ontap, focusNode) {
+    Widget edit2(control, ontap) {
       return Container(
         width: 65,
         decoration: new BoxDecoration(
@@ -1489,7 +1464,6 @@ class LeftInput extends StatelessWidget {
         ),
         height: 30,
         child: TextField(
-          focusNode: focusNode,
           onTap: ontap,
           cursorColor: Color(0xFFCFDDF9),
           controller: control,
@@ -1503,7 +1477,7 @@ class LeftInput extends StatelessWidget {
       );
     }
 
-    Widget edit(title, control, ontap, focusNode) {
+    Widget edit(title, control, ontap) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -1525,7 +1499,6 @@ class LeftInput extends StatelessWidget {
             ),
             height: 30,
             child: TextField(
-              focusNode: focusNode,
               onTap: ontap,
               cursorColor: Color(0xFFCFDDF9),
               controller: control,
@@ -1556,9 +1529,9 @@ class LeftInput extends StatelessWidget {
                     color: Color(0xFF424648)),
               ),
             ),
-             SizedBox(
-                        height: 20,
-                      ),
+            SizedBox(
+              height: 20,
+            ),
             new Image.asset(
               imagePath,
               fit: BoxFit.fill,
@@ -1573,83 +1546,84 @@ class LeftInput extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-                width: 210,
-                child: edit("First Name", firstNameTextEditingController,
-                    ontap1, focusNode1)),
+            Row(
+              children: [
+                Container(
+                    width: 210,
+                    child: edit(
+                        "First Name", firstNameTextEditingController, ontap1)),
+                SizedBox(
+                  width: 20,
+                ),
+                Container(
+                    width: 210,
+                    child: edit(
+                        "Last Name", lastNameTextEditingController, ontap2)),
+              ],
+            ),
             SizedBox(
               height: 20,
             ),
-            Container(
-                width: 210,
-                child: edit("ID number", idNumberTextEditingController, ontap2,
-                    focusNode2)),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-                width: 210,
-                child: edit("Email Address", emailAddressTextEditingController,
-                    ontap3, focusNode3)),
-          ],
-        ),
-        SizedBox(
-          width: 20,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-                width: 210,
-                child: edit("Last Name", lastNameTextEditingController, ontap4,
-                    focusNode4)),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-                width: 210,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Birthday",
-                      style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                            fontSize: windows_width_small_size(w),
-                            color: Color(0xFF424648)),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Row(
+            Row(
+              children: [
+                Container(
+                    width: 210,
+                    child: edit(
+                        "ID number", idNumberTextEditingController, ontap3)),
+                SizedBox(
+                  width: 20,
+                ),
+                Container(
+                    width: 210,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        edit2(
-                            birthday1TextEditingController, ontap5, focusNode5),
-                        SizedBox(
-                          width: 7.5,
+                        Text(
+                          "Birthday",
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                fontSize: windows_width_small_size(w),
+                                color: Color(0xFF424648)),
+                          ),
                         ),
-                        edit2(
-                            birthday2TextEditingController, ontap6, focusNode6),
                         SizedBox(
-                          width: 7.5,
+                          height: 5,
                         ),
-                        edit2(
-                            birthday3TextEditingController, ontap7, focusNode7),
+                        Row(
+                          children: [
+                            edit2(birthday1TextEditingController, ontap4),
+                            SizedBox(
+                              width: 7.5,
+                            ),
+                            edit2(birthday2TextEditingController, ontap5),
+                            SizedBox(
+                              width: 7.5,
+                            ),
+                            edit2(birthday3TextEditingController, ontap6),
+                          ],
+                        )
                       ],
-                    )
-                  ],
-                )),
-            // Container(
-            //     width: 200,
-            //     child: edit("Birthday", firstNameTextEditingController)),
+                    )),
+              ],
+            ),
             SizedBox(
               height: 20,
             ),
-            Container(
-                width: 210,
-                child: edit("Phone Number", phoneNumberTextEditingController,
-                    ontap8, focusNode8)),
+            Row(
+              children: [
+                Container(
+                    width: 210,
+                    child: edit("Email Address", emailAddressTextEditingController,
+                        ontap7)),
+                SizedBox(
+                  width: 20,
+                ),
+                Container(
+                    width: 210,
+                    child: edit("Phone Number", phoneNumberTextEditingController,
+                        ontap8)),
+              ],
+            )
           ],
         ),
       ],
