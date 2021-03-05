@@ -388,7 +388,7 @@ class _OrderAccountState extends State<OrderAccount> {
                 SizedBox(
                   height: 10,
                 ),
-                order_dobdy("Date", "2024/12/25 14:00"),
+                order_dobdy("Date", accountStatus.getAccountDate),
                 SizedBox(
                   height: 30,
                 ),

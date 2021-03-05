@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class HomeContactAnimation {
   HomeContactAnimation(
       this.controller, this.containerWidth, this.containerHeight)
-      : sizeBoxWidth = new Tween(begin: containerWidth, end: 885.0).animate(
+      : sizeBoxWidth = new Tween(begin: containerWidth, end: 500.0).animate(
             new CurvedAnimation(
                 parent: controller,
                 curve: new Interval(0.0, 1.0, curve: Curves.fastOutSlowIn))),
-        sizeBoxHeight = new Tween(begin: containerHeight, end: 510.0)
+        sizeBoxHeight = new Tween(begin: containerHeight, end: 300.0)
             .animate(new CurvedAnimation(
                 parent: controller,
                 curve: new Interval(0.0, 1.0, curve: Curves.fastOutSlowIn)));

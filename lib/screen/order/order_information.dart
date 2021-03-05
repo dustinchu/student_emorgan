@@ -1,6 +1,7 @@
 import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/menu_btn.dart';
 import 'package:emorgan/common/padding_size.dart';
+import 'package:emorgan/provider/account.dart';
 import 'package:emorgan/provider/book_state.dart';
 import 'package:emorgan/util/dateString.dart';
 import 'package:emorgan/util/order_page_status.dart';
@@ -1006,96 +1007,96 @@ class _OrderImformationState extends State<OrderImformation>
       );
     }
 
-    void _handleKeyEvent(RawKeyEvent event) async {
-      if (event.logicalKey == LogicalKeyboardKey.keyQ) {
-        print('Pressed the "Q" key!');
-      } else {
-        if (kReleaseMode) {
-        } else {
-          if (event.logicalKey.debugName == 'Tab') {
-            if (_tempKeyPressedOnce) {
-              _tempKeyPressedOnce = false;
-              print("index===$textFiledIndex");
-              // if (textFiledIndex == 1) {
-              // } else if (textFiledIndex == 2) myFocusNode3.requestFocus();
-              // switch (textFiledIndex) {
-              //   case 1:
-              //     myFocusNode2.requestFocus();
-              //     print("focus1");
-              //     break;
-              //   case 2:
-              //     myFocusNode3.requestFocus();
-              //         print("focus2");
-              //     break;
-              //   case 3:
-              //     myFocusNode4.requestFocus();    print("focus3");
-              //     break;
-              //   case 4:
-              //     myFocusNode5.requestFocus();
-              //         print("focus4");
-              //     break;
-              //   case 5:
-              //     myFocusNode6.requestFocus();    print("focus5");
-              //     break;
-              //   case 6:
-              //       print("focus6");
-              //     myFocusNode7.requestFocus();
-              //     break;
-              //   case 7:
-              //       print("focus7");
-              //     myFocusNode8.requestFocus();
-              //     break;
-              //   case 8:
-              //       print("focus8");
-              //     myFocusNode9.requestFocus();
-              //     break;
-              //   case 9:
-              //       print("focus9");
-              //     myFocusNode10.requestFocus();
-              //     break;
-              //   case 10:
-              //       print("focus10");
-              //     myFocusNode11.requestFocus();
-              //     break;
-              //   case 11:
-              //       print("focus11");
-              //     myFocusNode12.requestFocus();
-              //     break;
-              //   case 12:
-              //       print("focus12");
-              //     myFocusNode13.requestFocus();
-              //     break;
-              //   case 13:
-              //       print("focus13");
-              //     myFocusNode14.requestFocus();
-              //     break;
-              //   case 14:
-              //       print("focus14");
-              //     myFocusNode15.requestFocus();
-              //     break;
+    // void _handleKeyEvent(RawKeyEvent event) async {
+    //   if (event.logicalKey == LogicalKeyboardKey.keyQ) {
+    //     print('Pressed the "Q" key!');
+    //   } else {
+    //     if (kReleaseMode) {
+    //     } else {
+    //       if (event.logicalKey.debugName == 'Tab') {
+    //         if (_tempKeyPressedOnce) {
+    //           _tempKeyPressedOnce = false;
+    //           print("index===$textFiledIndex");
+    //           // if (textFiledIndex == 1) {
+    //           // } else if (textFiledIndex == 2) myFocusNode3.requestFocus();
+    //           // switch (textFiledIndex) {
+    //           //   case 1:
+    //           //     myFocusNode2.requestFocus();
+    //           //     print("focus1");
+    //           //     break;
+    //           //   case 2:
+    //           //     myFocusNode3.requestFocus();
+    //           //         print("focus2");
+    //           //     break;
+    //           //   case 3:
+    //           //     myFocusNode4.requestFocus();    print("focus3");
+    //           //     break;
+    //           //   case 4:
+    //           //     myFocusNode5.requestFocus();
+    //           //         print("focus4");
+    //           //     break;
+    //           //   case 5:
+    //           //     myFocusNode6.requestFocus();    print("focus5");
+    //           //     break;
+    //           //   case 6:
+    //           //       print("focus6");
+    //           //     myFocusNode7.requestFocus();
+    //           //     break;
+    //           //   case 7:
+    //           //       print("focus7");
+    //           //     myFocusNode8.requestFocus();
+    //           //     break;
+    //           //   case 8:
+    //           //       print("focus8");
+    //           //     myFocusNode9.requestFocus();
+    //           //     break;
+    //           //   case 9:
+    //           //       print("focus9");
+    //           //     myFocusNode10.requestFocus();
+    //           //     break;
+    //           //   case 10:
+    //           //       print("focus10");
+    //           //     myFocusNode11.requestFocus();
+    //           //     break;
+    //           //   case 11:
+    //           //       print("focus11");
+    //           //     myFocusNode12.requestFocus();
+    //           //     break;
+    //           //   case 12:
+    //           //       print("focus12");
+    //           //     myFocusNode13.requestFocus();
+    //           //     break;
+    //           //   case 13:
+    //           //       print("focus13");
+    //           //     myFocusNode14.requestFocus();
+    //           //     break;
+    //           //   case 14:
+    //           //       print("focus14");
+    //           //     myFocusNode15.requestFocus();
+    //           //     break;
 
-              //   case 15:
-              //       print("focus15");
-              //     myFocusNode16.requestFocus();
-              //     break;
-              //   case 16:
-              //       print("focus16");
-              //     myFocusNode1.requestFocus();
-              //     break;
-              // }
-              await Future.delayed(Duration(milliseconds: 500));
-              _tempKeyPressedOnce = true;
-              if (textFiledIndex == 16)
-                textFiledIndex = 1;
-              else
-                textFiledIndex++;
-              print('Not a Q: Pressed ${event.logicalKey.debugName}');
-              // _tempKeyPressedOnce = true;
-            }
-          }
-        }
-      }
-    }
+    //           //   case 15:
+    //           //       print("focus15");
+    //           //     myFocusNode16.requestFocus();
+    //           //     break;
+    //           //   case 16:
+    //           //       print("focus16");
+    //           //     myFocusNode1.requestFocus();
+    //           //     break;
+    //           // }
+    //           await Future.delayed(Duration(milliseconds: 500));
+    //           _tempKeyPressedOnce = true;
+    //           if (textFiledIndex == 16)
+    //             textFiledIndex = 1;
+    //           else
+    //             textFiledIndex++;
+    //           print('Not a Q: Pressed ${event.logicalKey.debugName}');
+    //           // _tempKeyPressedOnce = true;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
 
     return Scaffold(
       body: Container(
@@ -1398,6 +1399,12 @@ class _DateWidgetState extends State<DateWidget> {
                       ),
                     ),
                     onTap: () {
+
+                      Provider.of<AccountStatus>(context, listen: false)
+        .setAccountDate("2021/${widget.dateStr} ${defDataItem[i]}");
+
+
+                      print("datastr ==${widget.dateStr}  selectDate==${defDataItem[i]}   $i");
                       widget.selectedDate(defDataItem[i], i);
                       //將點選的資料存到預設的list裡面
                       setState(

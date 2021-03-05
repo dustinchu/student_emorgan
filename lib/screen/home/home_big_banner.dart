@@ -33,8 +33,8 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "EMORGAN",
+                    Text(" ",
+                      // "EMORGAN",
                       style: GoogleFonts.montserrat(
                         textStyle:
                             TextStyle(color: Color(0xFF7A82A7), fontSize: 44),
@@ -56,8 +56,8 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text(
-                      "FOR LOVE FOR FUTURE",
+                    Text(" ",
+                      // "FOR LOVE FOR FUTURE",
                       style: GoogleFonts.montserrat(
                         textStyle:
                             TextStyle(color: Color(0xFF7A82A7), fontSize: 44),

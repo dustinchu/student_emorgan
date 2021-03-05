@@ -80,7 +80,7 @@ class _HomeFeedbackState extends State<HomeFeedback>
                             ),
                         ),
                         Text(
-                          "We collected Emos’ feedbacks who have used\nEMORGAN for more than one year to provide\reference for new EMOs.",
+                          "We collected Emos’ feedbacks who have used\nEMORGAN for more than one year to provide reference for new EMOs.",
                             style: GoogleFonts.montserrat(
                               textStyle: TextStyle(
                               fontSize: windows_width_small_size(w),

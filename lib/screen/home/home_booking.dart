@@ -742,7 +742,7 @@ class _HomeBookingState extends State<HomeBooking>
     }
 
     return Container(
-      margin: EdgeInsets.only(top:200),
+      padding: EdgeInsets.only(top:200),
       width: w,
       height: h,
       decoration: BoxDecoration(

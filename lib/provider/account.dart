@@ -9,7 +9,7 @@ class AccountStatus extends ChangeNotifier {
   String account2ImangePath;
   String accountOrderName1;
   String accountOrderName2;
-
+String accountDate;
   // String accountWhiteImagePath1;
   // String accountWhiteImagePath2;
 
@@ -19,7 +19,7 @@ class AccountStatus extends ChangeNotifier {
   String get getAccount2ImangePath => account2ImangePath;
   String get getAccountOrderName1 => accountOrderName1;
   String get getAccountOrderName2 => accountOrderName2;
-
+  String get getAccountDate => accountDate;
   // String get getAccountWhiteImagePath1 => accountWhiteImagePath1;
   // String get getAccountWhiteImagePath2 => accountWhiteImagePath2;
 
@@ -32,6 +32,12 @@ class AccountStatus extends ChangeNotifier {
   //   accountWhiteImagePath2 = imagePath;
   //   notifyListeners();
   // }
+
+
+  void setAccountDate(String date) {
+    accountDate =date;
+    notifyListeners();
+  }
 
   void setAccountName1(String name, String path, String orderName) {
     account1Name = name;

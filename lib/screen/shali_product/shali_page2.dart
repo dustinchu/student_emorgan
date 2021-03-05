@@ -96,7 +96,7 @@ DIMENSIONS
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("assets/shali_sub_item.png"),
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
                           ),
                         ),
                         width: w / 5,
