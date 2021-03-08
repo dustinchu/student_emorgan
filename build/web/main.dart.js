@@ -37760,23 +37760,24 @@ p=t.t
 o=T.ap(H.b([M.p(d,d,d,d,new S.ah(d,X.aO(C.aA,new L.aE("assets/shali_sub_item.png",d,d)),d,d,d,d,C.n),270,new V.C(0,50,0,50),d,353)],p),C.l,C.w,C.e)
 n=c/5
 m=(n+50)/10
+l=m*1.4
 s=(c-(s-150)*2)/40
-l=$.ag_.a
-k=T.ak(d,R.aS(!1,!0,K.aU(l,new O.acU(),d),d,!0,d,d,d,C.q,d,d,d,new O.acV(),d,new O.acW(),d,C.q,d),d,d,s*18.3,d,m*1.2,d)
-j=$.ag4.a
-i=T.ak(d,R.aS(!1,!0,K.aU(j,new O.ad1(),d),d,!0,d,d,d,C.q,d,d,d,new O.ad2(),d,new O.ad3(),d,C.q,d),d,d,s*9.7,d,m*6.27,d)
-h=$.agg.a
-g=T.ak(d,R.aS(!1,!0,K.aU(h,new O.ad4(),d),d,!0,d,d,d,C.q,d,d,d,new O.ad5(),d,new O.ad6(),d,C.q,d),d,d,d,s*9.8,m*1.4,d)
+k=$.ag_.a
+j=T.ak(d,R.aS(!1,!0,K.aU(k,new O.acU(),d),d,!0,d,d,d,C.q,d,d,d,new O.acV(),d,new O.acW(),d,C.q,d),d,d,s*18.6,d,l,d)
+i=$.ag4.a
+h=T.ak(d,R.aS(!1,!0,K.aU(i,new O.ad1(),d),d,!0,d,d,d,C.q,d,d,d,new O.ad2(),d,new O.ad3(),d,C.q,d),d,d,s*9.8,d,m*4.3,d)
+g=$.agg.a
+l=T.ak(d,R.aS(!1,!0,K.aU(g,new O.ad4(),d),d,!0,d,d,d,C.q,d,d,d,new O.ad5(),d,new O.ad6(),d,C.q,d),d,d,d,s*9.6,l,d)
 f=$.agl.a
-s=T.ak(d,R.aS(!1,!0,K.aU(f,new O.ad7(),d),d,!0,d,d,d,C.q,d,d,d,new O.ad8(),d,new O.acX(),d,C.q,d),d,d,d,s*17,m*5.9,d)
-e=N.agy(n,m*2.2)
-e=T.ak(d,K.aU(l,new O.acY(),d),d,d,10,d,e,d)
-l=N.agy(n,m*6.5)
-l=T.ak(d,K.aU(j,new O.acZ(),d),d,d,2,d,l,d)
-j=N.agy(n,m*1.7)
-j=T.ak(d,K.aU(h,new O.ad_(),d),d,d,d,0,j,d)
-m=N.agy(n,m*6.15)
-return M.p(d,M.p(d,new T.cG(C.ce,T.ad(H.b([q,T.bp(C.C,H.b([o,k,i,g,s,e,l,j,T.ak(d,K.aU(f,new O.ad0(),d),d,d,d,36,m,d)],p),C.u,C.A),T.G(d,15,d),M.agv("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",c),T.G(d,40,d),T.ap(H.b([M.Ae("Material",u.K,c),T.ba(M.p(d,d,d,d,d,d,d,d,d),1),M.Ae("Technology",u.d,c)],p),C.p,C.j,C.e)],p),C.p,C.j,C.e),d),d,d,d,d,d,new V.C(r,70,r,70),d),d,d,d,1150,d,d,c)}}
+s=T.ak(d,R.aS(!1,!0,K.aU(f,new O.ad7(),d),d,!0,d,d,d,C.q,d,d,d,new O.ad8(),d,new O.acX(),d,C.q,d),d,d,d,s*15,m*5,d)
+e=N.agy(n,m*1.8)
+e=T.ak(d,K.aU(k,new O.acY(),d),d,d,4.8,d,e,d)
+k=N.agy(n,m*4.6)
+k=T.ak(d,K.aU(i,new O.acZ(),d),d,d,1,d,k,d)
+i=N.agy(n,m*1.7)
+i=T.ak(d,K.aU(g,new O.ad_(),d),d,d,d,-37,i,d)
+m=N.agy(n,m*5.4)
+return M.p(d,M.p(d,new T.cG(C.ce,T.ad(H.b([q,T.bp(C.C,H.b([o,j,h,l,s,e,k,i,T.ak(d,K.aU(f,new O.ad0(),d),d,d,d,-30,m,d)],p),C.u,C.A),T.G(d,15,d),M.agv("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",c),T.G(d,40,d),T.ap(H.b([M.Ae("Material",u.K,c),T.ba(M.p(d,d,d,d,d,d,d,d,d),1),M.Ae("Technology",u.d,c)],p),C.p,C.j,C.e)],p),C.p,C.j,C.e),d),d,d,d,d,d,new V.C(r,70,r,70),d),d,d,d,1150,d,d,c)}}
 O.acW.prototype={
 $0:function(){},
 $S:1}
