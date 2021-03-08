@@ -113,7 +113,8 @@ DIMENSIONS
                   // 白色區域中間(w-((w / 3 - 150)*2))/2,
                   //左一hovar
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 1.4,
+                    // top: ((w / 5 + 50) / 10) * 1.4,
+                    top:65,
                     //白色區域分成40等分
                     left: (w - ((w / 3 - 150) * 2)) / 40 * 18.6,
                     child: InkWell(
@@ -135,7 +136,8 @@ DIMENSIONS
                   ),
                   //左二 hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 4.3,
+                    // top: ((w / 5 + 50) / 10) * 4.3,
+                    top:188,
                     //白色區域分成40等分
                     left: (w - ((w / 3 - 150) * 2)) / 40 * 9.8,
                     child: InkWell(
@@ -157,7 +159,8 @@ DIMENSIONS
                   ),
                   //右一Hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 1.4,
+                    // top: ((w / 5 + 50) / 10) * 1.4,
+                    top:70,
                     //白色區域分成40等分
                     right: (w - ((w / 3 - 150) * 2)) / 40 * 9.6,
                     child: InkWell(
@@ -179,7 +182,8 @@ DIMENSIONS
                   ),
                   //右二Hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 5,
+                    // top: ((w / 5 + 50) / 10) * 5,
+                    top:215,
                     //白色區域分成40等分
                     right: (w - ((w / 3 - 150) * 2)) / 40 * 15,
                     child: InkWell(
@@ -207,7 +211,8 @@ DIMENSIONS
                   //       child: Text("${w / 5}")),
                   // ),
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.8),
+                    // top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.8),
+                    top:77,
                     left: 4.8,
                     child: AnimatedBuilder(
                               animation: left1InfoAnimation.controller,
@@ -239,7 +244,8 @@ the right position.''',
                   ),
                   //左二資訊
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 4.6),
+                    // top: top_size(w / 5, ((w / 5 + 50) / 10) * 4.6),
+                    top:200,
                     left: 1,
                      child: AnimatedBuilder(
                               animation: left2InfoAnimation.controller,
@@ -267,7 +273,8 @@ facial expression.''',
                   ),
 //                 //右一資訊
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.7),
+                    // top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.7),
+                    top:85,
                     right: -37,
                      child: AnimatedBuilder(
                               animation: right1InfoAnimation.controller,
@@ -299,7 +306,8 @@ for 14 years.
                   ),
 //                 //右二資訊
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 5.4),
+                    // top: top_size(w / 5, ((w / 5 + 50) / 10) * 5.4),
+                    top:230,
                     right: -30,
                      child: AnimatedBuilder(
                               animation: right2InfoAnimation.controller,
