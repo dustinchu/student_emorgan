@@ -116,7 +116,7 @@ DIMENSIONS
                     // top: ((w / 5 + 50) / 10) * 1.4,
                     top:65,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 18.6,
+                    left: (w - ((w / 3 - 150) * 2)) / 70 * 32.6,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -139,7 +139,7 @@ DIMENSIONS
                     // top: ((w / 5 + 50) / 10) * 4.3,
                     top:188,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 9.8,
+                    left: (w - ((w / 3 - 150) * 2)) / 70 * 17.1,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -162,7 +162,7 @@ DIMENSIONS
                     // top: ((w / 5 + 50) / 10) * 1.4,
                     top:70,
                     //白色區域分成40等分
-                    right: (w - ((w / 3 - 150) * 2)) / 40 * 9.6,
+                    right: (w - ((w / 3 - 150) * 2)) / 70 * 16,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -185,7 +185,7 @@ DIMENSIONS
                     // top: ((w / 5 + 50) / 10) * 5,
                     top:215,
                     //白色區域分成40等分
-                    right: (w - ((w / 3 - 150) * 2)) / 40 * 15,
+                    right: (w - ((w / 3 - 150) * 2)) / 70 * 27,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -212,8 +212,8 @@ DIMENSIONS
                   // ),
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.8),
-                    top:77,
-                    left: 4.8,
+                    top:78,
+                    left: (w - ((w / 3 - 150) * 2)) / 70 * 16,
                     child: AnimatedBuilder(
                               animation: left1InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
@@ -246,7 +246,7 @@ the right position.''',
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 4.6),
                     top:200,
-                    left: 1,
+                    left:  (w - ((w / 3 - 150) * 2)) / 70 * 0.08,
                      child: AnimatedBuilder(
                               animation: left2InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
@@ -275,7 +275,7 @@ facial expression.''',
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.7),
                     top:85,
-                    right: -37,
+                    right: (w - ((w / 3 - 150) * 2)) / 70 * -3.01,
                      child: AnimatedBuilder(
                               animation: right1InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
@@ -308,7 +308,7 @@ for 14 years.
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 5.4),
                     top:230,
-                    right: -30,
+                    right: (w - ((w / 3 - 150) * 2)) / 70 * -2.31,
                      child: AnimatedBuilder(
                               animation: right2InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {

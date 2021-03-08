@@ -37747,25 +37747,26 @@ $.afn.k(0)
 $.afr.k(0)
 $.afw.k(0)
 $.afB.k(0)},
-D:function(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g=null,f=b.E(t.w).f.a.a
-$.ag2=U.dv($.afn,X.azU(f/6.1))
-$.ag6=U.dv($.afr,X.azV(f/7.8))
-$.agj=U.dv($.afw,X.aA6(f/7.2))
-$.ago=U.dv($.afB,X.aA7(f/6.5))
-s=f/3
+D:function(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=null,e=b.E(t.w).f.a.a
+$.ag2=U.dv($.afn,X.azU(e/6.1))
+$.ag6=U.dv($.afr,X.azV(e/7.8))
+$.agj=U.dv($.afw,X.aA6(e/7.2))
+$.ago=U.dv($.afB,X.aA7(e/6.5))
+s=e/3
 r=s-100
-q=M.agw("Patch","DIMENSIONS \n56.5  x  36.4  x  4.0  mm",f)
+q=M.agw("Patch","DIMENSIONS \n56.5  x  36.4  x  4.0  mm",e)
 p=t.t
-o=T.ap(H.b([M.p(g,g,g,g,new S.ah(g,X.aO(C.aA,new L.aE("assets/shali_sub_item.png",g,g)),g,g,g,g,C.n),270,new V.C(0,50,0,50),g,353)],p),C.l,C.w,C.e)
-s=(f-(s-150)*2)/40
+o=T.ap(H.b([M.p(f,f,f,f,new S.ah(f,X.aO(C.aA,new L.aE("assets/shali_sub_item.png",f,f)),f,f,f,f,C.n),270,new V.C(0,50,0,50),f,353)],p),C.l,C.w,C.e)
+s=(e-(s-150)*2)/70
 n=$.ag2.a
-m=T.ak(g,R.aS(!1,!0,K.aU(n,new O.acU(),g),g,!0,g,g,g,C.q,g,g,g,new O.acV(),g,new O.acW(),g,C.q,g),g,g,s*18.6,g,65,g)
+m=T.ak(f,R.aS(!1,!0,K.aU(n,new O.acU(),f),f,!0,f,f,f,C.q,f,f,f,new O.acV(),f,new O.acW(),f,C.q,f),f,f,s*32.6,f,65,f)
 l=$.ag6.a
-k=T.ak(g,R.aS(!1,!0,K.aU(l,new O.ad1(),g),g,!0,g,g,g,C.q,g,g,g,new O.ad2(),g,new O.ad3(),g,C.q,g),g,g,s*9.8,g,188,g)
-j=$.agj.a
-i=T.ak(g,R.aS(!1,!0,K.aU(j,new O.ad4(),g),g,!0,g,g,g,C.q,g,g,g,new O.ad5(),g,new O.ad6(),g,C.q,g),g,g,g,s*9.6,70,g)
-h=$.ago.a
-return M.p(g,M.p(g,new T.cG(C.ce,T.ad(H.b([q,T.bp(C.C,H.b([o,m,k,i,T.ak(g,R.aS(!1,!0,K.aU(h,new O.ad7(),g),g,!0,g,g,g,C.q,g,g,g,new O.ad8(),g,new O.acX(),g,C.q,g),g,g,g,s*15,215,g),T.ak(g,K.aU(n,new O.acY(),g),g,g,4.8,g,77,g),T.ak(g,K.aU(l,new O.acZ(),g),g,g,1,g,200,g),T.ak(g,K.aU(j,new O.ad_(),g),g,g,g,-37,85,g),T.ak(g,K.aU(h,new O.ad0(),g),g,g,g,-30,230,g)],p),C.u,C.A),T.G(g,15,g),M.agw("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",f),T.G(g,40,g),T.ap(H.b([M.Af("Material",u.K,f),T.ba(M.p(g,g,g,g,g,g,g,g,g),1),M.Af("Technology",u.d,f)],p),C.p,C.j,C.e)],p),C.p,C.j,C.e),g),g,g,g,g,g,new V.C(r,70,r,70),g),g,g,g,1150,g,g,f)}}
+k=T.ak(f,R.aS(!1,!0,K.aU(l,new O.ad1(),f),f,!0,f,f,f,C.q,f,f,f,new O.ad2(),f,new O.ad3(),f,C.q,f),f,f,s*17.1,f,188,f)
+j=s*16
+i=$.agj.a
+h=T.ak(f,R.aS(!1,!0,K.aU(i,new O.ad4(),f),f,!0,f,f,f,C.q,f,f,f,new O.ad5(),f,new O.ad6(),f,C.q,f),f,f,f,j,70,f)
+g=$.ago.a
+return M.p(f,M.p(f,new T.cG(C.ce,T.ad(H.b([q,T.bp(C.C,H.b([o,m,k,h,T.ak(f,R.aS(!1,!0,K.aU(g,new O.ad7(),f),f,!0,f,f,f,C.q,f,f,f,new O.ad8(),f,new O.acX(),f,C.q,f),f,f,f,s*27,215,f),T.ak(f,K.aU(n,new O.acY(),f),f,f,j,f,78,f),T.ak(f,K.aU(l,new O.acZ(),f),f,f,s*0.08,f,200,f),T.ak(f,K.aU(i,new O.ad_(),f),f,f,f,s*-3.01,85,f),T.ak(f,K.aU(g,new O.ad0(),f),f,f,f,s*-2.31,230,f)],p),C.u,C.A),T.G(f,15,f),M.agw("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",e),T.G(f,40,f),T.ap(H.b([M.Af("Material",u.K,e),T.ba(M.p(f,f,f,f,f,f,f,f,f),1),M.Af("Technology",u.d,e)],p),C.p,C.j,C.e)],p),C.p,C.j,C.e),f),f,f,f,f,f,new V.C(r,70,r,70),f),f,f,f,1150,f,f,e)}}
 O.acW.prototype={
 $0:function(){},
 $S:1}
