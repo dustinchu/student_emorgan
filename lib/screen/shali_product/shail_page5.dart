@@ -19,6 +19,7 @@ generate electricity.
 
 
 
+
 ''';
     String step2Msg = '''4 forks are made of this
 material. When implanting
@@ -27,6 +28,7 @@ protective sheath outside of the
 pacemaker, and the forks
 will automatically open to
 hook on the  body destination.
+
 
 
 
@@ -56,13 +58,13 @@ long-term in human body.''';
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Setp(
-                title: "Blood Flow Power\n",
+                title: "Blood Flow Power\n  ",
                 imgPath: "assets/shail_img1.png",
                 msg: step1Msg,
               ),
               SizedBox(width: 10,),
               Setp(
-                title: "Nitinol\n",
+                title: "Nitinol\n  ",
                 imgPath: "assets/shail_img2.png",
                 msg: step2Msg,
               ),
