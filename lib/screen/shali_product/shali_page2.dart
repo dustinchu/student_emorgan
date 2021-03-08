@@ -101,7 +101,7 @@ DIMENSIONS
                         ),
                         // width: w / 4.8,
                         // height: w / 5 ,
-                        width: 345,
+                        width: 355,
                         height: 355,
                       ),
                     ],
