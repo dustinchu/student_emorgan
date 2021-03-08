@@ -19,7 +19,8 @@ generate electricity.
 
 
 
- ''';
+ 
+  ''';
     String step2Msg = '''4 forks are made of this
 material. When implanting
 EMORGAN, retract the
@@ -30,6 +31,7 @@ hook on the  body destination.
 
 
 
+  
   ''';
     String step3Msg = '''They have good affinity with
 organisms and does not
