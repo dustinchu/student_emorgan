@@ -85,77 +85,77 @@ class _HomeAboutState extends State<HomeAbout>
                 Container(
                   width: (w / 3) * 2,
                   height: 1200,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/people.png"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  // decoration: BoxDecoration(
+                  //   image: DecorationImage(
+                  //     image: AssetImage("assets/people.png"),
+                  //     fit: BoxFit.cover,
+                  //   ),
+                  // ),
                 ),
-                Container(
-                  height: 300,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
+                // Container(
+                //   height: 300,
+                //   child: Row(
+                //     children: [
+                //       Expanded(
+                //         child: Column(
+                //           mainAxisAlignment: MainAxisAlignment.center,
+                //           crossAxisAlignment: CrossAxisAlignment.center,
+                //           children: [
                            
-                            Text("Wen-Chien,Wu",
-                                style:  GoogleFonts.montserrat(
-                                            textStyle: TextStyle(
-                                              fontSize:
-                                                 windows_width_large_size(w),
-                                              color:Color(0xFF324146),
-                                            ),
-                                          ),),
-                            Text("Emorgan Designer",
-                                style:  GoogleFonts.montserrat(
-                                            textStyle: TextStyle(
-                                              fontSize:
-                                                 windows_width_medium_size(w),
-                                              color:Color(0x80424648),
-                                            ),
-                                          ),),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text("Xi-Le, Huang",
-                                style: GoogleFonts.montserrat(
-                                            textStyle: TextStyle(
-                                              fontSize:
-                                                 windows_width_large_size(w),
-                                              color:Color(0xFF324146),
-                                            ),
-                                          ),),
-                            Text("Emorgan Designer",
-                                style: GoogleFonts.montserrat(
-                                            textStyle: TextStyle(
-                                              fontSize:
-                                                 windows_width_medium_size(w),
-                                              color:Color(0x80424648),
-                                            ),
-                                          ),),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                )
+                //             Text("Wen-Chien,Wu",
+                //                 style:  GoogleFonts.montserrat(
+                //                             textStyle: TextStyle(
+                //                               fontSize:
+                //                                  windows_width_large_size(w),
+                //                               color:Color(0xFF324146),
+                //                             ),
+                //                           ),),
+                //             Text("Emorgan Designer",
+                //                 style:  GoogleFonts.montserrat(
+                //                             textStyle: TextStyle(
+                //                               fontSize:
+                //                                  windows_width_medium_size(w),
+                //                               color:Color(0x80424648),
+                //                             ),
+                //                           ),),
+                //           ],
+                //         ),
+                //       ),
+                //       Expanded(
+                //         child: Column(
+                //           mainAxisAlignment: MainAxisAlignment.center,
+                //           crossAxisAlignment: CrossAxisAlignment.center,
+                //           children: [
+                //             Text("Xi-Le, Huang",
+                //                 style: GoogleFonts.montserrat(
+                //                             textStyle: TextStyle(
+                //                               fontSize:
+                //                                  windows_width_large_size(w),
+                //                               color:Color(0xFF324146),
+                //                             ),
+                //                           ),),
+                //             Text("Emorgan Designer",
+                //                 style: GoogleFonts.montserrat(
+                //                             textStyle: TextStyle(
+                //                               fontSize:
+                //                                  windows_width_medium_size(w),
+                //                               color:Color(0x80424648),
+                //                             ),
+                //                           ),),
+                //           ],
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // )
               ],
             ),
           ),
           Stack(
-            alignment: Alignment.center,
+            alignment: Alignment.topCenter,
             children: [
               Container(
-                alignment: Alignment.center,
+                alignment: Alignment.topCenter,
                 width: w / 3,
                 height: h,
                 color: Colors.white,
@@ -165,8 +165,8 @@ class _HomeAboutState extends State<HomeAbout>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 40,
+                     SizedBox(
+                      height: MediaQuery.of(context).size.height<1000?650:250,
                     ),
                     Text(
                       "About EMOGRAN",
@@ -204,8 +204,29 @@ spiritually assisted.''',
                               color: Color(0xFF364146),
                               fontSize: windows_width_small_size(w))),
                     ),
+                     SizedBox(
+                      height: MediaQuery.of(context).size.height<1000?20:50,
+                    ),
+                    Text(
+                      "Emorgan Designer",
+                      style: GoogleFonts.montserrat(
+                          textStyle: TextStyle(
+                              color: Color(0xFF7A82A7),
+                              fontSize: windows_width_small_size(w))),
+                    ),
                     SizedBox(
-                      height: 50,
+                      height: 20,
+                    ),
+                    participation("Wen-Chien, Wu"," "),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    participation("Xi-Le, Huang ", " "),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      height:  MediaQuery.of(context).size.height<1000?20:50,
                     ),
                     Text(
                       "Participation",
@@ -231,7 +252,7 @@ spiritually assisted.''',
                     ),
                     participation("Gimmyfoto      ", "Photographer"),
                     SizedBox(
-                      height: 50,
+                      height:  MediaQuery.of(context).size.height<1000?20:50,
                     ),
                     iconText("assets/email.png", "emorgancreation@gmail.com"),
                     SizedBox(
@@ -242,14 +263,12 @@ spiritually assisted.''',
                       height: 10,
                     ),
                     iconText("assets/ig.png", "emorgan_creation"),
-                    SizedBox(
-                      height: 100,
-                    ),
+                   
                   ],
                 ),
               ),
               Positioned(
-                bottom: 200,
+                bottom:MediaQuery.of(context).size.height<1000?600:300,
                 child: Text(
                   "© 2020-2047 EMORGAN",
                   style: GoogleFonts.montserrat(

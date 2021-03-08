@@ -59,7 +59,7 @@ class _ShaliPage2State extends State<ShaliPage2> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 1100;
+    double h = 1150;
      left1InfoAnimation = DetsIntroAnimation(
         controllerLeft1, line_left1_patch_width_size(w / 6.1),);
     left2InfoAnimation = DetsIntroAnimation(
@@ -96,11 +96,11 @@ DIMENSIONS
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("assets/shali_sub_item.png"),
-                            fit: BoxFit.fill,
+                            fit: BoxFit.cover,
                           ),
                         ),
-                        width: w / 5,
-                        height: w / 5 + 50,
+                        width: w / 4.8,
+                        height: w / 5 ,
                       ),
                     ],
                   ),
@@ -113,7 +113,7 @@ DIMENSIONS
                   Positioned(
                     top: ((w / 5 + 50) / 10) * 2,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 18.4,
+                    left: (w - ((w / 3 - 150) * 2)) / 40 * 19.1,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -133,9 +133,9 @@ DIMENSIONS
                   ),
                   //左二 hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 6.7,
+                    top: ((w / 5 + 50) / 10) * 6.27,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 9.85,
+                    left: (w - ((w / 3 - 150) * 2)) / 40 * 9.7,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -177,9 +177,9 @@ DIMENSIONS
                   ),
                   //右二Hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 6.7,
+                    top: ((w / 5 + 50) / 10) * 5.9,
                     //白色區域分成40等分
-                    right: (w - ((w / 3 - 150) * 2)) / 40 * 15,
+                    right: (w - ((w / 3 - 150) * 2)) / 40 * 17,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -205,8 +205,8 @@ DIMENSIONS
                   //       child: Text("${w / 5}")),
                   // ),
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 2.4),
-                    left: 0,
+                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 2.2),
+                    left: 10,
                     child: AnimatedBuilder(
                               animation: left1InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
@@ -237,8 +237,8 @@ the right position.''',
                   ),
                   //左二資訊
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 7),
-                    left: 0,
+                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 6.5),
+                    left: 2,
                      child: AnimatedBuilder(
                               animation: left2InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
@@ -297,8 +297,8 @@ for 14 years.
                   ),
 //                 //右二資訊
                   Positioned(
-                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 7),
-                    right: 0,
+                    top: top_size(w / 5, ((w / 5 + 50) / 10) * 6.15),
+                    right: 36,
                      child: AnimatedBuilder(
                               animation: right2InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {

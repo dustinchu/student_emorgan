@@ -76,21 +76,27 @@ class Setp extends StatelessWidget {
             width: 240,
             height: 200,
           ),
-          Text(
-            title,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                    fontSize: product_width_medium_size(w),
-                    color: Color(0xFF424648))),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                      fontSize: product_width_medium_size(w),
+                      color: Color(0xFF424648))),
+            ),
           ),
-          Text(
-            msg,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                    fontSize: product_width_small_size(w),
-                    color: Color(0xFF424648))),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              msg,
+              textAlign: TextAlign.start,
+              style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                      fontSize: product_width_small_size(w),
+                      color: Color(0xFF424648))),
+            ),
           ),
         ],
       ),

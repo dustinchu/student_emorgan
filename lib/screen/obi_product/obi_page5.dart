@@ -9,9 +9,41 @@ class ObiPage5 extends StatelessWidget {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = 650;
-    String step1Msg = '''The power leads would be coated by PVDF.  While blood is flowing in vein, it will move the leads back and forth to generate electricity.''';
-    String step2Msg = '''4 forks are made of this material. When implanting EMORGAN, retract the protective sheath outside of the pacemaker, and the forks will automatically open to hook on the body destination.''';
-    String step3Msg = '''They have good affinity with organisms and does not produce toxic corrosion and decomposition substance. Moreover, They don’t cause biological cell mutation, necrosis, inflammation and growth Granulation. According to the above, the materials can be used for long- term in human body.''';
+    String step1Msg = '''The power leads would be
+coated by PVDF.  While blood
+is flowing in vein, it will move
+the leads back and forth to
+generate electricity.
+
+
+
+
+
+
+''';
+    String step2Msg = '''4 forks are made of this
+material. When implanting
+EMORGAN, retract the
+protective sheath outside of
+the pacemaker, and the forks
+will automatically open to
+hook on the body destination.
+
+
+
+
+''';
+    String step3Msg = '''They have good affinity with
+organisms and does not
+produce toxic corrosion and
+decomposition substance.
+Moreover, They don’t cause
+biological cell mutation,
+necrosis, inflammation and
+growth Granulation.
+According to the above, the
+materials can be used for
+long- term in human body.''';
 
     return Container(
       width: w,
@@ -26,13 +58,13 @@ class ObiPage5 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Setp(
-                title: "Blood Flow Power\n",
+                title: "Blood Flow Power\n\n",
                 imgPath: "assets/shail_img1.png",
                 msg: step1Msg,
               ),
               SizedBox(width: 10,),
               Setp(
-                title: "Nitinol\n",
+                title: "Nitinol\n\n",
                 imgPath: "assets/shail_img2.png",
                 msg: step2Msg,
               ),
@@ -62,8 +94,7 @@ class Setp extends StatelessWidget {
     return Container(
       width: 240,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             margin: EdgeInsets.only(top: 25, bottom: 25),
@@ -76,22 +107,28 @@ class Setp extends StatelessWidget {
             width: 240,
             height: 200,
           ),
-          Text(
-            title,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.montserrat(
-              textStyle: TextStyle(
-                  fontSize: product_width_medium_size(w),
-                  color: Color(0xFF424648)),
+               Align(
+            alignment: Alignment.center,
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                    fontSize: product_width_medium_size(w),
+                    color: Color(0xFF424648)),
+              ),
             ),
           ),
-          Text(
-            msg,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.montserrat(
-                textStyle: TextStyle(
-                    fontSize: product_width_small_size(w),
-                    color: Color(0xFF424648))),
+               Align(
+            alignment: Alignment.center,
+            child: Text(
+              msg,
+              textAlign: TextAlign.start,
+              style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                      fontSize: product_width_small_size(w),
+                      color: Color(0xFF424648))),
+            ),
           ),
         ],
       ),

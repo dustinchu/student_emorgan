@@ -10,21 +10,24 @@ class ObiPage4 extends StatelessWidget {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = 550;
-    String step1Msg = '''Patch camera detects
-the fighting situation
+    String step1Msg = '''Patch camera
+detects the
+fighting situation
  ''';
-    String step2Msg = '''Patch starts analyzing
-A’s ingredient of tear
+    String step2Msg = '''Patch starts
+analyzing A’s data 
+of voice
  ''';
-    String step3Msg = '''Patch turns A’s tear’s
-data into taste data
+    String step3Msg = '''Patch turns
+A’s voice’s data
+into vibrate data
  ''';
-    String step4Msg = '''Taste data was sent to
-B’s Obi Emorgan
- ''';
-    String step5Msg = '''B feels the taste and
-have a new way to
-read A’s emotion''';
+    String step4Msg = '''Taste data was
+sent to B’s
+Obi Emorgan''';
+    String step5Msg = '''B feels the vibrate
+and try to read 
+A’s emotion''';
 
     return Container(
       width: w,

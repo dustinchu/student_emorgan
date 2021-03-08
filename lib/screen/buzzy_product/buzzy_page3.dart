@@ -20,7 +20,7 @@ data
 
  ''';
     String step3Msg = '''Electric shock data
-was sent to B’s
+was sent to B’s 
 Buzzy Patch
 
  ''';

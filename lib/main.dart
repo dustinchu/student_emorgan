@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
           //   ),
           // );
           home: HomeScreen(pageAnimate: 0,pageIndex: 0,)),
-          // home: OrderShoppingCode()),
+          // home: BuzzyProductScreen()),
       // home: OrderImformation(
       //   rightImagePath: "assets/info_buzzy_and_buzzy_right.png",
       //   leftImagePath: "assets/info_buzzy_and_buzzy_right.png",

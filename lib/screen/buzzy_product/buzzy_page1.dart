@@ -59,7 +59,7 @@ class _BuzzyPage1State extends State<BuzzyPage1> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 1100;
+    double h = 1200;
     left1InfoAnimation = DetsIntroAnimation(
         controllerLeft1, line_page1_left_width_size(w / 7.9));
     left2InfoAnimation = DetsIntroAnimation(

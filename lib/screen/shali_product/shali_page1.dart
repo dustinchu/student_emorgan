@@ -61,7 +61,7 @@ class _ShaliPage1State extends State<ShaliPage1> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 1150;
+    double h = 1200;
     left1InfoAnimation = DetsIntroAnimation(
       controllerLeft1,
       line_left_width_size(w / 5.7),

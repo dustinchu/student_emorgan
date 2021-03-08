@@ -117,7 +117,7 @@ DIMENSIONS
                   Positioned(
                     top: ((w / 5 + 50) / 10) * 1.7,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 11.5,
+                    left: (w - ((w / 3 - 150) * 2)) / 40 * 12.2,
                     child: InkWell(
                        splashColor: Colors.transparent,
                         hoverColor: Colors.transparent,

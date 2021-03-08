@@ -11,7 +11,7 @@ class ObiPage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = 900;
+    double h = 950;
     String human_aMsg = '''The doctor will simulate your expression in any
 state with your 3D model on the computer first.
 Then decide the final position according to the feeling of placing it directly on your face and the product functions.''';

@@ -9,8 +9,22 @@ class BuzzyPage4 extends StatelessWidget {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = 650;
-    String step1Msg = '''When measuring, it emits green light and penetrates the skin. The human blood is red and will absorb green light. When the heart beats, the blood flow increases, and the amount of green light absorption increases, and vice versa. Thereby, the heart rate is measured based on the blood absorbance.''';
-    String step2Msg = '''Use low-frequency current to control the user’s muscle expansion and transform the partner’s emotions into a sense of touch.'''; 
+    String step1Msg = '''When measuring, it emits
+green light and penetrates
+the skin. The human blood is
+red and will absorb green
+light. When the heart beats
+the blood flow increases, and
+the amount of green light
+absorption increases, and vice
+versa. Thereby, the heart rate
+is measured based on the 
+blood absorbance.''';
+    String step2Msg = '''Use low-frequency current to 
+control the user’s muscle
+expansion and transform the
+partner’s emotions into a
+sense of touch.''';
 
     return Container(
       width: w,
@@ -29,7 +43,7 @@ class BuzzyPage4 extends StatelessWidget {
                 imgPath: "assets/buzzy_img1.png",
                 msg: step1Msg,
               ),
-               SizedBox(width: 50,),
+               SizedBox(width: 200,),
               Setp(
                 title: "Low-frequency Therapy\n",
                 imgPath: "assets/buzzy_img2.png",
@@ -69,22 +83,28 @@ class Setp extends StatelessWidget {
            width: 240,
             height: 200,
           ),
-          Text(
-            title,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.montserrat(
-              textStyle: TextStyle(
-                  fontSize: product_width_medium_size(w),
-                  color: Color(0xFF424648)),
+             Align(
+            alignment: Alignment.center,
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                    fontSize: product_width_medium_size(w),
+                    color: Color(0xFF424648)),
+              ),
             ),
           ),
-          Text(
-            msg,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.montserrat(
-              textStyle: TextStyle(
-                  fontSize: product_width_small_size(w),
-                  color: Color(0xFF424648)),
+            Align(
+            alignment: Alignment.center,
+            child: Text(
+              msg,
+              textAlign: TextAlign.start,
+              style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                    fontSize: product_width_small_size(w),
+                    color: Color(0xFF424648)),
+              ),
             ),
           ),
         ],

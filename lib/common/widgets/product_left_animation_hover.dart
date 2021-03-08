@@ -17,7 +17,7 @@ class Product_left_animation_hover extends StatelessWidget {
     double w = MediaQuery.of(context).size.width;
     return Container(
       height: 500,
-      width: 560,
+      width: 800,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
