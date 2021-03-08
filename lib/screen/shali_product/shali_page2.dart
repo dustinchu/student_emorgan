@@ -92,7 +92,7 @@ DIMENSIONS
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 25, bottom: 25),
+                        margin: EdgeInsets.only(top: 50, bottom: 50),
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage("assets/shali_sub_item.png"),
@@ -101,8 +101,8 @@ DIMENSIONS
                         ),
                         // width: w / 4.8,
                         // height: w / 5 ,
-                        width: 284,
-                        height: 217,
+                        width: 353,
+                        height: 270,
                       ),
                     ],
                   ),
@@ -113,9 +113,9 @@ DIMENSIONS
                   // 白色區域中間(w-((w / 3 - 150)*2))/2,
                   //左一hovar
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 2,
+                    top: ((w / 5 + 50) / 10) * 1.4,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 40 * 19.1,
+                    left: (w - ((w / 3 - 150) * 2)) / 40 * 18.6,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -135,7 +135,7 @@ DIMENSIONS
                   ),
                   //左二 hover
                   Positioned(
-                    top: ((w / 5 + 50) / 10) * 6.27,
+                    top: ((w / 5 + 50) / 10) * 6,
                     //白色區域分成40等分
                     left: (w - ((w / 3 - 150) * 2)) / 40 * 9.7,
                     child: InkWell(
