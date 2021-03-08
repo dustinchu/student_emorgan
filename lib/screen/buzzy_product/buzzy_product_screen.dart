@@ -57,7 +57,7 @@ class _BuzzyProductScreenState extends State<BuzzyProductScreen> {
                   ),
                   BuzzyPage2(),
                   SizedBox(
-                    height: 100,
+                    height: 50,
                   ),
                   ProductCircle(),
                   BuzzyPage3(),
