@@ -50,9 +50,9 @@ long- term in human body.''';
       height: h,
       child: Container(
         padding:
-               EdgeInsets.only(left: w / 3 - 100, right: w / 3 - 100, top: 40),
+            EdgeInsets.only(left: w / 3 - 100, right: w / 3 - 100, top: 40),
         child: Padding(
-            padding: const EdgeInsets.only(top:20,left:50,bottom: 50),
+          padding: const EdgeInsets.only(top: 20, left: 50, bottom: 50),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,18 +61,25 @@ long- term in human body.''';
                 title: "Blood Flow Power\n  ",
                 imgPath: "assets/shail_img1.png",
                 msg: step1Msg,
+                isHeight: true,
               ),
-              SizedBox(width: 10,),
+              SizedBox(
+                width: 10,
+              ),
               Setp(
                 title: "Nitinol\n  ",
                 imgPath: "assets/shail_img2.png",
                 msg: step2Msg,
+                isHeight: true,
               ),
-              SizedBox(width: 10,),
+              SizedBox(
+                width: 10,
+              ),
               Setp(
                 title: "Titanium Alloy &\nBiomedical Ceramics\n",
                 imgPath: "assets/shail_img3.png",
                 msg: step3Msg,
+                isHeight: false,
               ),
             ],
           ),
@@ -86,7 +93,9 @@ class Setp extends StatelessWidget {
   final String title;
   final String imgPath;
   final String msg;
-  const Setp({Key key, this.title, this.imgPath, this.msg}) : super(key: key);
+  final bool isHeight;
+  const Setp({Key key, this.title, this.imgPath, this.msg, this.isHeight})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +116,7 @@ class Setp extends StatelessWidget {
             width: 240,
             height: 200,
           ),
-               Align(
+          Align(
             alignment: Alignment.center,
             child: Text(
               title,
@@ -119,7 +128,7 @@ class Setp extends StatelessWidget {
               ),
             ),
           ),
-               Align(
+          Align(
             alignment: Alignment.center,
             child: Text(
               msg,
@@ -130,6 +139,11 @@ class Setp extends StatelessWidget {
                       color: Color(0xFF424648))),
             ),
           ),
+               isHeight
+              ? SizedBox(
+                  height: 6,
+                )
+              : Container(),
         ],
       ),
     );
