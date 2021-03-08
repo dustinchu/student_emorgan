@@ -129,7 +129,7 @@ on your body and the product functions.
                   ],
                 ),
                 Positioned(
-                  top: h / 3,
+                  top: h / 2,
                   left: w / 3 / 2-40,
                   child: Container(
                       margin: EdgeInsets.only(),
