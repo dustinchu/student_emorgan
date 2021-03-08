@@ -129,7 +129,7 @@ on your body and the product functions.
                   ],
                 ),
                 Positioned(
-                 top : MediaQuery.of(context).size.height>1000 ?280: 220,
+                 top : MediaQuery.of(context).size.height>1200 ?280: 220,
                   left: w / 3 / 2-40,
                   child: Container(
                       margin: EdgeInsets.only(),

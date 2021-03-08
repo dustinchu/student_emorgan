@@ -213,7 +213,7 @@ DIMENSIONS
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.8),
                     top:78,
-                    left: (w - ((w / 3 - 150) * 2)) / 70 * 16,
+                    left:  (w - ((w / 3 - 150) * 2)) / 70 * 0.3,
                     child: AnimatedBuilder(
                               animation: left1InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
@@ -246,7 +246,7 @@ the right position.''',
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 4.6),
                     top:200,
-                    left:  (w - ((w / 3 - 150) * 2)) / 70 * 0.08,
+                    left:  (w - ((w / 3 - 150) * 2)) / 70 * 0.025,
                      child: AnimatedBuilder(
                               animation: left2InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
