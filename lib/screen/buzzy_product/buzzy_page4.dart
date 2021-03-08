@@ -18,9 +18,9 @@ the blood flow increases, and
 the amount of green light
 absorption increases, and vice
 versa. Thereby, the heart rate
-is measured based on the 
+is measured based on the
 blood absorbance.''';
-    String step2Msg = '''Use low-frequency current to 
+    String step2Msg = '''Use low-frequency current to
 control the user’s muscle
 expansion and transform the
 partner’s emotions into a

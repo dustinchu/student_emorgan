@@ -35085,7 +35085,7 @@ D:function(a,b){var s=null,r=4282533448,q=b.E(t.w).f.a.a
 return T.ad(H.b([L.L(this.c,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.ds(q),s,s,s,s,!0,s,s,s,s,s,s)),s),M.p(s,s,s,s,new S.ah(s,X.aO(C.y,new L.aE(this.d,s,s)),s,s,s,s,C.n),100,new V.C(0,25,0,25),s,100),L.L(this.e,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fq(q),s,s,s,s,!0,s,s,s,s,s,s)),C.ay)],t.t),C.l,C.w,C.e)}}
 O.B7.prototype={
 D:function(a,b){var s=null,r=b.E(t.w).f.a.a,q=r/3-100
-return M.p(s,M.p(s,new T.cG(C.mM,T.ap(H.b([new O.w6("PhotoPlethysmoGraphy\n","assets/buzzy_img1.png","When measuring, it emits\ngreen light and penetrates\nthe skin. The human blood is\nred and will absorb green\nlight. When the heart beats\nthe blood flow increases, and\nthe amount of green light\nabsorption increases, and vice\nversa. Thereby, the heart rate\nis measured based on the \nblood absorbance.",s),T.I(s,s,200),new O.w6("Low-frequency Therapy\n","assets/buzzy_img2.png","Use low-frequency current to \ncontrol the user\u2019s muscle\nexpansion and transform the\npartner\u2019s emotions into a\nsense of touch.",s)],t.t),C.p,C.w,C.e),s),s,s,s,s,s,new V.C(q,40,q,0),s),s,s,s,650,s,s,r)}}
+return M.p(s,M.p(s,new T.cG(C.mM,T.ap(H.b([new O.w6("PhotoPlethysmoGraphy\n","assets/buzzy_img1.png","When measuring, it emits\ngreen light and penetrates\nthe skin. The human blood is\nred and will absorb green\nlight. When the heart beats\nthe blood flow increases, and\nthe amount of green light\nabsorption increases, and vice\nversa. Thereby, the heart rate\nis measured based on the\nblood absorbance.",s),T.I(s,s,200),new O.w6("Low-frequency Therapy\n","assets/buzzy_img2.png","Use low-frequency current to\ncontrol the user\u2019s muscle\nexpansion and transform the\npartner\u2019s emotions into a\nsense of touch.",s)],t.t),C.p,C.w,C.e),s),s,s,s,s,s,new V.C(q,40,q,0),s),s,s,s,650,s,s,r)}}
 O.w6.prototype={
 D:function(a,b){var s=null,r=4282533448,q=b.E(t.w).f.a.a
 return M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.ah(s,X.aO(C.aV,new L.aE(this.d,s,s)),s,s,s,s,C.n),200,new V.C(0,25,0,25),s,240),new T.dF(C.E,s,s,L.L(this.c,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.ds(q),s,s,s,s,!0,s,s,s,s,s,s)),C.ay),s),new T.dF(C.E,s,s,L.L(this.e,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fq(q),s,s,s,s,!0,s,s,s,s,s,s)),C.L),s)],t.t),C.p,C.j,C.e),s,s,s,s,s,s,240)}}
@@ -36410,7 +36410,7 @@ D:function(a,b){var s=null,r=4282533448,q=b.E(t.w).f.a.a
 return T.ad(H.b([L.L(this.c,s,s,s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.ds(q),s,s,s,s,!0,s,s,s,s,s,s),s),M.p(s,s,s,s,new S.ah(s,X.aO(C.y,new L.aE(this.d,s,s)),s,s,s,s,C.n),100,new V.C(0,25,0,25),s,100),L.L(this.e,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fq(q),s,s,s,s,!0,s,s,s,s,s,s)),C.ay)],t.t),C.l,C.w,C.e)}}
 Z.E2.prototype={
 D:function(a,b){var s=null,r=b.E(t.w).f.a.a,q=r/3-100
-return M.p(s,M.p(s,new T.cG(C.mM,T.ap(H.b([new Z.pE("Blood Flow Power\n\n","assets/shail_img1.png","The power leads would be\ncoated by PVDF.  While blood\nis flowing in vein, it will move\nthe leads back and forth to\ngenerate electricity.\n\n\n\n\n\n\n",s),T.I(s,s,10),new Z.pE("Nitinol\n\n","assets/shail_img2.png","4 forks are made of this\nmaterial. When implanting\nEMORGAN, retract the\nprotective sheath outside of\nthe pacemaker, and the forks\nwill automatically open to\nhook on the body destination.\n\n\n\n\n",s),T.I(s,s,10),new Z.pE("Titanium Alloy &\nBiomedical Ceramics\n","assets/shail_img3.png","They have good affinity with\norganisms and does not\nproduce toxic corrosion and\ndecomposition substance.\nMoreover, They don\u2019t cause\nbiological cell mutation,\nnecrosis, inflammation and\ngrowth Granulation.\nAccording to the above, the\nmaterials can be used for\nlong- term in human body.",s)],t.t),C.p,C.b4,C.e),s),s,s,s,s,s,new V.C(q,40,q,0),s),s,s,s,650,s,s,r)}}
+return M.p(s,M.p(s,new T.cG(C.mM,T.ap(H.b([new Z.pE("Blood Flow Power\n","assets/shail_img1.png","The power leads would be\ncoated by PVDF.  While blood\nis flowing in vein, it will move\nthe leads back and forth to\ngenerate electricity.\n\n\n\n\n\n\n",s),T.I(s,s,10),new Z.pE("Nitinol\n","assets/shail_img2.png","4 forks are made of this\nmaterial. When implanting\nEMORGAN, retract the\nprotective sheath outside of\nthe pacemaker, and the forks\nwill automatically open to\nhook on the body destination.\n\n\n\n\n",s),T.I(s,s,10),new Z.pE("Titanium Alloy &\nBiomedical Ceramics\n","assets/shail_img3.png","They have good affinity with\norganisms and does not\nproduce toxic corrosion and\ndecomposition substance.\nMoreover, They don\u2019t cause\nbiological cell mutation,\nnecrosis, inflammation and\ngrowth Granulation.\nAccording to the above, the\nmaterials can be used for\nlong- term in human body.",s)],t.t),C.p,C.b4,C.e),s),s,s,s,s,s,new V.C(q,40,q,0),s),s,s,s,650,s,s,r)}}
 Z.pE.prototype={
 D:function(a,b){var s=null,r=4282533448,q=b.E(t.w).f.a.a
 return M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.ah(s,X.aO(C.aV,new L.aE(this.d,s,s)),s,s,s,s,C.n),200,new V.C(0,25,0,25),s,240),new T.dF(C.E,s,s,L.L(this.c,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.ds(q),s,s,s,s,!0,s,s,s,s,s,s)),C.ay),s),new T.dF(C.E,s,s,L.L(this.e,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fq(q),s,s,s,s,!0,s,s,s,s,s,s)),C.L),s)],t.t),C.l,C.w,C.e),s,s,s,s,s,s,240)}}
@@ -37603,7 +37603,7 @@ m+=50
 s=t.t
 l=T.ap(H.b([M.p(r,T.ad(H.b([L.L("Human A",r,r,r,B.T(r,A.J(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.ds(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/human_a.png",r,r)),r,r,r,r,C.n),m,new V.C(0,25,0,25),r,l),M.Af("How to put on Shali Patch","The doctor will simulate your expression in any state with your 3D model on the computer first.\n\nThen decide the final position according to the feeling of placing it directly on your face and the product functions.",p)],s),C.p,C.j,C.e)],s),C.l,C.j,C.e),r,r,r,r,r,r,l),M.p(r,T.ad(H.b([L.L("Human B",r,r,r,B.T(r,A.J(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.ds(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/human_b.png",r,r)),r,r,r,r,C.n),m,new V.C(0,25,0,25),r,l),M.Af("How to Implant Shali Emorgan","The Shali organ will be implanted on the salivary gland.",p)],s),C.p,C.j,C.e)],s),C.l,C.j,C.e),r,r,r,r,r,r,l)],s),C.l,C.b4,C.e)
 m=new G.a_i().$1(p)
-return M.p(r,M.p(r,new T.cG(C.ce,T.bp(C.C,H.b([l,T.ak(r,M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/human_line.png",r,r)),r,r,r,r,C.n),20,new V.C(0,0,0,0),r,250),r,r,o/2-40,r,257.14285714285717-m,r)],s),C.u,C.A),r),r,r,r,r,r,new V.C(n,40,n,40),r),r,r,r,900,r,r,p)}}
+return M.p(r,M.p(r,new T.cG(C.ce,T.bp(C.C,H.b([l,T.ak(r,M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/human_line.png",r,r)),r,r,r,r,C.n),20,new V.C(0,0,0,0),r,250),r,r,o/2-40,r,271.42857142857144-m,r)],s),C.u,C.A),r),r,r,r,r,r,new V.C(n,40,n,40),r),r,r,r,950,r,r,p)}}
 G.a_i.prototype={
 $1:function(a){if(a>1600)return 0
 else if(a>1500)return 20
@@ -37619,10 +37619,10 @@ D:function(a,b){var s=null,r=4282533448,q=b.E(t.w).f.a.a
 return T.ad(H.b([L.L(this.c,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.ds(q),s,s,s,s,!0,s,s,s,s,s,s)),s),M.p(s,s,s,s,new S.ah(s,X.aO(C.y,new L.aE(this.d,s,s)),s,s,s,s,C.n),100,new V.C(0,25,0,25),s,100),L.L(this.e,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fq(q),s,s,s,s,!0,s,s,s,s,s,s)),C.ay)],t.t),C.l,C.w,C.e)}}
 R.Gm.prototype={
 D:function(a,b){var s=null,r=b.E(t.w).f.a.a,q=r/3-100
-return M.p(s,M.p(s,new T.cG(C.mM,T.ap(H.b([new R.pF("Blood Flow Power\n","assets/shail_img1.png","The power leads would be coated by PVDF.  While blood is flowing in vein, it will move the leads back and forth to generate electricity.",s),T.I(s,s,10),new R.pF("Nitinol\n","assets/shail_img2.png","4 forks are made of this material. When implanting EMORGAN, retract the protective sheath outside of the pacemaker, and the forks will  automatically open to hook on the  body destination.",s),T.I(s,s,10),new R.pF("Titanium Alloy &\nBiomedical Ceramics\n","assets/shail_img3.png","They have good affinity with  organisms and does not produce  toxic corrosion and decomposition  substance. Moreover, They don\u2019t  cause biological cell mutation, necrosis, inflammation and growth Granulation. According to the above, the materials can be used for long-term in human body.",s)],t.t),C.p,C.b4,C.e),s),s,s,s,s,s,new V.C(q,40,q,0),s),s,s,s,700,s,s,r)}}
+return M.p(s,M.p(s,new T.cG(C.mM,T.ap(H.b([new R.pF("Blood Flow Power\n","assets/shail_img1.png","The power leads would be \ncoated by PVDF.  While blood\nis flowing in vein, it will move\nthe leads back and forth to\ngenerate electricity.\n\n\n\n\n\n",s),T.I(s,s,10),new R.pF("Nitinol\n","assets/shail_img2.png","4 forks are made of this\nmaterial. When implanting\nEMORGAN, retract the\nprotective sheath outside of the\npacemaker, and the forks\nwill automatically open to\nhook on the  body destination.\n\n\n\n",s),T.I(s,s,10),new R.pF("Titanium Alloy &\nBiomedical Ceramics\n","assets/shail_img3.png","They have good affinity with\norganisms and does not\nproduce  toxic corrosion and\ndecomposition  substance.\nMoreover, They don\u2019t  cause\nbiological cell mutation,\nnecrosis, inflammation and\ngrowth Granulation.\nAccording to the above, the\nmaterials can be used for\nlong-term in human body.",s)],t.t),C.p,C.b4,C.e),s),s,s,s,s,s,new V.C(q,40,q,0),s),s,s,s,700,s,s,r)}}
 R.pF.prototype={
 D:function(a,b){var s=null,r=4282533448,q=b.E(t.w).f.a.a
-return M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.ah(s,X.aO(C.aV,new L.aE(this.d,s,s)),s,s,s,s,C.n),200,new V.C(0,25,0,25),s,240),new T.dF(C.E,s,s,L.L(this.c,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.ds(q),s,s,s,s,!0,s,s,s,s,s,s)),C.ay),s),new T.dF(C.E,s,s,L.L(this.e,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fq(q),s,s,s,s,!0,s,s,s,s,s,s)),C.L),s)],t.t),C.p,C.j,C.e),s,s,s,s,s,s,240)}}
+return M.p(s,T.ad(H.b([M.p(s,s,s,s,new S.ah(s,X.aO(C.aV,new L.aE(this.d,s,s)),s,s,s,s,C.n),200,new V.C(0,25,0,25),s,240),new T.dF(C.E,s,s,L.L(this.c,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.ds(q),s,s,s,s,!0,s,s,s,s,s,s)),C.ay),s),new T.dF(C.E,s,s,L.L(this.e,s,s,s,B.T(s,A.J(s,s,new P.i(r),s,s,s,s,s,s,s,s,V.fq(q),s,s,s,s,!0,s,s,s,s,s,s)),C.L),s)],t.t),C.l,C.w,C.e),s,s,s,s,s,s,240)}}
 S.w8.prototype={
 a4:function(){return new S.M9(null,C.o)}}
 S.M9.prototype={
@@ -37763,10 +37763,10 @@ $.agp=U.dv($.afC,X.aA9(c/6.5))
 s=c/3
 r=s-100
 q=M.agx("Patch","DIMENSIONS \n56.5  x  36.4  x  4.0  mm",c)
-p=c/5
-o=t.t
-n=T.ap(H.b([M.p(d,d,d,d,new S.ah(d,X.aO(C.y,new L.aE("assets/shali_sub_item.png",d,d)),d,d,d,d,C.n),p,new V.C(0,25,0,25),d,c/4.8)],o),C.l,C.w,C.e)
-m=(p+50)/10
+p=t.t
+o=T.ap(H.b([M.p(d,d,d,d,new S.ah(d,X.aO(C.y,new L.aE("assets/shali_sub_item.png",d,d)),d,d,d,d,C.n),485,new V.C(0,25,0,25),d,618)],p),C.l,C.w,C.e)
+n=c/5
+m=(n+50)/10
 s=(c-(s-150)*2)/40
 l=$.ag3.a
 k=T.ak(d,R.aS(!1,!0,K.aU(l,new O.acV(),d),d,!0,d,d,d,C.q,d,d,d,new O.acW(),d,new O.acX(),d,C.q,d),d,d,s*19.1,d,m*2,d)
@@ -37776,14 +37776,14 @@ h=$.agk.a
 g=T.ak(d,R.aS(!1,!0,K.aU(h,new O.ad5(),d),d,!0,d,d,d,C.q,d,d,d,new O.ad6(),d,new O.ad7(),d,C.q,d),d,d,d,s*9.8,m*1.4,d)
 f=$.agp.a
 s=T.ak(d,R.aS(!1,!0,K.aU(f,new O.ad8(),d),d,!0,d,d,d,C.q,d,d,d,new O.ad9(),d,new O.acY(),d,C.q,d),d,d,d,s*17,m*5.9,d)
-e=N.agA(p,m*2.2)
+e=N.agA(n,m*2.2)
 e=T.ak(d,K.aU(l,new O.acZ(),d),d,d,10,d,e,d)
-l=N.agA(p,m*6.5)
+l=N.agA(n,m*6.5)
 l=T.ak(d,K.aU(j,new O.ad_(),d),d,d,2,d,l,d)
-j=N.agA(p,m*1.7)
+j=N.agA(n,m*1.7)
 j=T.ak(d,K.aU(h,new O.ad0(),d),d,d,d,0,j,d)
-m=N.agA(p,m*6.15)
-return M.p(d,M.p(d,new T.cG(C.ce,T.ad(H.b([q,T.bp(C.C,H.b([n,k,i,g,s,e,l,j,T.ak(d,K.aU(f,new O.ad1(),d),d,d,d,36,m,d)],o),C.u,C.A),T.I(d,15,d),M.agx("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",c),T.I(d,40,d),T.ap(H.b([M.Af("Material",u.K,c),T.ba(M.p(d,d,d,d,d,d,d,d,d),1),M.Af("Technology",u.d,c)],o),C.p,C.j,C.e)],o),C.p,C.j,C.e),d),d,d,d,d,d,new V.C(r,70,r,70),d),d,d,d,1150,d,d,c)}}
+m=N.agA(n,m*6.15)
+return M.p(d,M.p(d,new T.cG(C.ce,T.ad(H.b([q,T.bp(C.C,H.b([o,k,i,g,s,e,l,j,T.ak(d,K.aU(f,new O.ad1(),d),d,d,d,36,m,d)],p),C.u,C.A),T.I(d,15,d),M.agx("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",c),T.I(d,40,d),T.ap(H.b([M.Af("Material",u.K,c),T.ba(M.p(d,d,d,d,d,d,d,d,d),1),M.Af("Technology",u.d,c)],p),C.p,C.j,C.e)],p),C.p,C.j,C.e),d),d,d,d,d,d,new V.C(r,70,r,70),d),d,d,d,1150,d,d,c)}}
 O.acX.prototype={
 $0:function(){},
 $S:1}
