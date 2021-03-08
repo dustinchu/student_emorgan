@@ -35069,7 +35069,7 @@ G.B5.prototype={
 D:function(a,b){var s,r=null,q=4282533448,p=b.E(t.w).f.a.a,o=p/3,n=o-100,m=p/5,l=m-50
 m+=50
 s=t.t
-return M.p(r,M.p(r,new T.cG(C.ce,T.bp(C.C,H.b([T.ad(H.b([T.ap(H.b([M.p(r,T.ad(H.b([L.L("Human A",r,r,r,B.T(r,A.J(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.ds(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/buzzy_human_a.png",r,r)),r,r,r,r,C.n),m,new V.C(0,25,0,25),r,l)],s),C.p,C.j,C.e)],s),C.l,C.j,C.e),r,r,r,r,r,r,l),M.p(r,T.ad(H.b([L.L("Human B",r,r,r,B.T(r,A.J(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.ds(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/buzzy_human_b.png",r,r)),r,r,r,r,C.n),m,new V.C(0,25,0,25),r,l)],s),C.p,C.j,C.e)],s),C.l,C.j,C.e),r,r,r,r,r,r,l)],s),C.l,C.b4,C.e),T.G(r,10,r),M.aja("How to put on Buzzy Patch","The doctor will simulate your body action in any state with your 3D model \non the computer first. \n\nThen decide the final position according to the feeling of placing it directly\non your body and the product functions.\n",p)],s),C.l,C.j,C.e),T.ak(r,M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/human_line.png",r,r)),r,r,r,r,C.n),20,new V.C(0,0,0,0),r,250),r,r,o/2-40,r,300,r)],s),C.u,C.A),r),r,r,r,r,r,new V.C(n,40,n,40),r),r,r,r,1000,r,r,p)}}
+return M.p(r,M.p(r,new T.cG(C.ce,T.bp(C.C,H.b([T.ad(H.b([T.ap(H.b([M.p(r,T.ad(H.b([L.L("Human A",r,r,r,B.T(r,A.J(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.ds(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/buzzy_human_a.png",r,r)),r,r,r,r,C.n),m,new V.C(0,25,0,25),r,l)],s),C.p,C.j,C.e)],s),C.l,C.j,C.e),r,r,r,r,r,r,l),M.p(r,T.ad(H.b([L.L("Human B",r,r,r,B.T(r,A.J(r,r,new P.i(q),r,r,r,r,r,r,r,r,V.ds(p),r,r,r,r,!0,r,r,r,r,r,r)),r),T.ad(H.b([M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/buzzy_human_b.png",r,r)),r,r,r,r,C.n),m,new V.C(0,25,0,25),r,l)],s),C.p,C.j,C.e)],s),C.l,C.j,C.e),r,r,r,r,r,r,l)],s),C.l,C.b4,C.e),T.G(r,10,r),M.aja("How to put on Buzzy Patch","The doctor will simulate your body action in any state with your 3D model \non the computer first. \n\nThen decide the final position according to the feeling of placing it directly\non your body and the product functions.\n",p)],s),C.l,C.j,C.e),T.ak(r,M.p(r,r,r,r,new S.ah(r,X.aO(C.y,new L.aE("assets/human_line.png",r,r)),r,r,r,r,C.n),20,new V.C(0,0,0,0),r,250),r,r,o/2-40,r,280,r)],s),C.u,C.A),r),r,r,r,r,r,new V.C(n,40,n,40),r),r,r,r,1000,r,r,p)}}
 L.B6.prototype={
 D:function(a,b){var s=null,r=b.E(t.w).f.a.a,q=r/3-100
 return M.p(s,M.p(s,new T.cG(C.ce,T.ap(H.b([new L.mX("Step 1.","assets/product_step1.png","Patch detects\nthe unusual pulse\n\n\n ",s),new L.mX("Step 2.","assets/product_step3.png","Patch turns A\u2019s pulse\ninto electric shock \ndata\n\n ",s),new L.mX("Step 3.","assets/product_step4.png","Electric shock data\nwas sent to B\u2019s \nBuzzy Patch\n\n ",s),new L.mX("Step 4.","assets/buzzy_step4.png","B feels electric shock\nfrom A and have a\nnew way to read A\u2019s \nemotion\n ",s)],t.t),C.p,C.b4,C.e),s),s,s,s,s,s,new V.C(q,20,q,20),s),s,s,s,550,s,s,r)}}
@@ -37757,7 +37757,7 @@ s=c/3
 r=s-100
 q=M.agw("Patch","DIMENSIONS \n56.5  x  36.4  x  4.0  mm",c)
 p=t.t
-o=T.ap(H.b([M.p(d,d,d,d,new S.ah(d,X.aO(C.aA,new L.aE("assets/shali_sub_item.png",d,d)),d,d,d,d,C.n),290,new V.C(0,25,0,25),d,381)],p),C.l,C.w,C.e)
+o=T.ap(H.b([M.p(d,d,d,d,new S.ah(d,X.aO(C.aA,new L.aE("assets/shali_sub_item.png",d,d)),d,d,d,d,C.n),217,new V.C(0,25,0,25),d,284)],p),C.l,C.w,C.e)
 n=c/5
 m=(n+50)/10
 s=(c-(s-150)*2)/40
