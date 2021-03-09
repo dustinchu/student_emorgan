@@ -4,6 +4,7 @@ import 'package:emorgan/common/widgets/product_left_animation_hover.dart';
 import 'package:emorgan/common/widgets/product_left_hover.dart';
 import 'package:emorgan/common/widgets/product_right_animation_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
+import 'package:emorgan/common/widgets/shila_product_right_animation_hover.dart';
 import 'package:flutter/material.dart';
 
 import 'line_size.dart';
@@ -65,10 +66,10 @@ class _ShaliPage2State extends State<ShaliPage2> with TickerProviderStateMixin {
     left2InfoAnimation = DetsIntroAnimation(
         controllerLeft2, line_left2_patch_width_size(w / 7.8),);
     right1InfoAnimation = DetsIntroAnimation(
-        controllerRight1, line_right1_patch_width_size(w / 7.2),);
+        controllerRight1, line_right1_patch_width_size(w / 13),);
     right2InfoAnimation = DetsIntroAnimation(
       controllerRight2,
-     line_right2_patch_width_size(w / 6.5),
+     line_right2_patch_width_size(w /7.7),
     );
     return Container(
       width: w,
@@ -273,7 +274,7 @@ facial expression.''',
                      child: AnimatedBuilder(
                               animation: right1InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
-                                return Product_right_animation_hover(
+                                return Shila_product_right_animation_hover(
                                   infoAnimation: right1InfoAnimation,
                                   title: "Battery",
                                   body: '''\nThe electric power is from
@@ -288,11 +289,11 @@ for 14 years.
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 5.4),
                     top:230,
-                    right: (w - ((w / 3 - 150) * 2)) / 70 * -2.31,
+                    right: (w - ((w / 3 - 150) * 2)) / 70 * -0.31,
                      child: AnimatedBuilder(
                               animation: right2InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
-                                return Product_right_animation_hover(
+                                return Shila_product_right_animation_hover(
                                   infoAnimation: right2InfoAnimation,
                                   title: "Biomedical Silicone",
                                   body: '''\nUsing high skin-friendly
