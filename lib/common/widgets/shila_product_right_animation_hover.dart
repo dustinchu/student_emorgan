@@ -31,7 +31,7 @@ class Shila_product_right_animation_hover extends StatelessWidget {
                 color: Color(0xFF424648),
               ),
               SizedBox(
-                width: 5,
+                width: 10,
               ),
               Container(
                 width: infoAnimation.dividerSizeBoxWidth.value,
@@ -58,7 +58,6 @@ class Shila_product_right_animation_hover extends StatelessWidget {
                           fontSize: product_width_small_size(w))),
                 ],
               ),
-              SizedBox(width: 10,)
             ],
           ),
         ],
