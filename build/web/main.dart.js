@@ -37770,7 +37770,7 @@ $.afF.k(0)},
 D:function(a,b){var s,r,q,p,o,n,m,l,k=null,j=b.E(t.w).f.a.a
 $.OF=U.dv($.afr,X.azV(j/6.1))
 $.OG=U.dv($.afv,X.azW(j/7.8))
-$.OK=U.dv($.afA,X.aA7(j/21))
+$.OK=U.dv($.afA,X.aA7(j/23))
 $.agp=U.dv($.afF,X.aA8(j/9))
 s=j/3
 r=s-100
@@ -37782,7 +37782,7 @@ n=j-(s-150)*2
 m=n/70
 l=$.agp.a
 n/=200
-return M.o(k,M.o(k,new T.cG(C.ce,T.ac(H.b([q,T.bl(C.C,H.b([p,T.ak(k,R.aS(!1,!0,K.aU(l,new O.adb(),k),k,!0,k,k,k,C.q,k,k,k,new O.adc(),k,new O.ad0(),k,C.q,k),k,k,k,m*27,215,k),T.ak(k,K.aU($.OF.a,new O.ad1(),k),k,k,m*0.3,k,78,k),T.ak(k,K.aU($.OG.a,new O.ad2(),k),k,k,(j-(s-353)*2)/100*0.025,k,200,k),T.ak(k,K.aU($.OK.a,new O.ad3(),k),k,k,n*115.01,k,115,k),T.ak(k,K.aU(l,new O.ad4(),k),k,k,n*85.01,k,230,k)],o),C.u,C.A),T.D(k,15,k),M.agx("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",j),T.D(k,40,k),T.ap(H.b([M.Ag("Material",u.K,j),T.ba(M.o(k,k,k,k,k,k,k,k,k),1),M.Ag("Technology",u.d,j)],o),C.p,C.j,C.e)],o),C.p,C.j,C.e),k),k,k,k,k,k,new V.C(r,70,r,70),k),k,k,k,1150,k,k,j)}}
+return M.o(k,M.o(k,new T.cG(C.ce,T.ac(H.b([q,T.bl(C.C,H.b([p,T.ak(k,R.aS(!1,!0,K.aU(l,new O.adb(),k),k,!0,k,k,k,C.q,k,k,k,new O.adc(),k,new O.ad0(),k,C.q,k),k,k,k,m*27,215,k),T.ak(k,K.aU($.OF.a,new O.ad1(),k),k,k,m*0.3,k,78,k),T.ak(k,K.aU($.OG.a,new O.ad2(),k),k,k,(j-(s-353)*2)/100*0.025,k,200,k),T.ak(k,K.aU($.OK.a,new O.ad3(),k),k,k,n*114.01,k,115,k),T.ak(k,K.aU(l,new O.ad4(),k),k,k,n*85.01,k,230,k)],o),C.u,C.A),T.D(k,15,k),M.agx("Design","\nShali Patch is in the shape of bending alined with human face to stay in place. The bulge is to hold the tears dripping.",j),T.D(k,40,k),T.ap(H.b([M.Ag("Material",u.K,j),T.ba(M.o(k,k,k,k,k,k,k,k,k),1),M.Ag("Technology",u.d,j)],o),C.p,C.j,C.e)],o),C.p,C.j,C.e),k),k,k,k,k,k,new V.C(r,70,r,70),k),k,k,k,1150,k,k,j)}}
 O.ad_.prototype={
 $0:function(){},
 $S:1}

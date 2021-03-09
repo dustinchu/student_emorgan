@@ -66,7 +66,7 @@ class _ShaliPage2State extends State<ShaliPage2> with TickerProviderStateMixin {
     left2InfoAnimation = DetsIntroAnimation(
         controllerLeft2, line_left2_patch_width_size(w / 7.8),);
     right1InfoAnimation = DetsIntroAnimation(
-        controllerRight1, line_right1_patch_width_size(w / 21),);
+        controllerRight1, line_right1_patch_width_size(w / 23),);
     right2InfoAnimation = DetsIntroAnimation(
       controllerRight2,
      line_right2_patch_width_size(w /9),
@@ -270,7 +270,7 @@ facial expression.''',
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.7),
                     top:115,
-                    left: (w - ((w / 3 - 150) * 2)) / 200 * 115.01,
+                    left: (w - ((w / 3 - 150) * 2)) / 200 * 114.01,
                      child: AnimatedBuilder(
                               animation: right1InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
