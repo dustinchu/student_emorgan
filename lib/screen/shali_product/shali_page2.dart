@@ -66,7 +66,7 @@ class _ShaliPage2State extends State<ShaliPage2> with TickerProviderStateMixin {
     left2InfoAnimation = DetsIntroAnimation(
         controllerLeft2, line_left2_patch_width_size(w / 7.8),);
     right1InfoAnimation = DetsIntroAnimation(
-        controllerRight1, line_right1_patch_width_size(w / 13),);
+        controllerRight1, line_right1_patch_width_size(w / 20),);
     right2InfoAnimation = DetsIntroAnimation(
       controllerRight2,
      line_right2_patch_width_size(w /7.7),
