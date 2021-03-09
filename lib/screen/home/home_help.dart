@@ -24,7 +24,7 @@ class _HomeHelpState extends State<HomeHelp>
       step("Step 1.", "assets/step1.png", "Book a counseling", "Online", "",
           w),
       step("Step 2.", "assets/step2.png", "Get the consent and",
-          "emorgan-purchse code", "from the psychologist", w),
+          "emorgan-purchase code", "from the psychologist", w),
       step("Step 3.", "assets/step3.png", "Purchase Obi, Shali or",
           "Buzzy online", "", w),
       step("Step 4.", "assets/step4.png", "Put on your Obi, Shali or", "Buzzy",

@@ -232,12 +232,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Stack(
         children: [
           Container(
-            height: h,
             width: w,
             child: Listener(
-              onPointerUp: (details) {
-                print("up");
-              },
               onPointerSignal: (pointerSignal) async {
                 if (scrollStatus) {
                   if (pointerSignal is PointerScrollEvent) {
