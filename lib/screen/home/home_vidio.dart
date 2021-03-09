@@ -33,7 +33,7 @@ class _HomeVidioState extends State<HomeVidio> {
 
   Future<void> initializePlayer() async {
     _videoPlayerController1 = VideoPlayerController.network(
-        'https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4');
+        'https://vod-progressive.akamaized.net/exp=1615304520~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=b6e5ec1a894eb0dcad4bfb0e01d50130520daafbe66e3a40d3d601c0fc50e026/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4');
     await _videoPlayerController1.initialize();
     _videoPlayerController2 = VideoPlayerController.network(
         'https://assets.mixkit.co/videos/preview/mixkit-a-girl-blowing-a-bubble-gum-at-an-amusement-park-1226-large.mp4');
