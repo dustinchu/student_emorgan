@@ -66,10 +66,10 @@ class _ShaliPage2State extends State<ShaliPage2> with TickerProviderStateMixin {
     left2InfoAnimation = DetsIntroAnimation(
         controllerLeft2, line_left2_patch_width_size(w / 7.8),);
     right1InfoAnimation = DetsIntroAnimation(
-        controllerRight1, line_right1_patch_width_size(w / 20),);
+        controllerRight1, line_right1_patch_width_size(w / 21),);
     right2InfoAnimation = DetsIntroAnimation(
       controllerRight2,
-     line_right2_patch_width_size(w /7.7),
+     line_right2_patch_width_size(w /7),
     );
     return Container(
       width: w,
@@ -289,7 +289,7 @@ for 14 years.
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 5.4),
                     top:230,
-                    right: (w - ((w / 3 - 150) * 2)) / 70 * -0.31,
+                    left:  (w - ((w / 3 - 150) * 2)) / 200 * 85.01,
                      child: AnimatedBuilder(
                               animation: right2InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
