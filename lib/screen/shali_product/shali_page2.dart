@@ -289,7 +289,7 @@ for 14 years.
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 5.4),
                     top:230,
-                    left:  (w - ((w / 3 - 150) * 2)) / 200 * 85.01,
+                    left:  (w - ((w / 3 - 150) * 2)) / 200 * 84.01,
                      child: AnimatedBuilder(
                               animation: right2InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
