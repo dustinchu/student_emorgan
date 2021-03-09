@@ -101,7 +101,7 @@ class _HomeAboutState extends State<HomeAbout>
                 //           mainAxisAlignment: MainAxisAlignment.center,
                 //           crossAxisAlignment: CrossAxisAlignment.center,
                 //           children: [
-                           
+
                 //             Text("Wen-Chien,Wu",
                 //                 style:  GoogleFonts.montserrat(
                 //                             textStyle: TextStyle(
@@ -159,15 +159,16 @@ class _HomeAboutState extends State<HomeAbout>
                 width: w / 3,
                 height: h,
                 color: Colors.white,
-                padding: EdgeInsets.only(top:20),
+                padding: EdgeInsets.only(top: 20),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                     SizedBox(
-                      height: MediaQuery.of(context).size.height<1000?650:250,
-                    ),
+                    //  SizedBox(
+                    //   height: MediaQuery.of(context).size.height<1000?650:250,
+                    // ),
+                    SizedBox(height: 300),
                     Text(
                       "About EMOGRAN",
                       style: GoogleFonts.montserrat(
@@ -204,8 +205,9 @@ spiritually assisted.''',
                               color: Color(0xFF364146),
                               fontSize: windows_width_small_size(w))),
                     ),
-                     SizedBox(
-                      height: MediaQuery.of(context).size.height<1000?20:50,
+                    SizedBox(
+                      height:
+                          MediaQuery.of(context).size.height < 1000 ? 20 : 50,
                     ),
                     Text(
                       "Emorgan Designer",
@@ -217,7 +219,7 @@ spiritually assisted.''',
                     SizedBox(
                       height: 20,
                     ),
-                    participation("Wen-Chien, Wu"," "),
+                    participation("Wen-Chien, Wu", " "),
                     SizedBox(
                       height: 10,
                     ),
@@ -226,7 +228,8 @@ spiritually assisted.''',
                       height: 10,
                     ),
                     SizedBox(
-                      height:  MediaQuery.of(context).size.height<1000?20:50,
+                      height:
+                          MediaQuery.of(context).size.height < 1000 ? 20 : 50,
                     ),
                     Text(
                       "Participation",
@@ -252,7 +255,8 @@ spiritually assisted.''',
                     ),
                     participation("Gimmyfoto      ", "Photographer"),
                     SizedBox(
-                      height:  MediaQuery.of(context).size.height<1000?20:50,
+                      height:
+                          MediaQuery.of(context).size.height < 1000 ? 20 : 50,
                     ),
                     iconText("assets/email.png", "emorgancreation@gmail.com"),
                     SizedBox(
@@ -263,12 +267,12 @@ spiritually assisted.''',
                       height: 10,
                     ),
                     iconText("assets/ig.png", "emorgan_creation"),
-                   
+                 
                   ],
                 ),
               ),
               Positioned(
-                bottom:MediaQuery.of(context).size.height<1000?600:300,
+                bottom: MediaQuery.of(context).size.height<1600?300:250,
                 child: Text(
                   "© 2020-2047 EMORGAN",
                   style: GoogleFonts.montserrat(

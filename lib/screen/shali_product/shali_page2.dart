@@ -103,20 +103,13 @@ DIMENSIONS
                         // height: w / 5 ,
                         width: 353,
                         height: 270,
-                      ),
-                    ],
-                  ),
-                  //圖片總高(w / 5 +50)
-                  //  /10分成十等分
-                  //w / 3 - 150 ＝左右邊界寬度
-                  //(w-((w / 3 - 150)*2))得到中間頁面的寬度
-                  // 白色區域中間(w-((w / 3 - 150)*2))/2,
+                        child: Stack(children: [
                   //左一hovar
                   Positioned(
                     // top: ((w / 5 + 50) / 10) * 1.4,
-                    top:65,
+                    top:15,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 70 * 32.6,
+                    left: 223,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -134,12 +127,12 @@ DIMENSIONS
                                     return CircularContainer(infoAnimation:left1InfoAnimation);
                                 }),),
                   ),
-                  //左二 hover
+  //左二 hover
                   Positioned(
                     // top: ((w / 5 + 50) / 10) * 4.3,
-                    top:188,
+                    top:138,
                     //白色區域分成40等分
-                    left: (w - ((w / 3 - 150) * 2)) / 70 * 17.1,
+                    left: 15,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -160,9 +153,9 @@ DIMENSIONS
                   //右一Hover
                   Positioned(
                     // top: ((w / 5 + 50) / 10) * 1.4,
-                    top:70,
+                    top:50,
                     //白色區域分成40等分
-                    right: (w - ((w / 3 - 150) * 2)) / 70 * 16,
+                    right:10,
                     child: InkWell(
                         hoverColor: Colors.transparent,
                          splashColor: Colors.transparent,
@@ -180,6 +173,18 @@ DIMENSIONS
                                       return CircularContainer(infoAnimation:right1InfoAnimation);
                                 }),),
                   ),
+                        ],),
+                      ),
+                    ],
+                  ),
+                  //圖片總高(w / 5 +50)
+                  //  /10分成十等分
+                  //w / 3 - 150 ＝左右邊界寬度
+                  //(w-((w / 3 - 150)*2))得到中間頁面的寬度
+                  // 白色區域中間(w-((w / 3 - 150)*2))/2,
+                
+                
+                  
                   //右二Hover
                   Positioned(
                     // top: ((w / 5 + 50) / 10) * 5,
@@ -228,25 +233,12 @@ memory to fix emorgan at
 the right position.''',
                                 );
                               }),
-//                     child: AnimatedSwitcher(
-//                       duration: const Duration(milliseconds: 600),
-//                       child: suctionStart
-//                           ? Product_left_hover(
-//                               lineWidth: line_left1_patch_width_size(w / 6.4),
-//                               title: "Tear Suction",
-//                               body: '''\nThere will be 4 forks made
-// of Nitinol with shape
-// memory to fix emorgan at
-// the right position.''',
-//                             )
-//                           : Container(),
-//                     ),
                   ),
                   //左二資訊
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 4.6),
                     top:200,
-                    left:  (w - ((w / 3 - 150) * 2)) / 70 * 0.025,
+                    left:  (w - ((w / 3 - 353) * 2)) / 100 * 0.025,
                      child: AnimatedBuilder(
                               animation: left2InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
@@ -271,11 +263,13 @@ facial expression.''',
 //                           : Container(),
 //                     ),
                   ),
-//                 //右一資訊
+//         
+
+        //右一資訊
                   Positioned(
                     // top: top_size(w / 5, ((w / 5 + 50) / 10) * 1.7),
-                    top:85,
-                    right: (w - ((w / 3 - 150) * 2)) / 70 * -3.01,
+                    top:115,
+                    left: (w - ((w / 3 - 150) * 2)) / 200 * 115.01,
                      child: AnimatedBuilder(
                               animation: right1InfoAnimation.controller,
                               builder: (BuildContext context, Widget child) {
@@ -289,20 +283,6 @@ for 14 years.
 ''',
                                 );
                               }),
-//                     child: AnimatedSwitcher(
-//                       duration: const Duration(milliseconds: 600),
-//                       child: batteryStart
-//                           ? Product_Right_hover(
-//                               lineWidth: line_right1_patch_width_size(w / 8.5),
-//                               title: "Battery",
-//                               body: '''\nThe electric power is from
-// the battery which can
-// supply power continuously
-// for 14 years.
-// ''',
-//                             )
-//                           : Container(),
-//                     ),
                   ),
 //                 //右二資訊
                   Positioned(
