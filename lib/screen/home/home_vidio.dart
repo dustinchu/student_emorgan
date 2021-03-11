@@ -1,4 +1,3 @@
-import 'package:chewie/chewie.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -21,7 +20,7 @@ VideoPlayerController _controller;
     // offers several different constructors to play videos from assets, files,
     // or the internet.
     _controller = VideoPlayerController.network(
-      'https://vod-progressive.akamaized.net/exp=1615458047~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=9c8153d26eacbb83f1fd6fab376eb5e108af9bcd8b1d47c0ceb80d57ef73eeac/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4',
+      'https://vod-progressive.akamaized.net/exp=1615470006~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=b05b63e79bb4fa8f29b47b4defcbdfa7da1a5fbf951af279569f9f8bc5ca8ebb/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4',
     );
 
     // Initialize the controller and store the Future for later use.
@@ -55,27 +54,27 @@ VideoPlayerController _controller;
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          children: [
-            FutureBuilder(
-              future: _initializeVideoPlayerFuture,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  // If the VideoPlayerController has finished initialization, use
-                  // the data it provides to limit the aspect ratio of the video.
-                  return AspectRatio(
+        child: FutureBuilder(
+          future: _initializeVideoPlayerFuture,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              // If the VideoPlayerController has finished i=nitialization, use
+              // the data it provides to limit the aspect ratio of the video.
+              return Column(
+                children: [
+                  AspectRatio(
                     aspectRatio: _controller.value.aspectRatio,
                     // Use the VideoPlayer widget to display the video.
                     child: VideoPlayer(_controller),
-                  );
-                } else {
-                  // If the VideoPlayerController is still initializing, show a
-                  // loading spinner.
-                  return Center(child: CircularProgressIndicator());
-                }
-              },
-            ),
-          ],
+                  ),
+                ],
+              );
+            } else {
+              // If the VideoPlayerController is still initializing, show a
+              // loading spinner.
+              return Center(child: CircularProgressIndicator());
+            }
+          },
         ),
     );
   }

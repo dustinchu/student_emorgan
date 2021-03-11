@@ -276,107 +276,112 @@ class _HomeScreenState extends State<HomeScreen> {
                 thickness: 8, // sets thickness of vsScrollBar
                 scrollbarFadeDuration: Duration(milliseconds: 500),
                 scrollbarTimeToFade: Duration(milliseconds: 800),
-                child: ListView(
-                  //避免listview下拉 往回時 會重新渲染 參考 https://stackoverflow.com/questions/57980225/flutter-issue-listview-rebuilding-items-when-scrolled
-                  addAutomaticKeepAlives: true,
-                  controller:
-                      _scrollController, // use same scrollController object to support drag functionality
-                  shrinkWrap: true,
-                  //關閉滾動
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    Column(
-                      children: [
-                        HomeVidio(),
-                        HomeBigBanner(
-                          upBtn: upBtn,
-                        ),
-                        new HomeProductBanner(
-                          id: "shali",
-                          upBtn: upBtn,
-                          nowBtn: nowBtn,
-                          moreBtn: shaliLearn,
-                          title: "Tear to Taste",
-                          title2: "SHALI",
-                          body1: "Human A wears a tear patch",
-                          body2: "Human B wears taste salivary",
-                          isLeft: true,
-                          finderName: 'shali',
-                          path: "https://eloquent-engelbart-9e449d.netlify.app",
-                          // path: "assets/shali145.html",
-                          status: bannerStatus.getBanner1Status,
-                          imgWidth: 1000,
-                          imgHeigh: 1000,
-                          isTop: false,
-                        ),
-                        new HomeProductBanner(
-                          id: "obi",
-                          upBtn: upBtn,
-                          nowBtn: nowBtn,
-                          moreBtn: obiLearn,
-                          title: "Voice to Vibrate",
-                          title2: "OBI",
-                          body1: "Human A wears a voice patch",
-                          body2: "Human B wears a tactile heart",
-                          isLeft: false,
-                          finderName: "obi",
-                          // path: "assets/obi150.html",
-                          path: "https://obi1.netlify.app/",
-                          status: bannerStatus.getBanner2Status,
-                          imgWidth: 1300,
-                          imgHeigh: 1300,
-                          isTop: true,
-                        ),
-                        new HomeProductBanner(
-                          id: "buzzy",
-                          upBtn: upBtn,
-                          nowBtn: nowBtn,
-                          moreBtn: buzzyLearn,
-                          title: "Pulse to Pain",
-                          title2: "BUZZY",
-                          body1: "Human A&B both wear patches with",
-                          body2:
-                              "pulse detection and low freqency electric shock",
-                          isLeft: true,
-                          finderName: "buzzy",
-                          // path: "assets/buzzy151.html",
-                          path: "https://buzzy1.netlify.app",
-                          status: bannerStatus.getBanner3Status,
-                          imgWidth: 1200,
-                          imgHeigh: 1200,
-                          isTop: false,
-                        ),
-                        HomeHelp(upBtn: upBtn),
-                        HomeBooking(
-                          upBtn: upBtn,
-                        ),
-                        HomeImagePlay(),
-                        HomeFeedback(
-                          upBtn: upBtn,
-                        ),
-                        HomeContact(
-                          upBtn: upBtn,
-                        ),
-                        HomeAbout(
-                          upBtn: upBtn,
-                        ),
-                        // Container(
-                        //   width: MediaQuery.of(context).size.width,
-                        //   height: 300,
-                        //   decoration: BoxDecoration(
-                        //     image: DecorationImage(
-                        //       image: AssetImage("assets/help.png"),
-                        //       fit: BoxFit.cover,
-                        //     ),
-                        //   ),
-                        // )
-                      ],
-                    ),
+                child: MediaQuery.removePadding(
+                  context: context,
+                  removeTop: true,
+                  child: ListView(
+                    //避免listview下拉 往回時 會重新渲染 參考 https://stackoverflow.com/questions/57980225/flutter-issue-listview-rebuilding-items-when-scrolled
+                    addAutomaticKeepAlives: true,
+                    controller:
+                        _scrollController, // use same scrollController object to support drag functionality
+                    shrinkWrap: true,
+                    //關閉滾動
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      Column(
+                        children: [
+                          HomeVidio(),
+                          HomeBigBanner(
+                            upBtn: upBtn,
+                          ),
+                          new HomeProductBanner(
+                            id: "shali",
+                            upBtn: upBtn,
+                            nowBtn: nowBtn,
+                            moreBtn: shaliLearn,
+                            title: "Tear to Taste",
+                            title2: "SHALI",
+                            body1: "Human A wears a tear patch",
+                            body2: "Human B wears taste salivary",
+                            isLeft: true,
+                            finderName: 'shali',
+                            path:
+                                "https://eloquent-engelbart-9e449d.netlify.app",
+                            // path: "assets/shali145.html",
+                            status: bannerStatus.getBanner1Status,
+                            imgWidth: 1000,
+                            imgHeigh: 1000,
+                            isTop: false,
+                          ),
+                          new HomeProductBanner(
+                            id: "obi",
+                            upBtn: upBtn,
+                            nowBtn: nowBtn,
+                            moreBtn: obiLearn,
+                            title: "Voice to Vibrate",
+                            title2: "OBI",
+                            body1: "Human A wears a voice patch",
+                            body2: "Human B wears a tactile heart",
+                            isLeft: false,
+                            finderName: "obi",
+                            // path: "assets/obi150.html",
+                            path: "https://obi1.netlify.app/",
+                            status: bannerStatus.getBanner2Status,
+                            imgWidth: 1300,
+                            imgHeigh: 1300,
+                            isTop: true,
+                          ),
+                          new HomeProductBanner(
+                            id: "buzzy",
+                            upBtn: upBtn,
+                            nowBtn: nowBtn,
+                            moreBtn: buzzyLearn,
+                            title: "Pulse to Pain",
+                            title2: "BUZZY",
+                            body1: "Human A&B both wear patches with",
+                            body2:
+                                "pulse detection and low freqency electric shock",
+                            isLeft: true,
+                            finderName: "buzzy",
+                            // path: "assets/buzzy151.html",
+                            path: "https://buzzy1.netlify.app",
+                            status: bannerStatus.getBanner3Status,
+                            imgWidth: 1200,
+                            imgHeigh: 1200,
+                            isTop: false,
+                          ),
+                          HomeHelp(upBtn: upBtn),
+                          HomeBooking(
+                            upBtn: upBtn,
+                          ),
+                          HomeImagePlay(),
+                          HomeFeedback(
+                            upBtn: upBtn,
+                          ),
+                          HomeContact(
+                            upBtn: upBtn,
+                          ),
+                          HomeAbout(
+                            upBtn: upBtn,
+                          ),
+                          // Container(
+                          //   width: MediaQuery.of(context).size.width,
+                          //   height: 300,
+                          //   decoration: BoxDecoration(
+                          //     image: DecorationImage(
+                          //       image: AssetImage("assets/help.png"),
+                          //       fit: BoxFit.cover,
+                          //     ),
+                          //   ),
+                          // )
+                        ],
+                      ),
 
-                    // HomeAbout(
-                    //   upBtn: upBtn,
-                    // ),
-                  ],
+                      // HomeAbout(
+                      //   upBtn: upBtn,
+                      // ),
+                    ],
+                  ),
                 ),
               ),
             ),

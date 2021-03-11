@@ -32,7 +32,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // offers several different constructors to play videos from assets, files,
     // or the internet.
     _controller = VideoPlayerController.network(
-      'https://vod-progressive.akamaized.net/exp=1615304520~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=b6e5ec1a894eb0dcad4bfb0e01d50130520daafbe66e3a40d3d601c0fc50e026/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4',
+      'https://vod-progressive.akamaized.net/exp=1615470006~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=b05b63e79bb4fa8f29b47b4defcbdfa7da1a5fbf951af279569f9f8bc5ca8ebb/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4',
     );
 
     // Initialize the controller and store the Future for later use.
@@ -40,7 +40,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
     // Use the controller to loop the video.
     _controller.setLooping(true);
-  _controller.play();
+    _controller.play();
     super.initState();
   }
 
@@ -58,32 +58,44 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     double h = 1500;
 
     return Scaffold(
-      body: Container(
-        width: w,
-        height: h,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/big_banner_backroung.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: FutureBuilder(
-          future: _initializeVideoPlayerFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              // If the VideoPlayerController has finished initialization, use
-              // the data it provides to limit the aspect ratio of the video.
-              return AspectRatio(
-                aspectRatio: _controller.value.aspectRatio,
-                // Use the VideoPlayer widget to display the video.
-                child: VideoPlayer(_controller),
-              );
-            } else {
-              // If the VideoPlayerController is still initializing, show a
-              // loading spinner.
-              return Center(child: CircularProgressIndicator());
-            }
-          },
+      body: MediaQuery.removePadding(
+        context: context,
+        removeTop: true,
+        child: ListView(
+          children: [
+            Container(
+              width: w,
+              height: h,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/big_banner_backroung.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Column(
+                children: [
+                  FutureBuilder(
+                    future: _initializeVideoPlayerFuture,
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        // If the VideoPlayerController has finished initialization, use
+                        // the data it provides to limit the aspect ratio of the video.
+                        return AspectRatio(
+                          aspectRatio: _controller.value.aspectRatio,
+                          // Use the VideoPlayer widget to display the video.
+                          child: VideoPlayer(_controller),
+                        );
+                      } else {
+                        // If the VideoPlayerController is still initializing, show a
+                        // loading spinner.
+                        return Center(child: CircularProgressIndicator());
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
