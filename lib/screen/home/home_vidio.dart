@@ -21,7 +21,7 @@ VideoPlayerController _controller;
     // offers several different constructors to play videos from assets, files,
     // or the internet.
     _controller = VideoPlayerController.network(
-      'https://vod-progressive.akamaized.net/exp=1615304520~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=b6e5ec1a894eb0dcad4bfb0e01d50130520daafbe66e3a40d3d601c0fc50e026/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4',
+      'https://vod-progressive.akamaized.net/exp=1615458047~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=9c8153d26eacbb83f1fd6fab376eb5e108af9bcd8b1d47c0ceb80d57ef73eeac/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4',
     );
 
     // Initialize the controller and store the Future for later use.
