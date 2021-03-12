@@ -1,4 +1,3 @@
-import 'package:chewie/chewie.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -14,14 +13,49 @@ class HomeVidio extends StatefulWidget {
 
 // https://vod-progressive.akamaized.net/exp=1614157174~acl=%2A%2F617711126.mp4%2A~hmac=f43820930d5cc210055084405c3684d7a2d3e21a48c8ed870ae4f837e1584121/vimeo-prod-skyfire-std-us/01/2418/7/187094433/617711126.mp4
 class _HomeVidioState extends State<HomeVidio> {
+  VideoPlayerController _controller;
+  Duration videoLength;
+  Duration videoPosition;
+  double volume = 0.5;
+
   @override
   void initState() {
     super.initState();
+    _controller = VideoPlayerController.network(
+        'https://vod-progressive.akamaized.net/exp=1615537828~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=1a611e24f706f70f3e9ef63a6fe44f39654ddb0eeb59beadb660c6aab69e71b7/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4')
+      ..addListener(() => setState(() {
+            videoPosition = _controller.value.position;
+          }))
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {
+          videoLength = _controller.value.duration;
+          _controller.play();
+        });
+      });
   }
 
-  @override
-  void dispose() {
-    super.dispose();
+  String convertToMinutesSeconds(Duration duration) {
+    final parsedMinutes = duration.inMinutes % 60;
+
+    final minutes =
+        parsedMinutes < 10 ? '0$parsedMinutes' : parsedMinutes.toString();
+
+    final parsedSeconds = duration.inSeconds % 60;
+
+    final seconds =
+        parsedSeconds < 10 ? '0$parsedSeconds' : parsedSeconds.toString();
+
+    return '$minutes:$seconds';
+  }
+
+  IconData animatedVolumeIcon(double volume) {
+    if (volume == 0)
+      return Icons.volume_mute;
+    else if (volume < 0.5)
+      return Icons.volume_down;
+    else
+      return Icons.volume_up;
   }
 
   @override
@@ -40,14 +74,70 @@ class _HomeVidioState extends State<HomeVidio> {
       ),
       child: Column(
         children: [
-          VideoItems(
-            videoPlayerController: VideoPlayerController.network(
-                'https://vod-progressive.akamaized.net/exp=1615534196~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=2d7f0eb730aee8e8f4990ae9808481cd59baaa3d4f019684c9b5aea03d9025de/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4'),
-            looping: true,
-            autoplay: true,
-          ),
+          if (_controller.value.initialized) ...[
+            AspectRatio(
+              aspectRatio: _controller.value.aspectRatio,
+              child: VideoPlayer(_controller),
+            ),
+            VideoProgressIndicator(
+              _controller,
+              allowScrubbing: true,
+              padding: EdgeInsets.all(10),
+            ),
+            Row(
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(
+                    _controller.value.isPlaying
+                        ? Icons.pause
+                        : Icons.play_arrow,
+                  ),
+                  onPressed: () => setState(
+                    () {
+                      _controller.value.isPlaying
+                          ? _controller.pause()
+                          : _controller.play();
+                    },
+                  ),
+                ),
+                Text(
+                    '${convertToMinutesSeconds(videoPosition)} / ${convertToMinutesSeconds(videoLength)}'),
+                SizedBox(width: 10),
+                Icon(animatedVolumeIcon(volume)),
+                Slider(
+                    value: volume,
+                    min: 0,
+                    max: 1,
+                    onChanged: (changedVolume) {
+                      setState(() {
+                        volume = changedVolume;
+                        _controller.setVolume(changedVolume);
+                      });
+                    }),
+                Spacer(),
+                IconButton(
+                    icon: Icon(Icons.loop,
+                        color: _controller.value.isLooping
+                            ? Colors.green
+                            : Colors.black),
+                    onPressed: () {
+                      _controller.setLooping(!_controller.value.isLooping);
+                    })
+              ],
+            )
+          ]
         ],
       ),
+      // child: Column(
+      //   children: [
+      //     // VideoItems(
+      //     //   videoPlayerController: VideoPlayerController.network(
+      //     //       'https://vod-progressive.akamaized.net/exp=1615534196~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=2d7f0eb730aee8e8f4990ae9808481cd59baaa3d4f019684c9b5aea03d9025de/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4'),
+      //     //   looping: true,
+      //     //   autoplay: true,
+      //     // ),
+      //   ],
+      // ),
     );
   }
 }
