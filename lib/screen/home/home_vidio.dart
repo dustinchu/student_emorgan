@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-import 'video_items.dart';
 
 class HomeVidio extends StatefulWidget {
   HomeVidio({Key key}) : super(key: key);
@@ -22,7 +21,7 @@ class _HomeVidioState extends State<HomeVidio> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(
-        'https://vod-progressive.akamaized.net/exp=1615537828~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=1a611e24f706f70f3e9ef63a6fe44f39654ddb0eeb59beadb660c6aab69e71b7/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4')
+        'https://firebasestorage.googleapis.com/v0/b/stockcalendar-449ba.appspot.com/o/2434881143.mp4?alt=media&token=d978b040-0d94-40cb-83b2-163a78bc0931')
       ..addListener(() => setState(() {
             videoPosition = _controller.value.position;
           }))
@@ -30,6 +29,7 @@ class _HomeVidioState extends State<HomeVidio> {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {
           videoLength = _controller.value.duration;
+           _controller.setLooping(true);
           _controller.play();
         });
       });
