@@ -25,9 +25,9 @@ generate electricity.
 material. When implanting
 EMORGAN, retract the
 protective sheath outside of
-the pacemaker, and the forks
+the EMORGAN, and the forks
 will automatically open to
-hook on the body destination.
+hook on the implantation destination.
 
 
 

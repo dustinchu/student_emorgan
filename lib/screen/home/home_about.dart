@@ -70,7 +70,7 @@ class _HomeAboutState extends State<HomeAbout>
       height: 1500,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/help.png"),
+          image: AssetImage("assets/perple.png"),
           fit: BoxFit.cover,
         ),
       ),
