@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'buzzy – Emorgan情緒器官',
+          title: 'Emorgan情緒器官',
           initialRoute: "/",
           onGenerateRoute: Modular.generateRoute,
           navigatorKey: Modular.navigatorKey, // Here's the culprit
