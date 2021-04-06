@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 
 class HomeVidio extends StatefulWidget {
@@ -208,7 +209,7 @@ class _HomeVidioState extends State<HomeVidio> {
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          first=false;
+                          first = false;
                           isShow = false;
                         });
                         _controller.play();
@@ -290,7 +291,36 @@ class _HomeVidioState extends State<HomeVidio> {
                                 ),
                               ),
                       ))
-                  : Container()
+                  : Container(),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Positioned(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  isShow
+                      ? Text(
+                          "Become  EMO",
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                fontSize: 26, color: Colors.white),
+                          ),
+                        )
+                      : Container(),
+                  Container(
+                    height: 40,
+                    width: 40,
+                    margin: EdgeInsets.only(bottom: 100),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/video_icon_down.png"),
+                          fit: BoxFit.fill),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
       // child: Column(
