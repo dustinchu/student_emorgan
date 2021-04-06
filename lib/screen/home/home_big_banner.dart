@@ -47,7 +47,7 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/big_banner.png"),
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),

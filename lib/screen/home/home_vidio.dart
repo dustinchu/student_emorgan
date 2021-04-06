@@ -1,7 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-
 
 class HomeVidio extends StatefulWidget {
   HomeVidio({Key key}) : super(key: key);
@@ -16,7 +17,13 @@ class _HomeVidioState extends State<HomeVidio> {
   Duration videoLength;
   Duration videoPosition;
   double volume = 0.5;
-
+  bool isTouch = false;
+  bool first = true;
+  bool isShow = true;
+  Timer timer;
+  double x, oldX, y, oldY = 0.0;
+  List<bool> isShowTime = [true, true, true];
+  int listCount = 0;
   @override
   void initState() {
     super.initState();
@@ -29,10 +36,40 @@ class _HomeVidioState extends State<HomeVidio> {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {
           videoLength = _controller.value.duration;
-           _controller.setLooping(true);
-          _controller.play();
+          _controller.setLooping(true);
+          // _controller.play();
+          _controller.pause();
         });
       });
+    timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+      if (oldX == x) {
+        // print("oldx===x");
+        isShowTime[listCount] = false;
+        if (listCount < 2) {
+          listCount += 1;
+        }
+        // print("conut===$listCount");
+        // print("isShowTime$listCount===${isShowTime[listCount]}");
+      } else {
+        // print("不一樣");
+        isShowTime = [true, true, true];
+        listCount = 0;
+      }
+      oldX = x;
+      oldY = y;
+      // print("看一下${!isShowTime[0] && !isShowTime[1] && !isShowTime[2]}");
+      if (!isShowTime[0] && !isShowTime[1] && !isShowTime[2]) {
+        setState(() {
+          isShow = false;
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   String convertToMinutesSeconds(Duration duration) {
@@ -72,60 +109,188 @@ class _HomeVidioState extends State<HomeVidio> {
           fit: BoxFit.cover,
         ),
       ),
-      child: Column(
+      child: Stack(
         children: [
-          if (_controller.value.initialized) ...[
-            AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: VideoPlayer(_controller),
+          MouseRegion(
+            onHover: (details) async {
+              setState(() {
+                x = details.position.dx;
+                y = details.position.dy;
+                isShow = true;
+              });
+            },
+            child: Column(
+              children: [
+                if (_controller.value.initialized) ...[
+                  AspectRatio(
+                    aspectRatio: _controller.value.aspectRatio,
+                    child: VideoPlayer(_controller),
+                  ),
+                  VideoProgressIndicator(
+                    _controller,
+                    allowScrubbing: true,
+                    padding: EdgeInsets.all(10),
+                  ),
+                  // Row(
+                  //   children: <Widget>[
+                  //     IconButton(
+                  //       icon: Icon(
+                  //         _controller.value.isPlaying
+                  //             ? Icons.pause
+                  //             : Icons.play_arrow,
+                  //       ),
+                  //       onPressed: () => setState(
+                  //         () {
+                  //           _controller.value.isPlaying
+                  //               ? _controller.pause()
+                  //               : _controller.play();
+                  //         },
+                  //       ),
+                  //     ),
+                  //     Text(
+                  //         '${convertToMinutesSeconds(videoPosition)} / ${convertToMinutesSeconds(videoLength)}'),
+                  //     SizedBox(width: 10),
+                  //     Icon(animatedVolumeIcon(volume)),
+                  //     Slider(
+                  //         value: volume,
+                  //         min: 0,
+                  //         max: 1,
+                  //         onChanged: (changedVolume) {
+                  //           setState(() {
+                  //             volume = changedVolume;
+                  //             _controller.setVolume(changedVolume);
+                  //           });
+                  //         }),
+                  //     Spacer(),
+                  //     IconButton(
+                  //         icon: Icon(Icons.loop,
+                  //             color: _controller.value.isLooping
+                  //                 ? Colors.green
+                  //                 : Colors.black),
+                  //         onPressed: () {
+                  //           _controller.setLooping(!_controller.value.isLooping);
+                  //         })
+                  //   ],
+                  // )
+                ]
+              ],
             ),
-            VideoProgressIndicator(
-              _controller,
-              allowScrubbing: true,
-              padding: EdgeInsets.all(10),
-            ),
-            // Row(
-            //   children: <Widget>[
-            //     IconButton(
-            //       icon: Icon(
-            //         _controller.value.isPlaying
-            //             ? Icons.pause
-            //             : Icons.play_arrow,
-            //       ),
-            //       onPressed: () => setState(
-            //         () {
-            //           _controller.value.isPlaying
-            //               ? _controller.pause()
-            //               : _controller.play();
-            //         },
-            //       ),
-            //     ),
-            //     Text(
-            //         '${convertToMinutesSeconds(videoPosition)} / ${convertToMinutesSeconds(videoLength)}'),
-            //     SizedBox(width: 10),
-            //     Icon(animatedVolumeIcon(volume)),
-            //     Slider(
-            //         value: volume,
-            //         min: 0,
-            //         max: 1,
-            //         onChanged: (changedVolume) {
-            //           setState(() {
-            //             volume = changedVolume;
-            //             _controller.setVolume(changedVolume);
-            //           });
-            //         }),
-            //     Spacer(),
-            //     IconButton(
-            //         icon: Icon(Icons.loop,
-            //             color: _controller.value.isLooping
-            //                 ? Colors.green
-            //                 : Colors.black),
-            //         onPressed: () {
-            //           _controller.setLooping(!_controller.value.isLooping);
-            //         })
-            //   ],
-            // )
-          ]
+          ),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: Positioned(
+          //     // bottom: 500,
+          //     child: Container(
+          //       margin: EdgeInsets.only(bottom: 700),
+          //       decoration: new BoxDecoration(
+          //         border:
+          //             new Border.all(color: Colors.white, width: 2), // 边色与边宽度
+          //         color: isTouch ? Colors.white : Colors.transparent, // 底色
+          //         borderRadius: new BorderRadius.circular((50.0)), // 圆角度
+          //       ),
+          //       child: Padding(
+          //         padding:
+          //             const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+          //         child: Text(
+          //           "The New Way to Feel Emotions ",
+          //           style: TextStyle(
+          //               color: isTouch ? Colors.black54 : Colors.white,
+          //               fontSize: 30),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          first
+              ? Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Positioned(
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          first=false;
+                          isShow = false;
+                        });
+                        _controller.play();
+                      },
+                      onHover: (touch) {
+                        setState(() {
+                          isTouch = touch;
+                        });
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: 500),
+                        decoration: new BoxDecoration(
+                          border: new Border.all(
+                              color: Colors.white, width: 2), // 边色与边宽度
+                          color:
+                              isTouch ? Colors.white : Colors.transparent, // 底色
+                          borderRadius:
+                              new BorderRadius.circular((50.0)), // 圆角度
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 10),
+                          child: Text(
+                            "The New Way to Feel Emotions ",
+                            style: TextStyle(
+                                color: isTouch ? Colors.black54 : Colors.white,
+                                fontSize: 30),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              : isShow
+                  ? Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Positioned(
+                        child: _controller.value.isPlaying
+                            ? InkWell(
+                                onTap: () {
+                                  _controller.pause();
+                                  isShow = false;
+                                  first = false;
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  margin: EdgeInsets.only(bottom: 500),
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/video_icon_pause.png"),
+                                        fit: BoxFit.fill),
+                                  ),
+                                ),
+                              )
+                            : Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Positioned(
+                                  child: InkWell(
+                                    //第二次出現播放的按鈕
+                                    onTap: () {
+                                      isShow = false;
+                                      _controller.play();
+                                    },
+                                    child: Container(
+                                      height: 100,
+                                      width: 100,
+                                      margin: EdgeInsets.only(bottom: 500),
+                                      // margin: EdgeInsets.only(bottom: 1000),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                "assets/video_play_icon.png"),
+                                            fit: BoxFit.fill),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                      ))
+                  : Container()
         ],
       ),
       // child: Column(

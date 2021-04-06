@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool scrollStatus = true;
   void scrollPageNext(h) {
     if (widget.pageIndex < 9) {
-      print("pageindex ===$widget.pageIndex");
+      print("pageindex ===${widget.pageIndex}");
       if (widget.pageIndex <= 0) {
         if (h < 1500) {
           widget.pageAnimate += 1500 + ((1500 - h) / 2);
@@ -70,8 +70,11 @@ class _HomeScreenState extends State<HomeScreen> {
           widget.pageAnimate += 1500 + ((h - 1500) / 2);
       } else
         widget.pageAnimate += 1500;
-      widget.pageIndex += 1;
-      print("next index ==$widget.pageIndex   animate==$widget.pageAnimate");
+      setState(() {
+        widget.pageIndex += 1;
+      });
+
+      // print("next index ==$widget.pageIndex   animate==$widget.pageAnimate");
       // pageAnimate += 1300;
       // else
       // pageAnimate += 1700;
@@ -86,13 +89,15 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void scrollPageBack(h) {
-    widget.pageIndex -= 1;
-    if (widget.pageIndex == 0) {
-      widget.pageAnimate = 0;
-      widget.pageIndex = 0;
-    } else {
-      widget.pageAnimate -= 1500;
-    }
+    setState(() {
+      widget.pageIndex -= 1;
+      if (widget.pageIndex == 0) {
+        widget.pageAnimate = 0;
+        widget.pageIndex = 0;
+      } else {
+        widget.pageAnimate -= 1500;
+      }
+    });
 
     print("back index ==$widget.pageIndex   animate==$widget.pageAnimate");
     // pageAnimate -= 1700;
@@ -243,7 +248,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     if (pointerSignal.scrollDelta.dy > 0 &&
                         widget.pageAnimate != 14300) {
-                      print("?");
                       scrollPageNext(h);
                     }
                     if (pointerSignal.scrollDelta.dy < 0 &&
@@ -386,20 +390,22 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Positioned(
-              width: 400,
-              height: 300,
-              left: 18.0,
-              top: h / 2,
-              child: HomeMenu(
-                emorgan: menuEmorgan,
-                products: menuProducts,
-                purchase: menuPurchase,
-                book: menuBook,
-                user: menuUser,
-                contact: menuContact,
-                about: menuAbout,
-              )),
+          widget.pageIndex > 0
+              ? Positioned(
+                  width: 400,
+                  height: 300,
+                  left: 18.0,
+                  top: h / 2,
+                  child: HomeMenu(
+                    emorgan: menuEmorgan,
+                    products: menuProducts,
+                    purchase: menuPurchase,
+                    book: menuBook,
+                    user: menuUser,
+                    contact: menuContact,
+                    about: menuAbout,
+                  ))
+              : Container(),
         ],
       ),
     );

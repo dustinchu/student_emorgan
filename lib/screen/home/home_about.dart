@@ -68,12 +68,12 @@ class _HomeAboutState extends State<HomeAbout>
     return Container(
       width: w,
       height: 1500,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/perple.png"),
-          fit: BoxFit.fill
-        ),
-      ),
+      // decoration: BoxDecoration(
+      //   image: DecorationImage(
+      //     image: AssetImage("assets/perple.png"),
+      //     fit: BoxFit.fill
+      //   ),
+      // ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,13 +84,13 @@ class _HomeAboutState extends State<HomeAbout>
               children: [
                 Container(
                   width: (w / 3) * 2,
-                  height: 1200,
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //     image: AssetImage("assets/people.png"),
-                  //     fit: BoxFit.cover,
-                  //   ),
-                  // ),
+                  height: 1500,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/perple.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
                 // Container(
                 //   height: 300,
