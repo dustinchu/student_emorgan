@@ -110,17 +110,17 @@ class _HomeVidioState extends State<HomeVidio> {
           fit: BoxFit.cover,
         ),
       ),
-      child: Stack(
-        children: [
-          MouseRegion(
-            onHover: (details) async {
-              setState(() {
-                x = details.position.dx;
-                y = details.position.dy;
-                isShow = true;
-              });
-            },
-            child: Column(
+      child: MouseRegion(
+        onHover: (details) async {
+          setState(() {
+            x = details.position.dx;
+            y = details.position.dy;
+            isShow = true;
+          });
+        },
+        child: Stack(
+          children: [
+            Column(
               children: [
                 if (_controller.value.initialized) ...[
                   AspectRatio(
@@ -176,165 +176,155 @@ class _HomeVidioState extends State<HomeVidio> {
                 ]
               ],
             ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Positioned(
-              child: InkWell(
-                onTap: () {
-                  setState(() {
-                    first = false;
-                    isShow = false;
-                  });
-                  _controller.play();
-                },
-                onHover: (touch) {
-                  setState(() {
-                    isTouch = touch;
-                  });
-                },
-                child: Container(
-                  margin: EdgeInsets.only(bottom: 500),
-                  decoration: new BoxDecoration(
-                    border:
-                        new Border.all(color: Colors.white, width: 2), // 边色与边宽度
-                    color: isTouch ? Colors.white : Colors.transparent, // 底色
-                    borderRadius: new BorderRadius.circular((50.0)), // 圆角度
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 10),
-                    child: Text(
-                      "The New Way to Feel Emotions ",
-                      style: TextStyle(
-                          color: isTouch ? Colors.black54 : Colors.white,
-                          fontSize: 30),
+            // Align(
+            //     alignment: Alignment.bottomCenter,
+            //   child: InkWell(
+            //     onTap: () {
+            //       setState(() {
+            //         first = false;
+            //         isShow = false;
+            //       });
+            //       _controller.play();
+            //     },
+            //     onHover: (touch) {
+            //       setState(() {
+            //         isTouch = touch;
+            //       });
+            //     },
+            //     child: Container(
+            //       margin: EdgeInsets.only(bottom: 500),
+            //       decoration: new BoxDecoration(
+            //         border:
+            //             new Border.all(color: Colors.white, width: 2), // 边色与边宽度
+            //         color: isTouch ? Colors.white : Colors.transparent, // 底色
+            //         borderRadius: new BorderRadius.circular((50.0)), // 圆角度
+            //       ),
+            //       child: Padding(
+            //         padding:
+            //             const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+            //         child: Text(
+            //           "The New Way to Feel Emotions ",
+            //           style: TextStyle(
+            //               color: isTouch ? Colors.black54 : Colors.white,
+            //               fontSize: 30),
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            first
+                ? Align(
+                    alignment: Alignment.bottomCenter,
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          first = false;
+                          isShow = false;
+                        });
+                        _controller.play();
+                      },
+                      onHover: (touch) {
+                        setState(() {
+                          isTouch = touch;
+                        });
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: 500),
+                        decoration: new BoxDecoration(
+                          border: new Border.all(
+                              color: Colors.white, width: 2), // 边色与边宽度
+                          color:
+                              isTouch ? Colors.white : Colors.transparent, // 底色
+                          borderRadius:
+                              new BorderRadius.circular((50.0)), // 圆角度
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 10),
+                          child: Text(
+                            "The New Way to Feel Emotions ",
+                            style: TextStyle(
+                                color: isTouch ? Colors.black54 : Colors.white,
+                                fontSize: 30),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                : isShow
+                    ? Align(
+                        alignment: Alignment.bottomCenter,
+                        child: _controller.value.isPlaying
+                            ? InkWell(
+                                onTap: () {
+                                  _controller.pause();
+                                  isShow = false;
+                                  first = false;
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  margin: EdgeInsets.only(bottom: 500),
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/video_icon_pause.png"),
+                                        fit: BoxFit.fill),
+                                  ),
+                                ),
+                              )
+                            : Align(
+                                alignment: Alignment.bottomCenter,
+                                child: InkWell(
+                                  //第二次出現播放的按鈕
+                                  onTap: () {
+                                    isShow = false;
+                                    _controller.play();
+                                  },
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    margin: EdgeInsets.only(bottom: 500),
+                                    // margin: EdgeInsets.only(bottom: 1000),
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/video_play_icon.png"),
+                                          fit: BoxFit.fill),
+                                    ),
+                                  ),
+                                ),
+                              ))
+                    : Container(),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  isShow
+                      ? Text(
+                          "Become  EMO",
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                fontSize: 26, color: Colors.white),
+                          ),
+                        )
+                      : Container(),
+                  Container(
+                    height: 40,
+                    width: 40,
+                    margin: EdgeInsets.only(bottom: 100),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/video_icon_down.png"),
+                          fit: BoxFit.fill),
                     ),
                   ),
-                ),
+                ],
               ),
-            ),
-          )
-          // first
-          //     ? Align(
-          //         alignment: Alignment.bottomCenter,
-          //         child: Positioned(
-          //           child: InkWell(
-          //             onTap: () {
-          //               setState(() {
-          //                 first = false;
-          //                 isShow = false;
-          //               });
-          //               _controller.play();
-          //             },
-          //             onHover: (touch) {
-          //               setState(() {
-          //                 isTouch = touch;
-          //               });
-          //             },
-          //             child: Container(
-          //               margin: EdgeInsets.only(bottom: 500),
-          //               decoration: new BoxDecoration(
-          //                 border: new Border.all(
-          //                     color: Colors.white, width: 2), // 边色与边宽度
-          //                 color:
-          //                     isTouch ? Colors.white : Colors.transparent, // 底色
-          //                 borderRadius:
-          //                     new BorderRadius.circular((50.0)), // 圆角度
-          //               ),
-          //               child: Padding(
-          //                 padding: const EdgeInsets.symmetric(
-          //                     horizontal: 40, vertical: 10),
-          //                 child: Text(
-          //                   "The New Way to Feel Emotions ",
-          //                   style: TextStyle(
-          //                       color: isTouch ? Colors.black54 : Colors.white,
-          //                       fontSize: 30),
-          //                 ),
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //       )
-          //     : isShow
-          //         ? Align(
-          //             alignment: Alignment.bottomCenter,
-          //             child: Positioned(
-          //               child: _controller.value.isPlaying
-          //                   ? InkWell(
-          //                       onTap: () {
-          //                         _controller.pause();
-          //                         isShow = false;
-          //                         first = false;
-          //                       },
-          //                       child: Container(
-          //                         height: 100,
-          //                         width: 100,
-          //                         margin: EdgeInsets.only(bottom: 500),
-          //                         decoration: BoxDecoration(
-          //                           image: DecorationImage(
-          //                               image: AssetImage(
-          //                                   "assets/video_icon_pause.png"),
-          //                               fit: BoxFit.fill),
-          //                         ),
-          //                       ),
-          //                     )
-          //                   : Align(
-          //                       alignment: Alignment.bottomCenter,
-          //                       child: Positioned(
-          //                         child: InkWell(
-          //                           //第二次出現播放的按鈕
-          //                           onTap: () {
-          //                             isShow = false;
-          //                             _controller.play();
-          //                           },
-          //                           child: Container(
-          //                             height: 100,
-          //                             width: 100,
-          //                             margin: EdgeInsets.only(bottom: 500),
-          //                             // margin: EdgeInsets.only(bottom: 1000),
-          //                             decoration: BoxDecoration(
-          //                               image: DecorationImage(
-          //                                   image: AssetImage(
-          //                                       "assets/video_play_icon.png"),
-          //                                   fit: BoxFit.fill),
-          //                             ),
-          //                           ),
-          //                         ),
-          //                       ),
-          //                     ),
-          //             ))
-          //         : Container(),
-          // Align(
-          //   alignment: Alignment.bottomCenter,
-          //   child: Positioned(
-          //     child: Column(
-          //       mainAxisAlignment: MainAxisAlignment.end,
-          //       children: [
-          //         isShow
-          //             ? Text(
-          //                 "Become  EMO",
-          //                 style: GoogleFonts.montserrat(
-          //                   textStyle: TextStyle(
-          //                       fontSize: 26, color: Colors.white),
-          //                 ),
-          //               )
-          //             : Container(),
-          //         Container(
-          //           height: 40,
-          //           width: 40,
-          //           margin: EdgeInsets.only(bottom: 100),
-          //           decoration: BoxDecoration(
-          //             image: DecorationImage(
-          //                 image: AssetImage("assets/video_icon_down.png"),
-          //                 fit: BoxFit.fill),
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // )
-        ],
+            )
+          ],
+        ),
       ),
       // child: Column(
       //   children: [
