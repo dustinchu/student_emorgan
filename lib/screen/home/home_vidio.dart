@@ -177,121 +177,96 @@ class _HomeVidioState extends State<HomeVidio> {
               ],
             ),
           ),
-          // Align(
-          //   alignment: Alignment.bottomCenter,
-          //   child: Positioned(
-          //     // bottom: 500,
-          //     child: Container(
-          //       margin: EdgeInsets.only(bottom: 700),
-          //       decoration: new BoxDecoration(
-          //         border:
-          //             new Border.all(color: Colors.white, width: 2), // 边色与边宽度
-          //         color: isTouch ? Colors.white : Colors.transparent, // 底色
-          //         borderRadius: new BorderRadius.circular((50.0)), // 圆角度
-          //       ),
-          //       child: Padding(
-          //         padding:
-          //             const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-          //         child: Text(
-          //           "The New Way to Feel Emotions ",
-          //           style: TextStyle(
-          //               color: isTouch ? Colors.black54 : Colors.white,
-          //               fontSize: 30),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
-          // first
-          //     ? Align(
-          //         alignment: Alignment.bottomCenter,
-          //         child: Positioned(
-          //           child: InkWell(
-          //             onTap: () {
-          //               setState(() {
-          //                 first = false;
-          //                 isShow = false;
-          //               });
-          //               _controller.play();
-          //             },
-          //             onHover: (touch) {
-          //               setState(() {
-          //                 isTouch = touch;
-          //               });
-          //             },
-          //             child: Container(
-          //               margin: EdgeInsets.only(bottom: 500),
-          //               decoration: new BoxDecoration(
-          //                 border: new Border.all(
-          //                     color: Colors.white, width: 2), // 边色与边宽度
-          //                 color:
-          //                     isTouch ? Colors.white : Colors.transparent, // 底色
-          //                 borderRadius:
-          //                     new BorderRadius.circular((50.0)), // 圆角度
-          //               ),
-          //               child: Padding(
-          //                 padding: const EdgeInsets.symmetric(
-          //                     horizontal: 40, vertical: 10),
-          //                 child: Text(
-          //                   "The New Way to Feel Emotions ",
-          //                   style: TextStyle(
-          //                       color: isTouch ? Colors.black54 : Colors.white,
-          //                       fontSize: 30),
-          //                 ),
-          //               ),
-          //             ),
-          //           ),
-          //         ),
-          //       )
-          //     : isShow
-          //         ? Align(
-          //             alignment: Alignment.bottomCenter,
-          //             child: Positioned(
-          //               child: _controller.value.isPlaying
-          //                   ? InkWell(
-          //                       onTap: () {
-          //                         _controller.pause();
-          //                         isShow = false;
-          //                         first = false;
-          //                       },
-          //                       child: Container(
-          //                         height: 100,
-          //                         width: 100,
-          //                         margin: EdgeInsets.only(bottom: 500),
-          //                         decoration: BoxDecoration(
-          //                           image: DecorationImage(
-          //                               image: AssetImage(
-          //                                   "assets/video_icon_pause.png"),
-          //                               fit: BoxFit.fill),
-          //                         ),
-          //                       ),
-          //                     )
-          //                   : Align(
-          //                       alignment: Alignment.bottomCenter,
-          //                       child: Positioned(
-          //                         child: InkWell(
-          //                           //第二次出現播放的按鈕
-          //                           onTap: () {
-          //                             isShow = false;
-          //                             _controller.play();
-          //                           },
-          //                           child: Container(
-          //                             height: 100,
-          //                             width: 100,
-          //                             margin: EdgeInsets.only(bottom: 500),
-          //                             // margin: EdgeInsets.only(bottom: 1000),
-          //                             decoration: BoxDecoration(
-          //                               image: DecorationImage(
-          //                                   image: AssetImage(
-          //                                       "assets/video_play_icon.png"),
-          //                                   fit: BoxFit.fill),
-          //                             ),
-          //                           ),
-          //                         ),
-          //                       ),
-          //                     ),
-          //             ))
-          //         : Container(),
+          first
+              ? Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Positioned(
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          first = false;
+                          isShow = false;
+                        });
+                        _controller.play();
+                      },
+                      onHover: (touch) {
+                        setState(() {
+                          isTouch = touch;
+                        });
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: 500),
+                        decoration: new BoxDecoration(
+                          border: new Border.all(
+                              color: Colors.white, width: 2), // 边色与边宽度
+                          color:
+                              isTouch ? Colors.white : Colors.transparent, // 底色
+                          borderRadius:
+                              new BorderRadius.circular((50.0)), // 圆角度
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 10),
+                          child: Text(
+                            "The New Way to Feel Emotions ",
+                            style: TextStyle(
+                                color: isTouch ? Colors.black54 : Colors.white,
+                                fontSize: 30),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              : isShow
+                  ? Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Positioned(
+                        child: _controller.value.isPlaying
+                            ? InkWell(
+                                onTap: () {
+                                  _controller.pause();
+                                  isShow = false;
+                                  first = false;
+                                },
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  margin: EdgeInsets.only(bottom: 500),
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/video_icon_pause.png"),
+                                        fit: BoxFit.fill),
+                                  ),
+                                ),
+                              )
+                            : Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Positioned(
+                                  child: InkWell(
+                                    //第二次出現播放的按鈕
+                                    onTap: () {
+                                      isShow = false;
+                                      _controller.play();
+                                    },
+                                    child: Container(
+                                      height: 100,
+                                      width: 100,
+                                      margin: EdgeInsets.only(bottom: 500),
+                                      // margin: EdgeInsets.only(bottom: 1000),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                "assets/video_play_icon.png"),
+                                            fit: BoxFit.fill),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                      ))
+                  : Container(),
           // Align(
           //   alignment: Alignment.bottomCenter,
           //   child: Positioned(
