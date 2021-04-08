@@ -39063,8 +39063,8 @@ a0=a8.$2("Osborne, Zhu  ",a5)
 a1=T.G(a2,10,a2)
 a8=a8.$2("Gimmyfoto      ","Photographer")
 a8=M.n(C.dD,T.ag(H.b([s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a8,T.G(a2,b4.J(a6).f.a.b<1000?20:50,a2),a9.$2("assets/email.png","emorgancreation@gmail.com"),T.G(a2,10,a2),a9.$2("assets/phone.png","0912-283-063"),T.G(a2,10,a2),a9.$2("assets/ig.png","emorgan_creation")],b2),C.p,C.k,C.hg),C.l,a2,a2,1500,a2,new V.D(0,20,0,0),b0)
-a6=b4.J(a6).f.a.b<1600?200:150
-return M.n(a2,T.ar(H.b([b1,T.bs(C.dD,H.b([a8,T.ap(a6,L.L("\xa9 2020-2047 EMORGAN",a2,a2,a2,B.P(a2,A.I(a2,a2,new P.i(4291346927),a2,a2,a2,a2,a2,a2,a2,a2,V.b7(a7),a2,a2,a2,a2,!0,a2,a2,a2,a2,a2,a2,a2)),a2,a2),a2,a2,a2,a2,a2,a2),T.ap(a2,B.pA(U.l5("assets/icon_up.png",a2,a2,a2),this.a.c,a2),a2,a2,a2,20,50,a2)],b2),C.r,C.B)],b2),C.p,C.k,C.f),a2,a2,a2,1500,a2,a2,a7)}}
+b4.J(a6).f.a.b
+return M.n(a2,T.ar(H.b([b1,T.bs(C.dD,H.b([a8,T.ap(150,L.L("\xa9 2020-2047 EMORGAN",a2,a2,a2,B.P(a2,A.I(a2,a2,new P.i(4291346927),a2,a2,a2,a2,a2,a2,a2,a2,V.b7(a7),a2,a2,a2,a2,!0,a2,a2,a2,a2,a2,a2,a2)),a2,a2),a2,a2,a2,a2,a2,a2),T.ap(a2,B.pA(U.l5("assets/icon_up.png",a2,a2,a2),this.a.c,a2),a2,a2,a2,20,50,a2)],b2),C.r,C.B)],b2),C.p,C.k,C.f),a2,a2,a2,1500,a2,a2,a7)}}
 K.a9i.prototype={
 $2:function(a,b){var s=null
 return T.ar(H.b([L.L(a,s,s,s,B.P(s,A.I(s,s,new P.i(4281745734),s,s,s,s,s,s,s,s,12,s,s,s,s,!0,s,s,s,s,s,s,s)),s,s),T.G(s,s,160),L.L(b,s,s,s,B.P(s,A.I(s,s,new P.i(2151827016),s,s,s,s,s,s,s,s,12,s,s,s,s,!0,s,s,s,s,s,s,s)),s,s)],t.t),C.m,C.k,C.hg)},

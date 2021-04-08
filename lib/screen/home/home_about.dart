@@ -267,12 +267,11 @@ spiritually assisted.''',
                       height: 10,
                     ),
                     iconText("assets/ig.png", "emorgan_creation"),
-                 
                   ],
                 ),
               ),
               Positioned(
-                bottom: MediaQuery.of(context).size.height<1600?200:150,
+                bottom: MediaQuery.of(context).size.height < 1600 ? 150 : 150,
                 child: Text(
                   "© 2020-2047 EMORGAN",
                   style: GoogleFonts.montserrat(
