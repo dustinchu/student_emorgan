@@ -272,7 +272,7 @@ spiritually assisted.''',
                 ),
               ),
               Positioned(
-                bottom: MediaQuery.of(context).size.height<1600?300:250,
+                bottom: MediaQuery.of(context).size.height<1600?200:150,
                 child: Text(
                   "© 2020-2047 EMORGAN",
                   style: GoogleFonts.montserrat(

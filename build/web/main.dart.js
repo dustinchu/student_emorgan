@@ -39063,7 +39063,7 @@ a0=a8.$2("Osborne, Zhu  ",a5)
 a1=T.G(a2,10,a2)
 a8=a8.$2("Gimmyfoto      ","Photographer")
 a8=M.n(C.dD,T.ag(H.b([s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a8,T.G(a2,b4.J(a6).f.a.b<1000?20:50,a2),a9.$2("assets/email.png","emorgancreation@gmail.com"),T.G(a2,10,a2),a9.$2("assets/phone.png","0912-283-063"),T.G(a2,10,a2),a9.$2("assets/ig.png","emorgan_creation")],b2),C.p,C.k,C.hg),C.l,a2,a2,1500,a2,new V.D(0,20,0,0),b0)
-a6=b4.J(a6).f.a.b<1600?300:250
+a6=b4.J(a6).f.a.b<1600?200:150
 return M.n(a2,T.ar(H.b([b1,T.bs(C.dD,H.b([a8,T.ap(a6,L.L("\xa9 2020-2047 EMORGAN",a2,a2,a2,B.P(a2,A.I(a2,a2,new P.i(4291346927),a2,a2,a2,a2,a2,a2,a2,a2,V.b7(a7),a2,a2,a2,a2,!0,a2,a2,a2,a2,a2,a2,a2)),a2,a2),a2,a2,a2,a2,a2,a2),T.ap(a2,B.pA(U.l5("assets/icon_up.png",a2,a2,a2),this.a.c,a2),a2,a2,a2,20,50,a2)],b2),C.r,C.B)],b2),C.p,C.k,C.f),a2,a2,a2,1500,a2,a2,a7)}}
 K.a9i.prototype={
 $2:function(a,b){var s=null
@@ -39083,7 +39083,7 @@ B.vI.prototype={
 a4:function(){return new B.MF(C.o)}}
 B.MF.prototype={
 D:function(a,b){var s=null,r=4286218919,q=b.J(t.w).f,p=X.aP(C.A,new L.aG("assets/big_banner_backroung.png",s,s)),o=t.t
-return T.bs(C.C,H.b([M.n(s,M.n(s,T.ag(H.b([T.ar(H.b([L.L(" ",s,s,s,B.P(s,A.I(s,s,new P.i(r),s,s,s,s,s,s,s,s,44,s,s,s,s,!0,s,s,s,s,s,s,s)),s,s)],o),C.p,C.k,C.f),T.bj(M.n(s,s,s,s,new S.am(s,X.aP(C.ad,new L.aG("assets/big_banner.png",s,s)),s,s,s,s,C.n),s,s,s,s)),T.ar(H.b([L.L(" ",s,s,s,B.P(s,A.I(s,s,new P.i(r),s,s,s,s,s,s,s,s,44,s,s,s,s,!0,s,s,s,s,s,s,s)),s,s)],o),C.cL,C.bF,C.f)],o),C.m,C.k,C.f),s,s,s,s,s,new V.D(200,50,200,50),s),s,s,new S.am(s,p,s,s,s,s,C.n),1500,s,s,q.a.a),T.ap(s,B.pA(U.l5("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,50,s)],o),C.r,C.B)}}
+return T.bs(C.C,H.b([M.n(s,M.n(s,T.ag(H.b([T.ar(H.b([L.L(" ",s,s,s,B.P(s,A.I(s,s,new P.i(r),s,s,s,s,s,s,s,s,44,s,s,s,s,!0,s,s,s,s,s,s,s)),s,s)],o),C.p,C.k,C.f),T.bj(M.n(s,s,s,s,new S.am(s,X.aP(C.ad,new L.aG("assets/big_banner.jpg",s,s)),s,s,s,s,C.n),s,s,s,s)),T.ar(H.b([L.L(" ",s,s,s,B.P(s,A.I(s,s,new P.i(r),s,s,s,s,s,s,s,s,44,s,s,s,s,!0,s,s,s,s,s,s,s)),s,s)],o),C.cL,C.bF,C.f)],o),C.m,C.k,C.f),s,s,s,s,s,new V.D(200,50,200,50),s),s,s,new S.am(s,p,s,s,s,s,C.n),1500,s,s,q.a.a),T.ap(s,B.pA(U.l5("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,50,s)],o),C.r,C.B)}}
 A.vJ.prototype={
 a4:function(){var s=t.i
 return new A.zK(H.b([!0,!0,!0,!0,!0,!0,!0],t.jf),H.b([H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s)],t.TE),null,null,C.o)}}
