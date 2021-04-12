@@ -27,44 +27,46 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
             ),
           ),
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 200, vertical: 50),
+            padding: EdgeInsets.symmetric(horizontal: 200, vertical: 150),
             child: Column(
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(" ",
-                      // "EMORGAN",
-                      style: GoogleFonts.montserrat(
-                        textStyle:
-                            TextStyle(color: Color(0xFF7A82A7), fontSize: 44),
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //     Text(" ",
+                //       // "EMORGAN",
+                //       style: GoogleFonts.montserrat(
+                //         textStyle:
+                //             TextStyle(color: Color(0xFF7A82A7), fontSize: 44),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+                SizedBox(height: 200,),
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("assets/big_banner.jpg"),
+                        image: AssetImage("assets/big_banner.png"),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(" ",
-                      // "FOR LOVE FOR FUTURE",
-                      style: GoogleFonts.montserrat(
-                        textStyle:
-                            TextStyle(color: Color(0xFF7A82A7), fontSize: 44),
-                      ),
-                    )
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   crossAxisAlignment: CrossAxisAlignment.end,
+                //   children: [
+                //     Text(" ",
+                //       // "FOR LOVE FOR FUTURE",
+                //       style: GoogleFonts.montserrat(
+                //         textStyle:
+                //             TextStyle(color: Color(0xFF7A82A7), fontSize: 44),
+                //       ),
+                //     )
+                //   ],
+                // ),
+                SizedBox(height: 200,),
               ],
             ),
           ),

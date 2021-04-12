@@ -164,6 +164,7 @@ class _HomeContactState extends State<HomeContact>
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
+    FocusNode myFocusNode;
     // double h = MediaQuery.of(context).size.height;
     containerSizeAnimation =
         HomeContactAnimation(containerSizeControlle, 900.0, 600.0);
@@ -186,6 +187,50 @@ class _HomeContactState extends State<HomeContact>
             color: Color(0xFFF3F2F8),
             height: h,
             child: TextField(
+              style: TextStyle(
+                fontSize: 20,
+                fontFamily: "",
+                height: 1,
+              ),
+              cursorColor: Color(0xFFC8C1EF),
+              controller: control,
+              keyboardType: TextInputType.multiline,
+              scrollPhysics: const NeverScrollableScrollPhysics(),
+              maxLines: max,
+              autofocus: true,
+              decoration: InputDecoration(
+                //多行上面要給個寬度
+                contentPadding: EdgeInsets.only(
+                    left: 10, bottom: 20, top: max > 1 ? 10 : 0),
+                //去除下滑線
+                border: InputBorder.none,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
+    Widget edit2(title, control, h, max) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: GoogleFonts.montserrat(
+              textStyle: TextStyle(
+                  fontSize: windows_width_small_size(w),
+                  color: Color(0xFF424648)),
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Container(
+            color: Color(0xFFF3F2F8),
+            height: h,
+            child: TextField(
+              focusNode: myFocusNode,
               style: TextStyle(
                 fontSize: 20,
                 fontFamily: "",
@@ -388,90 +433,97 @@ class _HomeContactState extends State<HomeContact>
                         color: Colors.white,
                         width: 900,
                         height: 600,
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: edit("Your Name",
-                                      yourNameTextEditingController, 30, 1),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Expanded(
-                                  child: edit("Your Email",
-                                      yourEmailTextEditingController, 30, 1),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Expanded(
-                              child: edit("Message",
-                                  messageTextEditingController, 300, 14),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                InkWell(
-                                  onTap: () async {
-                                    if (nameStatus &&
-                                        addressStatus &&
-                                        messageStatus) {
-                                      // yourNameTextEditingController.text = "";
-                                      // yourEmailTextEditingController.text = "";
-                                      // messageTextEditingController.text = "";
-                                      setState(() {
-                                        loading = true;
-                                        containerSizeControlle.forward();
-                                        nameStatus = false;
-                                        addressStatus = false;
-                                        messageStatus = false;
-                                      });
-                                    }
-                                  },
-                                  child: Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 10, vertical: 5),
-                                    decoration: new BoxDecoration(
-                                      border: new Border.all(
-                                          color: nameStatus &&
-                                                  addressStatus &&
-                                                  messageStatus
-                                              ? Color(0xFF7A82A7)
-                                              : Color(0xF80364146),
-                                          width: 2), // 邊色寬度
-                                      color: nameStatus &&
-                                              addressStatus &&
-                                              messageStatus
-                                          ? Color(0xFF7A82A7)
-                                          : Colors.transparent, // 底色
-                                      borderRadius: new BorderRadius.circular(
-                                          (60)), // 圆角度
-                                    ),
-                                    child: Text(
-                                      "Send Message",
-                                      style: GoogleFonts.montserrat(
-                                        textStyle: TextStyle(
+
+                        //web tab跳到下一個輸入 直接使用這比較方便
+                        //參考
+                        //https://github.com/flutter/flutter/issues/1608
+                        //https://api.flutter.dev/flutter/widgets/FocusTraversalGroup-class.html
+                        child: FocusTraversalGroup(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: edit("Your Name",
+                                        yourNameTextEditingController, 30, 1),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Expanded(
+                                    child: edit("Your Email",
+                                        yourEmailTextEditingController, 30, 1),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Expanded(
+                                child: edit("Message",
+                                    messageTextEditingController, 300, 14),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  InkWell(
+                                    onTap: () async {
+                                      if (nameStatus &&
+                                          addressStatus &&
+                                          messageStatus) {
+                                        // yourNameTextEditingController.text = "";
+                                        // yourEmailTextEditingController.text = "";
+                                        // messageTextEditingController.text = "";
+                                        setState(() {
+                                          loading = true;
+                                          containerSizeControlle.forward();
+                                          nameStatus = false;
+                                          addressStatus = false;
+                                          messageStatus = false;
+                                        });
+                                      }
+                                    },
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 10, vertical: 5),
+                                      decoration: new BoxDecoration(
+                                        border: new Border.all(
                                             color: nameStatus &&
                                                     addressStatus &&
                                                     messageStatus
-                                                ? Colors.white
-                                                : Color(0x80364146),
-                                            fontSize:
-                                                windows_width_small_size(w)),
+                                                ? Color(0xFF7A82A7)
+                                                : Color(0xF80364146),
+                                            width: 2), // 邊色寬度
+                                        color: nameStatus &&
+                                                addressStatus &&
+                                                messageStatus
+                                            ? Color(0xFF7A82A7)
+                                            : Colors.transparent, // 底色
+                                        borderRadius: new BorderRadius.circular(
+                                            (60)), // 圆角度
+                                      ),
+                                      child: Text(
+                                        "Send Message",
+                                        style: GoogleFonts.montserrat(
+                                          textStyle: TextStyle(
+                                              color: nameStatus &&
+                                                      addressStatus &&
+                                                      messageStatus
+                                                  ? Colors.white
+                                                  : Color(0x80364146),
+                                              fontSize:
+                                                  windows_width_small_size(w)),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            )
-                          ],
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       )
               ],

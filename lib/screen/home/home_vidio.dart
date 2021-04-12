@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,6 +26,7 @@ class _HomeVidioState extends State<HomeVidio> {
   double x, oldX, y, oldY = 0.0;
   List<bool> isShowTime = [true, true, true];
   int listCount = 0;
+  String status = "";
   @override
   void initState() {
     super.initState();
@@ -42,6 +44,8 @@ class _HomeVidioState extends State<HomeVidio> {
           _controller.pause();
         });
       });
+
+    //每秒判斷如果xy都一樣的話按鈕不顯示
     timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
       if (oldX == x) {
         // print("oldx===x");
@@ -56,13 +60,18 @@ class _HomeVidioState extends State<HomeVidio> {
         isShowTime = [true, true, true];
         listCount = 0;
       }
+
       oldX = x;
       oldY = y;
       // print("看一下${!isShowTime[0] && !isShowTime[1] && !isShowTime[2]}");
-      if (!isShowTime[0] && !isShowTime[1] && !isShowTime[2]) {
-        setState(() {
-          isShow = false;
-        });
+      if (status != "pause") {
+        print(
+            "看一下${!isShowTime[0] && !isShowTime[1] && !isShowTime[2]}  status==$status");
+        if (!isShowTime[0] && !isShowTime[1] && !isShowTime[2]) {
+          setState(() {
+            isShow = false;
+          });
+        }
       }
     });
   }
@@ -100,6 +109,7 @@ class _HomeVidioState extends State<HomeVidio> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = 1500;
+    double nowH = MediaQuery.of(context).size.height;
 
     return Container(
       width: w,
@@ -120,61 +130,72 @@ class _HomeVidioState extends State<HomeVidio> {
         },
         child: Stack(
           children: [
-            Column(
-              children: [
-                if (_controller.value.initialized) ...[
+            Expanded(
+              flex: 1,
+              child: Column(
+                children: [
                   AspectRatio(
                     aspectRatio: _controller.value.aspectRatio,
                     child: VideoPlayer(_controller),
                   ),
-                  VideoProgressIndicator(
-                    _controller,
-                    allowScrubbing: true,
-                    padding: EdgeInsets.all(10),
-                  ),
-                  // Row(
-                  //   children: <Widget>[
-                  //     IconButton(
-                  //       icon: Icon(
-                  //         _controller.value.isPlaying
-                  //             ? Icons.pause
-                  //             : Icons.play_arrow,
-                  //       ),
-                  //       onPressed: () => setState(
-                  //         () {
-                  //           _controller.value.isPlaying
-                  //               ? _controller.pause()
-                  //               : _controller.play();
-                  //         },
-                  //       ),
-                  //     ),
-                  //     Text(
-                  //         '${convertToMinutesSeconds(videoPosition)} / ${convertToMinutesSeconds(videoLength)}'),
-                  //     SizedBox(width: 10),
-                  //     Icon(animatedVolumeIcon(volume)),
-                  //     Slider(
-                  //         value: volume,
-                  //         min: 0,
-                  //         max: 1,
-                  //         onChanged: (changedVolume) {
-                  //           setState(() {
-                  //             volume = changedVolume;
-                  //             _controller.setVolume(changedVolume);
-                  //           });
-                  //         }),
-                  //     Spacer(),
-                  //     IconButton(
-                  //         icon: Icon(Icons.loop,
-                  //             color: _controller.value.isLooping
-                  //                 ? Colors.green
-                  //                 : Colors.black),
-                  //         onPressed: () {
-                  //           _controller.setLooping(!_controller.value.isLooping);
-                  //         })
-                  //   ],
-                  // )
-                ]
-              ],
+                ],
+              ),
+              // child: Column(
+              // children: [
+              // if (_controller.value.initialized) ...[
+              //   AspectRatio(
+              //     aspectRatio: _controller.value.aspectRatio,
+              //     child: VideoPlayer(_controller),
+              //   ),
+              // VideoProgressIndicator(
+              //   _controller,
+              //   allowScrubbing: true,
+              //   padding: EdgeInsets.all(10),
+              // ),
+              // Row(
+              //   children: <Widget>[
+              //     IconButton(
+              //       icon: Icon(
+              //         _controller.value.isPlaying
+              //             ? Icons.pause
+              //             : Icons.play_arrow,
+              //       ),
+              //       onPressed: () => setState(
+              //         () {
+              //           _controller.value.isPlaying
+              //               ? _controller.pause()
+              //               : _controller.play();
+              //         },
+              //       ),
+              //     ),
+              //     Text(
+              //         '${convertToMinutesSeconds(videoPosition)} / ${convertToMinutesSeconds(videoLength)}'),
+              //     SizedBox(width: 10),
+              //     Icon(animatedVolumeIcon(volume)),
+              //     Slider(
+              //         value: volume,
+              //         min: 0,
+              //         max: 1,
+              //         onChanged: (changedVolume) {
+              //           setState(() {
+              //             volume = changedVolume;
+              //             _controller.setVolume(changedVolume);
+              //           });
+              //         }),
+              //     Spacer(),
+              //     IconButton(
+              //         icon: Icon(Icons.loop,
+              //             color: _controller.value.isLooping
+              //                 ? Colors.green
+              //                 : Colors.black),
+              //         onPressed: () {
+              //           _controller.setLooping(!_controller.value.isLooping);
+              //         })
+              //   ],
+              // )
+              // ]
+              // ],
+              // ),
             ),
             // Align(
             //     alignment: Alignment.bottomCenter,
@@ -214,12 +235,13 @@ class _HomeVidioState extends State<HomeVidio> {
             // ),
             first
                 ? Align(
-                    alignment: Alignment.bottomCenter,
+                    alignment: Alignment.topCenter,
                     child: InkWell(
                       onTap: () {
                         setState(() {
                           first = false;
                           isShow = false;
+                          status = "first";
                         });
                         _controller.play();
                       },
@@ -229,7 +251,7 @@ class _HomeVidioState extends State<HomeVidio> {
                         });
                       },
                       child: Container(
-                        margin: EdgeInsets.only(bottom: 500),
+                        margin: EdgeInsets.only(top: nowH / 2),
                         decoration: new BoxDecoration(
                           border: new Border.all(
                               color: Colors.white, width: 2), // 边色与边宽度
@@ -252,75 +274,87 @@ class _HomeVidioState extends State<HomeVidio> {
                     ),
                   )
                 : isShow
-                    ? Align(
-                        alignment: Alignment.bottomCenter,
-                        child: _controller.value.isPlaying
-                            ? InkWell(
-                                onTap: () {
-                                  _controller.pause();
-                                  isShow = false;
-                                  first = false;
-                                },
-                                child: Container(
-                                  height: 100,
-                                  width: 100,
-                                  margin: EdgeInsets.only(bottom: 500),
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            "assets/video_icon_pause.png"),
-                                        fit: BoxFit.fill),
-                                  ),
-                                ),
-                              )
-                            : Align(
-                                alignment: Alignment.bottomCenter,
-                                child: InkWell(
-                                  //第二次出現播放的按鈕
-                                  onTap: () {
-                                    isShow = false;
-                                    _controller.play();
-                                  },
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    margin: EdgeInsets.only(bottom: 500),
-                                    // margin: EdgeInsets.only(bottom: 1000),
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              "assets/video_play_icon.png"),
-                                          fit: BoxFit.fill),
+                    ? DelayedDisplay(
+                        delay: Duration(seconds: 1),
+                        slidingBeginOffset: const Offset(0.0, 0.0),
+                        child: Align(
+                            alignment: Alignment.topCenter,
+                            child: _controller.value.isPlaying
+                                ? InkWell(
+                                    onTap: () {
+                                      _controller.pause();
+                                      isShow = false;
+                                      first = false;
+                                      status = "pause";
+                                    },
+                                    child: Container(
+                                      height: 100,
+                                      width: 100,
+                                      margin: EdgeInsets.only(top: nowH / 2),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                "assets/video_icon_pause.png"),
+                                            fit: BoxFit.fill),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              ))
+                                  )
+                                : DelayedDisplay(
+                                    delay: Duration(seconds: 1),
+                                    slidingBeginOffset: const Offset(0.0, 0.0),
+                                    child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: InkWell(
+                                        //第二次出現播放的按鈕
+                                        onTap: () {
+                                          isShow = false;
+                                          status = "play";
+                                          _controller.play();
+                                        },
+                                        child: Container(
+                                          height: 100,
+                                          width: 100,
+                                          margin:
+                                              EdgeInsets.only(top: nowH / 2),
+                                          // margin: EdgeInsets.only(bottom: 1000),
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/video_play_icon.png"),
+                                                fit: BoxFit.fill),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )),
+                      )
                     : Container(),
             Align(
-              alignment: Alignment.bottomCenter,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  isShow
-                      ? Text(
-                          "Become  EMO",
-                          style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                                fontSize: 26, color: Colors.white),
-                          ),
-                        )
-                      : Container(),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    margin: EdgeInsets.only(bottom: 100),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/video_icon_down.png"),
-                          fit: BoxFit.fill),
+              alignment: Alignment.topCenter,
+              child: Container(
+                margin: EdgeInsets.only(top: nowH - 100),
+                child: Column(
+                  children: [
+                    isShow
+                        ? Text(
+                            "Become  EMO",
+                            style: GoogleFonts.montserrat(
+                              textStyle:
+                                  TextStyle(fontSize: 26, color: Colors.white),
+                            ),
+                          )
+                        : Container(),
+                    Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage("assets/video_icon_down.png"),
+                            fit: BoxFit.fill),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             )
           ],

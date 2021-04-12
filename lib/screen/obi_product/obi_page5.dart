@@ -20,6 +20,7 @@ generate electricity.
 
 
   
+  
   ''';
     String step2Msg = '''4 forks are made of this
 material. When implanting
@@ -43,7 +44,8 @@ necrosis, inflammation and
 growth Granulation.
 According to the above, the
 materials can be used for
-long- term in human body.''';
+long- term in human body.
+''';
 
     return Container(
       width: w,
