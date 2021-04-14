@@ -78,8 +78,9 @@ class _HomeVidioState extends State<HomeVidio> {
 
   @override
   void dispose() {
-    timer?.cancel();
+    // timer?.cancel();
     super.dispose();
+    _controller.dispose();
   }
 
   String convertToMinutesSeconds(Duration duration) {
@@ -130,10 +131,24 @@ class _HomeVidioState extends State<HomeVidio> {
         },
         child: Stack(
           children: [
-            Expanded(
-              flex: 1,
-              child: Column(
-                children: [
+            //   Expanded(
+            //     flex: 1,
+            //     child: Column(
+            //       children: [
+            //         AspectRatio(
+            //           aspectRatio: _controller.value.aspectRatio,
+            //           child: VideoPlayer(_controller),
+            //         ),
+            //         VideoProgressIndicator(
+            //           _controller,
+            //           allowScrubbing: true,
+            //           padding: EdgeInsets.all(10),
+            //         ),
+            //       ],
+            //     ),
+            Column(
+              children: [
+                if (_controller.value.initialized) ...[
                   AspectRatio(
                     aspectRatio: _controller.value.aspectRatio,
                     child: VideoPlayer(_controller),
@@ -143,65 +158,10 @@ class _HomeVidioState extends State<HomeVidio> {
                     allowScrubbing: true,
                     padding: EdgeInsets.all(10),
                   ),
-                ],
-              ),
-              // child: Column(
-              // children: [
-              // if (_controller.value.initialized) ...[
-              //   AspectRatio(
-              //     aspectRatio: _controller.value.aspectRatio,
-              //     child: VideoPlayer(_controller),
-              //   ),
-              // VideoProgressIndicator(
-              //   _controller,
-              //   allowScrubbing: true,
-              //   padding: EdgeInsets.all(10),
-              // ),
-              // Row(
-              //   children: <Widget>[
-              //     IconButton(
-              //       icon: Icon(
-              //         _controller.value.isPlaying
-              //             ? Icons.pause
-              //             : Icons.play_arrow,
-              //       ),
-              //       onPressed: () => setState(
-              //         () {
-              //           _controller.value.isPlaying
-              //               ? _controller.pause()
-              //               : _controller.play();
-              //         },
-              //       ),
-              //     ),
-              //     Text(
-              //         '${convertToMinutesSeconds(videoPosition)} / ${convertToMinutesSeconds(videoLength)}'),
-              //     SizedBox(width: 10),
-              //     Icon(animatedVolumeIcon(volume)),
-              //     Slider(
-              //         value: volume,
-              //         min: 0,
-              //         max: 1,
-              //         onChanged: (changedVolume) {
-              //           setState(() {
-              //             volume = changedVolume;
-              //             _controller.setVolume(changedVolume);
-              //           });
-              //         }),
-              //     Spacer(),
-              //     IconButton(
-              //         icon: Icon(Icons.loop,
-              //             color: _controller.value.isLooping
-              //                 ? Colors.green
-              //                 : Colors.black),
-              //         onPressed: () {
-              //           _controller.setLooping(!_controller.value.isLooping);
-              //         })
-              //   ],
-              // )
-              // ]
-              // ],
-              // ),
+                ]
+              ],
             ),
+            // ),
             // Align(
             //     alignment: Alignment.bottomCenter,
             //   child: InkWell(
