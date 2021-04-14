@@ -295,7 +295,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Column(
                         children: [
-                          VideoPlayerScreen(),
                           HomeVidio(),
                           HomeBigBanner(
                             upBtn: upBtn,
