@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool scrollStatus = true;
   void scrollPageNext(h) {
     if (widget.pageIndex < 9) {
-      print("pageindex ===${widget.pageIndex}");
+      // print("pageindex ===${widget.pageIndex}");
       if (widget.pageIndex <= 0) {
         if (h < 1500) {
           widget.pageAnimate += 1500 + ((1500 - h) / 2);
@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
       }
     });
 
-    print("back index ==$widget.pageIndex   animate==$widget.pageAnimate");
+    // print("back index ==$widget.pageIndex   animate==$widget.pageAnimate");
     // pageAnimate -= 1700;
     // print("index: $pageIndex   animate:$pageAnimate");
     _scrollController.animateTo(widget.pageAnimate,

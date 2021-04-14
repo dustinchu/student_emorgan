@@ -65,8 +65,8 @@ class _HomeVidioState extends State<HomeVidio> {
       oldY = y;
       // print("看一下${!isShowTime[0] && !isShowTime[1] && !isShowTime[2]}");
       if (status != "pause") {
-        print(
-            "看一下${!isShowTime[0] && !isShowTime[1] && !isShowTime[2]}  status==$status");
+        // print(
+            // "看一下${!isShowTime[0] && !isShowTime[1] && !isShowTime[2]}  status==$status");
         if (!isShowTime[0] && !isShowTime[1] && !isShowTime[2]) {
           setState(() {
             isShow = false;
