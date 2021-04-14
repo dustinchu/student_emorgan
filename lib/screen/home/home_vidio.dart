@@ -66,7 +66,7 @@ class _HomeVidioState extends State<HomeVidio> {
       // print("看一下${!isShowTime[0] && !isShowTime[1] && !isShowTime[2]}");
       if (status != "pause") {
         // print(
-            // "看一下${!isShowTime[0] && !isShowTime[1] && !isShowTime[2]}  status==$status");
+        // "看一下${!isShowTime[0] && !isShowTime[1] && !isShowTime[2]}  status==$status");
         if (!isShowTime[0] && !isShowTime[1] && !isShowTime[2]) {
           setState(() {
             isShow = false;
@@ -137,6 +137,11 @@ class _HomeVidioState extends State<HomeVidio> {
                   AspectRatio(
                     aspectRatio: _controller.value.aspectRatio,
                     child: VideoPlayer(_controller),
+                  ),
+                  VideoProgressIndicator(
+                    _controller,
+                    allowScrubbing: true,
+                    padding: EdgeInsets.all(10),
                   ),
                 ],
               ),
@@ -266,7 +271,8 @@ class _HomeVidioState extends State<HomeVidio> {
                           child: Text(
                             "The New Way to Feel Emotions ",
                             style: TextStyle(
-                                color: isTouch ? Color(0xFF777EA2) : Colors.white,
+                                color:
+                                    isTouch ? Color(0xFF777EA2) : Colors.white,
                                 fontSize: 30),
                           ),
                         ),
