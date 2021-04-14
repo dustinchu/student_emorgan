@@ -114,12 +114,12 @@ class _HomeVidioState extends State<HomeVidio> {
     return Container(
       width: w,
       height: h,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/big_banner_backroung.png"),
-          fit: BoxFit.cover,
-        ),
-      ),
+      // decoration: BoxDecoration(
+      //   image: DecorationImage(
+      //     image: AssetImage("assets/big_banner_backroung.png"),
+      //     fit: BoxFit.cover,
+      //   ),
+      // ),
       child: MouseRegion(
         onHover: (details) async {
           setState(() {
