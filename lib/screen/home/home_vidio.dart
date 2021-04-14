@@ -266,7 +266,7 @@ class _HomeVidioState extends State<HomeVidio> {
                           child: Text(
                             "The New Way to Feel Emotions ",
                             style: TextStyle(
-                                color: isTouch ? Colors.black54 : Colors.white,
+                                color: isTouch ? Color(0xFF777EA2) : Colors.white,
                                 fontSize: 30),
                           ),
                         ),

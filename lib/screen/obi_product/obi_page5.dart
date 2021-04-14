@@ -28,8 +28,8 @@ EMORGAN, retract the
 protective sheath outside of
 the EMORGAN, and the forks
 will automatically open to
-hook on the implantation destination.
-
+hook on the implantation 
+destination.
 
 
 

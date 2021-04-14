@@ -3,6 +3,7 @@ import 'package:emorgan/util/order_page_status.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import 'order_appbar.dart';
 import 'order_patch.dart';
@@ -40,10 +41,9 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
     // _orderStatus.setPage2Status(true);
     double w = MediaQuery.of(context).size.width;
 
-
     double maxH = MediaQuery.of(context).size.height;
 
- double returnMoveHeight(index) {
+    double returnMoveHeight(index) {
       double moveHeight = 0;
       if (maxH < 1500) {
         moveHeight += 1500 + ((1500 - maxH) / 2);
@@ -56,7 +56,6 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
 
       return moveHeight;
     }
-
 
     double h = 900;
     List<bool> colorStatus = [true, false, false, false];
@@ -120,6 +119,7 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                                     cursorColor: Color(0xFFC8C1EF),
                                     controller: shoppingCodeContriller,
                                     decoration: InputDecoration(
+                                        prefixText: 'emo-',
                                         border: InputBorder.none,
                                         contentPadding: EdgeInsets.only(
                                           left: 10,
@@ -134,7 +134,11 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                                 onTap: () {
                                   if (editStatus) {
                                     _orderStatus.setPage1Status(false);
-                                    Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: OrderPatch()));
+                                    Navigator.push(
+                                        context,
+                                        PageTransition(
+                                            type: PageTransitionType.fade,
+                                            child: OrderPatch()));
                                     // Navigator.push(
                                     //     context,
                                     //     MaterialPageRoute(
@@ -181,7 +185,10 @@ class _OrderShoppingCodeState extends State<OrderShoppingCode> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HomeScreen(pageAnimate: returnMoveHeight(6),pageIndex: 6,)));
+                                      builder: (context) => HomeScreen(
+                                            pageAnimate: returnMoveHeight(6),
+                                            pageIndex: 6,
+                                          )));
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,

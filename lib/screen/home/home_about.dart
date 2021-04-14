@@ -80,76 +80,82 @@ class _HomeAboutState extends State<HomeAbout>
         children: [
           Container(
             width: (w / 3) * 2,
-            child: Column(
-              children: [
-                Container(
-                  width: (w / 3) * 2,
-                  height: 1500,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/perple.png"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                // Container(
-                //   height: 300,
-                //   child: Row(
-                //     children: [
-                //       Expanded(
-                //         child: Column(
-                //           mainAxisAlignment: MainAxisAlignment.center,
-                //           crossAxisAlignment: CrossAxisAlignment.center,
-                //           children: [
-
-                //             Text("Wen-Chien,Wu",
-                //                 style:  GoogleFonts.montserrat(
-                //                             textStyle: TextStyle(
-                //                               fontSize:
-                //                                  windows_width_large_size(w),
-                //                               color:Color(0xFF324146),
-                //                             ),
-                //                           ),),
-                //             Text("Emorgan Designer",
-                //                 style:  GoogleFonts.montserrat(
-                //                             textStyle: TextStyle(
-                //                               fontSize:
-                //                                  windows_width_medium_size(w),
-                //                               color:Color(0x80424648),
-                //                             ),
-                //                           ),),
-                //           ],
-                //         ),
-                //       ),
-                //       Expanded(
-                //         child: Column(
-                //           mainAxisAlignment: MainAxisAlignment.center,
-                //           crossAxisAlignment: CrossAxisAlignment.center,
-                //           children: [
-                //             Text("Xi-Le, Huang",
-                //                 style: GoogleFonts.montserrat(
-                //                             textStyle: TextStyle(
-                //                               fontSize:
-                //                                  windows_width_large_size(w),
-                //                               color:Color(0xFF324146),
-                //                             ),
-                //                           ),),
-                //             Text("Emorgan Designer",
-                //                 style: GoogleFonts.montserrat(
-                //                             textStyle: TextStyle(
-                //                               fontSize:
-                //                                  windows_width_medium_size(w),
-                //                               color:Color(0x80424648),
-                //                             ),
-                //                           ),),
-                //           ],
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // )
-              ],
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/perple.png"),
+                fit: BoxFit.fill,
+              ),
             ),
+            // child: Column(
+            //   children: [
+            //     Container(
+            //       width: (w / 3) * 2,
+            //       height: 1500,
+            //       decoration: BoxDecoration(
+            //         image: DecorationImage(
+            //           image: AssetImage("assets/perple.png"),
+            //           fit: BoxFit.cover,
+            //         ),
+            //       ),
+            //     ),
+            // Container(
+            //   height: 300,
+            //   child: Row(
+            //     children: [
+            //       Expanded(
+            //         child: Column(
+            //           mainAxisAlignment: MainAxisAlignment.center,
+            //           crossAxisAlignment: CrossAxisAlignment.center,
+            //           children: [
+
+            //             Text("Wen-Chien,Wu",
+            //                 style:  GoogleFonts.montserrat(
+            //                             textStyle: TextStyle(
+            //                               fontSize:
+            //                                  windows_width_large_size(w),
+            //                               color:Color(0xFF324146),
+            //                             ),
+            //                           ),),
+            //             Text("Emorgan Designer",
+            //                 style:  GoogleFonts.montserrat(
+            //                             textStyle: TextStyle(
+            //                               fontSize:
+            //                                  windows_width_medium_size(w),
+            //                               color:Color(0x80424648),
+            //                             ),
+            //                           ),),
+            //           ],
+            //         ),
+            //       ),
+            //       Expanded(
+            //         child: Column(
+            //           mainAxisAlignment: MainAxisAlignment.center,
+            //           crossAxisAlignment: CrossAxisAlignment.center,
+            //           children: [
+            //             Text("Xi-Le, Huang",
+            //                 style: GoogleFonts.montserrat(
+            //                             textStyle: TextStyle(
+            //                               fontSize:
+            //                                  windows_width_large_size(w),
+            //                               color:Color(0xFF324146),
+            //                             ),
+            //                           ),),
+            //             Text("Emorgan Designer",
+            //                 style: GoogleFonts.montserrat(
+            //                             textStyle: TextStyle(
+            //                               fontSize:
+            //                                  windows_width_medium_size(w),
+            //                               color:Color(0x80424648),
+            //                             ),
+            //                           ),),
+            //           ],
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // )
+            // ],
+            // ),
           ),
           Stack(
             alignment: Alignment.topCenter,
@@ -267,19 +273,37 @@ spiritually assisted.''',
                       height: 10,
                     ),
                     iconText("assets/ig.png", "emorgan_creation"),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(
+                          width: 75,
+                        ),
+                        Text(
+                          "© 2020-2047 EMORGAN",
+                          style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                  color: Color(0xFFC8C1EF),
+                                  fontSize: windows_width_small_size(w))),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
-              Positioned(
-                bottom: MediaQuery.of(context).size.height < 1600 ? 150 : 150,
-                child: Text(
-                  "© 2020-2047 EMORGAN",
-                  style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
-                          color: Color(0xFFC8C1EF),
-                          fontSize: windows_width_small_size(w))),
-                ),
-              ),
+              // Positioned(
+              //   bottom: 250,
+              //   child: Text(
+              //     "© 2020-2047 EMORGAN",
+              //     style: GoogleFonts.montserrat(
+              //         textStyle: TextStyle(
+              //             color: Color(0xFFC8C1EF),
+              //             fontSize: windows_width_small_size(w))),
+              //   ),
+              // ),
               Positioned(
                   top: 50,
                   right: 20,

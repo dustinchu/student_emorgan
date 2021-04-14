@@ -28,11 +28,13 @@ EMORGAN, retract the
 protective sheath outside of the
 EMORGAN, and the forks
 will automatically open to
-hook on the  implantation destination.
+hook on the  implantation 
+destination.
 
 
 
-  
+ 
+ 
   ''';
     String step3Msg = '''They have good affinity with
 organisms and does not
@@ -129,7 +131,6 @@ class Setp extends StatelessWidget {
                       color: Color(0xFF424648))),
             ),
           ),
-   
           Align(
             alignment: Alignment.center,
             child: Text(
@@ -141,7 +142,7 @@ class Setp extends StatelessWidget {
                       color: Color(0xFF424648))),
             ),
           ),
-                 isHeight
+          isHeight
               ? SizedBox(
                   height: 6,
                 )

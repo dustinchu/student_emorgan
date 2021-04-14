@@ -277,34 +277,34 @@ class _OrderImformationState extends State<OrderImformation>
 
   void success() {
     setState(() {
-      firstNameTextEditingController1.text = "";
-      idNumberTextEditingController1.text = "";
-      emailAddressTextEditingController1.text = "";
-      lastNameTextEditingController1.text = "";
-      birthday1TextEditingController1.text = "";
-      birthday2TextEditingController1.text = "";
-      birthday3TextEditingController1.text = "";
-      phoneNumberTextEditingController1.text = "";
+      // firstNameTextEditingController1.text = "";
+      // idNumberTextEditingController1.text = "";
+      // emailAddressTextEditingController1.text = "";
+      // lastNameTextEditingController1.text = "";
+      // birthday1TextEditingController1.text = "";
+      // birthday2TextEditingController1.text = "";
+      // birthday3TextEditingController1.text = "";
+      // phoneNumberTextEditingController1.text = "";
 
-      firstNameTextEditingController2.text = "";
-      idNumberTextEditingController2.text = "";
-      emailAddressTextEditingController2.text = "";
-      lastNameTextEditingController2.text = "";
-      birthday1TextEditingController2.text = "";
-      birthday2TextEditingController2.text = "";
-      birthday3TextEditingController2.text = "";
-      phoneNumberTextEditingController2.text = "";
-      for (int i = 0; i < selectedList.length; i++) {
-        selectedList[i] = [
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-        ];
-      }
+      // firstNameTextEditingController2.text = "";
+      // idNumberTextEditingController2.text = "";
+      // emailAddressTextEditingController2.text = "";
+      // lastNameTextEditingController2.text = "";
+      // birthday1TextEditingController2.text = "";
+      // birthday2TextEditingController2.text = "";
+      // birthday3TextEditingController2.text = "";
+      // phoneNumberTextEditingController2.text = "";
+      // for (int i = 0; i < selectedList.length; i++) {
+      //   selectedList[i] = [
+      //     "",
+      //     "",
+      //     "",
+      //     "",
+      //     "",
+      //     "",
+      //     "",
+      //   ];
+      // }
     });
     Navigator.push(context,
         PageTransition(type: PageTransitionType.fade, child: OrderAccount()));
@@ -691,23 +691,23 @@ class _OrderImformationState extends State<OrderImformation>
       }
     });
 
-    focusNode = FocusNode();
-    myFocusNode1 = FocusNode();
-    myFocusNode2 = FocusNode();
-    myFocusNode3 = FocusNode();
-    myFocusNode4 = FocusNode();
-    myFocusNode5 = FocusNode();
-    myFocusNode6 = FocusNode();
-    myFocusNode7 = FocusNode();
-    myFocusNode8 = FocusNode();
-    myFocusNode9 = FocusNode();
-    myFocusNode10 = FocusNode();
-    myFocusNode11 = FocusNode();
-    myFocusNode12 = FocusNode();
-    myFocusNode13 = FocusNode();
-    myFocusNode14 = FocusNode();
-    myFocusNode15 = FocusNode();
-    myFocusNode16 = FocusNode();
+    // focusNode = FocusNode();
+    // myFocusNode1 = FocusNode();
+    // myFocusNode2 = FocusNode();
+    // myFocusNode3 = FocusNode();
+    // myFocusNode4 = FocusNode();
+    // myFocusNode5 = FocusNode();
+    // myFocusNode6 = FocusNode();
+    // myFocusNode7 = FocusNode();
+    // myFocusNode8 = FocusNode();
+    // myFocusNode9 = FocusNode();
+    // myFocusNode10 = FocusNode();
+    // myFocusNode11 = FocusNode();
+    // myFocusNode12 = FocusNode();
+    // myFocusNode13 = FocusNode();
+    // myFocusNode14 = FocusNode();
+    // myFocusNode15 = FocusNode();
+    // myFocusNode16 = FocusNode();
   }
 
   @override
