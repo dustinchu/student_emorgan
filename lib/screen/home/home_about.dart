@@ -74,6 +74,7 @@ class _HomeAboutState extends State<HomeAbout>
       //     fit: BoxFit.fill
       //   ),
       // ),
+      // //
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
