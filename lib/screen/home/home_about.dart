@@ -83,7 +83,7 @@ class _HomeAboutState extends State<HomeAbout>
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/perple.png"),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
             // child: Column(

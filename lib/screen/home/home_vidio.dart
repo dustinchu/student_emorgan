@@ -153,11 +153,11 @@ class _HomeVidioState extends State<HomeVidio> {
                     aspectRatio: _controller.value.aspectRatio,
                     child: VideoPlayer(_controller),
                   ),
-                  VideoProgressIndicator(
-                    _controller,
-                    allowScrubbing: true,
-                    padding: EdgeInsets.all(10),
-                  ),
+                  // VideoProgressIndicator(
+                  //   _controller,
+                  //   allowScrubbing: true,
+                  //   padding: EdgeInsets.all(10),
+                  // ),
                 ]
               ],
             ),

@@ -133,8 +133,8 @@ Container(
                   child: Container(
 
 
-                    width: 105,
-                    height: 30,
+                    width: 209,
+                    height: 44.06,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/html_3dview_icon.png"),
