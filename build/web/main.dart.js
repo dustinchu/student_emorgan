@@ -39085,7 +39085,7 @@ B.vG.prototype={
 a5:function(){return new B.MF(C.o)}}
 B.MF.prototype={
 D:function(a,b){var s=null,r=b.J(t.w).f,q=X.aR(C.B,new L.aI("assets/big_banner_backroung.png",s,s))
-return T.bt(C.D,H.b([M.o(s,M.o(s,T.dj(U.jC("assets/big_banner.png",s,500,760),s,s),s,s,s,s,s,new V.D(200,200,200,200),s),s,s,new S.am(s,q,s,s,s,s,C.n),1500,s,s,r.a.a),T.aq(s,B.px(U.jC("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,50,s)],t.t),C.t,C.A)}}
+return T.bt(C.D,H.b([M.o(s,M.o(s,T.dj(U.jC("assets/big_banner.png",s,750,1140),s,s),s,s,s,s,s,new V.D(200,200,200,200),s),s,s,new S.am(s,q,s,s,s,s,C.n),1500,s,s,r.a.a),T.aq(s,B.px(U.jC("assets/icon_up.png",s,s,s),this.a.c,s),s,s,s,20,50,s)],t.t),C.t,C.A)}}
 A.vH.prototype={
 a5:function(){var s=t.i
 return new A.zG(H.b([!0,!0,!0,!0,!0,!0,!0],t.jf),H.b([H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s),H.b(["","","","","","",""],s)],t.TE),null,null,C.o)}}

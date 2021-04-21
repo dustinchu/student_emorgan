@@ -29,7 +29,7 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
           // child:Center(child: Image.asset("assets/big_banner.png",width: 760,height: 500,),)
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 200, vertical: 200),
-            child: Center(child: Image.asset("assets/big_banner.png",width: 760,height: 500,))
+            child: Center(child: Image.asset("assets/big_banner.png",width: 1140,height: 750,))
             // child: Container(
             //   width: 760,
             //   height: 500,
