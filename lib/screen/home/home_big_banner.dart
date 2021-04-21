@@ -26,18 +26,20 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
               fit: BoxFit.cover,
             ),
           ),
+          // child:Center(child: Image.asset("assets/big_banner.png",width: 760,height: 500,),)
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 200, vertical: 200),
-            child: Container(
-              width: 760,
-              height: 500,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/big_banner.png"),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
+            child: Center(child: Image.asset("assets/big_banner.png",width: 760,height: 500,))
+            // child: Container(
+            //   width: 760,
+            //   height: 500,
+            //   decoration: BoxDecoration(
+            //     image: DecorationImage(
+            //       image: AssetImage("assets/big_banner.png"),
+            //       fit: BoxFit.cover,
+            //     ),
+            //   ),
+            // ),
           ),
         ),
         Positioned(
