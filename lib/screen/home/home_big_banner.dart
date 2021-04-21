@@ -27,10 +27,10 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
             ),
           ),
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 200, vertical: 150),
+            padding: EdgeInsets.symmetric(horizontal: 200, vertical: 200),
             child: Container(
-              width: 1976,
-              height: 1300,
+              width: 1520,
+              height: 1000,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/big_banner.png"),
