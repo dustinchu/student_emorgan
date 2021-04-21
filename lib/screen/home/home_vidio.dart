@@ -298,7 +298,7 @@ class _HomeVidioState extends State<HomeVidio> {
             Align(
               alignment: Alignment.topCenter,
               child: Container(
-                margin: EdgeInsets.only(top: nowH - 100),
+                margin: EdgeInsets.only(top: nowH - 110),
                 child: Column(
                   children: [
                     isShow
