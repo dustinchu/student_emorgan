@@ -40090,7 +40090,7 @@ Q.MM.prototype={
 af:function(){var s,r,q=this,p=null
 q.aH()
 s=new P.aX(t.V)
-r=new V.yS("https://vod-progressive.akamaized.net/exp=1619098823~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=db339f66df9d952e8667ca054015a240ba1f7dac0d066ae2fab5af6d061ff448/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4",new V.rA(p,C.L,C.j6,C.k4,!1,!1,!1,1,p,p),s)
+r=new V.yS("https://github.com/dustinchu/student_emorgan/blob/master/assets/2434881143.mp4?raw=true",new V.rA(p,C.L,C.j6,C.k4,!1,!1,!1,1,p,p),s)
 s.a4(p,new B.ai(new Q.abj(q)),!1)
 r.hs(0).bm(0,new Q.abk(q),t.P)
 q.d=r

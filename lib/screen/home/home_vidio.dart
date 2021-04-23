@@ -31,7 +31,7 @@ class _HomeVidioState extends State<HomeVidio> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(
-        'https://vod-progressive.akamaized.net/exp=1619098823~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4277%2F20%2F521389153%2F2434881143.mp4~hmac=db339f66df9d952e8667ca054015a240ba1f7dac0d066ae2fab5af6d061ff448/vimeo-prod-skyfire-std-us/01/4277/20/521389153/2434881143.mp4')
+        'https://github.com/dustinchu/student_emorgan/blob/master/assets/2434881143.mp4?raw=true')
       ..addListener(() => setState(() {
             videoPosition = _controller.value.position;
           }))
