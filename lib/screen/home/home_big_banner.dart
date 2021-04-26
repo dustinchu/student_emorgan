@@ -9,7 +9,11 @@ class HomeBigBanner extends StatefulWidget {
   _HomeBigBannerState createState() => _HomeBigBannerState();
 }
 
-class _HomeBigBannerState extends State<HomeBigBanner> {
+class _HomeBigBannerState extends State<HomeBigBanner>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -28,19 +32,24 @@ class _HomeBigBannerState extends State<HomeBigBanner> {
           ),
           // child:Center(child: Image.asset("assets/big_banner.png",width: 760,height: 500,),)
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 200, vertical: 200),
-            child: Center(child: Image.asset("assets/big_banner.png",width: 1140,height: 750,))
-            // child: Container(
-            //   width: 760,
-            //   height: 500,
-            //   decoration: BoxDecoration(
-            //     image: DecorationImage(
-            //       image: AssetImage("assets/big_banner.png"),
-            //       fit: BoxFit.cover,
-            //     ),
-            //   ),
-            // ),
-          ),
+              padding: EdgeInsets.symmetric(horizontal: 200, vertical: 200),
+              child: Center(
+                  child: Image.asset(
+                "assets/big_banner.png",
+                width: 1140,
+                height: 750,
+              ))
+              // child: Container(
+              //   width: 760,
+              //   height: 500,
+              //   decoration: BoxDecoration(
+              //     image: DecorationImage(
+              //       image: AssetImage("assets/big_banner.png"),
+              //       fit: BoxFit.cover,
+              //     ),
+              //   ),
+              // ),
+              ),
         ),
         Positioned(
             top: 50,

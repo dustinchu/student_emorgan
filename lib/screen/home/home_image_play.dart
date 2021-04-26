@@ -29,7 +29,8 @@ class _HomeImagePlayState extends State<HomeImagePlay>
     double w = MediaQuery.of(context).size.width;
     return Container(
       width: w,
-      height: 700,
+      padding: EdgeInsets.only(top:200),
+      height: 900,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/help.png"),
@@ -39,7 +40,7 @@ class _HomeImagePlayState extends State<HomeImagePlay>
       child: CarouselSlider(
         options: CarouselOptions(
           viewportFraction: 0.3,
-          height: 700.0,
+          height: 900.0,
           autoPlay: autoPlaty,
           autoPlayInterval: Duration(seconds: 3),
           autoPlayAnimationDuration: Duration(milliseconds: 800),

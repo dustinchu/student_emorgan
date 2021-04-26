@@ -7,14 +7,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 
 class HomeVidio extends StatefulWidget {
-  HomeVidio({Key key}) : super(key: key);
-
+  HomeVidio({Key key, @required this.emoNextPage}) : super(key: key);
+  VoidCallback emoNextPage;
   @override
   _HomeVidioState createState() => _HomeVidioState();
 }
 
 // https://vod-progressive.akamaized.net/exp=1614157174~acl=%2A%2F617711126.mp4%2A~hmac=f43820930d5cc210055084405c3684d7a2d3e21a48c8ed870ae4f837e1584121/vimeo-prod-skyfire-std-us/01/2418/7/187094433/617711126.mp4
-class _HomeVidioState extends State<HomeVidio> {
+class _HomeVidioState extends State<HomeVidio>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
   VideoPlayerController _controller;
   Duration videoLength;
   Duration videoPosition;
@@ -27,6 +31,7 @@ class _HomeVidioState extends State<HomeVidio> {
   List<bool> isShowTime = [true, true, true];
   int listCount = 0;
   String status = "";
+
   @override
   void initState() {
     super.initState();
@@ -198,128 +203,137 @@ class _HomeVidioState extends State<HomeVidio> {
             //     ),
             //   ),
             // ),
-            first
-                ? Align(
-                    alignment: Alignment.topCenter,
-                    child: InkWell(
-                      onTap: () {
-                        setState(() {
-                          first = false;
-                          isShow = false;
-                          status = "first";
-                        });
-                        _controller.play();
-                      },
-                      onHover: (touch) {
-                        setState(() {
-                          isTouch = touch;
-                        });
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(top: nowH / 2),
-                        decoration: new BoxDecoration(
-                          border: new Border.all(
-                              color: Colors.white, width: 2), // 边色与边宽度
-                          color:
-                              isTouch ? Colors.white : Colors.transparent, // 底色
-                          borderRadius:
-                              new BorderRadius.circular((50.0)), // 圆角度
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 40, vertical: 10),
-                          child: Text(
-                            "The New Way to Feel Emotions ",
-                            style: TextStyle(
-                                color:
-                                    isTouch ? Color(0xFF777EA2) : Colors.white,
-                                fontSize: 30),
+            _controller.value.initialized
+                ? first
+                    ? Align(
+                        alignment: Alignment.topCenter,
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              first = false;
+                              isShow = false;
+                              status = "first";
+                            });
+                            _controller.play();
+                          },
+                          onHover: (touch) {
+                            setState(() {
+                              isTouch = touch;
+                            });
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(top: nowH / 2),
+                            decoration: new BoxDecoration(
+                              border: new Border.all(
+                                  color: Colors.white, width: 2), // 边色与边宽度
+                              color: isTouch
+                                  ? Colors.white
+                                  : Colors.transparent, // 底色
+                              borderRadius:
+                                  new BorderRadius.circular((50.0)), // 圆角度
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 40, vertical: 10),
+                              child: Text(
+                                "The New Way to Feel Emotions ",
+                                style: TextStyle(
+                                    color: isTouch
+                                        ? Color(0xFF777EA2)
+                                        : Colors.white,
+                                    fontSize: 30),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                  )
-                : isShow
-                    ? DelayedDisplay(
-                        delay: Duration(seconds: 1),
-                        slidingBeginOffset: const Offset(0.0, 0.0),
-                        child: Align(
-                            alignment: Alignment.topCenter,
-                            child: _controller.value.isPlaying
-                                ? InkWell(
-                                    onTap: () {
-                                      _controller.pause();
-                                      isShow = false;
-                                      first = false;
-                                      status = "pause";
-                                    },
-                                    child: Container(
-                                      height: 100,
-                                      width: 100,
-                                      margin: EdgeInsets.only(top: nowH / 2),
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                "assets/video_icon_pause.png"),
-                                            fit: BoxFit.fill),
-                                      ),
-                                    ),
-                                  )
-                                : DelayedDisplay(
-                                    delay: Duration(seconds: 1),
-                                    slidingBeginOffset: const Offset(0.0, 0.0),
-                                    child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: InkWell(
-                                        //第二次出現播放的按鈕
+                      )
+                    : isShow
+                        ? DelayedDisplay(
+                            delay: Duration(seconds: 1),
+                            slidingBeginOffset: const Offset(0.0, 0.0),
+                            child: Align(
+                                alignment: Alignment.topCenter,
+                                child: _controller.value.isPlaying
+                                    ? InkWell(
                                         onTap: () {
+                                          _controller.pause();
                                           isShow = false;
-                                          status = "play";
-                                          _controller.play();
+                                          first = false;
+                                          status = "pause";
                                         },
                                         child: Container(
                                           height: 100,
                                           width: 100,
                                           margin:
                                               EdgeInsets.only(top: nowH / 2),
-                                          // margin: EdgeInsets.only(bottom: 1000),
                                           decoration: BoxDecoration(
                                             image: DecorationImage(
                                                 image: AssetImage(
-                                                    "assets/video_play_icon.png"),
+                                                    "assets/video_icon_pause.png"),
                                                 fit: BoxFit.fill),
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                  )),
-                      )
-                    : Container(),
+                                      )
+                                    : DelayedDisplay(
+                                        delay: Duration(seconds: 1),
+                                        slidingBeginOffset:
+                                            const Offset(0.0, 0.0),
+                                        child: Align(
+                                          alignment: Alignment.topCenter,
+                                          child: InkWell(
+                                            //第二次出現播放的按鈕
+                                            onTap: () {
+                                              isShow = false;
+                                              status = "play";
+                                              _controller.play();
+                                            },
+                                            child: Container(
+                                              height: 100,
+                                              width: 100,
+                                              margin: EdgeInsets.only(
+                                                  top: nowH / 2),
+                                              // margin: EdgeInsets.only(bottom: 1000),
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        "assets/video_play_icon.png"),
+                                                    fit: BoxFit.fill),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      )),
+                          )
+                        : Container()
+                : Container(),
             Align(
               alignment: Alignment.topCenter,
               child: Container(
                 margin: EdgeInsets.only(top: nowH - 120),
-                child: Column(
-                  children: [
-                    isShow
-                        ? Text(
-                            "Become  EMO",
-                            style: GoogleFonts.montserrat(
-                              textStyle:
-                                  TextStyle(fontSize: 26, color: Colors.white),
-                            ),
-                          )
-                        : Container(),
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage("assets/video_icon_down.png"),
-                            fit: BoxFit.fill),
+                child: InkWell(
+                  onTap: widget.emoNextPage,
+                  child: Column(
+                    children: [
+                      isShow
+                          ? Text(
+                              "Become  EMO",
+                              style: GoogleFonts.montserrat(
+                                textStyle: TextStyle(
+                                    fontSize: 26, color: Colors.white),
+                              ),
+                            )
+                          : Container(),
+                      Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/video_icon_down.png"),
+                              fit: BoxFit.fill),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             )

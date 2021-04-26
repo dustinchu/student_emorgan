@@ -39,6 +39,7 @@ class _HomeHelpState extends State<HomeHelp>
     return Container(
       width: w,
       height: h,
+      padding: EdgeInsets.only(top:200),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/help.png"),
@@ -67,7 +68,7 @@ class _HomeHelpState extends State<HomeHelp>
           Column(
             children: [
               Container(
-                height: 750,
+                height: 650,
                 // padding: EdgeInsets.only(top: 100, bottom: 100),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +87,7 @@ class _HomeHelpState extends State<HomeHelp>
                   ],
                 ),
               ),
-              helpText(w, h)
+              helpText(w, h),
             ],
           ),
 
@@ -183,6 +184,7 @@ class _HomeHelpState extends State<HomeHelp>
             ),
           ),
         ),
+      
       ],
     );
   }
@@ -201,7 +203,7 @@ class _HomeHelpState extends State<HomeHelp>
           children: [
             Expanded(child: Container()),
             Container(
-              padding: EdgeInsets.only(top: 250),
+              padding: EdgeInsets.only(top: 150),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -232,7 +234,7 @@ class _HomeHelpState extends State<HomeHelp>
               width: 100,
             ),
             Container(
-              padding: EdgeInsets.only(top: 250),
+              padding: EdgeInsets.only(top: 150),
               child: Text(
                 '''We understand that when you come to this website, you want a better solution. There might
 be some problems with you and your partner.

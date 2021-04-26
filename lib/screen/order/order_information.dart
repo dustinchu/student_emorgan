@@ -276,6 +276,7 @@ class _OrderImformationState extends State<OrderImformation>
   }
 
   void success() {
+    print("success");
     setState(() {
       // firstNameTextEditingController1.text = "";
       // idNumberTextEditingController1.text = "";
@@ -1394,8 +1395,8 @@ class _DateWidgetState extends State<DateWidget> {
                           .setAccountDate(
                               "2021/${widget.dateStr} ${defDataItem[i]}");
 
-                      print(
-                          "datastr ==${widget.dateStr}  selectDate==${defDataItem[i]}   $i");
+                      // print(
+                      //     "datastr ==${widget.dateStr}  selectDate==${defDataItem[i]}   $i");
                       widget.selectedDate(defDataItem[i], i);
                       //將點選的資料存到預設的list裡面
                       setState(

@@ -233,6 +233,10 @@ class _HomeScreenState extends State<HomeScreen> {
           .setPageIndex(widget.pageIndex);
     }
 
+    void emoNextPage() {
+      scrollPageNext(h);
+    }
+
     var bannerStatus = Provider.of<BannerStatus>(context);
     return Scaffold(
       body: Stack(
@@ -295,7 +299,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Column(
                         children: [
-                          HomeVidio(),
+                          HomeVidio(
+                            emoNextPage: emoNextPage,
+                          ),
                           HomeBigBanner(
                             upBtn: upBtn,
                           ),

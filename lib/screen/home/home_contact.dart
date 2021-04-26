@@ -60,7 +60,7 @@ class _HomeContactState extends State<HomeContact>
 
     await Future.delayed(Duration(seconds: 2), () {
       setState(() {
-        print("結束completed");
+        // print("結束completed");
         controller.reverse();
         containerSizeControlle.reverse();
       });
