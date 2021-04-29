@@ -309,7 +309,7 @@ class _HomeVidioState extends State<HomeVidio>
             Align(
               alignment: Alignment.topCenter,
               child: Container(
-                margin: EdgeInsets.only(top: nowH - 120),
+                margin: EdgeInsets.only(top: nowH - 140),
                 child: InkWell(
                   onTap: widget.emoNextPage,
                   child: Column(

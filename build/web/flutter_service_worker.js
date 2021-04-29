@@ -4,9 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "d437f1cbf3f5ac9b7a710fa814217dbf",
-"index.html": "7fa1586c044ea79a43739a03278d2d59",
-"/": "7fa1586c044ea79a43739a03278d2d59",
-"main.dart.js": "5fd3a04df7551b3cbcedac133939484e",
+"index.html": "45b6ed6f4a9bcaa0a429523c224d5131",
+"/": "45b6ed6f4a9bcaa0a429523c224d5131",
+"main.dart.js": "4d2acbc4b098a1cc8b8787010bc2f271",
 "favicon.png": "bded570080bd67f70737d5b23cad022f",
 "icons/Icon-192.png": "42c2aa62a4a11c93b56bb73a70d570a3",
 "icons/Icon-512.png": "5986ba0e4e756ec1c4ddd53e245b03d1",
@@ -25,7 +25,7 @@ const RESOURCES = {
 "assets/assets/buzzy_human_a.png": "3e2668b3543a791cde38a606eba527a5",
 "assets/assets/step5.png": "6b40b2774f84e3c9c52b49186e3be56d",
 "assets/assets/order_people_left2.png": "4afcf31306b2f9e09614beb05807fce7",
-"assets/assets/perple.png": "86ea39198f2396a4d2af0ba86f367938",
+"assets/assets/perple.png": "e28e8841d0e29b6633f642d64c602532",
 "assets/assets/info_buzzy_and_buzzy_right.png": "84430eebe1f8745454f5eeccc4a3e6f5",
 "assets/assets/step4.png": "5e0e8eadde0db1f6a6b758eb60497db9",
 "assets/assets/human_line.png": "ef62cbae557a922b3b7a5ef4602364d1",
