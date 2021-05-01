@@ -60,7 +60,7 @@ class _BuylodingState extends State<Buyloding> with TickerProviderStateMixin {
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 600),
       child: startHome
-          ? Scaffold(body: HomeScreen(pageAnimate: 0,pageIndex: 0,))
+          ? HomeScreen(pageAnimate: 0,pageIndex: 0,)
           : Scaffold(
               body: Stack(
                 children: [

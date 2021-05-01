@@ -745,7 +745,7 @@ class LeftInput2 extends StatelessWidget {
             Container(
                 width: (w / 2 / 3 * 2 / 3) - 10,
                 child: edit(
-                    "CreDit Card Number", creditCardTextEditingController, w)),
+                    "Credit Card Number", creditCardTextEditingController, w)),
             SizedBox(
               width: 20,
             ),
