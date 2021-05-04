@@ -2,6 +2,7 @@ import 'package:emorgan/common/font_size.dart';
 import 'package:emorgan/common/menu_btn.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/provider/account.dart';
+import 'package:emorgan/provider/information.dart';
 import 'package:emorgan/screen/buy/buy_loding.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,7 +56,8 @@ class _OrderAccountState extends State<OrderAccount> {
       ccvTextEditingController.text = "";
       billingTextEditingController.text = "";
     });
-        Navigator.push(context, PageTransition(type: PageTransitionType.fade, child:  Buyloding()));
+    Navigator.push(context,
+        PageTransition(type: PageTransitionType.fade, child: Buyloding()));
     // Navigator.push(
     //     context, MaterialPageRoute(builder: (context) => Buyloding()));
   }
@@ -63,6 +65,12 @@ class _OrderAccountState extends State<OrderAccount> {
   @override
   void initState() {
     super.initState();
+    // Provider.of<AccountStatus>(context, listen: false)
+    //     .setAccountName1("SHALI", "assets/order_shali.png", "Shali");
+    // Provider.of<AccountStatus>(context, listen: false)
+    //     .setAccountName2("SHALI", "assets/order_shali.png", "Shali");
+    // Provider.of<AccountStatus>(context, listen: false)
+    //     .setAccountDate("2021/123 2");
 
     firstNameTextEditingController = TextEditingController();
     emailAddressTextEditingController = TextEditingController();
@@ -183,9 +191,33 @@ class _OrderAccountState extends State<OrderAccount> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     var accountStatus = Provider.of<AccountStatus>(context);
+    var informationStatus = Provider.of<InformationStatus>(context);
     // double h = 900;
     List<bool> colorStatus = [false, false, false, true];
     List<bool> beforColorStatus = [true, true, true, true];
+
+    Widget humanBtn(String name, VoidCallback click) {
+      return InkWell(
+        onTap: click,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          decoration: new BoxDecoration(
+            border: new Border.all(color: Color(0xFF7A82A7), width: 2), // 邊色寬度
+            color: Colors.transparent,
+            borderRadius: new BorderRadius.circular((60)), // 圆角度
+          ),
+          child: Text(
+            name,
+            style: GoogleFonts.montserrat(
+              textStyle: TextStyle(
+                  color: Color(0xFF364146),
+                  fontSize: windows_width_small_size(w)),
+            ),
+          ),
+        ),
+      );
+    }
+
     Widget infoInput() {
       return Container(
           decoration: BoxDecoration(
@@ -205,12 +237,48 @@ class _OrderAccountState extends State<OrderAccount> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(child: Container()),
-                  Text(
-                    "Enter Account Detail",
-                    style: GoogleFonts.montserrat(
-                      textStyle:
-                          TextStyle(color: Color(0xFF424648), fontSize: 32),
-                    ),
+                  Row(
+                    children: [
+                      Container(
+                        width: w / 2 / 3+10,
+                        child: Text(
+                          "Enter Account Detail",
+                          style: GoogleFonts.montserrat(
+                            textStyle: TextStyle(
+                                color: Color(0xFF424648), fontSize: 32),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 20,),
+                      Container(
+                          width: w / 2 / 3-10,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              humanBtn("HumanA", () {
+                                firstNameTextEditingController.text =
+                                    informationStatus.getFirstNameA;
+                                emailAddressTextEditingController.text =
+                                    informationStatus.getEmailA;
+                                yotrLastNameTextEditingController.text =
+                                    informationStatus.getLastNameA;
+                                phoneNumberTextEditingController.text =
+                                    informationStatus.getPhoneA;
+                              }),
+                              SizedBox(width: 15,),
+                              humanBtn("HumanB", () {
+                                firstNameTextEditingController.text =
+                                    informationStatus.getFirstNameB;
+                                emailAddressTextEditingController.text =
+                                    informationStatus.getEmailB;
+                                yotrLastNameTextEditingController.text =
+                                    informationStatus.getLastNameB;
+                                phoneNumberTextEditingController.text =
+                                    informationStatus.getPhoneB;
+                              }),
+                            ],
+                          )),
+                    ],
                   ),
                   SizedBox(
                     height: 50,
@@ -347,7 +415,9 @@ class _OrderAccountState extends State<OrderAccount> {
                           height: 30,
                         ),
                         Text(
-                          "Human A",
+                          informationStatus.getFirstNameA +
+                              " " +
+                              informationStatus.getLastNameA,
                           style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
                                 fontSize: windows_width_medium_size(w),
@@ -373,7 +443,9 @@ class _OrderAccountState extends State<OrderAccount> {
                           height: 30,
                         ),
                         Text(
-                          "Human B",
+                          informationStatus.getFirstNameB +
+                              " " +
+                              informationStatus.getLastNameB,
                           style: GoogleFonts.montserrat(
                             textStyle: TextStyle(
                                 fontSize: windows_width_medium_size(w),

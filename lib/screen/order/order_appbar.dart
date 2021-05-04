@@ -50,8 +50,9 @@ class OrderAppbar extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
+                      // Navigator.of(context).pushNamed(HomeScreen.route);
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen(pageAnimate: 0,pageIndex: 0,)));
+                        MaterialPageRoute(builder: (context) => new HomeScreen(pageAnimate: 0,pageIndex: 0,)));
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

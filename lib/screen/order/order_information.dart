@@ -3,6 +3,7 @@ import 'package:emorgan/common/menu_btn.dart';
 import 'package:emorgan/common/padding_size.dart';
 import 'package:emorgan/provider/account.dart';
 import 'package:emorgan/provider/book_state.dart';
+import 'package:emorgan/provider/information.dart';
 import 'package:emorgan/util/dateString.dart';
 import 'package:emorgan/util/order_page_status.dart';
 import 'package:flutter/foundation.dart';
@@ -277,36 +278,38 @@ class _OrderImformationState extends State<OrderImformation>
 
   void success() {
     print("success");
-    setState(() {
-      // firstNameTextEditingController1.text = "";
-      // idNumberTextEditingController1.text = "";
-      // emailAddressTextEditingController1.text = "";
-      // lastNameTextEditingController1.text = "";
-      // birthday1TextEditingController1.text = "";
-      // birthday2TextEditingController1.text = "";
-      // birthday3TextEditingController1.text = "";
-      // phoneNumberTextEditingController1.text = "";
 
-      // firstNameTextEditingController2.text = "";
-      // idNumberTextEditingController2.text = "";
-      // emailAddressTextEditingController2.text = "";
-      // lastNameTextEditingController2.text = "";
-      // birthday1TextEditingController2.text = "";
-      // birthday2TextEditingController2.text = "";
-      // birthday3TextEditingController2.text = "";
-      // phoneNumberTextEditingController2.text = "";
-      // for (int i = 0; i < selectedList.length; i++) {
-      //   selectedList[i] = [
-      //     "",
-      //     "",
-      //     "",
-      //     "",
-      //     "",
-      //     "",
-      //     "",
-      //   ];
-      // }
-    });
+    // setState(() {
+
+    // firstNameTextEditingController1.text = "";
+    // idNumberTextEditingController1.text = "";
+    // emailAddressTextEditingController1.text = "";
+    // lastNameTextEditingController1.text = "";
+    // birthday1TextEditingController1.text = "";
+    // birthday2TextEditingController1.text = "";
+    // birthday3TextEditingController1.text = "";
+    // phoneNumberTextEditingController1.text = "";
+
+    // firstNameTextEditingController2.text = "";
+    // idNumberTextEditingController2.text = "";
+    // emailAddressTextEditingController2.text = "";
+    // lastNameTextEditingController2.text = "";
+    // birthday1TextEditingController2.text = "";
+    // birthday2TextEditingController2.text = "";
+    // birthday3TextEditingController2.text = "";
+    // phoneNumberTextEditingController2.text = "";
+    // for (int i = 0; i < selectedList.length; i++) {
+    //   selectedList[i] = [
+    //     "",
+    //     "",
+    //     "",
+    //     "",
+    //     "",
+    //     "",
+    //     "",
+    //   ];
+    // }
+    // });
     Navigator.push(context,
         PageTransition(type: PageTransitionType.fade, child: OrderAccount()));
     // Navigator.push(
@@ -761,7 +764,7 @@ class _OrderImformationState extends State<OrderImformation>
     // double h = 900;
     List<bool> colorStatus = [false, false, true, false];
     List<bool> beforColorStatus = [true, true, true, false];
-
+  var informationStatus = Provider.of<InformationStatus>(context);
     void textFildOnTap1() => textFiledIndex = 1;
     void textFildOnTap2() => textFiledIndex = 2;
     void textFildOnTap3() => textFiledIndex = 3;
@@ -1126,7 +1129,19 @@ class _OrderImformationState extends State<OrderImformation>
                         birthday2Status2 &&
                         birthday3Status2 &&
                         phoneNumberStatus2 &&
-                        isDate) success();
+                        isDate) {
+                      Provider.of<InformationStatus>(context, listen: false)
+                          .setHuman(
+                              firstNameTextEditingController1.text,
+                              lastNameTextEditingController1.text,
+                              emailAddressTextEditingController1.text,
+                              phoneNumberTextEditingController1.text,
+                              firstNameTextEditingController2.text,
+                              lastNameTextEditingController2.text,
+                              emailAddressTextEditingController2.text,
+                              phoneNumberTextEditingController2.text);
+                      success();
+                    }
                   },
                   // onHover: (value) {
                   //   print(value);
@@ -1614,15 +1629,15 @@ class LeftInput extends StatelessWidget {
               children: [
                 Container(
                     width: 210,
-                    child: edit("Email Address", emailAddressTextEditingController,
-                        ontap7)),
+                    child: edit("Email Address",
+                        emailAddressTextEditingController, ontap7)),
                 SizedBox(
                   width: 20,
                 ),
                 Container(
                     width: 210,
-                    child: edit("Phone Number", phoneNumberTextEditingController,
-                        ontap8)),
+                    child: edit("Phone Number",
+                        phoneNumberTextEditingController, ontap8)),
               ],
             )
           ],

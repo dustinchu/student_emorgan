@@ -7,7 +7,6 @@ import 'package:emorgan/common/widgets/product_right_animation_hover.dart';
 import 'package:emorgan/common/widgets/product_right_hover.dart';
 import 'package:emorgan/screen/order/order_shopping_code.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'obi_line_size.dart';
 import 'product_text.dart';

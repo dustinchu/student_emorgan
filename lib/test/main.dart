@@ -42,9 +42,7 @@ class TestUIForMail extends StatelessWidget {
                     ),
                     RaisedButton(
                       onPressed: () async {
-                        String request = await sendEmail(
-                            "title", "love2121103@gmail.com", "msg");
-                        print("request==$request");
+                        String request = await sendEmail("222", "33", "44;");
                       },
                       child: Text('Send'),
                     )

@@ -9,6 +9,7 @@ import 'order_appbar.dart';
 import 'order_patch.dart';
 
 class OrderShoppingCode extends StatefulWidget {
+  static const String route = '/order';
   OrderShoppingCode({Key key}) : super(key: key);
 
   @override

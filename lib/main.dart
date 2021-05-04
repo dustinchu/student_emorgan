@@ -1,3 +1,4 @@
+import 'package:emorgan/provider/information.dart';
 import 'package:emorgan/screen/buy/buy_loding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -34,20 +35,33 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(value: BookStatus()),
         ChangeNotifierProvider.value(value: BannerStatus()),
         ChangeNotifierProvider.value(value: AccountStatus()),
+        ChangeNotifierProvider.value(value: InformationStatus()),
       ],
       child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Emorgan情緒器官',
-          initialRoute: "/",
-          onGenerateRoute: Modular.generateRoute,
-          navigatorKey: Modular.navigatorKey, // Here's the culprit
-          //   home: ChangeNotifierProvider<BookStatus>(
-          //     create: (context) => BookStatus(),
-          //     child: Scaffold(body: HomeScreen()),
-          //   ),
-          // );
-          home: HomeScreen(pageAnimate: 0,pageIndex: 0,)),
-          // home: OrderShoppingCode()),
+        debugShowCheckedModeBanner: false,
+        title: 'Emorgan情緒器官',
+        initialRoute: HomeScreen.route,
+        // routes: {
+        //   HomeScreen.route: (context) => HomeScreen(
+        //         pageAnimate: 0,
+        //         pageIndex: 0,
+        //       ),
+        //   OrderShoppingCode.route: (context) => OrderShoppingCode(),
+        // },
+        onGenerateRoute: Modular.generateRoute,
+        navigatorKey: Modular.navigatorKey, // Here's the culprit
+        //   home: ChangeNotifierProvider<BookStatus>(
+        //     create: (context) => BookStatus(),
+        //     child: Scaffold(body: HomeScreen()),
+        //   ),
+        // );
+        // home: OrderAccount(),
+        home: HomeScreen(
+          pageAnimate: 0,
+          pageIndex: 0,
+        ),
+      ),
+      // home: OrderShoppingCode()),
       // home: OrderImformation(
       //   rightImagePath: "assets/info_buzzy_and_buzzy_right.png",
       //   leftImagePath: "assets/info_buzzy_and_buzzy_right.png",

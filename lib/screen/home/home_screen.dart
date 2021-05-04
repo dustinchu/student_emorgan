@@ -1,3 +1,4 @@
+import 'package:emorgan/common/widgets/key.dart';
 import 'package:emorgan/provider/banner.dart';
 import 'package:emorgan/provider/book_state.dart';
 import 'package:emorgan/provider/menu.dart';
@@ -23,17 +24,19 @@ import 'home_menu.dart';
 import 'home_product_banner.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const String route = '/';
   HomeScreen({Key key, @required this.pageAnimate, @required this.pageIndex})
       : super(key: key);
 
-  int pageIndex = 0;
-  double pageAnimate = 0;
+  int pageIndex;
+  double pageAnimate;
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   ScrollController _scrollController = ScrollController();
+
 //  _scrollController.animateTo(.0,
 //                         duration: Duration(milliseconds: 200),
 //                         curve: Curves.ease);
@@ -160,6 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     void moreNBtn() {}
     void nowBtn() {
+      // Navigator.of(context).pushNamed(OrderShoppingCode.route);
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => OrderShoppingCode()));
     }
@@ -306,6 +310,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             upBtn: upBtn,
                           ),
                           new HomeProductBanner(
+                            vKey: VKey.key1,
                             id: "shali",
                             upBtn: upBtn,
                             nowBtn: nowBtn,
@@ -325,6 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             isTop: false,
                           ),
                           new HomeProductBanner(
+                            vKey: VKey.key2,
                             id: "obi",
                             upBtn: upBtn,
                             nowBtn: nowBtn,
@@ -343,6 +349,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             isTop: true,
                           ),
                           new HomeProductBanner(
+                            vKey: VKey.key3,
                             id: "buzzy",
                             upBtn: upBtn,
                             nowBtn: nowBtn,

@@ -27,7 +27,8 @@ class HomeProductBanner extends StatefulWidget {
       this.imgWidth,
       this.imgHeigh,
       this.isLeft,
-      this.isTop})
+      this.isTop,
+      this.vKey})
       : super(key: key);
   final VoidCallback upBtn;
   final String title;
@@ -44,6 +45,7 @@ class HomeProductBanner extends StatefulWidget {
   final String id;
   final bool isTop;
   final bool status;
+  final ValueKey vKey;
   @override
   _HomeProductBannerState createState() => _HomeProductBannerState();
 }
@@ -63,7 +65,6 @@ class _HomeProductBannerState extends State<HomeProductBanner>
     double h = 1500;
     return Stack(
       children: [
-        
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -91,6 +92,7 @@ class _HomeProductBannerState extends State<HomeProductBanner>
                             onLoaded: () {
                               // print("onload~");
                             },
+                            key: widget.vKey,
                             src: widget.path,
                             isHtml: false, // Use Html syntax
                             isMarkdown: false, // Use markdown syntax
@@ -119,20 +121,18 @@ class _HomeProductBannerState extends State<HomeProductBanner>
           ),
         ),
         // backround(w, h),
-Container(
-  alignment: Alignment.bottomCenter,
+        Container(
+          alignment: Alignment.bottomCenter,
           height: 200,
           width: w,
           margin: EdgeInsets.only(top: 1100),
           padding: widget.isLeft
-              ? EdgeInsets.only( left: w / 3)
-              : EdgeInsets.only( right: w / 3),
+              ? EdgeInsets.only(left: w / 3)
+              : EdgeInsets.only(right: w / 3),
           child: widget.status
               ? Align(
                   alignment: Alignment.topCenter,
                   child: Container(
-
-
                     width: 209,
                     height: 44.06,
                     decoration: BoxDecoration(

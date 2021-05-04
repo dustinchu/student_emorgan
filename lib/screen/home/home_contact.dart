@@ -80,7 +80,7 @@ class _HomeContactState extends State<HomeContact>
         setState(() {
           start = true;
         });
-        sendemail();
+
         success();
       } else if (status == AnimationStatus.dismissed) {
         // print("dismissed");
@@ -474,6 +474,7 @@ class _HomeContactState extends State<HomeContact>
                                       if (nameStatus &&
                                           addressStatus &&
                                           messageStatus) {
+                                        
                                         // yourNameTextEditingController.text = "";
                                         // yourEmailTextEditingController.text = "";
                                         // messageTextEditingController.text = "";
@@ -483,6 +484,7 @@ class _HomeContactState extends State<HomeContact>
                                           nameStatus = false;
                                           addressStatus = false;
                                           messageStatus = false;
+                                         sendemail();
                                         });
                                       }
                                     },
