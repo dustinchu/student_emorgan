@@ -33,6 +33,7 @@ class _OrderAccountState extends State<OrderAccount> {
   bool creditCardNumber2 = false;
   bool ccv = false;
   bool zipCode = false;
+  bool humanAStatus = false, humanBStatus = false;
   TextEditingController firstNameTextEditingController;
   TextEditingController emailAddressTextEditingController;
   TextEditingController yotrLastNameTextEditingController;
@@ -192,25 +193,26 @@ class _OrderAccountState extends State<OrderAccount> {
     double h = MediaQuery.of(context).size.height;
     var accountStatus = Provider.of<AccountStatus>(context);
     var informationStatus = Provider.of<InformationStatus>(context);
+
     // double h = 900;
     List<bool> colorStatus = [false, false, false, true];
     List<bool> beforColorStatus = [true, true, true, true];
 
-    Widget humanBtn(String name, VoidCallback click) {
+    Widget humanBtn(String name, VoidCallback click, bool status) {
       return InkWell(
         onTap: click,
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: new BoxDecoration(
             border: new Border.all(color: Color(0xFF7A82A7), width: 2), // 邊色寬度
-            color: Colors.transparent,
+            color: status ? Color(0xFF7A82A7) : Colors.transparent,
             borderRadius: new BorderRadius.circular((60)), // 圆角度
           ),
           child: Text(
             name,
             style: GoogleFonts.montserrat(
               textStyle: TextStyle(
-                  color: Color(0xFF364146),
+                  color: status?Colors.white:Color(0xFF364146),
                   fontSize: windows_width_small_size(w)),
             ),
           ),
@@ -240,7 +242,7 @@ class _OrderAccountState extends State<OrderAccount> {
                   Row(
                     children: [
                       Container(
-                        width: w / 2 / 3+10,
+                        width: w / 2 / 3 + 10,
                         child: Text(
                           "Enter Account Detail",
                           style: GoogleFonts.montserrat(
@@ -249,9 +251,11 @@ class _OrderAccountState extends State<OrderAccount> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 20,),
+                      SizedBox(
+                        width: 20,
+                      ),
                       Container(
-                          width: w / 2 / 3-10,
+                          width: w / 2 / 3 - 10,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -264,8 +268,14 @@ class _OrderAccountState extends State<OrderAccount> {
                                     informationStatus.getLastNameA;
                                 phoneNumberTextEditingController.text =
                                     informationStatus.getPhoneA;
-                              }),
-                              SizedBox(width: 15,),
+                                setState(() {
+                                  humanAStatus = true;
+                                  humanBStatus = false;
+                                });
+                              }, humanAStatus),
+                              SizedBox(
+                                width: 15,
+                              ),
                               humanBtn("HumanB", () {
                                 firstNameTextEditingController.text =
                                     informationStatus.getFirstNameB;
@@ -275,7 +285,12 @@ class _OrderAccountState extends State<OrderAccount> {
                                     informationStatus.getLastNameB;
                                 phoneNumberTextEditingController.text =
                                     informationStatus.getPhoneB;
-                              }),
+
+                                setState(() {
+                                  humanAStatus = false;
+                                  humanBStatus = true;
+                                });
+                              }, humanBStatus),
                             ],
                           )),
                     ],
