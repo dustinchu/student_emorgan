@@ -270,7 +270,7 @@ the pairing is successful.
                     children: [
                       msg(
                           "Material",
-                          '''TBiomedical Metal
+                          '''Biomedical Metal
 Biomedical Ceramics
 Biomedical Polymer
 
