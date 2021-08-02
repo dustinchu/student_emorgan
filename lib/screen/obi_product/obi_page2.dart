@@ -351,7 +351,7 @@ and the patch to prevent needles from damage.''',
                   Expanded(child: Container()),
                   msg(
                       "Technology",
-                      '''TVoice Analysis
+                      '''Voice Analysis
 AI facial analysis''',
                       w)
                 ],
