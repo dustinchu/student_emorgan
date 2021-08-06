@@ -229,10 +229,9 @@ DIMENSIONS
                                   // lineWidth:
                                   //     line_page1_left_width_size(w / 7.8),
                                   title: "Tear Suction",
-                                  body: '''\nThere will be 4 forks made
-of Nitinol with shape
-memory to fix emorgan at
-the right position.''',
+                                  body: '''\nUser’s tear would flow into the
+                                  suction and the patch starts
+                                  analyzing the ingredient of tear..''',
                                 );
                               }),
                   ),
