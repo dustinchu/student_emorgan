@@ -230,8 +230,8 @@ DIMENSIONS
                                   //     line_page1_left_width_size(w / 7.8),
                                   title: "Tear Suction",
                                   body: '''\nUser’s tear would flow into the
-                                  suction and the patch starts
-                                  analyzing the ingredient of tear..''',
+suction and the patch starts
+analyzing the ingredient of tear..''',
                                 );
                               }),
                   ),
