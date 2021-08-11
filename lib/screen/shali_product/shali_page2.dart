@@ -231,7 +231,7 @@ DIMENSIONS
                                   title: "Tear Suction",
                                   body: '''\nUser’s tear would flow into the
 suction and the patch starts
-analyzing the ingredient of tear..''',
+analyzing the ingredient of tear.''',
                                 );
                               }),
                   ),

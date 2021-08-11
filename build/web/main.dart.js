@@ -39062,7 +39062,7 @@ $C:"$2",
 $R:2,
 $S:4}
 O.afA.prototype={
-$2:function(a,b){return new Z.eP($.PK,"Tear Suction","\nUser\u2019s tear would flow into the\nsuction and the patch starts\nanalyzing the ingredient of tear..",null)},
+$2:function(a,b){return new Z.eP($.PK,"Tear Suction","\nUser\u2019s tear would flow into the\nsuction and the patch starts\nanalyzing the ingredient of tear.",null)},
 $C:"$2",
 $R:2,
 $S:21}
